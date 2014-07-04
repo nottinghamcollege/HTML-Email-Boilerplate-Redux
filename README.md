@@ -25,12 +25,6 @@ The *experimental* version is for testing purposes, code may change regularly he
 
 The default table structure defined in the template is provided as guidance, you may wish to adapt it for your own uses.
 
-## Code Tests, Resources and Tools folder
-
-Code Tests - Example code for various areas
-Resources - Various email campaign resources
-Tools - Various command line tools for mentioned areas in the boilerplate
-
 ## License:
 
 The MIT License (MIT) (http://htmlemailboilerplate.com/license.html)
