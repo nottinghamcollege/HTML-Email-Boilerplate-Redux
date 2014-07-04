@@ -49,7 +49,7 @@ THE SOFTWARE.
 ## Credits:
 
 Central College Nottingham
-[mailto:websiteteam@centralnottingham.ac.uk](websiteteam@centralnottingham.ac.uk)
+websiteteam@centralnottingham.ac.uk
 
 
 
