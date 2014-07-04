@@ -1,4 +1,5 @@
-Central College Nottingham 
+Central College Nottingham
+============================================== 
 HTML Email Boilerplate
 ==============================================
 
