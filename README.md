@@ -1,11 +1,22 @@
-Central College Nottingham
+HTML Email Boilerplate Redux
 ============================================== 
 
-## HTML Email Boilerplate:
+## What is the HTML Email Boilerplate?:
 
-The HTML Email Boilerplate is designed to create a solid foundation for any email campaign by fixing various email client quirks from the beginning. (Saving headaches later!)
+A HTML Email Boilerplate is designed to create a solid foundation for any email campaign by fixing various email client quirks from the beginning. (Saving headaches later!)
 
-There are various email boilerplate templates around, however Central College Nottingham as adapted its own template from a variety of sources as well our own additions based on our own research and development. All sources have been credited accordingly where required by using the original source (URL) of where the code/information was found.
+There are various email boilerplate templates around, however Central College Nottingham has adapted its own template based on a variety of sources as well our own additions based on our own research and development. All sources have been credited accordingly where required by using the original source (URL) of where the code/information was found.
+
+## What are the main differences with this version?
+
+HTML email is a forever changing game. Overtime some boilerplates have become outdated. Our boilerplate includes:
+
+* Use of the IE Edge meta tag, forcing IE clients to render with highest capable standards
+* CSS3 media query support on Windows Phone 7.5+
+* DPI fixes for HiDPI devices when using Outlook 2007 and above
+* General Windows Phone compatibility
+
+And other areas...
 
 ## Usage:
 
@@ -21,7 +32,7 @@ The version *without* guidelines is the version you should use in your own email
 
 The *experimental* version is for testing purposes, code may change regularly here, and should not be used in any live campaign (Use the stable, without guidelines)
 
-**Never use the commented version in a live email campaign, as HTML comments play havoc with spam filters and also the structure of the commented version is not friendly for parsing!**
+**Never use the commented version in a live email campaign, as HTML comments play havoc with spam filters, also the structure of the commented version is not friendly for parsing!**
 
 The default table structure defined in the template is provided as guidance, you may wish to adapt it for your own uses.
 
@@ -52,7 +63,8 @@ THE SOFTWARE.
 ## Credits:
 
 Central College Nottingham
-websiteteam@centralnottingham.ac.uk
+
+All referenced organisations/individuals in the "with guidelines" template
 
 
 
