@@ -1,7 +1,7 @@
 Central College Nottingham
 ============================================== 
-HTML Email Boilerplate
-==============================================
+
+## HTML Email Boilerplate:
 
 The HTML Email Boilerplate is designed to create a solid foundation for any email campaign by fixing various email client quirks from the beginning. (Saving headaches later!)
 
