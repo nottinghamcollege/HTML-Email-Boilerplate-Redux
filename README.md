@@ -38,7 +38,7 @@ The default table structure defined in the template is provided as guidance, you
 
 ## License:
 
-The MIT License (MIT) (http://htmlemailboilerplate.com/license.html)
+The MIT License (MIT)
 
 Copyright (c) 2014 Central College Nottingham
 
