@@ -179,43 +179,39 @@
 				THE BASICS - Resolve some troublesome bugs from the get-go
 				*******************************************************************/
 			
-				#outlook a {padding:0;} 
+				#outlook a { padding:0; } 
 				/* Force Outlook to display view in browser link */
     	    
-				body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0;} 
+				body { width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; } 
 				/* Stop Wekbit and Windows Phone changing the font size */
 				
-				.ExternalClass {width:100%;} 
+				.ExternalClass { width:100%; } 
 				/* Force hotmail/outlook.com to display at full width */
 		    
-				.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+				.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; }
 				/* Fix the line-height bug in hotmail/outlook.com http://www.emailonacid.com/forum/viewthread/43/ */
 		    
-				#backgroundTable {margin:0; padding:0; width:100% !important; line-height: 100% !important;}
+				#backgroundTable { margin:0; padding:0; width:100% !important; line-height: 100% !important; }
 				/* In case the body tag is removed (Gmail etc..)*/
 		
 				/*************************************************************************
 				IMAGE FIXES - Sensible image fixes (remember display:block; as well)
 				**************************************************************************/
-				img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;} 
-				a img {border:none;} /* If using XHTML Transitional border="0" works fine */
+				img { outline:none; text-decoration:none; -ms-interpolation-mode: bicubic; } 
+				a img { border:none; } /* If using XHTML Transitional border="0" works fine */
 		
 				/****************************
 				YAHOO! Mail - Paragraph fix
 				****************************/
-				p {margin: 1em 0;}
+				p { margin: 1em 0; }
 		
 				/**********************************************************
 				HOTMAIL/OUTLOOK.COM - Header tags styling colour overrides
 				***********************************************************/
 				h1, h2, h3, h4, h5, h6 {color: black !important;}
 				h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: blue !important;}
-				h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active {
-				color: red !important;
-				}
-				h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
-				color: purple !important;
-				}
+				h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active { color: red !important; }
+				h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited { color: purple !important; }
 				
 				/*************************************************************************************************
 				OUTLOOK 2007+ and Gmail - Table padding issue
@@ -223,29 +219,27 @@
 				http://www.campaignmonitor.com/blog/post/3392/1px-borders-padding-on-table-cells-in-outlook-07/
 				**************************************************************************************************/
 				table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
-				table td {border-collapse: collapse;}
+				table td { border-collapse: collapse; }
 			
 				/* End Reset */
 		
 				/*****************************************************************
 				LINK COLOUR/EVENTS - Anchor styling
 				*****************************************************************/
-				a {color: orange;} /* Safer to bring this inline on each <a> tag */
+				a { color: orange; } /* Safer to bring this inline on each <a> tag */
 		
 				/**************************************************************************
 				YAHOO! SHORTCUTS - Certain keywords being hyperlinked
 				http://www.emailonacid.com/blog/details/C13/yahoo_shortcuts_are_baaaaaaaack
 				***************************************************************************/
-				span.yshortcuts, a span { color:#000; background-color:none; border:none;} 
-				span.yshortcuts:hover, 
-				span.yshortcuts:active,
-				span.yshortcuts:focus {color:#000; background-color:none; border:none;}
+				span.yshortcuts, a span { color:#000; background-color:none; border:none; } 
+				span.yshortcuts:hover, span.yshortcuts:active, span.yshortcuts:focus { color:#000; background-color:none; border:none; }
 		    
 				/****************************************************************************************
 				APPLE LINKS - Prevent certain text content being modified on iOS and breaking the design
 				https://litmus.com/blog/update-banning-blue-links-on-ios-devices
 				*****************************************************************************************/
-				.appleLinksWhite a, .appleLinksBlack a { text-decoration:none !important;}
+				.appleLinksWhite a, .appleLinksBlack a { text-decoration:none !important; }
 				.appleLinksWhite a { color:#ffffff !important; }
 				.appleLinksBlack a { color:#000001 !important; }
 				 
@@ -605,8 +599,8 @@
 										<td align="left" valign="top">
 											<table border="0" cellpadding="0" cellspacing="0" class="cta-button-wrap">
 												<tr>
-													<td class="cta-button" align="center" valign="middle" bgcolor="#d62828" width="200" height="45" style="display: block;width:200px;height:45px;">
-														<a href="" target="_blank" style="line-height:45px;width:100%;display:inline-block;text-decoration:none;">
+													<td class="cta-button" align="center" valign="middle" bgcolor="#d62828" width="200" height="45" style="display:block; width:200px; height:45px;">
+														<a href="" target="_blank" style="line-height:45px; width:100%; display:inline-block; text-decoration:none;">
 															Your text
 														</a>
 													</td>
@@ -618,9 +612,9 @@
                                
 								<!-- VML code for better Outlook support. Outlook conditionals are required to make the VML/table combo work cross platform  -->
                                 
-								<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:45px;v-text-anchor:middle;width:200px;" arcsize="10%" stroke="f" fillcolor="#d62828">
+								<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:45px; v-text-anchor:middle ;width:200px;" arcsize="10%" stroke="f" fillcolor="#d62828">
 									<w:anchorlock/>
-									<center style="color:#ffffff;font-size:16px;font-weight:bold;">
+									<center style="color:#ffffff; font-size:16px; font-weight:bold;">
 										Your text
 									</center>
 								</v:roundrect>
@@ -658,7 +652,7 @@
 												<table border="0" cellpadding="0" cellspacing="0" class="cta-button-wrap">
 													<tr>
 														<td align="center" valign="middle" bgcolor="#ff0000" 
-														style="padding-top:6px;padding-right:15px;padding-bottom:6px;padding-left:15px;" class="cta-button">
+														style="padding-top:6px; padding-right:15px; padding-bottom:6px; padding-left:15px;" class="cta-button">
 															<a href="" target="_blank" style="text-decoration:none;">Your text</a>
 														</td>
 													</tr>
