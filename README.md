@@ -63,8 +63,10 @@ THE SOFTWARE.
 ## Credits:
 
 Central College Nottingham
+Sean Powell - (http://htmlemailboilerplate.com)
+Email on Acid - (http://www.emailonacid.com/blog/details/C13/html_boilerplate)
 
-All referenced organisations/individuals in the "with guidelines" template
+Where sources have been cited in the "with guidelines" version, credit is given to the original author of the referenced information.
 
 
 
