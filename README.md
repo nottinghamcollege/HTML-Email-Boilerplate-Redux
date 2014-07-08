@@ -1,7 +1,5 @@
 HTML Email Boilerplate Redux
-============================================== 
-
-## What is the HTML Email Boilerplate?:
+==============================================
 
 A HTML Email Boilerplate is designed to create a solid foundation for any email campaign by fixing various email client quirks from the beginning. (Saving headaches later!)
 
