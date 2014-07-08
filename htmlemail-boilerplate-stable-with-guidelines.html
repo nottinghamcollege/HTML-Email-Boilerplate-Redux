@@ -189,30 +189,30 @@
 				.ExternalClass { width:100%; } 
 				/* Force hotmail/outlook.com to display at full width */
 		    
-				.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; }
+				.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height:100%; }
 				/* Fix the line-height bug in hotmail/outlook.com - http://www.emailonacid.com/forum/viewthread/43/ */
 		    
-				#backgroundTable { margin:0; padding:0; width:100% !important; line-height: 100% !important; }
+				#backgroundTable { margin:0; padding:0; width:100% !important; line-height:100% !important; }
 				/* In case the body tag is removed (Gmail etc..)*/
 		
 				/*************************************************************************
 				IMAGE FIXES - Sensible image fixes (remember display:block; as well)
 				**************************************************************************/
-				img { outline:none; text-decoration:none; -ms-interpolation-mode: bicubic; } 
+				img { outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; } 
 				a img { border:none; } /* If using XHTML Transitional border="0" works fine */
 		
 				/****************************
 				YAHOO! Mail - Paragraph fix
 				****************************/
-				p { margin: 1em 0; }
+				p { margin:1em 0; }
 		
 				/**********************************************************
 				HOTMAIL/OUTLOOK.COM - Header tags styling colour overrides
 				***********************************************************/
-				h1, h2, h3, h4, h5, h6 {color: black !important;}
-				h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: blue !important;}
-				h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active { color: red !important; }
-				h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited { color: purple !important; }
+				h1, h2, h3, h4, h5, h6 { color:black !important;}
+				h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color:blue !important;}
+				h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active { color:red !important; }
+				h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited { color:purple !important; }
 				
 				/*************************************************************************************************
 				OUTLOOK 2007+ and Gmail - Table padding issue
@@ -220,14 +220,14 @@
 				http://www.campaignmonitor.com/blog/post/3392/1px-borders-padding-on-table-cells-in-outlook-07/
 				**************************************************************************************************/
 				table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
-				table td { border-collapse: collapse; }
+				table td { border-collapse:collapse; }
 			
 				/* End Reset */
 		
 				/*****************************************************************
 				LINK COLOUR/EVENTS - Anchor styling
 				*****************************************************************/
-				a { color: orange; } /* Safer to bring this inline on each <a> tag */
+				a { color:orange; } /* Safer to bring this inline on each <a> tag */
 		
 				/**************************************************************************
 				YAHOO! SHORTCUTS - Certain keywords being hyperlinked
@@ -317,17 +317,17 @@
 				/***************************** TABLET TARGETING ********************************/
 				@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 					a[href^="tel"], a[href^="sms"] {
-						text-decoration: none;
-						color: blue;
-						pointer-events: none;
-						cursor: default;
+						text-decoration:none;
+						color:blue;
+						pointer-events:none;
+						cursor:default;
 					}
 	
 					.mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
-						text-decoration: default;
-						color: orange !important;
-						pointer-events: auto;
-						cursor: default;
+						text-decoration:default;
+						color:orange !important;
+						pointer-events:auto;
+						cursor:default;
 					}
 				}
 		
@@ -345,17 +345,17 @@
 		    
 				@media screen and (max-device-width: 480px), screen and (max-width: 480px) {
 					a[href^="tel"], a[href^="sms"] {
-						text-decoration: none;
-						color: blue;
-						pointer-events: none;
-						cursor: default;
+						text-decoration:none;
+						color:blue;
+						pointer-events:none;
+						cursor:default;
 					}
 
 					.mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
-						text-decoration: default;
-						color: orange !important;
-						pointer-events: auto;
-						cursor: default;
+						text-decoration:default;
+						color:orange !important;
+						pointer-events:auto;
+						cursor:default;
 					}
 				}
 		
