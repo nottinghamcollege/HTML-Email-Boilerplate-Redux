@@ -42,12 +42,10 @@
 						- Yahoo! Mail
 						- Outlook 2007, 2010, 2013
                         - Outlook.com
-						- Hiding content intended for mobile devices only
-						- Text Content
-						- Image Content
 					- Media Queries
 						- Tablet Targeting
 						- Mobile Targeting
+							- Hiding content intended for mobile devices only
 							- Minimum font size on iOS
 						- DPI Targeting
 				- Windows Phone 7 Conditional Targeting
@@ -248,7 +246,7 @@
 		
 				/*
 				
-				SPECIFIC EMAIL CLIENT QUIRKS:
+				SPECIFIC EMAIL CLIENT QUIRKS TO KNOW ABOUT:
 
 				Gmail 
 					- http://www.emailonacid.com/blog/details/C13/12_things_you_must_know_when_developing_for_gmail_and_gmail_mobile_apps
@@ -262,57 +260,11 @@
 					- https://www.campaignmonitor.com/forums/topic/8035/ (DPI scaling issues)
 				
 				Outlook.com - http://www.emailonacid.com/blog/details/C13/tips_and_tricks_outlook.com
-					
-        
-				HIDING CONTENT INTENDED FOR MOBILE ONLY:
+				
 			
-				https://www.campaignmonitor.com/forums/post/27544/
-				https://www.campaignmonitor.com/forums/topic/7405/how-to-hide-mobile-content-in-desktop-clients/
-
-				Hiding desktop email client content on mobile devices is easy, however it can get more involved when you reverse this logic.
-				display:none; is the obvious method, however display:none; doesn't work in Gmail and Outlook 2007+.
-			
-				With Gmail, display:none; does actually work with the !important directive inline, but it then can't be overridden
-			
-				Nuking the max-height and font-size is the fail-safe method, this works on the following tags:
-		
-				<table> <td> <span> <a> <ul> <p> <h1> <h2> <h3> <h4> <h5> <h6> <div>
-			
-				Text content:
-			
-				With text content the max-height and font-size needs to be set to 0 on a supported tag above.
-		
-				Image content:
-			
-				When hiding images intended for mobile only you need to be a bit more creative. You have two problems when using this technique.
-			
-				1. You need to hide image content so it doesn't appear in Design view in your Web IDE i.e. Dreamweaver during development.
-				2. You need to make sure the images never gets displayed on desktop clients and the space the block element takes up is nuked.
-			
-				With images you'll need to wrap it within a supported tag above.
-			
-				A separate nested table would be good as it maintains the layout, allow you to separate an image intended for specific device types easily.
-			
-				With images its also wise to set width="0" and height="0" on the image intended for mobile and then override within a media query.
-				This on its own will still take up space, you'll still need to set max-height to 0 to replicate display:none; on the containing element
-		
 				/*************************************************************************
 				MEDIA QUERIES - For clients that support CSS3
 				**************************************************************************/
-				
-				/*
-				
-				MINIMUM FONT SIZE ON IOS:
-				http://www.campaignmonitor.com/blog/post/3339/save-your-layout-by-overriding-the-minimum-font-size-on-the-iphone-and/
-				
-				Any text with a font size of less than 13px will be resized automatically, which can break a design.
-				
-				Add this to the containing element to prevent the resizing:
-				-webkit-text-size-adjust:none;
-				
-				To be safe, include this fix only within a media query and not directly inline.
-				
-				*/
 			
 				/***************************** TABLET TARGETING ********************************/
 				@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -334,13 +286,13 @@
 				/**************************** MOBILE TARGETING *****************************/
 			
 				/*
-				Some resources:
+					Some resources:
 				
-				https://litmus.com/blog/mobile-email-compatibility-guide-what-works-where
-				http://www.campaignmonitor.com/guides/mobile/#mobile-support
-				http://www.campaignmonitor.com/blog/post/3339/save-your-layout-by-overriding-the-minimum-font-size-on-the-iphone-and/
-				http://www.campaignmonitor.com/blog/post/3457/media-query-issues-in-yahoo-mail-mobile-email/
-				http://www.campaignmonitor.com/blog/post/3571/using-phone-numbers-in-html-email/
+					https://litmus.com/blog/mobile-email-compatibility-guide-what-works-where
+					http://www.campaignmonitor.com/guides/mobile/#mobile-support
+					http://www.campaignmonitor.com/blog/post/3339/save-your-layout-by-overriding-the-minimum-font-size-on-the-iphone-and/
+					http://www.campaignmonitor.com/blog/post/3457/media-query-issues-in-yahoo-mail-mobile-email/
+					http://www.campaignmonitor.com/blog/post/3571/using-phone-numbers-in-html-email/
 				*/
 		    
 				@media screen and (max-device-width: 480px), screen and (max-width: 480px) {
@@ -358,6 +310,59 @@
 						cursor:default;
 					}
 				}
+				
+				/*
+				
+					HIDING CONTENT INTENDED FOR MOBILE DEVICES ONLY:
+			
+					https://www.campaignmonitor.com/forums/post/27544/
+					https://www.campaignmonitor.com/forums/topic/7405/how-to-hide-mobile-content-in-desktop-clients/
+					http://freshinbox.com/blog/bulletproof-solution-to-hiding-mobile-content-when-opened-in-non-mobile-email-clients/
+
+					Hiding desktop email client content on mobile devices is fairly easy, however it can get more involved when you reverse this logic.
+					display:none; is the obvious method, however it doesn't work as you might think in Gmail/Outlook 2007/2010/2013
+			
+					With Gmail display:none is stripped entirely, ironically display:none !important; works but then you can't override it.
+					With Outlook 2007 - 2013, display:none; works but not if there is a table within the element you are trying to hide.
+				
+					An example of using this method:
+				
+					<!--[if !mso 9]><!-->
+						<table border="0" cellpadding="0" cellspacing="0" class="mobilecontent" style="display:none; max-height:0; overflow:hidden;">
+							<tr>
+								<td align="left" valign="top">
+									Some content. You could safely table nest here and it will be still hidden.
+								</td>
+							</tr>
+						</table>
+					<!--<![endif]-->
+				
+					Media query for displaying on a mobile device:
+				
+					@media screen and (max-device-width: 480px), screen and (max-width: 480px) {
+						table[class="mobilecontent"] { 
+							display:block !important;
+							max-height:none !important;
+						}
+					}
+				
+					Note: Some mobile devices may not support media queries and hence the content will be hidden as it will render the desktop verison.
+				
+				*/
+				
+				/*
+				
+					MINIMUM FONT SIZE ON IOS:
+					http://www.campaignmonitor.com/blog/post/3339/save-your-layout-by-overriding-the-minimum-font-size-on-the-iphone-and/
+				
+					Any text with a font size of less than 13px will be resized automatically, which can break a design.
+				
+					Add this to the containing element to prevent the resizing:
+					-webkit-text-size-adjust:none;
+				
+					To be safe, include this fix only within a media query and not directly inline.
+				
+				*/
 		
 				/********************** HIGH RESOLUTION QUERIES ************************/ 
 			
