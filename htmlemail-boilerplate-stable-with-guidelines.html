@@ -450,7 +450,7 @@
 			-->
 		</head>
 
-    <body bgcolor="#fffff">
+    <body>
 		<!-- 
 			PREHEADER:
 			
@@ -458,7 +458,8 @@
 			http://www.smartinsights.com/email-marketing/email-creative-and-copywriting/4-ways-use-preheader-marketing-emails/
 			
 			Text that appears after the subject line in a preview/notification in the inbox.
-			Not creating a preheader means generally the first bit of text content gets used. This can be bad when areas like the web version link are first.
+			Not creating a preheader means generally the first bit of text content gets used. 
+			This can be bad when areas like the web version link are first.
             
 			The preheader can be visible but if a template design doesn't allow for it the hidden span technique can be used
 			display:none !important; allows Gmail to hide the span without font-size or max-height hacks.
@@ -609,8 +610,10 @@
 										<td align="left" valign="top">
 											<table border="0" cellpadding="0" cellspacing="0" class="cta-button-wrap">
 												<tr>
-													<td class="cta-button" align="center" valign="middle" bgcolor="#d62828" width="200" height="45" style="display:block; width:200px; height:45px;">
-														<a href="" target="_blank" style="line-height:45px; width:100%; display:inline-block; text-decoration:none;">
+													<td class="cta-button" align="center" valign="middle" bgcolor="#d62828" 
+                                                    width="200" height="45" style="display:block; width:200px; height:45px;">
+														<a href="" target="_blank" 
+                                                        style="line-height:45px; width:100%; display:inline-block; text-decoration:none;">
 															Your text
 														</a>
 													</td>
@@ -620,16 +623,17 @@
 									</tr>
 								</table>
                                
-								<!-- VML code for better Outlook support. Outlook conditionals are required to make the VML/table combo work cross platform  -->
+								<!-- VML code for better Outlook support. This will need combining with method #1 or #2 with a Outlook conditional
                                 
-								<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:45px; v-text-anchor:middle ;width:200px;" arcsize="10%" stroke="f" fillcolor="#d62828">
+								<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" 
+                                href="" style="height:45px; v-text-anchor:middle; width:200px;" arcsize="10%" stroke="f" fillcolor="#d62828">
 									<w:anchorlock/>
 									<center style="color:#ffffff; font-size:16px; font-weight:bold;">
 										Your text
 									</center>
 								</v:roundrect>
                                 
-                                <!-- See code example for how it works together -->
+                                -->
 								   
 								<!--
 	   
@@ -651,18 +655,22 @@
 									but isn't set to 100% for desktop clients for when buttons don't want to be full width.
 								-->
 									
-									<!-- CSS for mobile media query -->
+								<!-- 
+									CSS for mobile media query
+
 									table[class="width100pc"] { width:100% !important; }
 									table[class="cta-button-wrap"] td[class="cta-button"] { padding:0 !important; background-color:none; }
 									table[class="cta-button-wrap"] td[class="cta-button"] a { padding:15px; display:block; background-color:#ff0000; }
-								
+								-->
+				
 									<table border="0" cellpadding="0" cellspacing="0" width="100%">
 										<tr>
 											<td align="left" valign="top">
 												<table border="0" cellpadding="0" cellspacing="0" class="cta-button-wrap">
 													<tr>
 														<td align="center" valign="middle" bgcolor="#ff0000" 
-														style="padding-top:6px; padding-right:15px; padding-bottom:6px; padding-left:15px;" class="cta-button">
+														style="padding-top:15px; padding-right:20px; padding-bottom:15px; padding-left:20px;" 
+														class="cta-button">
 															<a href="" target="_blank" style="text-decoration:none;">Your text</a>
 														</td>
 													</tr>
