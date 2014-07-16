@@ -48,6 +48,7 @@
 							- Hiding content intended for mobile devices only
 							- Minimum font size on iOS
 						- DPI Targeting
+						- Debugging layouts
 				- Windows Phone 7 Conditional Targeting
 				- Outlook Conditional Targeting
 				- Fixing images on HiDPI
@@ -383,7 +384,24 @@
 				@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) { 
 				
 				}
-		
+				
+				/************************* DEBUGGING LAYOUTS ****************************/
+				
+				/*
+					https://litmus.com/community/discussions/84-what-s-your-favorite-hack#comment-1287
+					
+					A great way to debug a layout by visually identifying what each element is doing. This can help when you have inconsitencies.
+					Firebug is also another example of development tools in the browser that allows for similar debugging.
+					The CSS below should only be used during development, remove the code on a live email send.
+					
+					* { background-color: rgba(255,0,0,.2); }
+					* * { background-color: rgba(0,255,0,.2); }
+					* * * { background-color: rgba(0,0,255,.2); }
+					* * * * { background-color: rgba(255,0,255,.2); }
+					* * * * * { background-color: rgba(0,255,255,.2); }
+					* * * * * * { background-color: rgba(255,255,0,.2); }
+				
+				*/
 			</style>
 	
 			<!--
