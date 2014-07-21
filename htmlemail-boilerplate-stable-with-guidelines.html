@@ -191,7 +191,7 @@
 				.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height:100%; }
 				/* Fix the line-height bug in hotmail/outlook.com - http://www.emailonacid.com/forum/viewthread/43/ */
 		    
-				#backgroundTable { margin:0; padding:0; width:100% !important; line-height:100% !important; }
+				#wrappertable { margin:0; padding:0; width:100% !important; line-height:100% !important; }
 				/* In case the body tag is removed (Gmail etc..)*/
 		
 				/*************************************************************************
@@ -591,21 +591,21 @@
 		-->
 		
 		<!-- Wrapper table to force 100% width usage, some clients don't by default. -->
-		<table border="0" cellpadding="0" cellspacing="0" width="100%" id="backgroundTable">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%" id="wrappertable">
 			<tr>
 				<!-- 
 					In most cases, you'll want the email to be centred
 					This is a clean way of doing it, no need for any <center> or <div> tags.
 					It does mean however you'll need to declare align="" for each <td> row following to avoid actual content i.e. text being centred.
 				-->
-				<td align="center" valign="top" id="wrapper">
+				<td align="center" valign="top" id="wrappercell">
 					<!--
 						The container table with a fixed width
 						A duplicate CSS width attribute is defined to match the width attribute set for Outlook and HiDPI.
 					-->
-					<table border="0" cellpadding="0" cellspacing="0" width="600" style="width:600px;">
+					<table border="0" cellpadding="0" cellspacing="0" width="600" style="width:600px;" id="containertable">
 						<tr>
-							<td align="left" valign="top" id="container">
+							<td align="left" valign="top" id="containercell">
                             
 								<!--
 									CREATING CTA BUTTONS THAT WORK CROSS PLATFORM WITHOUT IMAGES:
