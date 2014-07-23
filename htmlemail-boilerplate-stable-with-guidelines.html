@@ -63,7 +63,6 @@
 				- Spacing issues in Outlook 2007+
 				- Table layout
 				<table>
-					- Basic table layout rules
 					- Cross Compatible CTA buttons (without images)
 					- Using Images
 					- Using Hyperlinks
@@ -440,13 +439,13 @@
 			<![endif]-->
         
 			<!-- 
-				OUTLOOK IMAGES FIX FOR HIGH DPI DISPLAYS
+				OUTLOOK IMAGES FIX FOR HIGH DPI DISPLAYS:
+                https://www.campaignmonitor.com/forums/topic/8035/
+                
 				This will force upscaling of images on Outlook when using high DPI settings.
 				By default on Outlook 2007 and above images appear smaller than they should.
             
 				The MS office namespace on the root HTML tag are required for the XML code below to work.
-            
-				https://www.campaignmonitor.com/forums/topic/8035/
 			-->
         
 			<!--[if gte mso 9]>
@@ -565,18 +564,6 @@
 
 			The majority of clients won't be able to use custom fonts, so fallbacks are a must if used.
 		-->
-	
-		<!-- 
-			BASIC TABLE LAYOUT RULES:
-
-			1. Always have a wrapper table, so you can force 100% space usage, not all email clients do by default.
-
-			2. Nest the container table within the wrapper table for the actual email body
-				2a. 600px is the max recommended fixed width size.
-				2b. Never define widths as px with the width attribute on a table
-
-			3. Define widths on <table> and <td> when required but be careful.
-		-->
 
 		<!--
 			SPACING ISSUES IN OUTLOOK 2007+:
@@ -586,7 +573,13 @@
         
 		<!--
 			TABLE LAYOUT:
-			Basic table layout to adapt for your campaign.
+			Basic table layout to adapt for your campaign with some general guidance.
+            
+			1. Start with a 100% width table to force covering the entire email space available in various clients
+			2. Nest a container table within the wrapper table which will hold the email template
+				2a. The container should be no greater than 600 pixels wide.
+				2b. Never define widths as px values on a table width attribute. Either percentage or a number only.
+			3. When using a pixel width value, a matching CSS width property should be applied for better HiDPI support in Outlook 07-13
 		-->
 		
 		<!-- Wrapper table to force 100% width usage, some clients don't by default. -->
