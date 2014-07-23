@@ -7,11 +7,11 @@ There are various email boilerplate templates around, however Central College No
 
 ## What are the main differences with this version?
 
-HTML email is a forever changing game. Overtime some boilerplates have become outdated. Our boilerplate includes:
+HTML email is a forever changing game and overtime some boilerplates have become outdated, this boilerplate includes:
 
 * Use of the IE Edge meta tag, forcing IE clients to render with highest capable standards
 * CSS3 media query support on Windows Phone 7.5+
-* DPI fixes for HiDPI devices when using Outlook 2007 and above
+* DPI fixes on images for HiDPI devices when using Outlook 2007 and above
 * General Windows Phone compatibility
 
 And other areas...
