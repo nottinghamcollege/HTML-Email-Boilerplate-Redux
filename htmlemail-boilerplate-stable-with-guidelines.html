@@ -56,7 +56,6 @@
 			</head>
 			<body>
 				- Preheader
-				- General tips
 				- Fonts
 				- Web safe font stacks
 					- Custom web fonts
@@ -484,51 +483,9 @@
 			Incase display:none; doesn't work, color and font-size properties have been used to still "hide" the span content.
 			The font colour would match the background color of the email
 			
-            Note: Setting a very small font size can trigger some spam filters.
+			Note: Setting a very small font size can trigger some spam filters.
 		-->
 		<span style="display:none !important; font-size:1px; color:#ffffff;">Preheader text here</span>
-        
-		<!-- 
-		    GENERAL TIPS BEFORE YOU GO INSANE:
-
-			1. Always use tables for layout and put content in table cells so everything is contained.
-				1a. colspan and rowspan are banned, you will be nesting your ass off. GOT THAT?
-				1b. Don't assume CSS styling on inline elements will always work across the board. It probably won't. Stick to the basics.
-				1c. Applying styling to block level elements is preferred, as styling on some inline elements can fail in some clients
-				1d. Avoid using cellpadding or cellspacing to create margin/padding effects, it can be horrible in some clients and applies it on all sides.
-				1e. Empty table cells are bad, don't use them. No matter how much line-height or font-size hacks you do.
-				1f. Image spacing techniques i.e. transparent gif images are also discouraged.
-
-			2. Use margin and padding with caution on table cells. Padding is generally safer.
-
-			3. DO NOT USE SHORTHAND CSS. Expand any CSS properties e.g. padding:0px 10px 0px 10px; = padding-top:0px; padding-right:10px; etc..
-				3a. The exceptions to this rule are borders and a few others.
-
-			4. <span> is useful for wrapping text you want to style differently compared to the rest of a section.
-				4a. But don't expect most CSS styling to work on spans, think basic i.e. color and text CSS properties.
-
-			5. Don't think display:block; on elements will work in all email clients. Again table cells are good block level elements to control layout
-
-			6. THE RENDERING CAPABILITY OF OUTLOOK 2007 AND ABOVE IS MS WORD.... NO REALLY.
-				6a. Outlook Express/2000/2002/2003 renders emails better than Outlook 2007 and onwards. TRUE STORY.
-
-			7. The <font> tag should only be used as a last resort, mainly to resolve font bugs in Outlook.
-				7a. In most cases font-family and web safe font stacks work fine on block elements.
-
-			8. Don't use HTML tags like <p>, <ul>, etc.. These formatting tags won't work consistently across all email clients without major reset work.
-				8a. Want to have spacing like a paragraph? Time to get those <br /> tags out or split with <tr> with padding on the <td>
-				8b. Lists, <ul> and <ol> have very sketchy support, instead, use a table with two td rows to create a faux list.
-
-			9. Some email clients are stupid, you will be repeating inline rules on loads of elements.
-				9a. CSS styling doesn't inherit in HTML email in some cases, always define CSS inline on every element, even if its repetitive.
-				9b. There is no elegance with HTML Email, whatever your doing is going to be dirty, accept it.
-
-			10. Don't forget about line-height for consistent text appearance (especially if the line-height has been reset on the body)
-				10a. Pixel or percentage values for line-height are better supported.
-				10b. For line-height to work in Outlook 2007+ it needs to be at least 1px greater than the set value of font-size.
-
-			11. After coding HTML email, ask for forgiveness from the W3C gods. Then take a shower. AS THIS IS PURE FLITH.
-		-->
 
 		<!-- 
 			FONTS:
