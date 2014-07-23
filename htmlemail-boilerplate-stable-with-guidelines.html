@@ -481,9 +481,12 @@
 			The preheader can be visible but if a template design doesn't allow for it the hidden span technique can be used
 			display:none !important; allows Gmail to hide the span without font-size or max-height hacks.
             
-			font-size and color are declared in the event display:none; doesn't work. The colour would match the background when a solid colour is used
+			Incase display:none; doesn't work, color and font-size properties have been used to still "hide" the span content.
+			The font colour would match the background color of the email
+			
+            Note: Setting a very small font size can trigger some spam filters.
 		-->
-		<span style="display:none !important; font-size:1px; color:#ffffff;">Pre-header text here</span>
+		<span style="display:none !important; font-size:1px; color:#ffffff;">Preheader text here</span>
         
 		<!-- 
 		    GENERAL TIPS BEFORE YOU GO INSANE:
@@ -582,7 +585,7 @@
 			<tr>
             
 				<!--
-                	ALIGNING YOUR EMAIL TO THE CENTRE:
+					ALIGNING YOUR EMAIL TO THE CENTRE:
 					In a lot of cases, you'll likely want the email to be centred (mainly for desktop clients)
 					This is a clean way of doing it, no need for any <center> or <div> tags.
 					It does mean however you'll need to declare align="" for each <td> row following to avoid actual content i.e. text being centred.
