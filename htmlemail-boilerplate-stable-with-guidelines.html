@@ -60,9 +60,10 @@
 				- Fonts
 				- Web safe font stacks
 					- Custom web fonts
-				- Spacing issues in Outlook 2007+
 				- Table layout
 				<table>
+					- Aligning email to the centre
+					- Gap issues with long vertical emails in Outlook 2007 and above
 					- Cross Compatible CTA buttons (without images)
 					- Using Images
 					- Using Hyperlinks
@@ -564,12 +565,6 @@
 
 			The majority of clients won't be able to use custom fonts, so fallbacks are a must if used.
 		-->
-
-		<!--
-			SPACING ISSUES IN OUTLOOK 2007+:
-			The Word engine is screwing you over on long vertical emails! Awesome.
-			http://www.emailonacid.com/blog/details/C13/horizontal_spacing_issues_in_outlook_2007_and_2010
-		-->
         
 		<!--
 			TABLE LAYOUT:
@@ -582,19 +577,27 @@
 			3. When using a pixel width value, a matching CSS width property should be applied for better HiDPI support in Outlook 07-13
 		-->
 		
-		<!-- Wrapper table to force 100% width usage, some clients don't by default. -->
+		<!-- WRAPPER TABLE -->
 		<table border="0" cellpadding="0" cellspacing="0" width="100%" id="wrappertable">
 			<tr>
-				<!-- 
-					In most cases, you'll want the email to be centred
+            
+				<!--
+                	ALIGNING YOUR EMAIL TO THE CENTRE:
+					In a lot of cases, you'll likely want the email to be centred (mainly for desktop clients)
 					This is a clean way of doing it, no need for any <center> or <div> tags.
 					It does mean however you'll need to declare align="" for each <td> row following to avoid actual content i.e. text being centred.
 				-->
+                
 				<td align="center" valign="top" id="wrappercell">
+                
 					<!--
-						The container table with a fixed width
-						A duplicate CSS width attribute is defined to match the width attribute set for Outlook and HiDPI.
+						GAP ISSUES WITH LONG VERTICAL EMAILS IN OUTLOOK 2007 AND ABOVE:
+						http://www.emailonacid.com/blog/details/C13/horizontal_spacing_issues_in_outlook_2007_and_2010
+						
+						If a table exceeds 23.7 inches in height a page break will be added which can cause strange gaps.
 					-->
+                    
+					<!-- CONTAINER TABLE -->
 					<table border="0" cellpadding="0" cellspacing="0" width="600" style="width:600px;" id="containertable">
 						<tr>
 							<td align="left" valign="top" id="containercell">
@@ -733,10 +736,10 @@
 								-->
 							</td>
 						</tr>
-					</table> <!-- End Container Table -->
+					</table> <!-- END CONTAINER TABLE -->
 				</td>
 			</tr>
-		</table> <!-- End Wrapper Table -->
+		</table> <!-- END WRAPPER TABLE -->
 	
 		<!--
 			EMAIL SEND CHECKLIST:
