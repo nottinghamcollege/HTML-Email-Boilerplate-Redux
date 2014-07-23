@@ -36,12 +36,7 @@
 				- Viewport Setting
 				- Document Title
 				- Cascading Style Sheets
-					- Reset and common bug fixes
-					- Specific email client quirks
-						- Gmail
-						- Yahoo! Mail
-						- Outlook 2007, 2010, 2013
-						- Outlook.com
+					- CSS reset for fixing various email client quirks
 					- Media Queries
 						- Tablet Targeting
 						- Mobile Targeting
@@ -56,9 +51,6 @@
 			</head>
 			<body>
 				- Preheader
-				- Fonts
-				- Web safe font stacks
-					- Custom web fonts
 				- Table layout
 				<table>
 					- Aligning email to the centre
@@ -173,11 +165,30 @@
 
 			<style type="text/css">
 		
-				/* Begin Reset, based on the original CSS reset from MailChimp */
+				/* 
+					CSS RESET FOR FIXING VARIOUS EMAIL CLIENT QUIRKS:
+					http://www.emailonacid.com/blog/details/C13/12_things_you_must_know_when_developing_for_gmail_and_gmail_mobile_apps
+					http://www.emailonacid.com/blog/details/C13/stop_gmail_from_wrapping_your_phone_number_into_text_links
+					http://www.campaignmonitor.com/blog/post/4137/image-cache-display-issues-in-gmail
+					http://www.ianhoar.com/2008/04/29/outlook-2007-borders-and-1px-padding-on-table-cells/
+					http://www.campaignmonitor.com/blog/post/3392/1px-borders-padding-on-table-cells-in-outlook-07/
+					http://www.emailonacid.com/blog/details/C6/9_ways_to_prevent_yahoo_headaches
+					http://www.emailonacid.com/blog/details/C13/yahoo_shortcuts_are_baaaaaaaack
+					http://www.emailonacid.com/blog/details/C13/tips_and_tricks_outlook_07-13
+					https://www.campaignmonitor.com/forums/topic/8035/
+					http://www.emailonacid.com/blog/details/C13/tips_and_tricks_outlook.com
+					http://www.emailonacid.com/blog/details/C13/line_height_and_outlook.com
+					http://www.emailonacid.com/blog/details/C4/the_pulse_office_365_first_impressions
+					http://blog.jmwhite.co.uk/2014/07/22/office-365-quirks-for-email-designers
+					https://litmus.com/blog/update-banning-blue-links-on-ios-devices
+					
+					Based on the original reset from MailChimp with newer additions for various clients.
+				
+				*/
         
-				/******************************************************************
-				THE BASICS - Resolve some troublesome bugs from the get-go
-				*******************************************************************/
+				/***********************************************************
+				THE BASICS - Resolve some troublesome quirks from the get-go
+				************************************************************/
 			
 				#outlook a { padding:0; } 
 				/* Force Outlook to display view in browser link */
@@ -197,11 +208,11 @@
 				#wrappertable { margin:0; padding:0; width:100% !important; line-height:100% !important; }
 				/* In case the body tag is removed (Gmail etc..)*/
 		
-				/*************************************************************************
+				/*******************************************************************
 				IMAGE FIXES - Sensible image fixes (remember display:block; as well)
-				**************************************************************************/
+				********************************************************************/
 				img { outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; } 
-				a img { border:none; } /* If using XHTML Transitional border="0" works fine */
+				a img { border:none; }
 		
 				/****************************
 				YAHOO! Mail - Paragraph fix
@@ -216,52 +227,31 @@
 				h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active { color:red !important; }
 				h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited { color:purple !important; }
 				
-				/*************************************************************************************************
+				/*********************************************
 				OUTLOOK 2007+ and Gmail - Table padding issue
-				http://www.ianhoar.com/2008/04/29/outlook-2007-borders-and-1px-padding-on-table-cells/
-				http://www.campaignmonitor.com/blog/post/3392/1px-borders-padding-on-table-cells-in-outlook-07/
-				**************************************************************************************************/
+				**********************************************/
 				table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
 				table td { border-collapse:collapse; }
 			
 				/* End Reset */
 		
-				/**************************************************************************
-				YAHOO! SHORTCUTS - Certain keywords being hyperlinked.
-				http://www.emailonacid.com/blog/details/C13/yahoo_shortcuts_are_baaaaaaaack
-				***************************************************************************/
+				/****************************************************
+				YAHOO! SHORTCUTS - Certain keywords being hyperlinked
+				*****************************************************/
 				span.yshortcuts, a span.yshortcuts { color:#000000; background-color:none; border:none; } 
 				span.yshortcuts:hover, span.yshortcuts:active, span.yshortcuts:focus { color:#000000; background-color:none; border:none; }
 		    
 				/****************************************************************************************
 				APPLE LINKS - Prevent certain text content being modified on iOS and breaking the design
-				https://litmus.com/blog/update-banning-blue-links-on-ios-devices
 				*****************************************************************************************/
 				.appleLinksWhite a, .appleLinksBlack a { text-decoration:none !important; }
 				.appleLinksWhite a { color:#ffffff !important; }
 				.appleLinksBlack a { color:#000000 !important; }
-		
-				/*
-				
-				SPECIFIC EMAIL CLIENT QUIRKS TO KNOW ABOUT:
-
-				Gmail 
-					- http://www.emailonacid.com/blog/details/C13/12_things_you_must_know_when_developing_for_gmail_and_gmail_mobile_apps
-					- http://www.emailonacid.com/blog/details/C13/stop_gmail_from_wrapping_your_phone_number_into_text_links
-					- http://www.campaignmonitor.com/blog/post/4137/image-cache-display-issues-in-gmail
-
-				Yahoo! Mail - http://www.emailonacid.com/blog/details/C6/9_ways_to_prevent_yahoo_headaches
-			
-				Outlook 2007, 2010 and 2013 
-					- http://www.emailonacid.com/blog/details/C13/tips_and_tricks_outlook_07-13
-					- https://www.campaignmonitor.com/forums/topic/8035/ (DPI scaling issues)
-				
-				Outlook.com - http://www.emailonacid.com/blog/details/C13/tips_and_tricks_outlook.com
 				
 			
-				/*************************************************************************
+				/*********************************************
 				MEDIA QUERIES - For clients that support CSS3
-				**************************************************************************/
+				**********************************************/
 			
 				/***************************** TABLET TARGETING ********************************/
 				@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
