@@ -115,6 +115,9 @@
 
 			<!--
 				FORCE IE BASED MAIL CLIENTS TO RENDER AT HIGHEST CAPABLE STANDARDS:
+				https://www.campaignmonitor.com/forums/topic/7989/
+				http://blog.jmwhite.co.uk/2014/03/01/windows-phone-does-support-css3-media-queries-in-html-email/
+                
 				This will force any IE based email client to render at the highest standards possible.
 				In particular this prevents Quirks mode for when the doctype gets removed.
             
@@ -127,9 +130,6 @@
 				Forcing edge mode has been found to mess with Outlook 2003 and breaking printing functionality.
 				If printing is an absolute must, consider wrapping this tag in a !mso conditional to prevent
 				Outlook clients parsing it entirely. The primary use of this directive is not for Outlook anyway.
-            
-				https://www.campaignmonitor.com/forums/topic/7989/
-				http://blog.jmwhite.co.uk/2014/03/01/windows-phone-does-support-css3-media-queries-in-html-email/
 			-->
 			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -157,8 +157,9 @@
     
 			<!--
 				CASCADING STYLE SHEETS:
+				http://www.campaignmonitor.com/css/
+                
 				Email clients and CSS support can vary massively..
-				A great document for email client CSS support: http://www.campaignmonitor.com/css/
 				The recommendation is to place most CSS inline due to limitations with CSS in the <head>
 				Forget calling external style sheets, this is HTML email...
 			-->
@@ -514,12 +515,12 @@
                             
 								<!--
 									CREATING CTA BUTTONS THAT WORK CROSS PLATFORM WITHOUT IMAGES:
+									http://www.industrydive.com/blog/how-to-make-html-email-buttons-that-rock/
                                     
 									Call to action buttons that don't require images, so they are always visible regardless of image block status.
 		
 									METHOD #1: 
 									This method allows you to create buttons that span the entire space
-									http://www.industrydive.com/blog/how-to-make-html-email-buttons-that-rock/
 		
 									** GOOD: Entire button area is covered by the anchor (except in Outlook)
 									** MIGHT BE BAD: Requires matching line-height + fixed height, along with a fixed width
