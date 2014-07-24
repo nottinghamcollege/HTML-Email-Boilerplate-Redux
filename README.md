@@ -34,7 +34,7 @@ The two versions of the stable boilerplate are the same, the only difference is 
 
 The experimental version of the boilerplate is essentially a bleeding edge test ground. As things change in the email campaign world new code needs to be tested, this version provides a perfect base for this, without disrupting the stability and original purpose of the stable boilerplate.
 
-New code for fixing various quirks will appear on the experiemental version first and if the code passes our own QA test, it will eventually makes it way to the stable version. Sometimes if experiemental code doesn't pass such test, it will just be remove entirely and not make it to stable.
+New code for fixing various quirks will appear on the experimental version first and if the code passes our own QA tests, it will eventually makes it way to the stable version. Sometimes if experimental code doesn't pass such tests, it will just be removed entirely and not make it to stable.
 
 ## License:
 
@@ -64,8 +64,8 @@ THE SOFTWARE.
 
 This boilerplate is a hybrid of the two very popular boilerplates by:
 
-* Sean Powell - (http://htmlemailboilerplate.com)
-* Email on Acid - (http://www.emailonacid.com/blog/details/C13/html_boilerplate) 
+* Sean Powell - http://htmlemailboilerplate.com
+* Email on Acid - http://www.emailonacid.com/blog/details/C13/html_boilerplate
 
 Further additions and adaptations have been made Central College Nottingham either from our own research or cited from sources. Where sources have been cited in the guidelines version of the stable boilerplate, credit is given to the original author of the referenced information.
 
