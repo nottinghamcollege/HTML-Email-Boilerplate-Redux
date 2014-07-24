@@ -3,36 +3,38 @@ HTML Email Boilerplate Redux
 
 A HTML Email Boilerplate is designed to create a solid foundation for any email campaign by fixing various email client quirks from the beginning. (Saving headaches later!)
 
-There are various email boilerplate templates around, however Central College Nottingham has adapted its own template based on a variety of sources as well our own additions based on our own research and development. All sources have been credited accordingly where required by using the original source (URL) of where the code/information was found.
+There are various email boilerplate templates around, however Central College Nottingham has adapted its own template based on a variety of sources as well our own additions based on our own research and development. We regularly review changes in email client behaviour and aim to keep our boilerplate constantly up to date with the latest developments.
 
-## What are the main differences with this version?
+## What does our redux version of the HTML email boilerplate include?
 
-HTML email is a forever changing game and overtime some boilerplates have become outdated, this boilerplate includes:
+As well as creating a solid foundation for any email campaign, our boilerplate also focuses on the following areas:
 
 * Use of the IE Edge meta tag, forcing IE clients to render with highest capable standards
-* CSS3 media query support on Windows Phone 7.5+
-* DPI fixes on images for HiDPI devices when using Outlook 2007 and above
-* General Windows Phone compatibility
+* Enabling CSS3 media query support on Windows Phone 7.5 and above
+* DPI fixes with images for HiDPI devices when using Outlook 2007 and above
+* Better Windows Phone compatibility
 
-And other areas...
+As well as other standardised fixes for a lot of other clients.
 
 ## Usage:
 
-You will find three HTML documents:
+Our boilerplate is split into two versions, stable and experimental. There are two versions of the stable boilerplate and one version of the experimental boilerplate.
 
-* htmlemail-boilerplate-stable-with-guidelines.html
-* htmlemail-boilerplate-stable-without-guidelines.html
-* htmlemail-boilerplate-experimental-without-guidelines.html
+* htmlemail-boilerplate-stable-with-guidelines.html (Commented version for guideline purposes)
+* htmlemail-boilerplate-stable-without-guidelines.html (Version to use in live email campaigns)
+* htmlemail-boilerplate-experimental-without-guidelines.html (Bleeding edge version to test new developments)
 
-The version *with* guidelines is designed for learning and basically explains every part of the template in details.
+## Stable
 
-The version *without* guidelines is the version you should use in your own email campaign
+The two versions of the stable boilerplate are the same, the only difference is one features lots of comments for guideline purposes, while the other version is simply the same document but without any HTML/CSS comments.
 
-The *experimental* version is for testing purposes, code may change regularly here, and should not be used in any live campaign (Use the stable, without guidelines)
+**Never use the commented version in a live email campaign, as HTML/CSS comments play havoc with spam filters, also the structure of the commented version is not friendly for parsing!**
 
-**Never use the commented version in a live email campaign, as HTML comments play havoc with spam filters, also the structure of the commented version is not friendly for parsing!**
+## Experimental
 
-The default table structure defined in the template is provided as guidance, you may wish to adapt it for your own uses.
+The experimental version of the boilerplate is essentially a bleeding edge test ground. As things change in the email campaign world new code needs to be tested, this version provides a perfect base for this, without disrupting the stability and original purpose of the stable boilerplate.
+
+New code for fixing various quirks will appear on the experiemental version first and if the code passes our own QA test, it will eventually makes it way to the stable version. Sometimes if experiemental code doesn't pass such test, it will just be remove entirely and not make it to stable.
 
 ## License:
 
@@ -60,13 +62,13 @@ THE SOFTWARE.
 
 ## Credits:
 
-Central College Nottingham
+This boilerplate is a hybrid of the two very popular boilerplates by:
 
 Sean Powell - (http://htmlemailboilerplate.com)
 
-Email on Acid - (http://www.emailonacid.com/blog/details/C13/html_boilerplate)
+Email on Acid - (http://www.emailonacid.com/blog/details/C13/html_boilerplate) 
 
-Where sources have been cited in the "with guidelines" version, credit is given to the original author of the referenced information.
+Further additions have been made Central College Nottingham either from our own research or cited from sources. Where sources have been cited in the guidelines version of the stable boilerplate, credit is given to the original author of the referenced information.
 
 
 
