@@ -20,9 +20,9 @@ As well as other standardised fixes for a lot of other clients.
 
 Our boilerplate is split into two versions, stable and experimental. There are two versions of the stable boilerplate and one version of the experimental boilerplate.
 
-* htmlemail-boilerplate-stable-with-guidelines.html (Commented version for guideline purposes)
-* htmlemail-boilerplate-stable-without-guidelines.html (Version to use in live email campaigns)
-* htmlemail-boilerplate-experimental-without-guidelines.html (Bleeding edge version to test new developments)
+* [Stable with guidelines](https://raw.githubusercontent.com/centralcollegenottingham/html-email-boilerplate-redux/master/htmlemail-boilerplate-stable-with-guidelines.html) - Commented version for guideline purposes
+* [Stable without guidelines](https://raw.githubusercontent.com/centralcollegenottingham/html-email-boilerplate-redux/master/htmlemail-boilerplate-stable-without-guidelines.html) - Version to use in live email campaigns
+* [Experimental without guidelines](https://raw.githubusercontent.com/centralcollegenottingham/html-email-boilerplate-redux/master/htmlemail-boilerplate-experimental-without-guidelines.html) - Bleeding edge version to test new developments
 
 ### Stable
 
