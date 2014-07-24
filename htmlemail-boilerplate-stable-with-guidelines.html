@@ -641,9 +641,16 @@
 									** Apply display:block; to fix various image problems in email clients
 									** Set a good and relevant alternative text value as well. You can even style this text in some clients.
 									** Outlook 2013 will often mess up a layout containing an image that is less than 20px in height.
+									** To hide ugly link borders consider using border="0" as border:none; can fail in some cases.
 								-->
 								
+									<!-- Image without hyperlink -->
 									<img src="http://awesome.com/path/to/image" alt="Description" width="x" height="x" style="display:block;" />
+									
+									<!-- Image with hyperlink -->
+									<a href="http://www.centralnottingham.ac.uk" target="_blank">
+										<img src="http://awesome.com/path/to/image" alt="Description" width="x" height="x" style="display:block;" border="0" />
+									</a>
 								
 								<!--
 									USING HYPERLINKS:
