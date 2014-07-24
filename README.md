@@ -24,13 +24,13 @@ Our boilerplate is split into two versions, stable and experimental. There are t
 * htmlemail-boilerplate-stable-without-guidelines.html (Version to use in live email campaigns)
 * htmlemail-boilerplate-experimental-without-guidelines.html (Bleeding edge version to test new developments)
 
-## Stable
+### Stable
 
 The two versions of the stable boilerplate are the same, the only difference is one features lots of comments for guideline purposes, while the other version is simply the same document but without any HTML/CSS comments.
 
 **Never use the commented version in a live email campaign, as HTML/CSS comments play havoc with spam filters, also the structure of the commented version is not friendly for parsing!**
 
-## Experimental
+### Experimental
 
 The experimental version of the boilerplate is essentially a bleeding edge test ground. As things change in the email campaign world new code needs to be tested, this version provides a perfect base for this, without disrupting the stability and original purpose of the stable boilerplate.
 
