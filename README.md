@@ -18,7 +18,7 @@ As well as other standardised fixes for a lot of other clients.
 
 ## Usage:
 
-Our boilerplate is split into two versions, stable and experimental. There are two variants of the stable boilerplate and one version of the experimental boilerplate.
+Our boilerplate is split into two versions, stable and experimental. There are two variants of the stable boilerplate and one variant of the experimental boilerplate.
 
 * [Stable with guidelines](https://raw.githubusercontent.com/centralcollegenottingham/html-email-boilerplate-redux/master/htmlemail-boilerplate-stable-with-guidelines.html) - Commented version for guideline purposes
 * [Stable without guidelines](https://raw.githubusercontent.com/centralcollegenottingham/html-email-boilerplate-redux/master/htmlemail-boilerplate-stable-without-guidelines.html) - Version to use in live email campaigns
