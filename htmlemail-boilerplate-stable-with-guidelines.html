@@ -161,9 +161,10 @@
 				http://www.campaignmonitor.com/css/
 				http://templates.mailchimp.com/development/css/
                 
-				Email clients and CSS support can vary massively..
-				The recommendation is to place most CSS inline due to limitations with CSS in the <head>
-				Forget calling external style sheets, this is HTML email...
+				Email clients and CSS support vary massively.
+				Most CSS should be inline due to limitations with CSS in the <head> in some clients
+				The exception to this is reset styles or fixes that target a specific client that does render CSS in the <head>
+				Forget calling external style sheets, most email clients won't even parse it.
 			-->
 
 			<style type="text/css">
