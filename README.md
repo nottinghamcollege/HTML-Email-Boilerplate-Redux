@@ -11,10 +11,10 @@ As well as creating a solid foundation for any email campaign, our boilerplate a
 
 * Use of the IE Edge meta tag, forcing IE clients to render with highest capable standards
 * Enabling CSS3 media query support on Windows Phone 7.5 and above
-* DPI fixes with images for HiDPI devices when using Outlook 2007 and above
+* DPI fixes for images on HiDPI devices when using Outlook 2007 and above
 * Better Windows Phone compatibility
 
-As well as other standardised fixes for a lot of other clients.
+As well as fixing other email client quirks that have been discovered.
 
 ## Usage:
 
@@ -26,15 +26,17 @@ Our boilerplate is split into two versions, stable and experimental. There are t
 
 ### Stable
 
-The two versions of the stable boilerplate are the same, the only difference is one features lots of comments for guideline purposes, while the other version is simply the same document but without any HTML/CSS comments.
+The two variants of the stable boilerplate are essentially the same, the main difference is one features lots of comments for guideline purposes (with guidelines), while the other is simply the same document but without any HTML/CSS comments (without guidelines), which is the version you should use in your own email campaigns.
 
-**Never use the commented version in a live email campaign, as HTML/CSS comments play havoc with spam filters, also the structure of the commented version is not friendly for parsing!**
+**Never use the with guidelines version in a live email campaign, as HTML/CSS comments play havoc with spam filters, also the structure of the commented version is not friendly for parsing!**
 
 ### Experimental
 
-The experimental version of the boilerplate is essentially a bleeding edge test ground. As things change in the email campaign world new code needs to be tested, this version provides a perfect base for this, without disrupting the stability and original purpose of the stable boilerplate.
+The experimental version of the boilerplate is essentially a bleeding edge test ground. As things change in the email client world, new code needs to be tested. This version provides a perfect base for this without disrupting the stability and original purpose of the stable boilerplate.
 
-New code for fixing various quirks will appear on the experimental version first and if the code passes our own QA tests, it will eventually makes it way to the stable version. Sometimes if experimental code doesn't pass such tests, it will just be removed entirely and not make it to stable.
+Newer code for fixing newly discovered quirks will always appear on the experimental version first. If the newly added code passes our own QA tests it will eventually make its way to the stable version. Sometimes if experimental code doesn't pass such tests, it will just be removed entirely without going near the stable version.
+
+**It is strongly recommended that you NEVER use the experimental version of the boilerplate in a live email campaign. The experimental version may not have been tested thoroughly and hence its cross email client compatibility is not guaranteed. Always use the stable version!**
 
 ## License:
 
