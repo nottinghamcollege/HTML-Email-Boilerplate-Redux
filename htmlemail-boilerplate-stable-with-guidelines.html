@@ -46,7 +46,7 @@
 						- Debugging layouts
 				- Windows Phone 7 Conditional Targeting
 				- Outlook/IE Conditional Targeting
-				- Fix images on High DPI displays in Outlook 2007 and above
+				- Fix images in Outlook when using DPI scaling on Windows
 				- iOS email rendering bug
 			</head>
 			<body>
@@ -412,13 +412,13 @@
 			<![endif]-->
         
 			<!-- 
-				FIX IMAGES ON HIGH DPI DISPLAYS IN OUTLOOK 2007 AND ABOVE:
+				FIX IMAGES IN OUTLOOK WHEN USING DPI SCALING ON WINDOWS:
 				https://www.campaignmonitor.com/forums/topic/8035/
+				https://litmus.com/community/discussions/151-mystery-solved-dpi-scaling-in-outlook-2007-2013
                 
-				This will force upscaling of images on Outlook when using high DPI settings.
-				By default on Outlook 2007 and above images appear smaller than they should.
-            
-				The MS office namespace on the root HTML tag are required for the XML code below to work.
+				When using scaling factors greater than 100% (96 DPI) Outlook often displays images incorrectly.
+				This MS Office specific XML forces images to be rendered at 96 PPI, making them display correctly.
+				Outlook 2007 doesn't quite render images properly at 96 PPI and still enlarges them slightly.
 			-->
         
 			<!--[if gte mso 9]>
