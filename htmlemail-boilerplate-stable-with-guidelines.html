@@ -43,6 +43,7 @@
 							- Useful resources and general guidance
 							- Hiding content intended for mobile devices only
 						- Minimum font size for iOS devices
+						- Android 4.4 and display block on table cells
 						- High resolution targeting (Retina/HiDPI)
 							- Detecting devices based on DPI
 						- Debugging layouts
@@ -340,6 +341,17 @@
 				
 				*/
 				
+				/*
+					ANDROID 4.4 AND DISPLAY BLOCK ON TABLE CELLS
+					https://litmus.com/community/code/261-td-display-block-not-working-on-android
+					https://github.com/centralcollegenottingham/html-email-boilerplate-redux/issues/1
+					http://www.degdigital.com/blog/content-choreography-in-responsive-email
+					
+					Support for display:block; has been dropped on <td> in the native mail client on Android 4.4
+					This means any layout that relies on making table cells stack on mobile will fail.
+					There are workarounds to replicate the behaviour without use block as the display value.
+					
+				*/
 				
 				/********************** HIGH RESOLUTION TARGETING ************************/ 
 			
