@@ -32,7 +32,7 @@
 			- XML Namespaces
 			<head>
 				- Character Encoding
-				- Forcing IE based mail clients to render at highest capable standards
+				- Forcing the document for IE based email clients
 				- Viewport Setting
 				- Document Title
 				- Cascading Style Sheets
@@ -119,22 +119,21 @@
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 			<!--
-				FORCE IE BASED MAIL CLIENTS TO RENDER AT HIGHEST CAPABLE STANDARDS:
+				FORCING THE DOCUMENT MODE FOR IE BASED EMAIL CLIENTS:
 				https://www.campaignmonitor.com/forums/topic/7989
 				http://blog.jmwhite.co.uk/2014/03/01/windows-phone-does-support-css3-media-queries-in-html-email
+				http://blog.jmwhite.co.uk/2014/08/19/email-campaigns-windows-phone-part-2-pop3-and-imap
                 
 				This will force any IE based email client to render at the highest standards possible.
-				In particular this prevents Quirks mode for when the doctype gets removed.
             
-				Windows Phone 7.5 onwards benefits from this greatly, because the built in mail client has CSS3 support but
-				renders with Quirks Mode by default.
+				Windows Phone 8.0 onwards benefits from this greatly, because the built in mail client has CSS3 support but
+				renders with IE 7 standards by default.
             
-				In rare cases this will enable CSS3 support on Outlook 2003, if the client machine was running
-				IE9 at the time of installation.
+				In rare cases this will enable CSS3 support on Outlook 2003, if the client machine is running IE 9.
             
-				Forcing edge mode has been found to mess with Outlook 2003 and breaking printing functionality.
+				This meta tag has been known to mess with Outlook 2003 and breaking printing functionality.
 				If printing is an absolute must, consider wrapping this tag in a !mso conditional to prevent
-				Outlook clients parsing it entirely. The primary use of this directive is not for Outlook anyway.
+				Outlook clients parsing it entirely. The primary use of this meta tag is not for Outlook anyway.
 			-->
 			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
