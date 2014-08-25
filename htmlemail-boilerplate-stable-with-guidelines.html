@@ -59,7 +59,7 @@
 					- Aligning email to the centre
 					- Gap issues with long vertical emails in Outlook 2007 and above
 					- CSS inheritance on table cells in Outlook 2007 and above
-					- Windows Phone and text zooming
+					- Windows Phone and font sizes
 					- Cross Compatible CTA buttons (without images)
 					- Using Images
 					- Using Hyperlinks
@@ -552,12 +552,13 @@
 								-->
                                 
 								<!--
-									WINDOWS PHONE AND TEXT ZOOMING:
-									https://litmus.com/community/discussions/387-text-zooming-on-windows-phone-when-rendering-in-quirks-mode
+									WINDOWS PHONE FONT SIZES:
+									https://litmus.com/community/discussions/387-font-sizes-on-outlook-mobile-with-exchange-activesync-based-mailboxes
 									http://blog.jmwhite.co.uk/2014/08/19/email-campaigns-windows-phone-part-3-exchange-activesync
                                     
-									When Windows Phone renders with the EAS client, text zooming can occur on tables.
-									It occurs when the containing table is set to 100% width.
+									When Windows Phone renders with the EAS client, font sizes can appear inconsistent.
+									It occurs when the containting table/cells uses a fixed pixel width, along with several other factors.
+                                    Generally percentage based widths on tables work much better with Windows Phone when rendering with the EAS client. 
 								-->
                                     
 								<!--
