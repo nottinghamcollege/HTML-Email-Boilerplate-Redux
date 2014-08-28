@@ -32,7 +32,7 @@
 			- XML Namespaces
 			<head>
 				- Character Encoding
-				- Forcing the document mode for IE based email clients
+				- Forcing the document mode for Internet Explorer based email clients
 				- Viewport Setting
 				- Document Title
 				- Cascading Style Sheets
@@ -119,21 +119,31 @@
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 			<!--
-				FORCING THE DOCUMENT MODE FOR IE BASED EMAIL CLIENTS:
+				FORCING THE DOCUMENT MODE FOR INTERNET EXPLORER BASED EMAIL CLIENTS:
 				https://www.campaignmonitor.com/forums/topic/7989
 				http://blog.jmwhite.co.uk/2014/03/01/windows-phone-does-support-css3-media-queries-in-html-email
 				http://blog.jmwhite.co.uk/2014/08/19/email-campaigns-windows-phone-part-2-pop3-and-imap
+				http://www.emailonacid.com/blog/details/C13/designing_html_emails_for_outlook_2003_and_outlook_express
                 
-				This will force any IE based email client to render at the highest standards possible.
+				This will force any Internet Explorer (IE) based email client to render at the highest standards possible.
             
-				Windows Phone 8.0 onwards benefits from this greatly, because the built in mail client has CSS3 support but
+				Windows Phone 8.0 onwards benefits from this greatly, because the built in mail client with POP3/IMAP accounts has CSS3 support but
 				renders with IE 7 standards by default.
+                
+				Exchange/Office 365 mailboxes on Windows Phone do not benefit from this because the rendering engine is different (EAS client).
+                
+				As well as Windows Phone, the following email clients will also benefit from forcing edge as the document mode:
+                
+				- Outlook Express
+				- Outlook 2000, 2002, 2003
+				- Windows Live Mail
+				- Windows 8 mail app (Metro)
+                
+				Rather than being reliant on the original version of Internet Explorer that was installed at the time of installing the email client.
+				The actual current version of Internet Explorer installed will be used instead.
             
-				In rare cases this will enable CSS3 support on Outlook 2003, if the client machine is running IE 9.
-            
-				This meta tag has been known to mess with Outlook 2003 and breaking printing functionality.
-				If printing is an absolute must, consider wrapping this tag in a !mso conditional to prevent
-				Outlook clients parsing it entirely. The primary use of this meta tag is not for Outlook anyway.
+				The inclusion of this meta tag has been known to mess with Outlook 2003 and breaking printing functionality.
+				If printing is an absolute must, consider wrapping this tag in a !mso conditional.
 			-->
 			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
