@@ -105,17 +105,16 @@
 		<head>
 			<!--
 				CHARACTER ENCODING:
-				This is actually ignored by all email clients, as it gets set in the header of the email during a send.
 				http://www.emailonacid.com/blog/details/C18/the_importance_of_content-type_character_encoding_in_html_emails
-
-				It does however allow you to show up any characters that will not display correctly, e.g. unhandled character entities
-				when using a web browser during testing.
-            
 				http://dev.w3.org/html5/html-author/charref
 				http://www.emailonacid.com/character_converter
-		
-				ISO-8895-1 can also be used:
-				<meta http-equiv="Content-Type" content="text/html; charset=ISO-8895-1" />
+				https://www.campaignmonitor.com/blog/post/1810/why-are-all-my-apostrophes-mis
+                
+				Setting the Content-Type in an email template is actually ignored by all email clients.
+				The Content-Type is set by the server that the email is passing through.
+                
+				Often problems can occur with characters like apostrophe and double quotes when they haven't been handled properly.
+				Make sure you always the use the HTML entity code for the specific character you want.
 			-->
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
