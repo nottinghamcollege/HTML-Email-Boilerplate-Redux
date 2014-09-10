@@ -295,35 +295,27 @@
 						https://www.campaignmonitor.com/forums/post/27544
 						https://www.campaignmonitor.com/forums/topic/7405/how-to-hide-mobile-content-in-desktop-clients
 						http://freshinbox.com/blog/bulletproof-solution-to-hiding-mobile-content-when-opened-in-non-mobile-email-clients
+						https://litmus.com/community/discussions/67-hiding-content-from-desktop-version
+						http://freshinbox.com/blog/outlook-com-removes-all-content-within-conditional-comments/
 
-						Hiding desktop email client content on mobile devices is fairly easy, however it can get more involved when you reverse this logic.
-						display:none; is the obvious method, however it doesn't work as you might think in Gmail/Outlook 2007/2010/2013
+						display:none; is the obvious method, however it doesn't work reliability in every email client
 
 						With Gmail display:none is stripped entirely, ironically display:none !important; works but then you can't override it.
 						With Outlook 2007 - 2013, display:none; works but not if there is a table within the element you are trying to hide.
 
-						An example of using this method:
+						In order to hide content, you have to use a combination of CSS properties for maximum compatibility these include:
 
-						<!--[if !mso 9]><!-->
-							<table border="0" cellpadding="0" cellspacing="0" class="mobilecontent" style="display:none; max-height:0; overflow:hidden;">
-								<tr>
-									<td align="left" valign="top">
-										Some content. You could safely table nest here and it will be still hidden.
-									</td>
-								</tr>
-							</table>
-						<!--<![endif]-->
-
-						Media query for displaying on a mobile device:
-
-						@media screen and (max-device-width: 480px), screen and (max-width: 480px) {
-							table[class="mobilecontent"] { 
-								display:block !important;
-								max-height:none !important;
-							}
-						}
-
-						Note: Some mobile devices may not support media queries and hence the content will be hidden as it will render the desktop verison.
+						display:none; 
+						font-size:0; 
+						max-height:0; 
+						line-height:0;
+						overflow:hidden;
+						visibility:hidden;
+						mso-hide:all; (Specific MSO property for Outlook)
+						
+						You then need to override each property used in a media query to make them show when the mobile layout is used.
+ 
+						Note: Some mobile devices do not support media queries and hence the desktop version would be rendered.
 					*/
 				
 				}
