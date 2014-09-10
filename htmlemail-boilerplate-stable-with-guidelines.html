@@ -67,10 +67,10 @@
 					- Using HTML5 video
 				</table>
 				- Gmail Promotions tab view
-				- Email send checklist
 			</body>
 		- Filesize of your email template
 		</html>
+		- Checklist to follow before sending an email campaign
 -->
 
 <!-- 
@@ -740,53 +740,6 @@
 			</tr>
 		</table> <!-- END WRAPPER TABLE -->
 
-		<!--
-			EMAIL SEND CHECKLIST:
-			Think everything is ready? Follow the checklist.
-
-			1. Validate the HTML Email template with the W3C Validator (http://validator.w3.org/) via Direct input or Upload method
-				1a. When table nesting its very easy to have closing tag errors, so correct these before anything else (if any).
-				1b. Don't bother with CSS validation, but checks for syntax errors should be carried out.
-				1c. While an email may not pass validation, the main goal is to spot any syntax errors with tags.
-
-			2. Get a base line for how your email template will look by rendering it in:
-				2a. Modern web browsers with CSS3 support (good for testing media queries)
-				2b. Safari for Webkit testing (many mobile email clients are based on Webkit)
-				2c. Google Chrome no longer uses Webkit: http://www.wired.com/wiredenterprise/2013/04/blink
-					- Tests in Google Chrome may not longer represent true Webkit rendering
-				2d. Internet Explorer 6 - Get that Windows XP virtual machine out!
-					- Testing in IE6 can in most cases assure compatibility with Outlook Express/2000/2002/2003
-				2e. Opening an email in Microsoft Word can give you a rough idea on how Outlook 2007+ will render it, but don't rely on it.
-
-			3. Check all images and links
-				3a. Make sure all images are externally hosted (no relative paths and no https:// image paths)
-				3b. All images have widths and heights set
-				3c. All images have alt tags (Considering images are blocked by default on a lot of email clients)
-				3d. All images have display:block; set (Image fix for various email clients)
-				3e. All images that are wrapped with an anchor have border="0" or style="border:none;" to avoid the ugly blue border around images.
-				3f. All links work (no placeholders) and have target="_blank" applied where applicable to ensure they open outside of the email client
-
-			4. font-family is declared on block level tags where text content is used
-				4a. font sizes are defined where text is used. Don't let email clients define a default font size.
-				4b. font sizes smaller than 13px have font adjust properties set accordingly for mobile devices
-
-			5. Plain text version has been created and is optimised (Not just directly generated from HTML)
-			
-			http://beaker.mailchimp.com/html-to-text
-			http://www.campaignmonitor.com/guides/design/designing/
-			http://kb.mailchimp.com/article/can-i-send-plain-text-only-campaigns#tips
-
-			6. Unsubscribe and web version links have been added
-
-			7. Test with Inbox inspection tools for a view how the HTML email is rendered in many clients.
-				7a. Pay close attention to Outlook 2007 and onwards, thanks to it using Word to render email..
-				7b. Check mobile layouts - media queries, content i.e. unexpected text being hyperlinked etc.
-				7c. Check no desktop/mobile content is "bleeding" through in the wrong view when using the hiding method
-	
-			8. SPELLING AND GRAMMAR!
-
-		-->
-
 		<!--  
 			GMAIL PROMOTIONS TAB:
 			https://litmus.com/blog/gmail-does-it-again-the-new-visual-promotions-tab
@@ -834,4 +787,12 @@
 		If you use automated tools, make sure to preserve white space.
 	-->
 </html>
-<!-- Send the email, and your done! Till the next time... -->
+<!-- 
+	CHECKLIST TO FOLLOW BEFORE SENDING AN EMAIL CAMPAIGN
+	http://www.emailonacid.com/blog/details/C4/your_email_marketingpredeployment_checklist
+	https://www.campaignmonitor.com/blog/post/4166/the-essential-email-marketing-checklist
+    
+	Check every aspect of an email campaign before sending!
+-->
+
+<!-- Now hit that send button, and your done! Till the next time... -->
