@@ -69,7 +69,7 @@
 				- Gmail Promotions tab view
 				- Email send checklist
 			</body>
-		- Minify HTML and CSS (Compress file size)
+		- Filesize of your email template
 		</html>
 -->
 
@@ -812,16 +812,26 @@
 	</body>
 
 	<!--
-		MINIFYING YOUR HTML/CSS:
-		https://code.google.com/p/htmlcompressor
-		https://code.google.com/p/htmlcompressor/#For_Non-Java_Projects
+		FILESIZE OF YOUR EMAIL TEMPLATE:
+		https://www.emailonacid.com/blog/details/C13/how_does_email_file_size_affect_deliverability
+		https://www.campaignmonitor.com/blog/post/3610/maximum-file-size-for-html-email/
 
-		Does your HTML need to go on a diet? If your filesize is larger than 100kb, that's bad news. Time to cut out the fat!
-		While the filesize of HTML documents is in kilobytes, which is small, for larger emails 100kb range this can actually make email clients only partially load the email and then provide a button for the user to then initiate a download of the rest of the email. One major example of this shown in how iOS renders emails that are larger than 15kb.
+		With email, size really does matter. If the filesize of your HTML template is greater than 100kb, prepare for problems.
+		Sending a HTML email template greater than 100kb can cause several problems in relation to deliverability and user experience including:
 
-		When coding HTML email you'll likely be doing all the lovely stuff like code indents, spacing out code accordingly, this however just adds file size.
+		** Triggering spam filters
+		** Email clipping/truncation
+		** Load time
 
-		You should always generate a minified version separate from the original version. This should be done right at the end once an email template has been finalised, checked and approved, so you don't keep generating minified versions that quickly become of date from the original file.
+		For larger emails where this is an issue, you can use a couple of techniques to get under the limit:
+
+		** Remove any unnecessary spaces, carriage returns or comments.
+		** Remove redundant or unnecessary styles
+
+		You could also use a more automated approach with minification tools, such as:
+        https://code.google.com/p/htmlcompressor/
+
+		If you use automated tools, make sure to preserve white space.
 	-->
 </html>
 <!-- Send the email, and your done! Till the next time... -->
