@@ -10,8 +10,8 @@ There are various email boilerplate templates around, however Central College No
 As well as creating a solid foundation for any email campaign, our boilerplate also focuses on the following areas:
 
 * Forcing the document mode (Edge) for Internet Explorer based clients
-* Enabling CSS3 support in the mail client for Windows Phone 8 devices
-* Fixing how images are rendered in Outlook when DPI scaling factors greater than 100% are used
+* Enabling CSS3 support for POP3/IMAP mailboxes in the native mail app on Windows Phone 8 devices
+* Fixing how images are rendered in Outlook when DPI scaling factors greater than 96 DPI are used
 * Overall better Windows Phone compatibility
 
 As well as fixing other email client quirks that have been discovered.
