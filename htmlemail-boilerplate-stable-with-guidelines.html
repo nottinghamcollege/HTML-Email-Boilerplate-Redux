@@ -692,27 +692,11 @@
 									USING CONDITIONAL COMMENTS:
 									http://freshinbox.com/blog/outlook-com-removes-all-content-within-conditional-comments
 									https://www.campaignmonitor.com/forums/topic/7544/outlookcom-problems-with-conditional-comments-in-the-body
+                                    https://gist.github.com/jamesmacwhite/18e97b06f2c04661a757
 
 									Conditional comments are for targetting Internet Explorer/Outlook based clients.
 									The only problem with conditional comments is Outlook.com strips them AND the content within entirely.
 									This may or may not be a problem depending on how the conditional comments/logic is used.
-
-									Situation A:
-									You have conditional logic that uses IF logic only.
-
-									This won't be a problem because the targetted client will parse it and Outlook.com would strip it.
-									All other clients would ignore it by default anyway.
-
-									Situation B:
-									You have conditional logic that uses IF AND ELSE i.e. if mso and if !mso
-
-									This is going to be a problem because Outlook.com will remove content in both of parts of the conditional.
-									If the content is important i.e. a call to action button this would create a serious compatibility issue.
-
-									In order to remedy this, rather using !mso you can place mso-hide:all; on the element needing to be hidden.
-									This would hide the content in Outlook while displaying it everywhere else.
-
-									Note: When using nested tables mso-hide:all; needs to be added to the containing table and all tables within
 								-->
                                 
 								<!--
