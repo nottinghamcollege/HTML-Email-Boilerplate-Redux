@@ -57,6 +57,7 @@
 				- Table layout
 				<table>
 					- Aligning email to the centre
+                    - Fixed width vs fluid/hybrid layouts
 					- Gap issues with long vertical emails in Outlook 2007 and above
 					- CSS inheritance on table cells in Outlook 2007 and above
 					- Windows Phone and font sizes
@@ -499,18 +500,31 @@
 				-->
 
 				<td align="center" valign="top" id="wrappercell">
+                    
+                    <!--
+                    	FIXED WIDTH VS FLUID/HYBRID LAYOUTS
+						http://labs.actionrocket.co/the-hybrid-coding-approach
+						https://www.campaignmonitor.com/blog/post/4240/creating-a-centred-responsive-design-without-media-queries
+						https://www.campaignmonitor.com/guides/mobile/
 
-					<!--
-						GAP ISSUES WITH LONG VERTICAL EMAILS IN OUTLOOK 2007 AND ABOVE:
-						http://www.emailonacid.com/blog/details/C13/horizontal_spacing_issues_in_outlook_2007_and_2010
-						
-						If a table exceeds 23.7 inches in height a page break will be added which can cause strange gaps.
-					-->
+						When creating an email campaign there are several approaches you can take when developing the layout.
+						The approach used is often dependant on the design of the email campaign itself.
+
+						Fixed width layouts are common, but require the need of media query support to optimise them for mobile devices.
+						The fluid/hybrid approach removes the requirement for media query support but can force certain design requirements.
+                    -->
 
 					<!-- CONTAINER TABLE -->
 					<table border="0" cellpadding="0" cellspacing="0" width="600" align="center" style="width:600px;" id="containertable">
 						<tr>
 							<td align="left" valign="top" id="containercell">
+                            
+								<!--
+									GAP ISSUES WITH LONG VERTICAL EMAILS IN OUTLOOK 2007 AND ABOVE:
+									http://www.emailonacid.com/blog/details/C13/horizontal_spacing_issues_in_outlook_2007_and_2010
+						
+									If a table exceeds 23.7 inches in height a page break will be added which can cause strange gaps.
+								-->
 
 								<!--
 									CSS INHERITANCE ON TABLE CELLS IN OUTLOOK 2007 AND ABOVE:
