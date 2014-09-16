@@ -56,8 +56,8 @@
 				- Preheader
 				- Table layout
 				<table>
-					- Aligning email to the centre
-                    - Fixed width vs fluid/hybrid layouts
+					- Aligning layouts to the centre
+					- Fixed width vs fluid/hybrid layouts
 					- Gap issues with long vertical emails in Outlook 2007 and above
 					- CSS inheritance on table cells in Outlook 2007 and above
 					- Windows Phone and font sizes
@@ -493,10 +493,10 @@
 			<tr>
 
 				<!--
-					ALIGNING YOUR EMAIL TO THE CENTRE:
-					In a lot of cases, you'll likely want the email to be centred (mainly for desktop clients)
-					This is a clean way of doing it, no need for any <center> or <div> tags.
-					It does mean however you'll need to declare align="" for each <td> row following to avoid actual content i.e. text being centred.
+					ALIGNING LAYOUTS TO THE CENTRE:
+					In some cases, you may want the whole email layout to be centred (mainly for desktop clients)
+					Using the wrapping table cell approach is a clean way of doing it, removing the need for any <center> or <div> tags.
+					It does mean however you'll need to use the align attribute on all table cells within to avoid content being centered
 				-->
 
 				<td align="center" valign="top" id="wrappercell">
