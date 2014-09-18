@@ -532,31 +532,10 @@
 								<!--
 									CSS INHERITANCE ON TABLE CELLS IN OUTLOOK 2007 AND ABOVE:
 									http://blog.mailermailer.com/email-design/ultimate-field-guide-to-common-bugs-in-html-email
+									https://gist.github.com/jamesmacwhite/ddb075abde1de7d384ff
 
-									When a table contains more than one table cell, applying padding to one cell will actually get applied to all cells.
-
-									<table border="0" cellpadding="0" cellspacing="0">
-										<tr>
-											<td align="left" valign="top" style="padding-bottom:5px;">Cell 1</td>
-											<td align="left" valign="top">Cell 2</td>
-										</tr>
-									</table>
-
-									The padding would be applied to Cell 2, to avoid this a nested table must be used:
-
-									<table border="0" cellpadding="0" cellspacing="0">
-										<tr>
-											<td align="left" valign="top">
-												<table border="0" cellpadding="0" cellspacing="0">
-													<tr>
-														<td align="left" valign="top" style="padding-bottom:5px;">Cell 1</td>
-													</tr>
-												</table>
-											</td>
-											<td align="left" valign="top">Cell 2</td>
-										</tr>
-									</table>
-
+									When a table contains more than one table cell within the same table, CSS properties applied to one cell 
+									will be applied to all the cells within that table.
 								-->
 
 								<!--
@@ -572,7 +551,7 @@
 								<!--
 									CREATING CTA BUTTONS THAT WORK CROSS PLATFORM WITHOUT IMAGES:
 									http://www.industrydive.com/blog/how-to-make-html-email-buttons-that-rock
-                                    https://gist.github.com/jamesmacwhite/a6b22a300900cf5a0f50
+									https://gist.github.com/jamesmacwhite/a6b22a300900cf5a0f50
                                     
 									You should avoid making your call to action (CTA) buttons images, because they won't be visible with images off.
 									This could be a potential issue, and hence you should develop CTA buttons that are independent images
