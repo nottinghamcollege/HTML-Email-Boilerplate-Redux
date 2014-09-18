@@ -572,89 +572,11 @@
 								<!--
 									CREATING CTA BUTTONS THAT WORK CROSS PLATFORM WITHOUT IMAGES:
 									http://www.industrydive.com/blog/how-to-make-html-email-buttons-that-rock
-
-									Call to action buttons that don't require images, so they are always visible regardless of image block status.
-
-									METHOD #1: 
-									This method allows you to create buttons that span the entire space
-
-									** GOOD: Entire button area is covered by the anchor (except in Outlook)
-									** MIGHT BE BAD: Requires matching line-height + fixed height, along with a fixed width
-									** MIGHT BE BAD: You need to be generous with the widths i.e. provide a bit of empty space on both sides.
-									** BAD: Only the anchor part clickable in Outlook (Conditional VML code is required to fix this)
-
+                                    https://gist.github.com/jamesmacwhite/a6b22a300900cf5a0f50
+                                    
+									You should avoid making your call to action (CTA) buttons images, because they won't be visible with images off.
+									This could be a potential issue, and hence you should develop CTA buttons that are independent images
 								-->
-
-								<table border="0" cellpadding="0" cellspacing="0" width="100%">
-									<tr>
-										<td align="left" valign="top">
-											<table border="0" cellpadding="0" cellspacing="0" class="cta-button-wrap">
-												<tr>
-													<td class="cta-button" align="center" valign="middle" bgcolor="#d62828" width="200" height="45" style="display:block; width:200px; height:45px;">
-														<a href="" target="_blank" style="line-height:45px; width:100%; display:inline-block; text-decoration:none;">
-															Your text
-														</a>
-													</td>
-												</tr>
-											</table>
-										</td>
-									</tr>
-								</table>
-
-								<!-- 
-
-									VML code for better Outlook support. 
-									This will need combining with method #1 or #2 with a Outlook conditional.
-
-									<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:45px; v-text-anchor:middle; width:200px;" arcsize="10%" stroke="f" fillcolor="#d62828">
-										<w:anchorlock/>
-										<center style="color:#ffffff; font-size:16px; font-weight:bold;">
-											Your text
-										</center>
-									</v:roundrect>
-								-->
-
-								<!--
-
-									METHOD #2: 
-									This method doesn't rely on line-height/setting a fixed width and height.
-									The padding will essentially create the width and height which is more flexible.
-									It does mean however, the entire visible space isn't clickable
-
-									** GOOD: Doesn't rely on line-height to centre/pad out equally
-									** GOOD: Doesn't require width/height setting explicitly
-									** MIGHT BE BAD: Requires additional rules for mobile to swap the padding to the anchor on mobile devices
-									** BAD: Actual anchor doesn't cover entire visible button area
-
-									Arguably, the size of CTA buttons clickable area on the desktop being smaller would be acceptable.
-
-									Additional CSS for the mobile devices to make the clickable button area larger for tapping below.
-
-									The width100pc class expands container tables for mobile devices so the button spans the viewport
-									but isn't set to 100% for desktop clients for when buttons don't want to be full width.
-								-->
-
-								<!-- 
-									CSS for mobile media query
-
-									table[class="width100pc"] { width:100% !important; }
-									table[class="cta-button-wrap"] td[class="cta-button"] { padding:0 !important; }
-									table[class="cta-button-wrap"] td[class="cta-button"] a { padding:15px; display:block; }
-								-->
-
-									<table border="0" cellpadding="0" cellspacing="0" width="100%">
-										<tr>
-											<td align="left" valign="top">
-												<table border="0" cellpadding="0" cellspacing="0" class="cta-button-wrap">
-													<tr>
-														<td align="center" valign="middle" bgcolor="#ff0000" style="padding-top:15px; padding-right:20px; padding-bottom:15px; padding-left:20px;" class="cta-button">
-															<a href="" target="_blank" style="text-decoration:none;">Your text</a>
-														</td>
-													</tr>
-												</table>
-											</td>
-										</tr>
-									</table>
 
 								<!--
 									USING IMAGES:
