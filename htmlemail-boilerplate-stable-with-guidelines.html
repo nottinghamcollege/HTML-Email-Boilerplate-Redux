@@ -151,7 +151,7 @@
 				https://developer.mozilla.org/en/docs/Mozilla/Mobile/Viewport_meta_tag
 				http://www.emailonacid.com/blog/details/C13/emailology_viewport_metatag_rendered_unusable
 
-				Mainly for mobile devices to set the view correctly when using media queries
+				Mainly for mobile devices to set the view correctly when using media queries.
 				This does however have implications for older BlackBerry devices.
 
 				Not including it however can make some mobile email clients render the desktop version or appear zoomed out.
@@ -173,8 +173,8 @@
 				http://templates.mailchimp.com/development/css
 
 				Email clients and CSS support vary massively.
-				Most CSS should be inline due to limitations with CSS in the <head> in some clients
-				The exception to this is reset styles or fixes that target a specific client that does render CSS in the <head>
+				Most CSS should be inline due to limitations with CSS in the <head> in some clients.
+				The exception to this is reset styles or fixes that target a specific client that does render CSS in the <head>.
 				Forget calling external style sheets, most email clients won't even parse it.
 			-->
 			<style type="text/css">
@@ -266,7 +266,7 @@
 					CSS3 MEDIA QUERIES:
 					https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries
 
-					For clients that support CSS3, various queries can be used to target different devices
+					For clients that support CSS3, various queries can be used to target different devices.
 				*/
 
 
@@ -300,20 +300,20 @@
 						https://litmus.com/community/discussions/67-hiding-content-from-desktop-version
 						http://freshinbox.com/blog/outlook-com-removes-all-content-within-conditional-comments
 
-						display:none; is the obvious method, however it doesn't work reliability in every email client
+						display:none; is the obvious method, however it doesn't work reliability in every email client.
 
 						With Gmail display:none is stripped entirely, ironically display:none !important; works but then you can't override it.
 						With Outlook 2007 - 2013, display:none; works but not if there is a table within the element you are trying to hide.
 
 						In order to hide content, you have to use a combination of CSS properties for maximum compatibility these include:
 
-						display:none; 
-						font-size:0; 
-						max-height:0; 
-						line-height:0;
-						overflow:hidden;
-						visibility:hidden;
-						mso-hide:all; (Specific MSO property for Outlook)
+						** display:none; 
+						** font-size:0; 
+						** max-height:0; 
+						** line-height:0;
+						** overflow:hidden;
+						** visibility:hidden;
+						** mso-hide:all; (Specific MSO property for Outlook)
 						
 						You then need to override each property used in a media query to make them show when the mobile layout is used.
  
@@ -340,7 +340,7 @@
 					https://github.com/centralcollegenottingham/html-email-boilerplate-redux/issues/1
 					http://www.degdigital.com/blog/content-choreography-in-responsive-email
 
-					Support for display:block; has been dropped on <td> in the native mail client on Android 4.4
+					Support for display:block; has been dropped on <td> in the native mail client on Android 4.4.
 					This means any layout that relies on making table cells stack on mobile will fail.
 					There are workarounds to replicate the behaviour without use block as the display value.
 					The alternative would be to use floated tables to create the same effect.
@@ -468,11 +468,11 @@
 			Not creating a preheader means generally the first bit of text content gets used. 
 			This can be bad when areas like the web version link are first.
 
-			The preheader can be visible but if a template design doesn't allow for it the hidden span technique can be used
+			The preheader can be visible but if a template design doesn't allow for it the hidden span technique can be used.
 			display:none !important; allows Gmail to hide the span without max-height hacks.
 
 			Incase display:none; doesn't work, color and font-size properties can be used to still "hide" the span content.
-			The font colour would match the background colour of the email
+			The font colour would match the background colour of the email.
 
 			Note: Setting a very small font size can trigger some spam filters.
 		-->
@@ -495,19 +495,19 @@
 
 				<!--
 					ALIGNING LAYOUTS TO THE CENTRE:
-					In some cases, you may want the whole email layout to be centred (mainly for desktop clients)
+					In some cases, you may want the whole email layout to be centred (mainly for desktop clients).
 					Using the wrapping table cell approach is a clean way of doing it, removing the need for any <center> or <div> tags.
-					It does mean however you'll need to use the align attribute on all table cells within to avoid content being centered
+					It does mean however you'll need to use the align attribute on all table cells within to avoid content being centered.
 				-->
 
 				<td align="center" valign="top" id="wrappercell">
                     
                     <!--
-                    	FIXED WIDTH VS FLUID/HYBRID LAYOUTS
+						FIXED WIDTH VS FLUID/HYBRID LAYOUTS
 						http://labs.actionrocket.co/the-hybrid-coding-approach
 						http://labs.actionrocket.co/the-hybrid-coding-approach-2
 						https://www.campaignmonitor.com/blog/post/4240/creating-a-centred-responsive-design-without-media-queries
-						https://www.campaignmonitor.com/guides/mobile/
+						https://www.campaignmonitor.com/guides/mobile
 
 						When creating an email campaign there are several approaches you can take when developing the layout.
 						The approach used is often dependant on the design of the email campaign itself.
@@ -515,7 +515,7 @@
 						Fixed width layouts are common, but require the need of media query support to optimise them for mobile devices.
 						The fluid/hybrid approach removes the requirement for media query support but can force certain design requirements.
                         
-                        This layout uses the fixed width approach by default. 
+						This layout uses the fixed width approach by default. 
                     -->
 
 					<!-- CONTAINER TABLE -->
@@ -555,7 +555,7 @@
 									https://gist.github.com/jamesmacwhite/a6b22a300900cf5a0f50
                                     
 									You should avoid making your call to action (CTA) buttons images, because they won't be visible with images off.
-									This could be a potential issue, and hence you should develop CTA buttons that are independent images
+									This could be a potential issue, and hence you should develop CTA buttons that are independent of images.
 								-->
 
 								<!--
@@ -616,7 +616,7 @@
 
 									While HTML5 video is more flexible, its best to serve several file types, MP4 is a common format, but won't work everywhere, additional types of webm and ogv will be required. 
 
-									ffmpeg can be used to convert various video file formats
+									ffmpeg can be used to convert various video file formats.
 
 									<video width="x" height="x" controls>
 										<source src="video.mp4" type="video/mp4">
@@ -670,7 +670,7 @@
 
 		For larger emails where this is an issue, you can use a couple of techniques to get under the limit:
 
-		** Remove any unnecessary spaces, carriage returns or comments.
+		** Remove any unnecessary spaces, carriage returns or comments
 		** Remove redundant or unnecessary styles
 
 		You could also use a more automated approach with minification tools, such as:
