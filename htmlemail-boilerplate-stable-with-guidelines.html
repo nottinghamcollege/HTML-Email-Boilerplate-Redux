@@ -585,17 +585,20 @@
 									** Apply display:block; to fix various image gap problems in various email clients
 									** Set a good and relevant alternative text value as well. You can even style this text in some clients
 									** Outlook 2013 will add spacing underneath images that are less than 20px in height
-									** To hide ugly link borders consider using border="0" as border:none; isn't as reliable
+									** Hide blue hyperlink borders with border="0" as border:none; isn't as reliable.
 									** Office 365 (OWA) needs additional image fixing techniques, because it strips display:block;
 								-->
 
-									<!-- Image without hyperlink -->
-									<img src="http://awesome.com/path/to/image" alt="Description" width="x" height="x" style="display:block;" />
-
-									<!-- Image with hyperlink -->
-									<a href="http://www.centralnottingham.ac.uk" target="_blank">
-										<img src="http://awesome.com/path/to/image" alt="Description" width="x" height="x" style="display:block;" border="0" />
-									</a>
+									<div style="height:100px; font-size:0;">
+										<img src="/path/to/image.jpg" alt="Description" width="200" height="100" style="display:block;" />
+									</div>
+                                    
+									<!-- With a hyperlink -->
+									<div style="height:100px; font-size:0;">
+										<a href="http://www.centralnottingham.ac.uk" target="_blank">
+											<img src="/path/to/image.jpg" alt="Description" width="200" height="100" style="display:block;" border="0" />
+										</a>
+									</div>
 
 								<!--
 									USING HYPERLINKS:
