@@ -1,9 +1,11 @@
 HTML Email Boilerplate Redux
 ==============================================
 
-A HTML Email Boilerplate is designed to create a solid foundation for any email campaign by fixing various email client quirks from the beginning. (Saving headaches later!)
+A HTML Email Boilerplate is designed to create a solid foundation for any email campaign by fixing various email client quirks from the beginning (saving headaches later!), as well as providing a good starting point for building your own email campaigns/templates.
 
-There are various email boilerplate templates around, however Central College Nottingham has adapted its own template based on a variety of sources as well our own additions based on our own research and development. We regularly review changes in email client behaviour and aim to keep our boilerplate constantly up to date with the latest developments.
+There are various email boilerplate templates around, however Central College Nottingham has adapted its own boilerplate template based on a variety of sources as well our own additions based on our own research and development. We regularly review changes in email client behaviour and aim to keep our boilerplate constantly up to date with the latest developments and changes in the email world.
+
+We refer to our email boilerplate as a redux of the [original HTML Email Boilerplate](http://htmlemailboilerplate.com/)
 
 ## What does our redux version of the HTML email boilerplate include?
 
@@ -34,7 +36,7 @@ The two variants of the stable boilerplate are essentially the same, the main di
 
 The experimental version of the boilerplate is essentially a bleeding edge test ground. As things change in the email client world, new code needs to be tested. This version provides a perfect base for this without disrupting the stability and original purpose of the stable boilerplate.
 
-Newer code for fixing newly discovered quirks will always appear on the experimental version first. If the newly added code passes our own QA tests it will eventually make its way to the stable version. Sometimes if experimental code doesn't pass such tests, it will just be removed entirely without going near the stable version.
+New code that hasn't been tested thoroughly will appear on the experimental version first. If the newly added code passes our own QA tests it will eventually make its way to the stable version. Sometimes if experimental code doesn't pass such tests, it will just be removed entirely without going near the stable version.
 
 **It is strongly recommended that you NEVER use the experimental version of the boilerplate in a live email campaign. The experimental version may not have been tested thoroughly and hence its cross email client compatibility is not guaranteed. Always use the stable version!**
 
