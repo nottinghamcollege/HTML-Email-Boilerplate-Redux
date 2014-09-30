@@ -64,7 +64,6 @@
 					- Using Images
 					- Using Hyperlinks
 					- Conditional comments and Outlook.com (Webmail)
-					- Using HTML5 video
 				</table>
 				- Gmail Promotions tab view
 			</body>
@@ -624,25 +623,6 @@
 									Outlook.com and its pre-processor tends to strip conditional comments, as well as the content between them.
 									When IF ELSE logic is used this can cause problems in this client as both parts of the conditional will be removed.
 									In order to workaround this, alternative hiding techniques have to be used.
-								-->
-                                
-								<!--
-									USING HTML5 VIDEO:
-									http://www.emailonacid.com/blog/details/C13/a_how_to_guide_to_embedding_html5_video_in_email
-
-									Video in HTML email? WHAT. Thanks to HTML5 it is possible. Email clients with good standards support are able to use HTML5 video.
-									For clients that doesn't support HTML5, a fallback image will used, so they can view the video in their browser, usually through a video service like Vimeo or YouTube.
-
-									While HTML5 video is more flexible, its best to serve several file types, MP4 is a common format, but won't work everywhere, additional types of webm and ogv will be required. 
-
-									ffmpeg can be used to convert various video file formats.
-
-									<video width="x" height="x" controls>
-										<source src="video.mp4" type="video/mp4">
-										<source src="video.ogg" type="video/ogg">
-										<source src="video.webm" type="video/webm">
-										<img src="/path/to/fallbackimage.jpg" alt="Video" style="display:block;" width="x" height="x" />
-									</video> 
 								-->
 							</td>
 						</tr>
