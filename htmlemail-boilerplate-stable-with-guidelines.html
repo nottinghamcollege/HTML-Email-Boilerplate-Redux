@@ -39,7 +39,7 @@
 					- CSS reset for fixing various email client quirks
 					- Minimum font size for the iPhone and iPad
 					- Media Queries
-						- Detect webkit based clients
+						- Detect WebKit based clients
 						- Tablet targeting
 						- Mobile targeting
 							- Useful resources and general guidance
@@ -276,7 +276,10 @@
 				*/
 				
 				@media screen and (-webkit-min-device-pixel-ratio:0) {
-					/* Webkit based clients only. Windows Phone 8.1 GDR1 and above will also parse CSS in this query due to changes to IE Mobile 11. */
+					/* 
+						Detect WebKit based clients. 
+						Windows Phone 8.1 GDR1 and above will also parse CSS in this query due to changes to IE Mobile.
+					*/
 				}
 
 				@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
