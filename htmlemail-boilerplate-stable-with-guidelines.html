@@ -57,6 +57,7 @@
 				<table>
 					- Aligning layouts to the centre
 					- Define your layout approach
+					- Prevent Gmail App Auto-fit/zooming
 					- Gap issues with long vertical emails in Outlook 2007 and above
 					- CSS inheritance on table cells in Outlook 2007 and above
 					- Windows Phone and font sizes
@@ -537,6 +538,24 @@
 					<table border="0" cellpadding="0" cellspacing="0" width="600" align="center" style="width:600px;" id="containertable">
 						<tr>
 							<td align="left" valign="top" id="containercell">
+								<!--
+									PREVENT GMAIL APP AUTO-FIT/ZOOMING:
+                                    https://support.google.com/mail/answer/2951689?hl=en
+									https://litmus.com/community/discussions/257-gmail-app-android-how-to-stop-text-from-auto-resizing
+                                    
+                                    The Gmail App on Android 4.0 and above will modify an email to fit the device viewport.
+                                    Depending on the design, this can break various layouts and ends up being counterproductive
+                                    This feature can be disabled by setting min-width on an image that is equal size to the container table
+                                    For responsive designs the entire "gmailapp-android-fix" table can be removed.
+                                    
+								-->
+								<table border="0" cellpadding="0" cellspacing="0" width="100%" class="gmailapp-android-fix" style="mso-hide:all;">
+									<tr>
+										<td align="left" valign="top" height="1" style="line-height:1px; height:1px;">
+											<img src="http://app.clickdimensions.com/blob/centralnottinghamacuk-ao5ju/images/email-templates/600x1-white-spacer.gif" alt="" style="display:block; min-width:600px;" width="600" height="1" />
+										</td>
+									</tr>
+								</table>
                             
 								<!--
 									GAP ISSUES WITH LONG VERTICAL EMAILS IN OUTLOOK 2007 AND ABOVE:
