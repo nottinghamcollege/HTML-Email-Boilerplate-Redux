@@ -67,7 +67,7 @@ THE SOFTWARE.
 
 ## Credits:
 
-This boilerplate is a hybrid of the two very popular boilerplates by:
+This boilerplate is originally based on two very popular boilerplates by:
 
 * Sean Powell - http://htmlemailboilerplate.com
 * Email on Acid - http://www.emailonacid.com/blog/details/C13/html_boilerplate
