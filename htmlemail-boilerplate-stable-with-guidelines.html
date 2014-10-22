@@ -64,6 +64,7 @@
 					- Creating call to action (CTA) buttons
 					- Using Images
 					- Using Hyperlinks
+					- Faux unordered/ordered lists
 					- Conditional comments and Outlook.com (Webmail)
 				</table>
 				- Gmail Promotions tab view
@@ -646,7 +647,28 @@
 									<a href="http://www.centralnottingham.ac.uk" target="_blank" style="color:#e6057f; text-decoration:none;">
 										<span style="color:#e6057f;">We are Central</span>
 									</a>
+
+								<!--
+									FAUX UNORDERED/ORDERED LISTS
                                     
+									The rendering of <ul> and <ol> is not reliable with a few email clients, instead you have create faux lists.
+									Using two table cells you can mimic the same appearance of a bullet or number list.
+                                    You can add widths, padding etc to space out list items
+                                -->
+
+									<table border="0" cellpadding="0" cellspacing="0">
+										<!-- Faux unordered list -->
+										<tr>
+											<td align="left" valign="top">&bull;</td>
+											<td align="left" valign="top">Bullet point text</td>
+										</tr>
+										<!-- Faux ordered list -->
+										<tr>
+											<td align="left" valign="top">1.</td>
+											<td align="left" valign="top">Bullet point text</td>
+										</tr>
+									</table>
+
 								<!-- 
 									CONDITIONAL COMMENTS AND OUTLOOK.COM (WEBMAIL):
 									http://freshinbox.com/blog/outlook-com-removes-all-content-within-conditional-comments
