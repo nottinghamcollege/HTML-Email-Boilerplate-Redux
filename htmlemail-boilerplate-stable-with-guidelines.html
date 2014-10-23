@@ -621,14 +621,15 @@
 									** Outlook 2013 will add spacing underneath images that are less than 20px in height
 									** Hide blue hyperlink borders with border="0" as border:none; isn't as reliable.
 									** Office 365 (OWA) needs additional image fixing techniques, because it strips display:block;
+									** Add font-size:0; onto containing block element i.e. table cell if image gaps still occur
 								-->
 
-									<div style="height:100px; font-size:0;">
+									<div style="height:100px;">
 										<img src="/path/to/image.jpg" alt="Description" width="200" height="100" style="display:block;" />
 									</div>
                                     
 									<!-- With a hyperlink -->
-									<div style="height:100px; font-size:0;">
+									<div style="height:100px;">
 										<a href="http://www.centralnottingham.ac.uk" target="_blank">
 											<img src="/path/to/image.jpg" alt="Description" width="200" height="100" style="display:block;" border="0" />
 										</a>
