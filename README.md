@@ -31,7 +31,7 @@ Our boilerplate is split into two versions, stable and experimental. There are t
 
 The two variants of the stable boilerplate are essentially the same, the main difference is one features lots of comments for guideline purposes (with guidelines), while the other is simply the same document but without any HTML/CSS comments (without guidelines), which is the version you should use in your own email campaigns.
 
-**Never use the with guidelines version in a live email campaign, as HTML/CSS comments play havoc with spam filters, also the structure of the commented version is not friendly for parsing!**
+**Never use the guidelines version in a live email campaign, as HTML/CSS comments play havoc with spam filters and even cause emails to appear blank in a few clients!**
 
 ### Experimental
 
