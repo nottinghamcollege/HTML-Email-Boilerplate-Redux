@@ -615,7 +615,6 @@
 									http://www.emailonacid.com/blog/details/C18/12_fixes_for_the_image_spacing_in_html_emails
 									https://litmus.com/blog/the-ultimate-guide-to-styled-alt-text-in-email
 									http://www.emailonacid.com/blog/details/C13/fixing_image_gaps_in_outlook_2013
-									http://www.emailonacid.com/blog/details/C13/two_fixes_for_image_spacing_in_outlook_web_app_owa
                                     
 									** Absolute images paths, http:// only
 									** Always set a width and height that is EXACTLY the same values of the dimensions of the image
@@ -623,20 +622,15 @@
 									** Set a good and relevant alternative text value as well. You can even style this text in some clients
 									** Outlook 2013 will add spacing underneath images that are less than 20px in height
 									** Hide blue hyperlink borders with border="0" as border:none; isn't as reliable.
-									** Office 365 (OWA) needs additional image fixing techniques, because it strips display:block;
-									** Add font-size:0; onto containing block element i.e. table cell if image gaps still occur
 								-->
 
-									<div style="height:100px;">
-										<img src="/path/to/image.jpg" alt="Description" width="200" height="100" style="display:block;" />
-									</div>
+									<!-- Plain image -->
+									<img src="/path/to/image.jpg" alt="Description" width="200" height="100" style="display:block;" />
                                     
-									<!-- With a hyperlink -->
-									<div style="height:100px;">
-										<a href="http://www.centralnottingham.ac.uk" target="_blank">
-											<img src="/path/to/image.jpg" alt="Description" width="200" height="100" style="display:block;" border="0" />
-										</a>
-									</div>
+									<!-- Image with a hyperlink -->
+									<a href="http://www.centralnottingham.ac.uk" target="_blank">
+										<img src="/path/to/image.jpg" alt="Description" width="200" height="100" style="display:block;" border="0" />
+									</a>
 
 								<!--
 									USING HYPERLINKS:
@@ -645,11 +639,10 @@
 
 									** Add target="blank" to prevent links opening within the email client
 									** Apply color and text-decoration:none; inline when required
-									** Consider using a span within the anchor for better appearance in Office 365 (OWA)
 								-->
 
 									<a href="http://www.centralnottingham.ac.uk" target="_blank" style="color:#e6057f; text-decoration:none;">
-										<span style="color:#e6057f;">We are Central</span>
+										We are Central
 									</a>
 
 								<!--
