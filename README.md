@@ -13,7 +13,7 @@ As well as creating a solid foundation for any email campaign, our boilerplate a
 
 * Forcing the document mode (Edge) for Internet Explorer based clients
 * CSS3 support in the native mail client on Windows Phone 8 and above (POP3/IMAP)
-* Scaling images correctly in Outlook when using DPI scaling factors greater than 96 DPI
+* Scaling images correctly in Outlook 2010 and 2013 when using DPI scaling factors greater than 96 DPI (100%)
 * Improved Windows Phone compatibility
 * Improved Office 365 (OWA) compatibility
 
