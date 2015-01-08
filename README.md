@@ -15,7 +15,7 @@ As well as creating a solid foundation for any email campaign, our boilerplate a
 * CSS3 support in the native mail client on Windows Phone 8 and above (POP3/IMAP)
 * Scaling images correctly in Outlook 2010 and 2013 when using DPI scaling factors greater than 96 DPI (100%)
 * Improved Windows Phone compatibility
-* Improved Office 365 (OWA) compatibility
+* Improved Office 365 (OWA) compatibility (Microsoft have since improved the rendering standards of OWA [in the October 2014 update](http://blogs.office.com/2014/10/14/improving-outlook-web-app-options-settings-2/))
 
 As well as fixing other email client quirks that have been discovered.
 
