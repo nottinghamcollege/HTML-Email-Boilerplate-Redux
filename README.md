@@ -45,7 +45,7 @@ New code that hasn't been tested thoroughly will appear on the experimental vers
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Central College Nottingham
+Copyright (c) 2014 - 2015 Central College Nottingham
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
