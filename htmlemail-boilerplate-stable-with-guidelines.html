@@ -713,6 +713,27 @@
 			</div>
 		</div>
         
+        <!--
+        	Gmail iOS app font size fix
+            http://freshinbox.com/blog/gmail-on-ios-increases-font-size-on-some-emails
+            
+            The Gmail iOS app likes to mess around with font sizes. It increases font sizes to make them more legable on mobile.
+            It can however have very unpredictable results and break email templates or make them look worse.
+            Using either of the two methods below leverages a email width check to prevent the font sizing behaviour occurring.
+        -->
+        
+		<!-- Method #1 -->
+		<div style="display:none; white-space:nowrap; font:15px courier; color:#ffffff;">
+			- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		</div>
+        
+		<!-- Method #2 -->
+		<div style="display:none; white-space:nowrap; font:15px courier; line-height:0;">
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+		</div>
+        
 	</body>
 	<!--
 		FILESIZE OF YOUR EMAIL TEMPLATE:
