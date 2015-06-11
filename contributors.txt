@@ -1,0 +1,32 @@
+This serves as an official list of all organisations or indiviuals that have helped with the development of HTML Email Boilerplate Redux, whether directly or indirectly.
+
+Author:
+
+Central College Nottingham
+James White - james.white@centralnottingham.ac.uk
+
+Contributors:
+
+GC-Max
+
+Credited Organisations:
+
+Litmus
+Campaign Monitor
+Email on Acid
+MailChimp
+FreshInbox
+Action Rocket
+
+Credited People:
+
+Sean Powell (Original HTML Email Boilerplate)
+Justin Khoo (Fresh Inbox)
+Michael Muscat
+Jack Osbourne
+Mike Ragan (Action Rocket)
+
+If I have missed you out or believe you should be on this list, please give me a friendly nudge!
+
+
+
