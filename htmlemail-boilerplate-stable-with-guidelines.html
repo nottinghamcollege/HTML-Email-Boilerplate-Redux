@@ -35,6 +35,7 @@
 				- Forcing the document mode for Internet Explorer based email clients
 				- Viewport Setting
 				- Document Title
+				- Favicon
 				- Cascading Style Sheets
 					- CSS reset for fixing various email client quirks
 					- Minimum font size for the iPhone and iPad
@@ -68,6 +69,7 @@
 					- Conditional comments and Outlook.com (Webmail)
 				</table>
 				- Gmail Promotions tab view
+				- Gmail iOS font sizing fix
 			</body>
 		- Filesize of your email template
 		</html>
@@ -712,15 +714,15 @@
 				<link itemprop="image" href="http://media.centralnottingham.ac.uk/App_Media/SNC/emailers/default-gmail-promotions-image-block.jpg"/>
 			</div>
 		</div>
-        
-        <!--
-			Gmail iOS app font size fix
-            http://freshinbox.com/blog/gmail-on-ios-increases-font-size-on-some-emails
-            
-            The Gmail iOS app likes to mess around with font sizes. It increases font sizes to make them more legable on mobile.
-            It can however have very unpredictable results and break email templates or make them look worse.
-            Using either of the two methods below leverages a email width check to prevent the font sizing behaviour occurring.
-        -->
+		
+		<!--
+			GMAIL iOS APP FONT SIZING FIX:
+			http://freshinbox.com/blog/gmail-on-ios-increases-font-size-on-some-emails
+			
+			The Gmail iOS app likes to mess around with font sizes. It increases font sizes to make them more legable on mobile.
+			It can however have very unpredictable results and break email templates or make them look worse.
+			Using either of the two methods below leverages a email width check to prevent the font sizing behaviour occurring.
+		-->
         
 		<!-- Method #1 -->
 		<div style="display:none; white-space:nowrap; font:15px courier; color:#ffffff;">
