@@ -69,7 +69,7 @@
 					- Conditional comments and Outlook.com (Webmail)
 				</table>
 				- Gmail Promotions tab view
-				- Gmail iOS font sizing fix
+				- Gmail iOS app font sizing fix
 			</body>
 		- Filesize of your email template
 		</html>
@@ -135,10 +135,10 @@
 
 				As well as Windows Phone, the following email clients will also benefit from forcing edge as the document mode:
 
-				** Outlook Express
-				** Outlook 2000, 2002, 2003
-				** Windows Live Mail
-				** Windows 8 mail app (Metro)
+				* Outlook Express
+				* Outlook 2000, 2002, 2003
+				* Windows Live Mail
+				* Windows 8 mail app (Metro)
 
 				Rather than being reliant on the original version of Internet Explorer that was installed at the time of installing the email client.
 				The actual current version of Internet Explorer installed will be used instead.
@@ -339,13 +339,13 @@
 
 						In order to hide content, you have to use a combination of CSS properties for maximum compatibility these include:
 
-						** display:none; 
-						** font-size:0; 
-						** max-height:0; 
-						** line-height:0;
-						** overflow:hidden;
-						** visibility:hidden;
-						** mso-hide:all; (Specific MSO property for Outlook)
+						* display:none; 
+						* font-size:0; 
+						* max-height:0; 
+						* line-height:0;
+						* overflow:hidden;
+						* visibility:hidden;
+						* mso-hide:all; (Specific MSO property for Outlook)
 						
 						You then need to override each property used in a media query to make them show when the mobile layout is used.
  
@@ -445,14 +445,14 @@
 
 				Conditional expressions:
                 
-				** ! - NOT
-				** lt - Less than
-				** lte - Less than or equal to
-				** gt - Greater than
-				** gte - Greathan than or equal to
-				** ( ) - Subexpression operators. Used with more complex expressions
-				** AND - And operator
-				** | - OR operator
+				* ! - NOT
+				* lt - Less than
+				* lte - Less than or equal to
+				* gt - Greater than
+				* gte - Greathan than or equal to
+				* ( ) - Subexpression operators. Used with more complex expressions
+				* AND - And operator
+				* | - OR operator
 			-->
             
 			<!--[if IEMobile 7]>
@@ -624,12 +624,12 @@
 									https://litmus.com/blog/the-ultimate-guide-to-styled-alt-text-in-email
 									http://www.emailonacid.com/blog/details/C13/fixing_image_gaps_in_outlook_2013
                                     
-									** Absolute images paths, http:// only
-									** Always set a width and height that is EXACTLY the same values of the dimensions of the image
-									** Apply display:block; to fix various image gap problems in various email clients
-									** Set a good and relevant alternative text value as well. You can even style this text in some clients
-									** Outlook 2013 will add spacing underneath images that are less than 20px in height
-									** Hide blue hyperlink borders with border="0" as border:none; isn't as reliable.
+									* Absolute images paths, http:// only
+									* Always set a width and height that is EXACTLY the same values of the dimensions of the image
+									* Apply display:block; to fix various image gap problems in various email clients
+									* Set a good and relevant alternative text value as well. You can even style this text in some clients
+									* Outlook 2013 will add spacing underneath images that are less than 20px in height
+									* Hide blue hyperlink borders with border="0" as border:none; isn't as reliable.
 								-->
 
 									<!-- Plain image -->
@@ -648,8 +648,8 @@
 
 									Hyperlinks will be the foundation of any call to action, the general rules are:
 
-									** Add target="_blank" to prevent links opening within the email client
-									** Apply color and text-decoration:none; inline when required
+									* Add target="_blank" to prevent links opening within the email client
+									* Apply color and text-decoration:none; inline when required
 								-->
 
 									<a href="http://www.centralnottingham.ac.uk" target="_blank" style="color:#e6057f; text-decoration:none;">
@@ -701,8 +701,8 @@
 
 			Gmail's promotion tab view, shows email previews in a more visual way, the code below controls how this visual is displayed.
 
-			** The sender name is truncated at 20 characters.
-			** Subject line has a 75 character limit.
+			* The sender name is truncated at 20 characters.
+			* Subject line has a 75 character limit.
 		-->
 		<div itemscope itemtype="http://schema.org/EmailMessage">
 			<div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -745,14 +745,14 @@
 		With email, size really does matter. If the filesize of your HTML template is greater than 100kb, prepare for problems.
 		Sending a HTML email template greater than 100kb can cause several problems in relation to deliverability and user experience including:
 
-		** Triggering spam filters
-		** Email clipping/truncation
-		** Load time
+		* Triggering spam filters
+		* Email clipping/truncation
+		* Load time
 
 		For larger emails where this is an issue, you can use a couple of techniques to get under the limit:
 
-		** Remove any unnecessary spaces, carriage returns or comments
-		** Remove redundant or unnecessary styles
+		* Remove any unnecessary spaces, carriage returns or comments
+		* Remove redundant or unnecessary styles
 
 		You could also use a more automated approach with minification tools, such as:
 		https://code.google.com/p/htmlcompressor
