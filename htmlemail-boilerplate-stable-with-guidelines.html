@@ -125,28 +125,46 @@
 				http://blog.jmwhite.co.uk/2014/03/01/windows-phone-does-support-css3-media-queries-in-html-email
 				http://blog.jmwhite.co.uk/2014/08/19/email-campaigns-windows-phone-part-2-pop3-and-imap
 				http://www.emailonacid.com/blog/details/C13/designing_html_emails_for_outlook_2003_and_outlook_express
+				https://www.emailonacid.com/blog/article/email-development/prevent-ie-edge-meta-tag-from-breaking-images-in-live-mail
 
 				This will force any Internet Explorer (IE) based email client to render at the highest standards possible.
 
-				Windows Phone 8.0 onwards benefits from this greatly, because the built in mail client with POP3/IMAP accounts has CSS3 support but
-				renders with IE 7 standards by default.
+				Major email clients that are IE based and benefit from the document mode being forced to edge include:
 
-				Exchange/Office 365 mailboxes on Windows Phone do not benefit from this because the rendering engine is different (EAS client).
-
-				As well as Windows Phone, the following email clients will also benefit from forcing edge as the document mode:
-
+				* Windows Phone 7.8
+				* Windows Phone 8.0
+				* Windows Phone 8.1
 				* Outlook Express
-				* Outlook 2000, 2002, 2003
+				* Outlook 2000/2002/2003
 				* Windows Live Mail
-				* Windows 8 mail app (Metro)
+				* Windows 8 Metro Mail App (Touch based)
 
-				Rather than being reliant on the original version of Internet Explorer that was installed at the time of installing the email client.
-				The actual current version of Internet Explorer installed will be used instead.
+				Generally these clients will render with an IE document mode that's less than optimal.
+				The meta tag sets the document mode to edge meaning the highest possible rendering capabilities are used
+				Windows Phone benefits greatly from this due to the use of the IE7 document mode by default (Nice one Microsoft)
+
+
+				CAVEATS:
 
 				The inclusion of this meta tag has been known to mess with Outlook 2003 and breaking printing functionality.
-				If printing is an absolute must, consider wrapping this tag in a !mso conditional.
+				Windows Live Mail also has issues with images when the edge document mode is used
+				If you need to support these clients you should consider using the compatibility fix rather than the standard implementation
+
 			-->
+
+			<!-- Standard implementation -->
 			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+			<!-- 
+				Compatibility implementation
+				Prevents functionality isuses in Outlook 2003 and Windows Live Mail
+				An empty comment is used to prevent Outlook.com from messing with it
+			-->
+            
+			<!--[if !mso]><!-- -->
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<!--<![endif]-->
+
 
 			<!-- 
 				VIEWPORT SETTING:
