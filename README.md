@@ -11,11 +11,12 @@ We refer to our email boilerplate as a redux of the [original HTML Email Boilerp
 
 As well as creating a solid foundation for any email campaign, our boilerplate also focuses on the following areas:
 
-* Forcing the document mode (Edge) for Internet Explorer based clients
+* Forcing the document mode (edge) for Internet Explorer based clients
 * CSS3 support in the native mail client on Windows Phone 8 and above (POP3/IMAP)
 * Scaling images correctly in Outlook 2010 and 2013 when using DPI scaling factors greater than 96 DPI (100%)
 * Improved Windows Phone compatibility
 * Improved Office 365 (OWA) compatibility (Microsoft have since improved the rendering standards of OWA [in the October 2014 update](http://blogs.office.com/2014/10/14/improving-outlook-web-app-options-settings-2/))
+* Android 4.4 centring fix
 
 As well as fixing other email client quirks that have been discovered.
 
