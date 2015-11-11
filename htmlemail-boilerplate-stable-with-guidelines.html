@@ -47,6 +47,7 @@
 							- Hiding content intended for mobile devices only
 							- Android 4.4 and display block on table cells
 						- Detecting devices based on DPI
+						- Additional Android 4.4 margin fix
 						- Debugging layouts
 				- Conditional comments
 				- Fix images in Outlook when using DPI scaling on Windows
@@ -401,6 +402,17 @@
 				@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) { 
 					/* Not quite "Retina" but high-res */
 				}
+				
+				/*
+					ADDITIONAL ANDROID 4.4 MARGIN FIX
+					https://litmus.com/community/code/4194-why-is-email-not-centered-on-android-4-4
+					
+					In addition to resetting margin on the body, the native email client in Android 4.4 creates top and bottom margin with a wrapper div.
+					Because it has no ID or class to target you have to use attribute selectors creatively in order to remove it.
+					The code is put at bottom of a style block because Yahoo! Mail strips any CSS that appears after an attribute selector declaration
+				*/
+				
+				div[style*="margin: 16px 0"] { margin:0 !important; font-size:100% !important; }
 				
 				/*
 					DEBUGGING LAYOUTS
