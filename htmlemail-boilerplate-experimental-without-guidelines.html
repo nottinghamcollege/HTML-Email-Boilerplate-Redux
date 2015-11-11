@@ -15,7 +15,6 @@
 
 			<style type="text/css">
 				* { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; text-size-adjust:none; -webkit-text-size-adjust:none; -moz-text-size-adjust:none; -ms-text-size-adjust:none; }
-				@-webkit-keyframes bugfix { from { padding: 0; } to { padding: 0; } }
 				body { width:100% !important; height:100% !important; margin:0 !important; padding:0 !important; }
 				.aolReplacedBody { /* Prefix any CSS with this class to target AOL Webmail */ }
 				.ReadMsgBody, .ExternalClass { width:100%; }
@@ -37,6 +36,10 @@
 				.appleLinksWhite a { color:#ffffff !important; text-decoration:none !important; }
 				.appleLinksBlack a { color:#000000 !important; text-decoration:none !important; }
 				a[x-apple-data-detectors] { color:inherit !important; text-decoration:none !important; font-size:inherit !important; font-family:inherit !important; font-weight:inherit !important; line-height:inherit !important; }
+				
+				@-webkit-keyframes bugfix { 
+					from { padding: 0; } to { padding: 0; } 
+				}
 				
 				@media screen {
 					/* Generic media query for certain styles e.g. font-face */
