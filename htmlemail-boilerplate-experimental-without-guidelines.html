@@ -60,7 +60,7 @@
 				a[x-apple-data-detectors] { color:inherit !important; text-decoration:none !important; font-size:inherit !important; font-family:inherit !important; font-weight:inherit !important; line-height:inherit !important; }
 				
 				@-webkit-keyframes bugfix { 
-					from { padding: 0; } to { padding: 0; } 
+					from { padding:0; } to { padding:0; } 
 				}
 				
 				@media screen {
@@ -68,18 +68,19 @@
 				}
 				
 				@media yahoo {
-					-webkit-padding-start: none;
+					-webkit-padding-start:none;
 				}
 				
 				@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { 
-					/* Internet Explorer 10 and 11 specific styles */
+					/* Internet Explorer 10 and 11 specific styles (desktop and mobile) */
 				}
 				
 				@media screen and (-webkit-min-device-pixel-ratio:0) { 
-					/* 
-						All webkit based devices styles
-						Note: Styling here will also render in Windows Phone 8.1 GDR1+
-					*/
+					/* All webkit based devices styles */
+				}
+				
+				@-moz-document url-prefix() {
+					/* Mozilla specific styles */
 				}
 				
 				@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -110,6 +111,7 @@
 					/* Devices with a pixel density of 1.5x (Slightly higher resolution) */
 				}
 				
+				/* Android 4.4 centre alignment fix */
 				div[style*="margin: 16px 0"] { margin:0 !important; font-size:100% !important; }
 
 			</style>
