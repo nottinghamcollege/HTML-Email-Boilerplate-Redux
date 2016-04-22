@@ -111,6 +111,12 @@
 					/* Devices with a pixel density of 1.5x (Slightly higher resolution) */
 				}
 				
+				@media only screen and (-webkit-min-device-pixel-ratio: 1.3),
+				only screen and (-o-min-device-pixel-ratio: 13/10),
+				only screen and (min-resolution: 120dpi) {
+					/* Targets all high DPI devices */
+				}
+				
 				/* Android 4.4 centre alignment fix */
 				div[style*="margin: 16px 0"] { margin:0 !important; font-size:100% !important; }
 
