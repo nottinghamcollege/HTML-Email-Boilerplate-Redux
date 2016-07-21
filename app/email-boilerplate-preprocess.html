@@ -45,13 +45,13 @@
 					span.MsoHyperlinkFollowed { mso-style-priority:99; color:inherit; }
 				</style>
 			<![endif]-->
-
+			<!-- @if ENABLE_MSO_FALLBACK_FONT=true -->
 			<!--[if mso]>
 				<style type="text/css">
 					body, h1, h2, h3, h4, h5, h6, p, a, table, td, span, strong { font-family:<!-- @echo MSO_DEFAULT_FALLBACK_FONT_STACK --> !important; }
 				</style>
 			<![endif]-->
-
+			<!-- @endif -->
 			<style type="text/css">
 				* { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; text-size-adjust:none; -webkit-text-size-adjust:none; -moz-text-size-adjust:none; -ms-text-size-adjust:none; }
 				* img[tabindex="0"] + div { display:none !important; }
@@ -80,8 +80,10 @@
 				<!-- @endif -->
 				table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
 				table td { border-collapse:collapse; }
+				<!-- @if ENABLE_YAHOO_SHORTCUT_CSS_CLASSES=true -->
 				span.yshortcuts, a span.yshortcuts { color:#000000; background-color:none; border:none; } 
 				span.yshortcuts:hover, span.yshortcuts:active, span.yshortcuts:focus { color:#000000; background-color:transparent; border:none; }
+				<!-- @endif -->
 				.appleLinksWhite a { color:#ffffff !important; text-decoration:none !important; }
 				.appleLinksBlack a { color:#000000 !important; text-decoration:none !important; }
 				a[x-apple-data-detectors] { color:inherit !important; text-decoration:none !important; font-size:inherit !important; font-family:inherit !important; font-weight:inherit !important; line-height:inherit !important; }
