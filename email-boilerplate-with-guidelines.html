@@ -41,6 +41,8 @@
 				- Favicon
 				- Fix images in Outlook when using DPI scaling on Windows
 				- MSO font stack override
+				- MSO Normalise <li> spacing
+				- MSO prevent the colour of visited links being modified
 				- Cascading Style Sheets
 					- CSS reset for fixing various email client quirks
 					- Media Queries
@@ -234,6 +236,20 @@
 			<!--[if gte mso 9]>
 				<style style="text/css">
 					li { text-indent:-1em; }
+				</style>
+			<![endif]-->
+
+			<!-- 
+				RESET VISITED COLOUR LINKS IN OUTLOOK ON WINDOWS:
+				https://litmus.com/community/discussions/4164-outlook-07-13-visited-link-color-fix
+
+				Prevent changing colour of visited links in Outlook
+			-->
+
+			<!--[if gte mso 9]>
+				<style style="text/css">
+					span.MsoHyperlink { mso-style-priority:99; color:inherit; }
+					span.MsoHyperlinkFollowed { mso-style-priority:99; color:inherit; }
 				</style>
 			<![endif]-->
 
