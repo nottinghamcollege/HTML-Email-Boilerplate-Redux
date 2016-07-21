@@ -1,0 +1,20 @@
+{
+  "name": "html-email-boilerplate-redux",
+  "version": "1.0.0",
+  "description": "HTML Email Boilerplate for email developers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/centralcollegenottingham/HTML-Email-Boilerplate-Redux.git"
+  },
+  "author": "James White <james.white@centralnottingham.ac.uk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/centralcollegenottingham/HTML-Email-Boilerplate-Redux/issues"
+  },
+  "homepage": "https://github.com/centralcollegenottingham/HTML-Email-Boilerplate-Redux",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-preprocess": "^2.0.0",
+    "gulp-rename": "^1.2.2"
+  }
+}
