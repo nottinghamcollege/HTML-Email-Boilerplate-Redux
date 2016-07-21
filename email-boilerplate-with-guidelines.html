@@ -37,6 +37,7 @@
 				- Document Title
 				- Favicon
 				- Fix images in Outlook when using DPI scaling on Windows
+				- MSO font stack override
 				- Cascading Style Sheets
 					- CSS reset for fixing various email client quirks
 					- Minimum font size for the iPhone and iPad
@@ -212,6 +213,22 @@
 						<o:PixelsPerInch>96</o:PixelsPerInch>
 					</o:OfficeDocumentSettings>
 				</xml>
+			<![endif]-->
+
+			<!--
+				MSO FONT STACK OVERRIDE:
+				https://www.emailonacid.com/blog/article/email-development/custom-font-stacks-in-outlook
+				https://litmus.com/community/discussions/36-outlook-and-fallback-fonts
+				https://litmus.com/community/discussions/982-outlook-overrides-font-to-times-new-roman
+
+				When using web fonts, Outlook (Windows) can be very picky using the fallback font and in some cases defaults to Times New Roman
+				Using an MSO conditional you can target HTML tags that will contain text content and override the font stack globally.
+			-->
+
+			<!--[if mso]>
+				<style type="text/css">
+					body, h1, h2, h3, h4, h5, h6, p, a, table, td, span, strong { font-family:Helvetica, Arial, sans-serif !important; }
+				</style>
 			<![endif]-->
 
 			<!--
