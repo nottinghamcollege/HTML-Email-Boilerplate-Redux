@@ -268,11 +268,11 @@
 				THE BASICS - Resolve some troublesome quirks from the get-go
 				************************************************************/
 
-				/* Improve font rendering on supported devices */
 				* { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; text-size-adjust:none; -webkit-text-size-adjust:none; -moz-text-size-adjust:none; -ms-text-size-adjust:none; }
+				/* Improve font rendering on supported devices */
 
-				/* Remove download icon on images in Gmail */
 				* img[tabindex="0"] + div { display:none !important; }
+				/* Remove download icon on images in Gmail */
 
 				#outlook a { padding:0; } 
 				/* Force Outlook to display view in browser link */
@@ -280,11 +280,8 @@
 				body { width:100% !important; height:100% !important; margin:0 auto !important; padding:0 !important; } 
 				/* Stop Wekbit and Windows Phone changing the font size */
 
-				.ReadMsgBody { width:100%; }
+				.ReadMsgBody, .ExternalClass { width:100%; }
 				/* Force hotmail/outlook.com to display at full width (outer div) */
-
-				.ExternalClass { width:100%; } 
-				/* Force hotmail/outlook.com to display at full width (inner div) */
 
 				.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height:100%; }
 				/* Fix the line-height bug in hotmail/outlook.com */
