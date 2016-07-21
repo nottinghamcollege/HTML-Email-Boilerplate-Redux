@@ -7,7 +7,7 @@ There are various email boilerplate templates around, however Central College No
 
 We refer to our email boilerplate as a redux of the [original HTML Email Boilerplate](http://htmlemailboilerplate.com/)
 
-## What does our redux version of the HTML email boilerplate include?
+## Main Features:
 
 As well as creating a solid foundation for any email campaign, our boilerplate also focuses on the following areas:
 
@@ -17,6 +17,7 @@ As well as creating a solid foundation for any email campaign, our boilerplate a
 * Improved Windows Phone 7/8/8.1 compatibility
 * Improved Office 365 (OWA) compatibility (Microsoft have since improved the rendering standards of OWA [in the October 2014 update](http://blogs.office.com/2014/10/14/improving-outlook-web-app-options-settings-2/))
 * Android 4.4 centring fix
+* More robust method of stopping iOS data links
 
 As well as fixing other email client quirks that have been discovered.
 
