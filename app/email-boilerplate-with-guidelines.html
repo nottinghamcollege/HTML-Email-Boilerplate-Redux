@@ -327,7 +327,7 @@
 				.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height:100%; }
 				/* Fix the line-height bug in hotmail/outlook.com */
 
-				#wrappertable { margin:0; padding:0; width:100% !important; line-height:100% !important; }
+				#main-wrapper { margin:0; padding:0; width:100% !important; line-height:100% !important; }
 				/* In case the body tag is removed (Gmail etc..)*/
 				
 				/**********************************************************************************
@@ -637,7 +637,7 @@
 		-->
 
 		<!-- WRAPPER TABLE -->
-		<table border="0" cellpadding="0" cellspacing="0" width="100%" id="wrappertable" style="table-layout:fixed; min-width:100%;">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%" id="main-wrapper" style="table-layout:fixed; min-width:100%;">
 			<tr>
 				<!--
 					ALIGNING LAYOUTS TO THE CENTRE:
@@ -645,7 +645,7 @@
 					Using the wrapping table cell approach is a clean way of doing it, removing the need for any <center> or <div> tags.
 					It does mean however you'll need to use the align attribute on all table cells within to avoid content being centered.
 				-->
-				<td align="center" valign="top" id="wrappercell">
+				<td align="center" valign="top" id="main-cell">
                     
                     <!--
 						DEFINE YOUR LAYOUT APPROACH:
@@ -665,9 +665,9 @@
                     -->
 
 					<!-- CONTAINER TABLE -->
-					<table border="0" cellpadding="0" cellspacing="0" width="600" align="center" style="width:600px;" id="containertable">
+					<table border="0" cellpadding="0" cellspacing="0" width="600" align="center" style="width:600px;" id="container-wrap">
 						<tr>
-							<td align="left" valign="top" id="containercell">
+							<td align="left" valign="top" id="container-cell">
 								<!--
 									PREVENT GMAIL APP AUTO-FIT/ZOOMING:
 									https://support.google.com/mail/answer/2951689

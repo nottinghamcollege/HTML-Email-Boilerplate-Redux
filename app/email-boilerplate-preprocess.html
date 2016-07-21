@@ -62,7 +62,7 @@
 				<!-- @endif -->
 				.ReadMsgBody, .ExternalClass { width:100%; }
 				.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height:100%; }
-				#wrappertable { margin:0; padding:0; width:100% !important; line-height:100% !important; }
+				#main-wrapper { margin:0; padding:0; width:100% !important; line-height:100% !important; }
 				a, a:link { color:<!-- @echo DEFAULT_ANCHOR_COLOUR -->; text-decoration:underline; }
 				<!-- @if ENABLE_VISITED_ANCHOR_CSS=true -->
 				a:visited { color:<!-- @echo DEFAULT_ANCHOR_COLOUR -->; text-decoration:none; } 
@@ -124,12 +124,12 @@
 		<!-- @if ENABLE_PREHEADER=true -->
 		<span style="display:none !important; color:#ffffff; font-size:1px; line-height:0; overflow:hidden; mso-hide:all;"><!-- @echo PREHEADER_TEXT --></span>
 		<!-- @endif -->
-		<table border="0" cellpadding="0" cellspacing="0" width="100%" id="wrappertable" style="table-layout:fixed; min-width:100%;">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%" id="main-wrapper" style="table-layout:fixed; min-width:100%;">
 			<tr>
-				<td align="center" valign="top" id="wrappercell">
-					<table border="0" cellpadding="0" cellspacing="0" width="<!-- @echo TABLE_CONTAINER_WIDTH -->" id="containertable" align="center" style="width:<!-- @echo TABLE_CONTAINER_WIDTH -->px;">
+				<td align="center" valign="top" id="main-cell">
+					<table border="0" cellpadding="0" cellspacing="0" width="<!-- @echo TABLE_CONTAINER_WIDTH -->" id="container-wrapper" align="center" style="width:<!-- @echo TABLE_CONTAINER_WIDTH -->px;">
 						<tr>
-							<td align="left" valign="top" id="containercell">
+							<td align="left" valign="top" id="container-cell">
 								<!-- @if ENABLE_GMAIL_ANDROID_FIX=true -->
 								<table border="0" cellpadding="0" cellspacing="0" width="100%" id="gmailapp-android-fix" style="mso-hide:all;">
 									<tr>
