@@ -26,15 +26,15 @@ As well as fixing other email client quirks that have been discovered.
 Our boilerplate is split into two versions, stable and experimental. Previously this was managed by creating different HTML document versions, however since [
 1bc2b35](https://github.com/centralcollegenottingham/HTML-Email-Boilerplate-Redux/commit/1bc2b35d4e4730eb4aea203f2d8fded1a93ec0d9) this is now done via branches in the Git repo.
 
-### Develop branch
+### Develop branch (Experimental)
 
 This is the latest/bleeding edge version of the email boilerplate, experimental code that needs testing will appear here first, it provides a branch for testers/curious users to check out the very latest developments of the email boilerplate, but be warned, email client compatibility is not guaranteed on develop.
 
-**It is strongly recommended that you NEVER use the develop version of the boilerplate in a live email campaign. The develop version may not have been tested thoroughly and hence its cross email client compatibility is not guaranteed. Always use the master branch!**
+**It is strongly recommended that you NEVER use the develop version of the email boilerplate in a live email campaign. The develop version may not have been tested thoroughly and hence its cross email client compatibility is not guaranteed. Always use the master branch!**
 
-### Master branch (default branch)
+### Master branch (Stable)
 
-This is the stable version of the boilerplate which should be used in email campaigns. 
+This is the stable version of the boilerplate which should be used in email campaigns. It is also the default branch.
 
 **Note:** Always use the "without guidelines" version in any email campaign.
 
