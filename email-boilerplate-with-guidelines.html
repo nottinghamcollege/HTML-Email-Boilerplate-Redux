@@ -225,6 +225,19 @@
 			<![endif]-->
 
 			<!--
+				NORMALISE LIST ITEM SPACING IN OUTLOOK ON WINDOWS:
+				https://litmus.com/community/discussions/1093-bulletproof-lists-using-ul-and-li
+
+				When using the <li> tag, include this specific MSO code to fix the spacing
+			-->
+
+			<!--[if gte mso 9]>
+				<style style="text/css">
+					li { text-indent:-1em; }
+				</style>
+			<![endif]-->
+
+			<!--
 				MSO FONT STACK OVERRIDE:
 				https://www.emailonacid.com/blog/article/email-development/custom-font-stacks-in-outlook
 				https://litmus.com/community/discussions/36-outlook-and-fallback-fonts
