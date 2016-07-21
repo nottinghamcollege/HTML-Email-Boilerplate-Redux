@@ -34,6 +34,7 @@
 				- Character Encoding
 				- Document Mode
 				- Viewport Setting
+				- Robots (prevent indexing)
 				- Document Title
 				- Favicon
 				- Fix images in Outlook when using DPI scaling on Windows
@@ -179,6 +180,14 @@
 				Not including it however can make some mobile email clients render the desktop version or appear zoomed out.
 			-->
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+			<!--
+				PREVENT INDEXING:
+				https://support.google.com/webmasters/answer/93710?hl=en
+
+				Prevents your email campaign from being accidentally indexed.
+			-->
+			<meta name="robots" content="noindex, nofollow" />
 
 			<!--
 				DOCUMENT TITLE:
