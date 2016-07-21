@@ -278,10 +278,13 @@
 				/* Force Outlook to display view in browser link */
 
 				body { width:100% !important; height:100% !important; margin:0 auto !important; padding:0 !important; } 
-				/* Stop Wekbit and Windows Phone changing the font size */
+				/* Reset main body element to fix alignment issues in some clients */
+
+				.aolReplacedBody {  }
+				/* Prefix any CSS with this class to target the AOL Webmail client */
 
 				.ReadMsgBody, .ExternalClass { width:100%; }
-				/* Force hotmail/outlook.com to display at full width (outer div) */
+				/* Force hotmail/outlook.com to display at full width */
 
 				.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height:100%; }
 				/* Fix the line-height bug in hotmail/outlook.com */
