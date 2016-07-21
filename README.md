@@ -22,31 +22,33 @@ As well as fixing other email client quirks that have been discovered.
 
 ## Usage:
 
-Our boilerplate is split into two versions, stable and experimental. There are two variants of the stable boilerplate and one variant of the experimental boilerplate.
+Our boilerplate is split into two versions, stable and experimental. Previously this was managed by creating different HTML document versions, however since [
+1bc2b35](https://github.com/centralcollegenottingham/HTML-Email-Boilerplate-Redux/commit/1bc2b35d4e4730eb4aea203f2d8fded1a93ec0d9) this is now done via branches in the Git repo.
 
-* [Stable with guidelines](https://raw.githubusercontent.com/centralcollegenottingham/html-email-boilerplate-redux/master/htmlemail-boilerplate-stable-with-guidelines.html) - Commented version for guideline purposes
-* [Stable without guidelines](https://raw.githubusercontent.com/centralcollegenottingham/html-email-boilerplate-redux/master/htmlemail-boilerplate-stable-without-guidelines.html) - Version to use in live email campaigns
-* [Experimental without guidelines](https://raw.githubusercontent.com/centralcollegenottingham/html-email-boilerplate-redux/master/htmlemail-boilerplate-experimental-without-guidelines.html) - Bleeding edge version to test new developments
+### Develop branch
 
-### Stable
+This is the latest/bleeding edge version of the email boilerplate, experimental code that needs testing will appear here first, it provides a branch for testers/curious users to check out the very latest developments of the email boilerplate, but be warned, email client compatibility is not guaranteed on develop.
 
-The two variants of the stable boilerplate are essentially the same, the main difference is one features lots of comments for guideline purposes (with guidelines), while the other is simply the same document but without any HTML/CSS comments (without guidelines), which is the version you should use in your own email campaigns.
+**It is strongly recommended that you NEVER use the develop version of the boilerplate in a live email campaign. The develop version may not have been tested thoroughly and hence its cross email client compatibility is not guaranteed. Always use the master branch!**
 
-**Never use the guidelines version in a live email campaign, as HTML/CSS comments play havoc with spam filters and even cause emails to appear blank in a few clients!**
+### Master branch (default branch)
 
-### Experimental
+This is the stable version of the boilerplate which should be used in email campaigns. 
 
-The experimental version of the boilerplate is essentially a bleeding edge test ground. As things change in the email client world, new code needs to be tested. This version provides a perfect base for this without disrupting the stability and original purpose of the stable boilerplate.
+**Note:** Always use the "without guidelines" version in any email campaign.
 
-New code that hasn't been tested thoroughly will appear on the experimental version first. If the newly added code passes our own QA tests it will eventually make its way to the stable version. Sometimes if experimental code doesn't pass such tests, it will just be removed entirely without going near the stable version.
+### Guidelines
 
-**It is strongly recommended that you NEVER use the experimental version of the boilerplate in a live email campaign. The experimental version may not have been tested thoroughly and hence its cross email client compatibility is not guaranteed. Always use the stable version!**
+Two versions of the email boilerplate exist, one version is full of HTML/CSS comments that details every aspect of the code, the other is the same code but with all the comments stripped out.
+
+**Never use the guidelines version in a live email campaign, as HTML/CSS comments play havoc with spam filters and even cause emails to appear blank in a few clients! You will also be adding unnecessary bloat to your HTML as well **
+
 
 ## License:
 
 The MIT License (MIT)
 
-Copyright (c) 2014 - 2015 Central College Nottingham
+Copyright (c) 2014 - 2016 Central College Nottingham
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
