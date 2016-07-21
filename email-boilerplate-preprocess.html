@@ -1,16 +1,31 @@
+<!-- @if DOCTYPE_VERSION='XHTML_TRANSITIONAL' -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- @endif -->
+<!-- @if DOCTYPE_VERSION='XHTML_STRICT' -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- @endif -->
+<!-- @if DOCTYPE_VERSION='HTML5' -->
+<!DOCTYPE html>
+<!-- @endif -->
 	<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 		<head>
+			<!-- @if DOCTYPE_VERSION!='HTML5' -->
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<!-- @endif -->
+			<!-- @if DOCTYPE_VERSION='HTML5' -->
+			<meta charset="utf-8" />
+			<!-- @endif -->			
 			<!--[if !mso]><!-->
 			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 			<!--<![endif]-->
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
 			<meta name="robots" content="noindex, nofollow" />
 
-			<title>Central College Nottingham</title>
+			<title><!-- @echo DOCUMENT_TITLE --></title>
             
-			<link rel="icon" type="image/x-icon" href="http://media.centralnottingham.ac.uk/favicon.ico" />
+			<!-- @if ENABLE_FAVICON=true -->
+			<link rel="icon" type="image/x-icon" href="<!-- @echo FAVICON_URL -->" />
+			<!-- @endif -->
 
 			<!--[if gte mso 9]>
 				<xml>
@@ -86,13 +101,16 @@
 		</head>
 
 	<body>
-		<span style="display:none !important; color:#ffffff; font-size:1px; line-height:0; overflow:hidden; mso-hide:all;">Preheader text here</span>
+		<!-- @if ENABLE_PREHEADER=true -->
+		<span style="display:none !important; color:#ffffff; font-size:1px; line-height:0; overflow:hidden; mso-hide:all;"><!-- @echo PREHEADER_TEXT --></span>
+		<!-- @endif -->
 		<table border="0" cellpadding="0" cellspacing="0" width="100%" id="wrappertable" style="table-layout:fixed; min-width:100%;">
 			<tr>
 				<td align="center" valign="top" id="wrappercell">
 					<table border="0" cellpadding="0" cellspacing="0" width="600" id="containertable" align="center" style="width:600px;">
 						<tr>
 							<td align="left" valign="top" id="containercell">
+								<!-- @if ENABLE_GMAIL_ANDROID_FIX=true -->
 								<table border="0" cellpadding="0" cellspacing="0" width="100%" id="gmailapp-android-fix" style="mso-hide:all;">
 									<tr>
 										<td align="left" valign="top" height="1" style="line-height:1px; height:1px; min-width:600px;">
@@ -100,16 +118,19 @@
 										</td>
 									</tr>
 								</table>
+								<!-- @endif -->
 							</td>
 						</tr>
 					</table>
 				</td>
 			</tr>
 		</table>
+		<!-- @if ENABLE_GMAIL_IOS_FONT_FIX=true -->
 		<div style="display:none; white-space:nowrap; font:15px courier; line-height:0; mso-hide:all;">
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 		</div>
+		<!-- @endif -->
 	</body>
 </html>
