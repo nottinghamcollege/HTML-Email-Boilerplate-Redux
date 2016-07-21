@@ -396,8 +396,15 @@
 				
 				@media screen and (-webkit-min-device-pixel-ratio:0) {
 					/* 
-						Detect WebKit based clients.
-						NOTE: Windows Phone 8.1 GDR1 and above will also parse CSS in this query due to changes to IE Mobile.
+						Detect WebKit based clients, including:
+						
+						* Apple iOS
+						* Opera 15+
+						* Google Chrome
+						* Android Email Client (4.4 and below)
+						* Outlook for Mac 2011/2016
+
+						NOTE: Windows Phone 8.1 GDR1 and subsequent updates within the 8.1 branch also parse CSS in this query due to changes to IE Mobile.
 						https://msdn.microsoft.com/en-us/library/dn736066%28v=vs.85%29.aspx
 					*/
 
