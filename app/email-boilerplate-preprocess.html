@@ -27,6 +27,7 @@
 			<link rel="icon" type="image/x-icon" href="<!-- @echo FAVICON_URL -->" />
 			<!-- @endif -->
 
+			<!-- @if ENABLE_MSO_DPI_SCALING_FIX=true -->
 			<!--[if gte mso 9]>
 				<xml>
 				  <o:OfficeDocumentSettings>
@@ -35,6 +36,7 @@
 				 </o:OfficeDocumentSettings>
 				</xml>
 			<![endif]-->
+			<!-- @endif -->
 
 			<!--[if gte mso 9]>
 				<style style="text/css">
@@ -46,7 +48,7 @@
 
 			<!--[if mso]>
 				<style type="text/css">
-					body, h1, h2, h3, h4, h5, h6, p, a, table, td, span, strong { font-family:Helvetica, Arial, sans-serif !important; }
+					body, h1, h2, h3, h4, h5, h6, p, a, table, td, span, strong { font-family:<!-- @echo MSO_DEFAULT_FALLBACK_FONT_STACK --> !important; }
 				</style>
 			<![endif]-->
 
@@ -55,20 +57,27 @@
 				* img[tabindex="0"] + div { display:none !important; }
 				#outlook a { padding:0; }
 				body { width:100% !important; height:100% !important; margin:0 auto !important; padding:0 !important; }
-				/* @if ENABLE_AOL_WEBMAIL_CSS_CLASS=true */
+				<!-- @if ENABLE_AOL_WEBMAIL_CSS_CLASS=true -->
 				.aolReplacedBody {  }
-				/* @endif */
+				<!-- @endif -->
 				.ReadMsgBody, .ExternalClass { width:100%; }
 				.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height:100%; }
 				#wrappertable { margin:0; padding:0; width:100% !important; line-height:100% !important; }
 				a, a:link { color:#e6057f; text-decoration:underline; }
+				<!-- @if ENABLE_VISITED_ANCHOR_CSS=true -->
+				a:visited { color:#3c96e2; text-decoration:none; } 
+				a:focus { color:#3c96e2; text-decoration:underline; }  
+				a:hover { color:#3c96e2; text-decoration:underline; }
+				<!-- @endif -->
 				a img { border:none; }
 				img { display:block; border:none; outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; }
 				p { margin:1em 0; }
+				<!-- @if ENABLE_HEADER_SELECTORS_CSS=true -->
 				h1, h2, h3, h4, h5, h6 { color:black !important; }
 				h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color:blue !important; }
 				h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active { color:red !important; }
 				h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited { color:purple !important; }
+				<!-- @endif -->
 				table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
 				table td { border-collapse:collapse; }
 				span.yshortcuts, a span.yshortcuts { color:#000000; background-color:none; border:none; } 
@@ -77,10 +86,16 @@
 				.appleLinksBlack a { color:#000000 !important; text-decoration:none !important; }
 				a[x-apple-data-detectors] { color:inherit !important; text-decoration:none !important; font-size:inherit !important; font-family:inherit !important; font-weight:inherit !important; line-height:inherit !important; }
 				
+				<!-- @if ENABLE_MEDIA_SCREEN_QUERY=true -->
+				@media screen {
+
+				}
+				<!-- @endif -->
+				<!-- @if ENABLE_WEBKIT_DETECTION_QUERY=true -->
 				@media screen and (-webkit-min-device-pixel-ratio:0) { 
 
 				}
-
+				<!-- @endif -->
 				@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 
 				}
@@ -110,14 +125,14 @@
 		<table border="0" cellpadding="0" cellspacing="0" width="100%" id="wrappertable" style="table-layout:fixed; min-width:100%;">
 			<tr>
 				<td align="center" valign="top" id="wrappercell">
-					<table border="0" cellpadding="0" cellspacing="0" width="600" id="containertable" align="center" style="width:600px;">
+					<table border="0" cellpadding="0" cellspacing="0" width="<!-- @echo TABLE_CONTAINER_WIDTH -->" id="containertable" align="center" style="width:<!-- @echo TABLE_CONTAINER_WIDTH -->px;">
 						<tr>
 							<td align="left" valign="top" id="containercell">
 								<!-- @if ENABLE_GMAIL_ANDROID_FIX=true -->
 								<table border="0" cellpadding="0" cellspacing="0" width="100%" id="gmailapp-android-fix" style="mso-hide:all;">
 									<tr>
-										<td align="left" valign="top" height="1" style="line-height:1px; height:1px; min-width:600px;">
-											<img src="http://media.centralnottingham.ac.uk/App_Media/SNC/emailers/600x1-spacer.gif" alt="" style="display:block; min-width:600px;" width="600" height="1" />
+										<td align="left" valign="top" height="1" style="line-height:1px; height:1px; min-width:<!-- @echo TABLE_CONTAINER_WIDTH -->px;">
+											<img src="<!-- @echo PLACEHOLDER_IMG_URL -->/<!-- @echo TABLE_CONTAINER_WIDTH -->x1.gif" alt="" style="display:block; min-width:<!-- @echo TABLE_CONTAINER_WIDTH -->px;" width="<!-- @echo TABLE_CONTAINER_WIDTH -->" height="1" />
 										</td>
 									</tr>
 								</table>

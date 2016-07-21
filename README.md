@@ -24,11 +24,11 @@ As well as fixing other email client quirks that have been discovered.
 
 ## Usage:
 
-This project uses `npm` and `gulp` packages to produce a production ready version of the email boilerplate. Originally the project began as static HTML files, however overtime this become a problem where dynamic elements where needed. i.e. toggling code blocks on/off, variable values etc. This has led to using various `gulp` related packages to fill this requirement.
+This project uses `npm` and `gulp` packages to produce a customised and production ready version of the email boilerplate. Originally the project began as static HTML files, however overtime this become a problem where dynamic elements were needed. e.g. toggling code blocks on/off, variable values etc. This has led to using various `gulp` related packages to fill this requirement.
 
 1. Install `npm`
 2. Clone the git source of this project and run `npm i` to install the required packages
-3. Modify the variables in `gulpfile.js` to your requirements
+3. Modify the variables in `gulpfile.js` to your requirements. Mostly booleans or string values.
 4. Run `gulp` to build the email boilerplate
 5. The email boilerplate will be written to `dist/email-boilerplate-without-guidelines.html`
 
@@ -37,7 +37,7 @@ The email boilerplate itself is split into two versions, experimental and stable
 
 ### Develop branch (Experimental)
 
-This is the latest/bleeding edge version of the email boilerplate, experimental code that needs testing will appear here first, it provides a branch for testers/curious users to check out the very latest developments of the email boilerplate, but be warned, email client compatibility is not guaranteed on develop.
+This is the latest/bleeding edge version of the email boilerplate, experimental code that needs testing will appear here first, it provides a branch for testers/curious users to check out the very latest developments of the email boilerplate, but be warned, email client compatibility is not guaranteed on develop because its more of a pre-release branch.
 
 **It is strongly recommended that you NEVER use the develop version of the email boilerplate in a live email campaign. The develop version may not have been tested thoroughly and hence its cross email client compatibility is not guaranteed. Always use the master branch!**
 
@@ -47,7 +47,7 @@ This is the stable version of the boilerplate which should be used in email camp
 
 ### Guidelines
 
-Two versions of the email boilerplate exist, one version is full of HTML/CSS comments that details every aspect of the code, the other is a preprocess version which has all of the HTML/CSS comments removed, but contains variables and conditional logic ready to be built with `gulp`.
+Two versions of the email boilerplate exist, one version is static full of HTML/CSS comments that details every aspect of the code, the other is a preprocess version which has all of the HTML/CSS comments removed, but contains variables and conditional logic ready to be built with `gulp`.
 
 In order to maintain accessibility of the project, the guidelines version is provided outside of any `npm` control allowing you to view the full email boilerplate and documentation without having to install anything if you do not wish to use `npm`.
 
