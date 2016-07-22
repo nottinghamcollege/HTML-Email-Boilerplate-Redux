@@ -1,7 +1,7 @@
 // Dependencies
 var gulp = require('gulp');
 var preprocess = require('gulp-preprocess');
-var rename = require("gulp-rename");
+var rename = require('gulp-rename');
  
 gulp.task('default', function() {
     var preprocess_template_file = 'app/email-boilerplate-preprocess.html';
@@ -12,6 +12,7 @@ gulp.task('default', function() {
                 {
                     // 
                     // Pre-processing variables for customisation of email boilerplate template
+                    // See USAGE.md for further information on these configuration variables
                     //
 
                     // DOCTYPE, HEAD AND META
@@ -29,18 +30,27 @@ gulp.task('default', function() {
                     ENABLE_AOL_WEBMAIL_CSS_CLASS: false,
                     DEFAULT_ANCHOR_COLOUR: '#e6057f',
                     DEFAULT_ANCHOR_VISITED_COLOUR: '#ff0000',
-                    ENABLE_VISITED_ANCHOR_CSS: false, // Not all email clients support this styling
+                    ENABLE_VISITED_ANCHOR_CSS: false,
                     ENABLE_HEADER_SELECTORS_CSS: false,
-                    ENABLE_YAHOO_SHORTCUT_CSS_CLASSES: false,
+                    ENABLE_YAHOO_SHORTCUTS_CSS: false,
 
                     // CSS3 MEDIA QUERIES
                     ENABLE_MEDIA_SCREEN_QUERY: true,
+                    ENABLE_YAHOO_MEDIA_QUERY: false,
+                    ENABLE_IE_10_11_MEDIA_QUERY: false,
                     ENABLE_WEBKIT_DETECTION_QUERY: false,
+                    ENABLE_MAX_DEVICE_WIDTH_MEDIA_QUERY: true,
+                    ENABLE_RETINA_3X_MEDIA_QUERY: false,
+                    ENABLE_RETINA_2X_MEDIA_QUERY: false,
+                    ENABLE_RETINA_1X_MEDIA_QUERY: false,
+
+                    // Other CSS
+                    ENABLE_ANDROID_4_4_CENTRE_FIX: true,
 
                     // MAIN BODY
                     ENABLE_PREHEADER: true,
-                    PREHEADER_TEXT: 'Example Preheader text here',
-                    TABLE_CONTAINER_WIDTH: '600', // px is included in the source
+                    PREHEADER_TEXT: 'Example Preheader text',
+                    TABLE_CONTAINER_WIDTH: 600,
                     ENABLE_GMAIL_ANDROID_FIX: true,
                     ENABLE_GMAIL_IOS_FONT_FIX: true,
 
@@ -49,7 +59,7 @@ gulp.task('default', function() {
                 }
             }
         ))
-    .pipe(rename("email-boilerplate-without-guidelines.html"))
+    .pipe(rename('email-boilerplate-without-guidelines.html'))
     .pipe(gulp.dest('./dist/'))
 
     gulp.watch(preprocess_template_file), ['default'];

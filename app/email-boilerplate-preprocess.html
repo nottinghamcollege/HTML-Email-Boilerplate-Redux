@@ -45,6 +45,7 @@
 					span.MsoHyperlinkFollowed { mso-style-priority:99; color:inherit; }
 				</style>
 			<![endif]-->
+
 			<!-- @if ENABLE_MSO_FALLBACK_FONT=true -->
 			<!--[if mso]>
 				<style type="text/css">
@@ -52,6 +53,7 @@
 				</style>
 			<![endif]-->
 			<!-- @endif -->
+
 			<style type="text/css">
 				* { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; text-size-adjust:none; -webkit-text-size-adjust:none; -moz-text-size-adjust:none; -ms-text-size-adjust:none; }
 				* img[tabindex="0"] + div { display:none !important; }
@@ -80,7 +82,7 @@
 				<!-- @endif -->
 				table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
 				table td { border-collapse:collapse; }
-				<!-- @if ENABLE_YAHOO_SHORTCUT_CSS_CLASSES=true -->
+				<!-- @if ENABLE_YAHOO_SHORTCUTS_CSS=true -->
 				span.yshortcuts, a span.yshortcuts { color:#000000; background-color:none; border:none; } 
 				span.yshortcuts:hover, span.yshortcuts:active, span.yshortcuts:focus { color:#000000; background-color:transparent; border:none; }
 				<!-- @endif -->
@@ -93,28 +95,52 @@
 
 				}
 				<!-- @endif -->
+
+				<!-- @if ENABLE_YAHOO_MEDIA_QUERY=true -->
+				@media yahoo {
+
+				}
+				<!-- @endif -->
+
+				<!-- @if ENABLE_IE_10_11_MEDIA_QUERY=true -->
+				@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { 
+
+				}
+				<!-- @endif -->
+
 				<!-- @if ENABLE_WEBKIT_DETECTION_QUERY=true -->
 				@media screen and (-webkit-min-device-pixel-ratio:0) { 
 
 				}
 				<!-- @endif -->
-				@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 
-				}
-
-				@media screen and (max-device-width: 480px), screen and (max-width: 480px) {
+				<!-- @if ENABLE_MAX_DEVICE_WIDTH_MEDIA_QUERY=true -->
+				@media screen and (max-device-width: <!-- @echo TABLE_CONTAINER_WIDTH -->px), screen and (max-width: <!-- @echo TABLE_CONTAINER_WIDTH -->px) {
     
 				}
+				<!-- @endif -->
 
+				<!-- @if ENABLE_RETINA_3X_MEDIA_QUERY=true -->
+				@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+
+ 				}
+ 				<!-- @endif -->
+
+				<!-- @if ENABLE_RETINA_2X_MEDIA_QUERY=true -->
 				@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
                 
 				}
+				<!-- @endif -->
 
-				@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) { 
+				<!-- @if ENABLE_RETINA_1X_MEDIA_QUERY=true -->
+				@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) { 
      
 				}
-				
+				<!-- @endif -->
+
+				<!-- @if ENABLE_ANDROID_4_4_CENTRE_FIX=true -->
 				div[style*="margin: 16px 0"] { margin:0 !important; font-size:100% !important; }
+				<!-- @endif -->
 
 			</style>
 
@@ -146,7 +172,7 @@
 			</tr>
 		</table>
 		<!-- @if ENABLE_GMAIL_IOS_FONT_FIX=true -->
-		<div style="display:none; white-space:nowrap; font:15px courier; line-height:0; mso-hide:all;">
+		<div id="gmailapp-ios-font-fix" style="display:none; white-space:nowrap; font:15px courier; line-height:0; mso-hide:all;">
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
