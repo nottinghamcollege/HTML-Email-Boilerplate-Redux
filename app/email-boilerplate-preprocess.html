@@ -4,21 +4,31 @@
 <!-- @if DOCTYPE_VERSION='XHTML_STRICT' -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!-- @endif -->
+<!-- @if DOCTYPE_VERSION='HTML4' -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- @endif -->
 <!-- @if DOCTYPE_VERSION='HTML5' -->
 <!DOCTYPE html>
 <!-- @endif -->
-	<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+	<html lang="en" <!-- @if ENABLE_VML_NAMESPACES=true --> xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" <!-- @endif -->>
 		<head>
 			<!-- @if DOCTYPE_VERSION!='HTML5' -->
-			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<meta http-equiv="Content-Type" content="text/html; charset=<!-- @echo CHARSET -->" />
 			<!-- @endif -->
 			<!-- @if DOCTYPE_VERSION='HTML5' -->
-			<meta charset="utf-8" />
-			<!-- @endif -->			
+			<meta charset="<!-- @echo CHARSET -->" />
+			<!-- @endif -->
+			<!-- @if ENABLE_XUA_COMPATIBLE_META_TAG=true -->	
 			<!--[if !mso]><!-->
-			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<meta http-equiv="X-UA-Compatible" content="<!-- @echo XAU_COMPATIBLE_VALUE -->" />
 			<!--<![endif]-->
-			<meta name="viewport" content="width=device-width, initial-scale=1" />
+			<!-- @endif -->
+			<!-- @if ENABLE_VIEWPORT_META_TAG=true -->
+			<meta name="viewport" content="<!-- @echo VIEWPORT_META_VALUE -->" />
+			<!-- @endif -->
+			<!-- @if ENABLE_FORMAT_DETECTION_META_TAG=true -->
+			<meta name="format-detection" content="<!-- @echo FORMAT_DETECTION_META_VALUE -->" />
+			<!-- @endif -->
 			<!-- @if ENABLE_ROBOTS_META_TAG=true -->
 			<meta name="robots" content="<!-- @echo ROBOTS_META_VALUE -->" />
 			<!-- @endif -->
@@ -40,6 +50,7 @@
 			<![endif]-->
 			<!-- @endif -->
 
+			<!-- @if ENABLE_MSO_CONDITIONAL_STYLING=true -->
 			<!--[if gte mso 9]>
 				<style style="text/css">
 					li { text-indent:-1em; }
@@ -47,6 +58,7 @@
 					span.MsoHyperlinkFollowed { mso-style-priority:99; color:inherit; }
 				</style>
 			<![endif]-->
+			<!-- @endif -->
 
 			<!-- @if ENABLE_MSO_FALLBACK_FONT=true -->
 			<!--[if mso]>
@@ -66,7 +78,7 @@
 				<!-- @endif -->
 				.ReadMsgBody, .ExternalClass { width:100%; }
 				.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height:100%; }
-				#main-wrapper { margin:0; padding:0; width:100% !important; line-height:100% !important; }
+				#<!-- @echo TABLE_WRAPPER_CSS_ID --> { margin:0; padding:0; width:100% !important; line-height:100% !important; }
 				a, a:link { color:<!-- @echo DEFAULT_ANCHOR_COLOUR -->; text-decoration:underline; }
 				<!-- @if ENABLE_VISITED_ANCHOR_CSS=true -->
 				a:visited { color:<!-- @echo DEFAULT_ANCHOR_COLOUR -->; text-decoration:none; } 
@@ -152,17 +164,17 @@
 		<!-- @if ENABLE_PREHEADER=true -->
 		<span style="display:none !important; color:#ffffff; font-size:1px; line-height:0; overflow:hidden; mso-hide:all;"><!-- @echo PREHEADER_TEXT --></span>
 		<!-- @endif -->
-		<table border="0" cellpadding="0" cellspacing="0" width="100%" id="main-wrapper" style="table-layout:fixed; min-width:100%;">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%" id="<!-- @echo TABLE_WRAPPER_CSS_ID -->" style="table-layout:fixed; min-width:100%;">
 			<tr>
-				<td align="center" valign="top" id="main-cell">
-					<table border="0" cellpadding="0" cellspacing="0"<!-- @if TABLE_CONTAINER_FIXED_WIDTH=true --> width="<!-- @echo TABLE_CONTAINER_WIDTH -->"<!-- @endif --> id="container-wrapper" align="center" style="<!-- @if TABLE_CONTAINER_FIXED_WIDTH=true -->width:<!-- @echo TABLE_CONTAINER_WIDTH -->px;<!-- @endif --> <!-- @if TABLE_CONTAINER_FIXED_WIDTH=false -->max-width:<!-- @echo TABLE_CONTAINER_WIDTH -->px;<!-- @endif -->">
+				<td align="center" valign="top" id="<!-- @echo TABLE_WRAPPER_CELL_CSS_ID -->">
+					<table border="0" cellpadding="0" cellspacing="0"<!-- @if TABLE_CONTAINER_FIXED_WIDTH=true --> width="<!-- @echo TABLE_CONTAINER_WIDTH -->"<!-- @endif --> id="<!-- @echo TABLE_CONTAINER_CSS_ID -->" align="center" style="<!-- @if TABLE_CONTAINER_FIXED_WIDTH=true -->width:<!-- @echo TABLE_CONTAINER_WIDTH -->px;<!-- @endif --> <!-- @if TABLE_CONTAINER_FIXED_WIDTH=false -->max-width:<!-- @echo TABLE_CONTAINER_WIDTH -->px;<!-- @endif -->">
 						<tr>
-							<td align="left" valign="top" id="container-cell">
+							<td align="left" valign="top" id="<!-- @echo TABLE_CONTAINER_CELL_CSS_ID -->">
 								<!-- @if TABLE_CONTAINER_FIXED_WIDTH=false -->
 								<!--[if (gte mso 9)|(IE)]>
-					            <table border="0" cellpadding="0" cellspacing="0" width="<!-- @echo TABLE_CONTAINER_WIDTH -->" style="width:<!-- @echo TABLE_CONTAINER_WIDTH -->px;">
+					            <table border="0" cellpadding="0" cellspacing="0" id="mso-ie-wrapper" width="<!-- @echo TABLE_CONTAINER_WIDTH -->" style="width:<!-- @echo TABLE_CONTAINER_WIDTH -->px;">
 					                <tr>
-					                    <td align="left" valign="top">
+					                    <td align="left" valign="top" id="mso-ie-cell">
 					            <![endif]-->
 					            <!-- @endif -->
 								<!-- @if ENABLE_GMAIL_ANDROID_FIX=true -->

@@ -18,7 +18,15 @@ gulp.task('default', function() {
                     // DOCTYPE, HEAD AND META
                     DOCTYPE_VERSION: 'XHTML_TRANSITIONAL',
                     LANGUAGE_CODE: 'en',
+                    ENABLE_VML_NAMESPACES: false,
+                    CHARSET: 'utf-8',
                     DOCUMENT_TITLE: 'Central College Nottingham',
+                    ENABLE_VIEWPORT_META_TAG: true,
+                    VIEWPORT_META_VALUE: 'width=device-width, initial-scale=1',
+                    ENABLE_FORMAT_DETECTION_META_TAG: false,
+                    FORMAT_DETECTION_META_VALUE: 'telephone=no',
+                    ENABLE_XUA_COMPATIBLE_META_TAG: true,
+                    XAU_COMPATIBLE_VALUE: 'IE=edge',
                     ENABLE_ROBOTS_META_TAG: false,
                     ROBOTS_META_VALUE: 'noindex, nofollow',
                     ENABLE_FAVICON: true,
@@ -26,6 +34,7 @@ gulp.task('default', function() {
 
                     // MSO CONDITIONAL CODE
                     ENABLE_MSO_DPI_SCALING_FIX: true,
+                    ENABLE_MSO_CONDITIONAL_STYLING: true,
                     ENABLE_MSO_FALLBACK_FONT: true,
                     MSO_DEFAULT_FALLBACK_FONT_STACK: 'Helvetica, Arial, sans-serif',
 
@@ -53,8 +62,13 @@ gulp.task('default', function() {
                     // MAIN BODY
                     ENABLE_PREHEADER: true,
                     PREHEADER_TEXT: 'Example Preheader text',
+                    TABLE_WRAPPER_CSS_ID: 'main-wrapper',
+                    TABLE_CONTAINER_CSS_ID: 'container-wrapper',
+                    TABLE_WRAPPER_CELL_CSS_ID: 'main-cell',
+                    TABLE_CONTAINER_CELL_CSS_ID: 'container-cell',
                     TABLE_CONTAINER_FIXED_WIDTH: true,
                     TABLE_CONTAINER_WIDTH: 600,
+                    TABLE_CONTAINER_ALIGN: 'centre',
                     ENABLE_GMAIL_ANDROID_FIX: true,
                     ENABLE_GMAIL_IOS_FONT_FIX: true,
 

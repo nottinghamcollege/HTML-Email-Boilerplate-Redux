@@ -9,14 +9,75 @@ The full list of configuration variables is below and their purpose.
 #### Main document
 
 ```
-DOCTYPE_VERSION: 'XHTML_TRANSITIONAL|XHTML_STRICT|HTML5' (default: XHTML_TRANSITIONAL)
+DOCTYPE_VERSION: 'XHTML_TRANSITIONAL|XHTML_STRICT|HTML4|HTML5' (default: XHTML_TRANSITIONAL)
 Purpose: Output a common doctype used in email templates
+```
+
+```
+LANGUAGE_CODE: string
+Purpose: Sets lang attribute value on root <html> tag
+Example: en
+```
+
+```
+ENABLE_VML_NAMESPACES: boolean (default: true)
+Purpose: Boolean to include VML namespaces on root <html> (needed for MSO specific code like VML)
+```
+
+```
+CHARSET: string
+Purpose: Sets desired character set for the document
+Example: utf-8
 ```
 
 ```
 DOCUMENT_TITLE: string
 Purpose: Ability to set a specific <title> for the HTML document
 Example: Central College Nottingham
+```
+
+```
+ENABLE_FORMAT_DETECTION_META_TAG: boolean (default: false)
+Purpose: Boolean to stop devices automatically converting data like phone numbers and addresses into ineteractive links
+```
+
+```
+FORMAT_DETECTION_META_VALUE: string
+Purpose: Provide data types to be ignored
+Example: telephone=no
+```
+
+```
+ENABLE_VIEWPORT_META_TAG: boolean (default: true)
+Purpose: Boolean to include the viewport meta tag
+```
+
+```
+VIEWPORT_META_VALUE: string
+Purpose: Ability to set a specific viewport value
+Example: width=device-width, initial-scale=1
+```
+
+```
+ENABLE_XUA_COMPATIBLE_META_TAG: boolean (default: true)
+Purpose: Force a document mode for Internet Explorer based clients
+```
+
+```
+XAU_COMPATIBLE_VALUE: string
+Purpose: Set a document mode for Internet Explore clients to always use
+Example: IE=edge
+```
+
+```
+ENABLE_ROBOTS_META_TAG: boolean (default: false)
+Purpose: Boolean to include a meta robots tag
+```                    
+
+```
+ROBOTS_META_VALUE: string
+Purpose: Provide a value for the meta robots tags
+Example: noindex, nofollow
 ```
 
 ```
@@ -145,6 +206,30 @@ Example: Example Preheader text
 ```
 
 ```
+TABLE_WRAPPER_CSS_ID: string
+Purpose: Ability to set a specific CSS ID for the first wrapping table
+Example: main-wrapper
+```
+
+```
+TABLE_CONTAINER_CSS_ID: string
+Purpose: Ability to set a specific CSS ID for the first wrapping cell
+Example: container-wrapper
+```
+
+```
+TABLE_WRAPPER_CELL_CSS_ID: string
+Purpose: Ability to set a specific CSS ID for the container table
+Example: main-cell
+```
+
+```
+TABLE_CONTAINER_CELL_CSS_ID: string
+Purpose: Ability to set a specific CSS ID for the container cell
+Example: container-cell
+```
+
+```
 TABLE_CONTAINER_FIXED_WIDTH: boolean (default: true)
 Purpose: Boolean to define if the email width should be fixed or not
 ```
@@ -152,6 +237,12 @@ Purpose: Boolean to define if the email width should be fixed or not
 ```
 TABLE_CONTAINER_WIDTH: numeric (default: 600)
 Purpose: Set the width of the container table
+```
+
+```
+TABLE_CONTAINER_ALIGN: string
+Purpose: Set the align method of container table
+Example: centre
 ```
 
 ```
