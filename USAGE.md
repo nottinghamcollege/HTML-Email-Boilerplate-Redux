@@ -16,6 +16,7 @@ Purpose: Output a common doctype used in email templates
 ```
 DOCUMENT_TITLE: string
 Purpose: Ability to set a specific <title> for the HTML document
+Example: Central College Nottingham
 ```
 
 ```
@@ -144,6 +145,10 @@ Example: Example Preheader text
 ```
 
 ```
+TABLE_CONTAINER_FIXED_WIDTH: boolean (default: true)
+Purpose: Boolean to define if the email width should be fixed or not
+```
+
 TABLE_CONTAINER_WIDTH: numeric (default: 600)
 Purpose: Set the width of the container table
 ```

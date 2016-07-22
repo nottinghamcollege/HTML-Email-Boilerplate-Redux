@@ -2,9 +2,9 @@
 var gulp = require('gulp');
 var preprocess = require('gulp-preprocess');
 var rename = require('gulp-rename');
- 
+var preprocess_template_file = 'app/email-boilerplate-preprocess.html';
+
 gulp.task('default', function() {
-    var preprocess_template_file = 'app/email-boilerplate-preprocess.html';
     gulp.src(preprocess_template_file)
     .pipe(preprocess(
         {
@@ -17,6 +17,7 @@ gulp.task('default', function() {
 
                     // DOCTYPE, HEAD AND META
                     DOCTYPE_VERSION: 'XHTML_TRANSITIONAL',
+                    LANGUAGE_CODE: 'en',
                     DOCUMENT_TITLE: 'Central College Nottingham',
                     ENABLE_FAVICON: true,
                     FAVICON_URL: 'http://media.centralnottingham.ac.uk/favicon.ico',
@@ -50,6 +51,7 @@ gulp.task('default', function() {
                     // MAIN BODY
                     ENABLE_PREHEADER: true,
                     PREHEADER_TEXT: 'Example Preheader text',
+                    TABLE_CONTAINER_FIXED_WIDTH: true,
                     TABLE_CONTAINER_WIDTH: 600,
                     ENABLE_GMAIL_ANDROID_FIX: true,
                     ENABLE_GMAIL_IOS_FONT_FIX: true,
@@ -61,6 +63,4 @@ gulp.task('default', function() {
         ))
     .pipe(rename('email-boilerplate-without-guidelines.html'))
     .pipe(gulp.dest('./dist/'))
-
-    gulp.watch(preprocess_template_file), ['default'];
 });

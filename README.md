@@ -30,7 +30,7 @@ This project now uses `npm` and `gulp` based packages to produce a customised an
 2. Install gulp globally with `npm install --global gulp-cli`
 3. Clone the git source of this project and run `npm i` to install the required depedencies
 4. Modify the preprocess variables in `gulpfile.js` to your requirements. There are a range of booleans and string values to tweak to your needs
-5. Run `gulp` to build the preprcess version of email boilerplate
+5. Run `gulp` to build the preprocess version of email boilerplate
 6. The "compiled" email boilerplate will be written to `dist/email-boilerplate-without-guidelines.html` with the configuration set in `gulpfile.js`
 
 ## Project branches
