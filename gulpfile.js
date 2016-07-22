@@ -19,6 +19,8 @@ gulp.task('default', function() {
                     DOCTYPE_VERSION: 'XHTML_TRANSITIONAL',
                     LANGUAGE_CODE: 'en',
                     DOCUMENT_TITLE: 'Central College Nottingham',
+                    ENABLE_ROBOTS_META_TAG: false,
+                    ROBOTS_META_VALUE: 'noindex, nofollow',
                     ENABLE_FAVICON: true,
                     FAVICON_URL: 'http://media.centralnottingham.ac.uk/favicon.ico',
 

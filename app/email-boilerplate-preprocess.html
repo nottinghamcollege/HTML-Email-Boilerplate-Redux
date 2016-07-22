@@ -19,7 +19,9 @@
 			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 			<!--<![endif]-->
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
-			<meta name="robots" content="noindex, nofollow" />
+			<!-- @if ENABLE_ROBOTS_META_TAG=true -->
+			<meta name="robots" content="<!-- @echo ROBOTS_META_VALUE -->" />
+			<!-- @endif -->
 
 			<title><!-- @echo DOCUMENT_TITLE --></title>
             
