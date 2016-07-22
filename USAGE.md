@@ -242,7 +242,7 @@ Purpose: Set the width of the container table
 ```
 TABLE_CONTAINER_ALIGN: string
 Purpose: Set the align method of container table
-Example: centre
+Example: center
 ```
 
 ```

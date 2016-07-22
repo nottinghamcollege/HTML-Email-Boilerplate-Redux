@@ -68,7 +68,7 @@ gulp.task('default', function() {
                     TABLE_CONTAINER_CELL_CSS_ID: 'container-cell',
                     TABLE_CONTAINER_FIXED_WIDTH: true,
                     TABLE_CONTAINER_WIDTH: 600,
-                    TABLE_CONTAINER_ALIGN: 'centre',
+                    TABLE_CONTAINER_ALIGN: 'center',
                     ENABLE_GMAIL_ANDROID_FIX: true,
                     ENABLE_GMAIL_IOS_FONT_FIX: true,
 
