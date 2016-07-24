@@ -1,0 +1,35 @@
+/*
+	mso.reset.css.preprocess
+	Purpose: Defines all Microsoft Office specific reset properties
+	Description:
+
+	Microsoft Office specific CSS rules
+	NOTE: This file requires processing via gulp to build the minified version
+*/
+
+table#/* @echo TABLE_CONTAINER_CSS_ID */ {
+	width: /* @echo TABLE_CONTAINER_WIDTH */px
+}
+
+li { 
+	text-indent: -1em; 
+}
+
+span.MsoHyperlink { 
+	mso-style-priority: 99; 
+	color: inherit; 
+}
+
+span.MsoHyperlinkFollowed { 
+	mso-style-priority: 99; 
+	color: inherit; 
+}
+
+
+/* @if ENABLE_MSO_FALLBACK_FONT='true' */
+body, h1, h2, h3, h4, h5, h6, 
+p, a, table, td, span, strong { 
+	font-family:/* @echo MSO_DEFAULT_FALLBACK_FONT_STACK */ !important;
+}
+
+/* @endif */

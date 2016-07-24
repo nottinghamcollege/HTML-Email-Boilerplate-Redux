@@ -1,0 +1,55 @@
+/*
+	inline-rules.css.preprocess
+	Purpose: CSS rules that need to be inlined on the email boilerplate
+
+	Description:
+	Various CSS id/class rules that will be inlined during gulp processing
+*/
+
+span#preheader { 
+	display: none !important; 
+	color: /* @echo BODY_BG_COLOUR */; 
+	font-size: 1px; 
+	line-height: 0; 
+	overflow: hidden; 
+	mso-hide: all;
+}
+
+table#/* @echo TABLE_WRAPPER_CSS_ID */ { 
+	table-layout: fixed; 
+	min-width: 100%;
+	width: 100%;
+}
+
+table#/* @echo TABLE_CONTAINER_CSS_ID */ {
+	/* @if TABLE_CONTAINER_FIXED_WIDTH='true' */
+	width: 600; /* This is to workaround a bug inline-css*/
+	/* @endif */
+	/* @if TABLE_CONTAINER_FIXED_WIDTH='false' */
+	max-width: 600px;
+	/* @endif */
+}
+
+table#gmailapp-android-fix {
+	mso-hide: all;
+	width: 100%;
+}
+
+table#gmailapp-android-fix td {
+	line-height: 1px; 
+	height: 1px;
+	min-width: /* @echo TABLE_CONTAINER_WIDTH */px;
+}
+
+table#gmailapp-android-fix img {
+	display: block;
+	min-width: /* @echo TABLE_CONTAINER_WIDTH */px;
+}
+
+div#gmailapp-ios-font-fix {
+	display: none; 
+	white-space: nowrap; 
+	font: 15px courier; 
+	line-height: 0; 
+	mso-hide: all;
+}

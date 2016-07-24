@@ -1,0 +1,81 @@
+/*
+	media-queries.css.preprocess
+	Purpose: Defines all media queries to be included in the email boilerplate
+	Description:
+
+	For email clients that support CSS3, media queries can be used to enhance the user experience
+	NOTE: This file requires processing via gulp to build the desired conditional/variable values
+*/
+
+/* @if ENABLE_MEDIA_SCREEN_QUERY='true' */
+@media screen {
+/*! 
+	Captures all CSS3 based clients, useful for putting font-face/@import rules for fonts
+*/
+}
+
+/* @endif */
+/* @if ENABLE_YAHOO_MEDIA_QUERY='true' */
+@media yahoo {
+/*!
+	Specific media query that can be used to target Yahoo! Mail
+*/
+}
+
+/* @endif */
+/* @if ENABLE_IE_10_11_MEDIA_QUERY='true' */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { 
+/*!
+	Specific media query that targets IE 10/11 (Desktop and mobile)
+*/	
+}
+
+/* @endif */
+/* @if ENABLE_WEBKIT_DETECTION_QUERY='true' */
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+/*!
+	Specific media query that targets Webkit clients
+*/
+}
+
+/* @endif */
+/* @if ENABLE_GECKO_MEDIA_QUERY='true' */
+@-moz-document url-prefix() { 
+/*!
+	Specific media query that targets Gecko based clients
+*/
+}
+
+/* @endif */
+/* @if ENABLE_MAX_DEVICE_WIDTH_MEDIA_QUERY='true' */
+@media screen and (max-device-width: /* @echo TABLE_CONTAINER_WIDTH */px), screen and (max-width: /* @echo TABLE_CONTAINER_WIDTH */px) {
+/*!
+	Media query that is triggered by the defined table width size set
+*/
+}
+
+/* @endif */
+/* @if ENABLE_RETINA_3X_MEDIA_QUERY='true' */
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+/*!
+	Specific media query to target high DPI devices that are 3x the normal pixel density
+*/
+}
+
+/* @endif */
+/* @if ENABLE_RETINA_2X_MEDIA_QUERY='true' */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+/*!
+	Specific media query to target high DPI devices that are 2x the normal pixel density
+*/
+}
+
+/* @endif */
+/* @if ENABLE_RETINA_1X_MEDIA_QUERY='true' */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) { 
+/*!
+	Specific media query to target high DPI devices that are 1.25x the normal pixel density
+*/
+}
+
+/* @endif */
