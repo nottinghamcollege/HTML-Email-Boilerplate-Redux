@@ -214,6 +214,7 @@ Example: Example Preheader text
 BODY_BG_COLOUR: string
 Purpose: Ability to set a specific hexidecimal colour for the background of the email
 Example: #ffffff
+```
 
 ```
 TABLE_WRAPPER_CSS_ID: string
