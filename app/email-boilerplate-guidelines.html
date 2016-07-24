@@ -1,0 +1,872 @@
+<!--
+	#################################################################################
+	#                                                                               #
+	# Central College Nottingham                                                    #
+	# HTML Email Boilerplate (Redux Version)                                        #
+	# websiteteam@centralnottingham.ac.uk                                           #
+	#                                                                               #
+	# Originally based on the HTML Email Boilerplates:                              #
+	#                                                                               #
+	# https://github.com/seanpowell/Email-Boilerplate                               #
+	# http://www.emailology.org                                                     #
+	#                                                                               #
+	# This boilerplate has been formulated from various sources.                    #
+	# Including: Campaign Monitor, MailChimp, Litmus, Email on Acid and more.       #
+	# Original sources have been credited accordingly.                              #
+	#                                                                               #
+	# Additions made by Central College Nottingham from research and development    #
+	#                                                                               #		
+	# DO NOT USE THIS TEMPLATE IN A LIVE EMAIL CAMPAIGN!                            #
+	# OTHERWISE YOU WILL ANGER THE SPAM GODS AND ALL YOUR EMAIL WILL BE BURNED      #
+	# HTML COMMENTS WILL UP YOUR SPAM SCORE FASTER THAN A PHISHING EMAIL ON ACID    #
+	# AND CAN CAUSE RENDERING PROBLEMS SUCH AS BLANK EMAIL MESSAGES!                #
+	# THIS VERSION IS FOR GUIDANCE, EXPLAINATION, OUTLOOK BASHING AND NOTES!        #
+	#                                                                               #
+	#################################################################################
+
+	BOILERPLATE CONTENTS:
+
+	<!DOCTYPE>
+		- Choosing the Doctype
+		<html>
+			- XML Namespaces
+			<head>
+				<meta>
+					- Character Encoding
+					- Document Mode
+					- Viewport Setting
+					- Robots (prevent indexing)
+				</meta>
+				<title>Document Title</title>
+				- Favicon
+				- Fix images in Outlook when using DPI scaling on Windows
+				- MSO font stack override
+				- MSO Normalise <li> spacing
+				- MSO prevent the colour of visited links being modified
+				- Cascading Style Sheets
+					- CSS reset for fixing various email client quirks
+					- Media Queries
+						- Detect WebKit based clients
+							- Minimum font size for the iPhone and iPad
+						- Tablet targeting
+						- Mobile targeting
+							- Useful resources and general guidance
+							- Hiding content intended for mobile devices only
+							- Android 4.4 and display block on table cells
+						- Detecting devices based on DPI
+						- Additional Android 4.4 margin fix
+						- Debugging layouts
+				- Conditional comments
+				- iOS email rendering bug
+			</head>
+			<body>
+				<span>Preheader</span>
+				<table>
+					- Aligning layouts to the centre
+					- Define your layout approach
+					- Prevent Gmail App Auto-fit/zooming
+					- Gap issues with long vertical emails in Outlook 2007 and above
+					- CSS inheritance on table cells in Outlook 2007 and above
+					- Windows Phone and font sizes
+					- Creating call to action (CTA) buttons
+					- Using Images
+					- Using Hyperlinks
+					- Faux unordered/ordered lists
+					- Conditional comments and Outlook.com (Webmail)
+				</table>
+				- Gmail iOS app font sizing fix
+			</body>
+		- Filesize of your email template
+		</html>
+		- Checklist to follow before sending an email campaign
+-->
+
+<!-- 
+	CHOOSING THE DOCTYPE:
+	XHTML Strict or Transitional are common choices. HTML5 can also be used when using specific HTML5 features like video.
+	Note: Some email clients force their own doctype regardless of what's set and some will even remove it entirely.
+
+	http://www.campaignmonitor.com/blog/post/3317/correct-doctype-to-use-in-html-email
+	http://www.emailonacid.com/blog/details/C13/doctype_-_the_black_sheep_of_html_email_design
+	https://www.campaignmonitor.com/blog/post/4278/HTML5-vs-XHTML1-the-right-doctype-to-use-in-html-email
+
+	Switch the Doctype as required if you wish, this template uses XHTML 1.0 Transitional as the default
+
+	Other Doctypes for use:
+
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<!DOCTYPE html>
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<!-- 
+		XML NAMESPACES:
+		http://www.w3schools.com/xml/xml_namespaces.asp
+		http://msdn.microsoft.com/en-us/library/ee384217%28v=vs.85%29.aspx
+		http://msdn.microsoft.com/en-us/library/bb250524%28v=vs.85%29.aspx
+
+		Namespaces for VML. Enables the use of VML shapes and other Microsoft Word specific code for Outlook clients.
+	-->
+	<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+		<head>
+			<!--
+				CHARACTER ENCODING:
+				http://www.emailonacid.com/blog/details/C18/the_importance_of_content-type_character_encoding_in_html_emails
+				http://dev.w3.org/html5/html-author/charref
+				http://www.emailonacid.com/character_converter
+				https://www.campaignmonitor.com/blog/post/1810/why-are-all-my-apostrophes-mis
+
+				Setting the Content-Type in an email template is actually ignored by all email clients.
+				The actual Content-Type is set via headers by the sending server that the email is passing through.
+
+				Often problems can occur with characters like apostrophe and double quotes when they haven't been handled properly.
+				Make sure you always the use the HTML entity code for the specific character you want.
+				Defining a Content-Type locally allows for debugging unhandled characters.
+			-->
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+			<!--
+				DOCUMENT MODE:
+				https://www.campaignmonitor.com/forums/topic/7989
+				http://blog.jmwhite.co.uk/2014/03/01/windows-phone-does-support-css3-media-queries-in-html-email
+				http://blog.jmwhite.co.uk/2014/08/19/email-campaigns-windows-phone-part-2-pop3-and-imap
+				http://www.emailonacid.com/blog/details/C13/designing_html_emails_for_outlook_2003_and_outlook_express
+				https://www.emailonacid.com/blog/article/email-development/prevent-ie-edge-meta-tag-from-breaking-images-in-live-mail
+
+				This will force any Internet Explorer (IE) based email client to render at the highest standards possible.
+
+				Major email clients that are IE based and benefit from the document mode being forced to edge include:
+
+				* Windows Phone 7.8
+				* Windows Phone 8.0
+				* Windows Phone 8.1
+				* Outlook Express
+				* Outlook 2000/2002/2003
+				* Windows Live Mail
+				* Windows 8 Metro Mail App (Touch based)
+
+				Generally these clients will render with an IE document mode that's less than optimal.
+				The meta tag sets the document mode to edge meaning the highest possible rendering capabilities are used
+				Windows Phone benefits greatly from this due to the use of the IE7 document mode by default (Nice one Microsoft)
+
+
+				CAVEATS:
+
+				The inclusion of this meta tag has been known to mess with Outlook 2003 and breaking printing functionality.
+				Windows Live Mail also has issues with images when the edge document mode is used
+				If you need to support these clients you should consider using the compatibility fix rather than the standard implementation
+
+			-->
+
+			<!-- Standard implementation -->
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+			<!-- 
+				Compatibility implementation
+				Prevents functionality isuses in Outlook 2003 and Windows Live Mail
+				An empty comment is used to prevent Outlook.com from messing with it
+			-->
+            
+			<!--[if !mso]><!-->
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<!--<![endif]-->
+
+
+			<!-- 
+				VIEWPORT SETTING:
+				https://developer.mozilla.org/en/docs/Mozilla/Mobile/Viewport_meta_tag
+				http://www.emailonacid.com/blog/details/C13/emailology_viewport_metatag_rendered_unusable
+
+				Mainly for mobile devices to set the view correctly when using media queries.
+				This does however have implications for older BlackBerry devices.
+
+				Not including it however can make some mobile email clients render the desktop version or appear zoomed out.
+			-->
+			<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+			<!--
+				PREVENT INDEXING:
+				https://support.google.com/webmasters/answer/93710?hl=en
+
+				Prevents your email campaign from being accidentally indexed by search engines.
+				Many email service providers tend to handle this, so its optional.
+			-->
+			<meta name="robots" content="noindex, nofollow" />
+
+			<!--
+				DOCUMENT TITLE:
+				Not all email clients will use the title tag, however for those that do it can be used to reinforce the purpose of the email. 
+				Another example of when the title is used would be the web version of your email campaign.
+			
+				If in doubt, use the name of your organisation as a generic fallback to prevent "Untitled Document" or blank titles.
+			-->
+			<title>Central College Nottingham</title>
+             
+			<!--
+				FAVICON:
+				For the web version of the email, you can make use of a favicon much like a website
+			-->
+			<link rel="icon" type="image/x-icon" href="http://media.centralnottingham.ac.uk/favicon.ico" />
+
+			<!-- 
+				FIX IMAGES IN OUTLOOK WHEN USING DPI SCALING ON WINDOWS:
+				https://www.campaignmonitor.com/forums/topic/8035/
+				https://litmus.com/community/discussions/151-mystery-solved-dpi-scaling-in-outlook-2007-2013
+				http://msdn.microsoft.com/en-us/library/microsoft.office.interop.word.defaultweboptions.pixelsperinch%28v=office.14%29.aspx
+
+				When using scaling factors greater than 100% (96 DPI) Outlook often displays images incorrectly.
+				This Microsoft Office specific XML forces images to be rendered at 96 PPI, making them display correctly.
+				Outlook 2007 doesn't quite render images properly at 96 PPI and still enlarges them slightly.
+			-->
+
+			<!--[if gte mso 9]>
+				<xml>
+					<o:OfficeDocumentSettings>
+						<o:AllowPNG/>
+						<o:PixelsPerInch>96</o:PixelsPerInch>
+					</o:OfficeDocumentSettings>
+				</xml>
+			<![endif]-->
+
+			<!--
+				NORMALISE LIST ITEM SPACING IN OUTLOOK ON WINDOWS:
+				https://litmus.com/community/discussions/1093-bulletproof-lists-using-ul-and-li
+
+				When using the <li> tag, include this specific MSO code to fix the spacing
+			-->
+
+			<!--[if gte mso 9]>
+				<style style="text/css">
+					li { text-indent:-1em; }
+				</style>
+			<![endif]-->
+
+			<!-- 
+				RESET VISITED COLOUR LINKS IN OUTLOOK ON WINDOWS:
+				https://litmus.com/community/discussions/4164-outlook-07-13-visited-link-color-fix
+
+				Prevent changing colour of visited links in Outlook
+			-->
+
+			<!--[if gte mso 9]>
+				<style style="text/css">
+					span.MsoHyperlink { mso-style-priority:99; color:inherit; }
+					span.MsoHyperlinkFollowed { mso-style-priority:99; color:inherit; }
+				</style>
+			<![endif]-->
+
+			<!--
+				MSO FONT STACK OVERRIDE:
+				https://www.emailonacid.com/blog/article/email-development/custom-font-stacks-in-outlook
+				https://litmus.com/community/discussions/36-outlook-and-fallback-fonts
+				https://litmus.com/community/discussions/982-outlook-overrides-font-to-times-new-roman
+
+				When using web fonts, Outlook (Windows) can be very picky using the fallback font and in some cases defaults to Times New Roman
+				Using an MSO conditional you can target HTML tags that will contain text content and override the font stack globally.
+			-->
+
+			<!--[if mso]>
+				<style type="text/css">
+					body, h1, h2, h3, h4, h5, h6, p, a, table, td, span, strong { font-family:Helvetica, Arial, sans-serif !important; }
+				</style>
+			<![endif]-->
+
+			<!--
+				CASCADING STYLE SHEETS:
+				http://www.campaignmonitor.com/css
+				http://templates.mailchimp.com/development/css
+
+				Email clients and CSS support vary massively.
+				Most CSS should be inline due to limitations with CSS in the <head> in some clients.
+				The exception to this is reset styles or fixes that target a specific client that does render CSS in the <head>.
+				Forget calling external style sheets, most email clients won't even parse it.
+			-->
+			<style type="text/css">
+
+				/* 
+					CSS RESET FOR FIXING VARIOUS EMAIL CLIENT QUIRKS:
+					http://www.emailonacid.com/blog/details/C13/12_things_you_must_know_when_developing_for_gmail_and_gmail_mobile_apps
+					http://www.emailonacid.com/blog/details/C13/stop_gmail_from_wrapping_your_phone_number_into_text_links
+					http://www.campaignmonitor.com/blog/post/4137/image-cache-display-issues-in-gmail
+					http://www.ianhoar.com/2008/04/29/outlook-2007-borders-and-1px-padding-on-table-cells
+					http://www.campaignmonitor.com/blog/post/3392/1px-borders-padding-on-table-cells-in-outlook-07
+					http://www.emailonacid.com/blog/details/C6/9_ways_to_prevent_yahoo_headaches
+					http://www.emailonacid.com/blog/details/C13/yahoo_shortcuts_are_baaaaaaaack
+					http://www.emailonacid.com/blog/details/C13/tips_and_tricks_outlook_07-13
+					https://www.campaignmonitor.com/forums/topic/8035
+					http://www.emailonacid.com/blog/details/C13/tips_and_tricks_outlook.com
+					http://www.emailonacid.com/blog/details/C13/line_height_and_outlook.com
+					http://www.emailonacid.com/forum/viewthread/43
+					http://www.emailonacid.com/blog/details/C4/the_pulse_office_365_first_impressions
+					http://blog.jmwhite.co.uk/2014/07/22/office-365-quirks-for-email-designers
+					https://litmus.com/blog/update-banning-blue-links-on-ios-devices
+
+					Based on the original reset from MailChimp with newer additions for various clients.
+				*/
+
+				/***********************************************************
+				THE BASICS - Resolve some troublesome quirks from the get-go
+				************************************************************/
+
+				* { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; text-size-adjust:none; -webkit-text-size-adjust:none; -moz-text-size-adjust:none; -ms-text-size-adjust:none; }
+				/* Improve font rendering on supported devices */
+
+				* img[tabindex="0"] + div { display:none !important; }
+				/* Remove download icon on images in Gmail */
+
+				#outlook a { padding:0; } 
+				/* Force Outlook to display view in browser link */
+
+				body { width:100% !important; height:100% !important; margin:0 auto !important; padding:0 !important; } 
+				/* Reset main body element to fix alignment issues in some clients */
+
+				.aolReplacedBody {  }
+				/* Prefix any CSS with this class to target the AOL Webmail client */
+
+				.ReadMsgBody, .ExternalClass { width:100%; }
+				/* Force hotmail/outlook.com to display at full width */
+
+				.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height:100%; }
+				/* Fix the line-height bug in hotmail/outlook.com */
+
+				#main-wrapper { margin:0; padding:0; width:100% !important; line-height:100% !important; }
+				/* In case the body tag is removed (Gmail etc..)*/
+				
+				/**********************************************************************************
+				ANCHOR STYLING - Styling for hyperlinks (Move these inline for best compatibility)
+				***********************************************************************************/
+				a, a:link { color:#e6057f; text-decoration:underline; }
+				
+				/* Optional hyperlink states (Not supported in all email clients)
+				a:visited { color:#3c96e2; text-decoration:none; } 
+				a:focus { color:#3c96e2; text-decoration:underline; }  
+				a:hover { color:#3c96e2; text-decoration:underline; }
+				*/
+
+				/******************************************************************************************************
+				IMAGE FIXES - Sensible image fixes (Move these inline, for best compatibility)
+				*******************************************************************************************************/
+				a img { border:none; }
+				img { display:block; border:none; outline:none; text-decoration:none; -ms-interpolation-mode:bicubic; }
+
+				/****************************
+				YAHOO! Mail - Paragraph fix
+				****************************/
+				p { margin:1em 0; }
+
+				/**********************************************************
+				HOTMAIL/OUTLOOK.COM - Header tags styling colour overrides
+				***********************************************************/
+				h1, h2, h3, h4, h5, h6 { color:black !important;}
+				h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color:blue !important;}
+				h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active { color:red !important; }
+				h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited { color:purple !important; }
+
+				/*********************************************
+				OUTLOOK 2007+ and Gmail - Table padding issue
+				**********************************************/
+				table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
+				table td { border-collapse:collapse; }
+
+				/****************************************************
+				YAHOO! SHORTCUTS - Certain keywords being hyperlinked
+				*****************************************************/
+				span.yshortcuts, a span.yshortcuts { color:#000000; background-color:none; border:none; } 
+				span.yshortcuts:hover, span.yshortcuts:active, span.yshortcuts:focus { color:#000000; background-color:transparent; border:none; }
+
+				/***********************************************************************************************
+				APPLE LINKS - Prevent the colour of certain text content i.e. dates/times being changed on iOS
+				************************************************************************************************/
+				.appleLinksWhite a { color:#ffffff !important; text-decoration:none !important; }
+				.appleLinksBlack a { color:#000000 !important; text-decoration:none !important; }
+				
+				/* You can add more appleLinks classes for any additional colour(s) you require to fix */
+
+				/************************************************************************************************
+				iOS data links - Target a specific attribute selector to stop data links being coloured
+				*************************************************************************************************/
+				a[x-apple-data-detectors] { color:inherit !important; text-decoration:none !important; font-size:inherit !important; font-family:inherit !important; font-weight:inherit !important; line-height:inherit !important; }
+
+				/* END CSS RESET */
+
+				/*
+					CSS3 MEDIA QUERIES:
+					https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries
+
+					For clients that support CSS3, various queries can be used to target different devices.
+				*/
+
+				@media screen {  
+					/*
+						Useful for declaring webfonts that only target CSS3 clients, avoiding issues for Outlook (Windows)
+					*/
+				}
+				
+				@media screen and (-webkit-min-device-pixel-ratio:0) {
+					/* 
+						Detect WebKit based clients, including:
+						
+						* Apple iOS
+						* Opera 15+
+						* Google Chrome
+						* Android Email Client (4.4 and below)
+						* Outlook for Mac 2011/2016
+
+						NOTE: Windows Phone 8.1 GDR1 and subsequent updates within the 8.1 branch also parse CSS in this query due to changes to IE Mobile.
+						https://msdn.microsoft.com/en-us/library/dn736066%28v=vs.85%29.aspx
+					*/
+
+					/*
+						MINIMUM FONT SIZE ON THE IPHONE AND IPAD:
+						http://www.campaignmonitor.com/blog/post/3339/save-your-layout-by-overriding-the-minimum-font-size-on-the-iphone-and
+
+						Any text with a font size of less than 13px will be resized automatically on an iPhone and iPad, which can break a design.
+
+						To fix this you can add CSS rules with the -webkit-text-size-adjust:none; property.
+						Don't add directly inline this will break font styling in older versions of Outlook Web Access.
+					*/
+				}
+
+				@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+					/* Detect tablet devices */
+				}
+
+				@media screen and (max-device-width: 480px), screen and (max-width: 480px) {
+					
+					/*
+						USEFUL RESOURCES AND GENERAL GUIDANCE:
+						https://litmus.com/blog/mobile-email-compatibility-guide-what-works-where
+						http://www.campaignmonitor.com/guides/mobile/#mobile-support
+						http://www.campaignmonitor.com/blog/post/3339/save-your-layout-by-overriding-the-minimum-font-size-on-the-iphone-and
+						http://www.campaignmonitor.com/blog/post/3457/media-query-issues-in-yahoo-mail-mobile-email
+						http://www.campaignmonitor.com/blog/post/3571/using-phone-numbers-in-html-email
+						
+						Guides to optimising email on mobile devices. Some mobile devices don't support CSS3 and hence responsive design is not possible.
+						While most mobile clients have decent CSS3 support, some do have some quirks to be aware of.
+					*/
+
+					/*
+						HIDING CONTENT INTENDED FOR MOBILE DEVICES ONLY:
+						https://www.campaignmonitor.com/forums/post/27544
+						https://www.campaignmonitor.com/forums/topic/7405/how-to-hide-mobile-content-in-desktop-clients
+						http://freshinbox.com/blog/bulletproof-solution-to-hiding-mobile-content-when-opened-in-non-mobile-email-clients
+						https://litmus.com/community/discussions/67-hiding-content-from-desktop-version
+						http://freshinbox.com/blog/outlook-com-removes-all-content-within-conditional-comments
+
+						display:none; is the obvious method, however it doesn't work reliability in every email client.
+
+						With Gmail display:none is stripped entirely, ironically display:none !important; works but then you can't override it.
+						With Outlook 2007 - 2013, display:none; works but not if there is a table within the element you are trying to hide.
+
+						In order to hide content, you have to use a combination of CSS properties for maximum compatibility these include:
+
+						* display:none; 
+						* font-size:0; 
+						* max-height:0; 
+						* line-height:0;
+						* overflow:hidden;
+						* visibility:hidden;
+						* mso-hide:all; (Specific MSO property for Outlook)
+						
+						You then need to override each property used in a media query to make them show when the mobile layout is used.
+ 
+						Note: Some mobile devices do not support media queries and hence the desktop version would be rendered.
+					*/
+					
+					/*
+						ANDROID 4.4 AND DISPLAY BLOCK ON TABLE CELLS
+						https://litmus.com/community/code/261-td-display-block-not-working-on-android
+						https://github.com/centralcollegenottingham/html-email-boilerplate-redux/issues/1
+						http://www.degdigital.com/blog/content-choreography-in-responsive-email
+
+						Support for display:block; has been dropped on <td> in the native mail client on Android 4.4.
+						This means any layout that relies on making table cells stack on mobile will fail.
+						There are workarounds to replicate the behaviour without use block as the display value.
+						The alternative would be to use floated tables to create the same effect.
+					*/
+				
+				}
+
+				/*
+					DETECTING DEVICES BASED ON DPI:
+					http://jackosborne.com/articles/responsive-email-design/#mediaqueriesandcss
+					http://www.browsersupport.net/CSS/@media_%28min-resolution%29
+					http://bjango.com/articles/min-device-pixel-ratio
+						
+					DPI/Resolutions based media queries are a great way to detect retina/HiDPI devices.
+					By querying such devices you can optimise image assets and provide a better experience for HiDPI devices.
+				*/
+
+				@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+					/* True "Retina" devices 2x */
+				}
+
+				@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) { 
+					/* Not quite "Retina" but high-res */
+				}
+				
+				/*
+					ADDITIONAL ANDROID 4.4 MARGIN FIX
+					https://litmus.com/community/code/4194-why-is-email-not-centered-on-android-4-4
+					
+					In addition to resetting margin on the body, the native email client in Android 4.4 creates top and bottom margin with a wrapper div.
+					Because it has no ID or class to target you have to use attribute selectors creatively in order to remove it.
+					The code is put at bottom of a style block because Yahoo! Mail strips any CSS that appears after an attribute selector declaration
+				*/
+				
+				div[style*="margin: 16px 0"] { margin:0 !important; font-size:100% !important; }
+				
+				/*
+					DEBUGGING LAYOUTS
+					https://litmus.com/community/discussions/84-what-s-your-favorite-hack#comment-1287
+					
+					A great way to debug a layout by visually identifying what each element is doing. This can help when you have inconsitencies.
+					Firebug is also another example of development tools in the browser that allows for similar debugging.
+					The CSS below should only be used during development, remove the code on a live email send.
+					
+					* { background-color: rgba(255,0,0,.2); }
+					* * { background-color: rgba(0,255,0,.2); }
+					* * * { background-color: rgba(0,0,255,.2); }
+					* * * * { background-color: rgba(255,0,255,.2); }
+					* * * * * { background-color: rgba(0,255,255,.2); }
+					* * * * * * { background-color: rgba(255,255,0,.2); }
+				*/
+
+			</style>
+
+			<!-- 
+				CONDITIONAL COMMENTS:
+				http://templates.mailchimp.com/development/css/outlook-conditional-css
+				http://msdn.microsoft.com/en-us/library/ms537512%28v=vs.85%29.aspx
+				http://labs.actionrocket.co/microsoft-outlook-conditional-statements
+				http://blogs.msdn.com/b/iemobile/archive/2010/12/08/targeting-mobile-optimized-css-at-windows-phone-7.aspx
+				http://dev.bowdenweb.com/html/ie-conditional-comments.html
+                
+				Conditional comments can be used to detect Outlook versions from 2000 - 2016 and Internet Explorer versions from 5 - 9
+				as well as IE Mobile 7 on early versions Windows Phone 7 before the Windows Phone 7.5 (Mango) update.
+                
+				Internet Explorer 10 onwards, no longer supports conditional comments when the document mode is edge.
+                
+				Outlook versions and their corresponding mso value for use in a conditional comment:
+
+
+				[Outlook Version]     [mso value]
+				
+				2000                  9
+				2002                  10
+				2003                  11
+				2007                  12
+				2010                  14
+				2013                  15
+				2016                  16
+                
+
+				Internet Explorer versions and their corresponding browser version for use in a conditional comment:
+  
+
+				[IE Version]                               [Version value]
+
+				Internet Explorer                          IE
+				Internet Explorer 5.0                      IE 5.0000
+				Internet Explorer 5 (any incremental)      IE 5
+				Internet Explorer 5.5                      IE 5.5
+				Internet Explorer 6                        IE 6
+				Internet Explorer 7                        IE 7
+				Internet Explorer Mobile                   IEMobile
+				Internet Explorer Mobile 7                 IEMobile 7
+				Internet Explorer 8                        IE 8
+				Internet Explorer 9                        IE 9
+
+
+				Conditional expressions:
+                
+				* ! - NOT
+				* lt - Less than
+				* lte - Less than or equal to
+				* gt - Greater than
+				* gte - Greathan than or equal to
+				* ( ) - Subexpression operators. Used with more complex expressions
+				* AND - And operator
+				* | - OR operator
+			-->
+            
+			<!--[if IEMobile 7]>
+				<style type="text/css">
+					/* Windows Phone 7.0 specific styles here */
+				</style>
+			<![endif]-->
+
+
+			<!--[if gte mso 9]>
+				<style type="text/css">
+					/* Outlook specific styles here */
+				</style>
+			<![endif]-->
+
+			<!--
+				iOS EMAIL RENDERING BUG:
+				http://www.emailonacid.com/blog/details/C6/ensure_that_your_entire_email_is_rendered_by_default_in_the_iphone_ipad
+				https://www.campaignmonitor.com/blog/post/3857/ios-email-truncation
+
+				Note: The original EOA report indicates problems in iOS 7. Campaign Monitor has a different take on the situation.
+			-->
+		</head>
+
+    <body>
+		<!-- 
+			PREHEADER:
+
+			https://www.campaignmonitor.com/blog/post/3628/a-practical-guide-to-email-preheaders
+			http://www.smartinsights.com/email-marketing/email-creative-and-copywriting/4-ways-use-preheader-marketing-emails
+
+			Text that appears after the subject line in a preview/notification in the inbox.
+			Not creating a preheader means generally the first bit of text content gets used. 
+			This can be bad when areas like the web version link are first.
+
+			The preheader can be visible but if a template design doesn't allow for it the hidden span technique can be used.
+			display:none !important; allows Gmail to hide the span without max-height hacks.
+
+			In case display:none; doesn't work, color and font-size properties can be used to still "hide" the span content.
+			The font colour would match the background colour of the email.
+
+			Note: Setting a very small font size can trigger some spam filters.
+		-->
+		<span style="display:none !important; color:#ffffff; font-size:1px; line-height:0; overflow:hidden; mso-hide:all;">Preheader text here</span>
+
+		<!--
+			TABLE LAYOUT:
+			Basic table layout to adapt for your campaign with some general guidance.
+
+			1. Start with a 100% width table to force covering the entire email space available in various clients
+			2. Nest a container table within the wrapper table which will hold the email template
+				2a. The container should be no greater than 600 pixels wide.
+				2b. Never define widths as px values on a table width attribute. Either percentage or a number only.
+			3. When using a pixel width value, a matching CSS width property should be applied for better HiDPI support in Outlook 07-13
+		-->
+
+		<!-- WRAPPER TABLE -->
+		<table border="0" cellpadding="0" cellspacing="0" width="100%" id="main-wrapper" style="table-layout:fixed; min-width:100%;">
+			<tr>
+				<!--
+					ALIGNING LAYOUTS TO THE CENTRE:
+					In some cases, you may want the whole email layout to be centred (mainly for desktop clients).
+					Using the wrapping table cell approach is a clean way of doing it, removing the need for any <center> or <div> tags.
+					It does mean however you'll need to use the align attribute on all table cells within to avoid content being centered.
+				-->
+				<td align="center" valign="top" id="main-cell">
+                    
+                    <!--
+						DEFINE YOUR LAYOUT APPROACH:
+						https://litmus.com/community/learning/22-mobile-email-defining-approaches
+						http://labs.actionrocket.co/the-hybrid-coding-approach
+						http://labs.actionrocket.co/the-hybrid-coding-approach-2
+						https://www.campaignmonitor.com/blog/post/4240/creating-a-centred-responsive-design-without-media-queries
+						https://www.campaignmonitor.com/guides/mobile
+
+						When creating an email campaign there are several approaches you can take when developing the layout.
+						The approach used is often dependant on the design of the email campaign itself.
+
+						Fixed width layouts are common, but require the need of media query support to optimise them for mobile devices.
+						The scalable/fluid approach removes the requirement for media query support but can force certain design requirements.
+                        
+						This layout uses the fixed width approach by default.
+                    -->
+
+					<!-- CONTAINER TABLE -->
+					<table border="0" cellpadding="0" cellspacing="0" width="600" align="center" style="width:600px;" id="container-wrap">
+						<tr>
+							<td align="left" valign="top" id="container-cell">
+								<!--
+									PREVENT GMAIL APP AUTO-FIT/ZOOMING:
+									https://support.google.com/mail/answer/2951689
+									https://litmus.com/community/discussions/257-gmail-app-android-how-to-stop-text-from-auto-resizing
+                                    
+									The Gmail App on Android 4.0 and above will modify an email to fit the device viewport.
+									Depending on the design, this can break various layouts and ends up being counterproductive
+									This feature can be disabled by setting min-width on an image that is equal size to the container table
+									For responsive designs the entire "gmailapp-android-fix" table can be hidden.
+                                    
+								-->
+								<table border="0" cellpadding="0" cellspacing="0" width="100%" id="gmailapp-android-fix" style="mso-hide:all;">
+									<tr>
+										<td align="left" valign="top" height="1" style="line-height:1px; height:1px; min-width:600px;">
+											<img src="http://media.centralnottingham.ac.uk/App_Media/SNC/emailers/600x1-spacer.gif" alt="" style="display:block; min-width:600px;" width="600" height="1" />
+										</td>
+									</tr>
+								</table>
+                            
+								<!--
+									GAP ISSUES WITH LONG VERTICAL EMAILS IN OUTLOOK 2007 AND ABOVE:
+									http://www.emailonacid.com/blog/details/C13/horizontal_spacing_issues_in_outlook_2007_and_2010
+						
+									If a single table element exceeds 23.7 inches (Approx 2275 pixels) in height, a page break will be added which can cause gaps.
+									The easiest solution is to break up major sections of an email template by starting new table elements to avoid this issue.
+								-->
+
+								<!--
+									CSS INHERITANCE ON TABLE CELLS IN OUTLOOK 2007 AND ABOVE:
+									http://blog.mailermailer.com/email-design/ultimate-field-guide-to-common-bugs-in-html-email
+									https://gist.github.com/jamesmacwhite/ddb075abde1de7d384ff
+
+									When a table contains more than one table cell within the same table, CSS properties applied to one cell 
+									will be applied to all the cells within that table.
+								-->
+
+								<!--
+									WINDOWS PHONE AND FONT SIZES:
+									https://litmus.com/community/discussions/387-font-sizes-on-outlook-mobile-with-exchange-activesync-based-mailboxes
+									http://blog.jmwhite.co.uk/2014/08/19/email-campaigns-windows-phone-part-3-exchange-activesync
+
+									When Windows Phone renders with the EAS client, font sizes can appear inconsistent.
+									It occurs when the containing table/cells uses a fixed pixel width, along with several other factors.
+									Generally percentage based widths on tables work much better with Windows Phone when rendering with the EAS client. 
+								-->
+
+								<!--
+									CREATING CALL TO ACTION (CTA) BUTTONS:
+									http://www.industrydive.com/blog/how-to-make-html-email-buttons-that-rock
+									https://gist.github.com/jamesmacwhite/a6b22a300900cf5a0f50
+									https://www.campaignmonitor.com/blog/post/4076/how-to-add-a-fixed-position-cta-to-your-email-newsletters
+									http://buttons.cm
+                                    
+									Creating good call to action buttons is important, especially in email as there is also the compatibility factor.
+									Call to action buttons need to be cross client and optimised for various devices to maximise the click-through rate
+									Avoid using images as the main basis of any CTA button due to the images off by default state in some email clients.
+								-->
+
+								<!--
+									USING IMAGES:
+									http://www.emailonacid.com/blog/details/C18/12_fixes_for_the_image_spacing_in_html_emails
+									https://litmus.com/blog/the-ultimate-guide-to-styled-alt-text-in-email
+									http://www.emailonacid.com/blog/details/C13/fixing_image_gaps_in_outlook_2013
+                                    
+									* Absolute images paths, http:// only
+									* Always set a width and height that is EXACTLY the same values of the dimensions of the image
+									* Apply display:block; to fix various image gap problems in various email clients
+									* Set a good and relevant alternative text value as well. You can even style this text in some clients
+									* Outlook 2013 will add spacing underneath images that are less than 20px in height
+									* Hide blue hyperlink borders with border="0" as border:none; isn't as reliable.
+								-->
+
+									<!-- Plain image -->
+									<img src="/path/to/image.jpg" alt="Description" width="200" height="100" style="display:block;" />
+                                    
+									<!-- Plain image with styled alternative text -->
+									<img src="/path/to/image.jpg" alt="Styled Alt Text!" width="200" height="100" style="display:block; color:#000000; font-family:Helvetica, Arial, sans-serif; font-size:22px;" />
+                                    
+									<!-- Image with a hyperlink -->
+									<a href="http://www.centralnottingham.ac.uk" target="_blank">
+										<img src="/path/to/image.jpg" alt="Description" width="200" height="100" style="display:block;" border="0" />
+									</a>
+
+								<!--
+									USING HYPERLINKS:
+
+									Hyperlinks will be the foundation of any call to action, the general rules are:
+
+									* Add target="_blank" to prevent links opening within the email client
+									* Apply color and text-decoration:none; inline when required
+								-->
+
+									<a href="http://www.centralnottingham.ac.uk" target="_blank" style="color:#e6057f; text-decoration:none;">
+										We are Central
+									</a>
+
+								<!--
+									FAUX UNORDERED/ORDERED LISTS:
+                                    
+									The rendering of <ul> and <ol> is not reliable with a few email clients, instead you have to create faux lists.
+									Using two table cells you can mimic the same appearance of a bullet or number list.
+									You can add widths, padding etc to space out list items
+								-->
+
+									<table border="0" cellpadding="0" cellspacing="0">
+										<!-- Faux unordered list with a bullet -->
+										<tr>
+											<td align="left" valign="top">&bull;</td>
+											<td align="left" valign="top">Example List Item</td>
+										</tr>
+										<!-- Faux unordered list with a dash -->
+										<tr>
+											<td align="left" valign="top">&#8209;</td>
+											<td align="left" valign="top">Example List Item</td>
+										</tr>
+										<!-- Faux ordered list -->
+										<tr>
+											<td align="left" valign="top">1.</td>
+											<td align="left" valign="top">Example List Item</td>
+										</tr>
+									</table>
+
+								<!-- 
+									CONDITIONAL COMMENTS AND OUTLOOK.COM (WEBMAIL):
+									http://freshinbox.com/blog/outlook-com-removes-all-content-within-conditional-comments
+									https://www.campaignmonitor.com/forums/topic/7544/outlookcom-problems-with-conditional-comments-in-the-body
+									https://gist.github.com/jamesmacwhite/18e97b06f2c04661a757
+									
+									Outlook.com and its pre-processor tends to strip conditional comments, as well as the content between them.
+									When IF ELSE logic is used this can cause problems in this client as both parts of the conditional will be removed.
+									In order to workaround this, alternative hiding techniques have to be used.
+								-->
+							</td>
+						</tr>
+					</table> <!-- END CONTAINER TABLE -->
+				</td>
+			</tr>
+		</table> <!-- END WRAPPER TABLE -->
+		
+		<!--
+			GMAIL iOS APP FONT SIZING FIX:
+			http://freshinbox.com/blog/gmail-on-ios-increases-font-size-on-some-emails
+			
+			The Gmail iOS app likes to mess around with font sizes. It increases font sizes to make them more legable on mobile.
+			It can however have very unpredictable results and break email templates or make them look worse.
+			Using either of the two methods below leverages a email width check to prevent the font sizing behaviour occurring.
+		-->
+        
+		<!-- Method #1 -->
+		<div id="gmailapp-ios-font-fix" style="display:none; white-space:nowrap; font:15px courier; color:#ffffff; mso-hide:all;">
+			- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		</div>
+        
+		<!-- Method #2 -->
+		<div id="gmailapp-ios-font-fix" style="display:none; white-space:nowrap; font:15px courier; line-height:0; mso-hide:all;">
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+		</div>
+        
+	</body>
+	<!--
+		FILESIZE OF YOUR EMAIL TEMPLATE:
+		https://www.emailonacid.com/blog/details/C13/how_does_email_file_size_affect_deliverability
+		https://www.campaignmonitor.com/blog/post/3610/maximum-file-size-for-html-email
+
+		With email, size really does matter. If the filesize of your HTML template is greater than 100kb, prepare for problems.
+		Sending a HTML email template greater than 100kb can cause several problems in relation to deliverability and user experience including:
+
+		* Triggering spam filters
+		* Email clipping/truncation
+		* Load time
+
+		For larger emails where this is an issue, you can use a couple of techniques to get under the limit:
+
+		* Remove any unnecessary spaces, carriage returns or comments
+		* Remove redundant or unnecessary styles
+
+		You could also use a more automated approach with minification tools, such as:
+		https://code.google.com/p/htmlcompressor
+
+		If you use automated tools, make sure to preserve white space.
+	-->
+</html>
+<!-- 
+	CHECKLIST TO FOLLOW BEFORE SENDING AN EMAIL CAMPAIGN
+	http://www.emailonacid.com/blog/details/C4/your_email_marketingpredeployment_checklist
+	https://www.campaignmonitor.com/blog/post/4166/the-essential-email-marketing-checklist
+	http://www.displayblock.com/2014/09/22/robust-testing-process-email-campaigns
+    
+	Check every aspect of an email campaign before sending!
+-->
+
+<!-- Now hit that send button, and your done! Till the next time... -->

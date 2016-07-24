@@ -1,0 +1,121 @@
+<!-- @if DOCTYPE_VERSION='XHTML-TRANSITIONAL' -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- @endif -->
+<!-- @if DOCTYPE_VERSION='XHTML-STRICT' -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- @endif -->
+<!-- @if DOCTYPE_VERSION='HTML4' -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- @endif -->
+<!-- @if DOCTYPE_VERSION='HTML5' -->
+<!DOCTYPE html>
+<!-- @endif -->
+	<html lang="en" <!-- @if ENABLE_VML_NAMESPACES='true' --> xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" <!-- @endif -->>
+		<head>
+			<!-- @if DOCTYPE_VERSION!='HTML5' -->
+			<meta http-equiv="Content-Type" content="text/html; charset=<!-- @echo CHARSET -->" />
+			<!-- @endif -->
+			<!-- @if DOCTYPE_VERSION='HTML5' -->
+			<meta charset="<!-- @echo CHARSET -->" />
+			<!-- @endif -->
+			<!-- @if ENABLE_XUA_COMPATIBLE_META_TAG='true' -->	
+			<!--[if !mso]><!-->
+			<meta http-equiv="X-UA-Compatible" content="<!-- @echo XAU_COMPATIBLE_VALUE -->" />
+			<!--<![endif]-->
+			<!-- @endif -->
+			<!-- @if ENABLE_VIEWPORT_META_TAG='true' -->
+			<meta name="viewport" content="<!-- @echo VIEWPORT_META_VALUE -->" />
+			<!-- @endif -->
+			<!-- @if ENABLE_FORMAT_DETECTION_META_TAG='true' -->
+			<meta name="format-detection" content="<!-- @echo FORMAT_DETECTION_META_VALUE -->" />
+			<!-- @endif -->
+			<!-- @if ENABLE_ROBOTS_META_TAG='true' -->
+			<meta name="robots" content="<!-- @echo ROBOTS_META_VALUE -->" />
+			<!-- @endif -->
+
+			<title><!-- @echo DOCUMENT_TITLE --></title>
+            
+			<!-- @if ENABLE_FAVICON='true' -->
+			<link rel="icon" type="image/x-icon" href="<!-- @echo FAVICON_URL -->" />
+			<!-- @endif -->
+			<link rel="stylesheet" href="../../tmp/css/inline-rules.css.min" />
+			<!-- @if ENABLE_MSO_DPI_SCALING_FIX='true' -->
+			<!--[if gte mso 9]>
+				<xml>
+				  <o:OfficeDocumentSettings>
+				    <o:AllowPNG/>
+				    <o:PixelsPerInch>96</o:PixelsPerInch>
+				 </o:OfficeDocumentSettings>
+				</xml>
+			<![endif]-->
+			<!-- @endif -->
+
+			<!-- @if ENABLE_MSO_CONDITIONAL_STYLING='true' -->
+			<!--[if gte mso 9]>
+				<style style="text/css">
+					<!-- @include ../tmp/css/mso-reset.css.min -->
+				</style>
+			<![endif]-->
+			<!-- @endif -->
+
+			<style type="text/css">
+				<!-- @include ../tmp/css/reset.css.min -->
+
+				<!-- @include ../tmp/css/media-queries.css.min -->
+
+				<!-- @if ENABLE_ANDROID_4_4_CENTRE_FIX='true' -->
+				div[style*="margin: 16px 0"] { margin:0 !important; font-size:100% !important; }
+
+				<!-- @endif -->
+			</style>
+
+		</head>
+
+	<body bgcolor="<!-- @echo BODY_BG_COLOUR -->">
+		<!-- @if ENABLE_PREHEADER='true' -->
+		<span id="preheader"><!-- @echo PREHEADER_TEXT --></span>
+		<!-- @endif -->
+		<table id="<!-- @echo TABLE_WRAPPER_CSS_ID -->">
+			<tr>
+				<td id="<!-- @echo TABLE_WRAPPER_CELL_CSS_ID -->" align="center" valign="top">
+					<table id="<!-- @echo TABLE_CONTAINER_CSS_ID -->">
+						<tr>
+							<td id="<!-- @echo TABLE_CONTAINER_CELL_CSS_ID -->" align="left" valign="top">
+								<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
+								<!--[if (gte mso 9)|(IE)]>
+					            <table id="mso-ie-wrapper" style="width: <!-- @echo TABLE_CONTAINER_WIDTH -->px;" width="<!-- @echo TABLE_CONTAINER_WIDTH -->" border="0" cellpadding="0" cellspacing="0">
+					                <tr>
+					                    <td id="mso-ie-cell" align="left" valign="top">
+					            <![endif]-->
+					            <!-- @endif -->
+								<!-- @if ENABLE_GMAIL_ANDROID_FIX='true' -->
+								<table id="gmailapp-android-fix">
+									<tr>
+										<td align="left" valign="top" height="1">
+											<img src="<!-- @echo PLACEHOLDER_IMG_URL -->/<!-- @echo TABLE_CONTAINER_WIDTH -->x1.gif" alt="" width="<!-- @echo TABLE_CONTAINER_WIDTH -->" height="1" />
+										</td>
+									</tr>
+								</table>
+								<!-- @endif -->
+								<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
+								<!--[if (gte mso 9)|(IE)]>
+					                    </td>
+					                </tr>
+					            </table>
+					            <![endif]-->
+					            <!-- @endif -->
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<!-- @if ENABLE_GMAIL_IOS_FONT_FIX='true' -->
+		<div id="gmailapp-ios-font-fix">
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+		</div>
+		<!-- @endif -->
+	</body>
+</html>
