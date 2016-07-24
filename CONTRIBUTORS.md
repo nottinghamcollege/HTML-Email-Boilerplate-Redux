@@ -5,11 +5,12 @@ This serves as an official list of all organisations or indiviuals that have hel
 ### Author(s):
 
 * Central College Nottingham
-* James White - james.white@centralnottingham.ac.uk
+* James White <james.white@centralnottingham.ac.uk>
 
 ### Contributors/Pull Requests:
 
 * GC-Max
+* cresencio (Gave me the idea for adding gulp processing)
 
 ### Credited Organisations:
 

@@ -1,6 +1,6 @@
 ## Usage
 
-The default configuration of the email boilerplate should provide a common basis for most email campaigns, however if you want to customise the email boilerplate you need to modify the pre-process variables within `gulpfile.js`.
+The default configuration of the email boilerplate should provide a common basis for most email campaigns, however if you want to customise the email boilerplate you need to modify the pre-process variables within `.env`. This file is ignored by Git so you don't need to worry about any of your changes being overwritten on any updates to the source. Ensure you keep watching `.env.example` if new configuration variables are added or modified, otherwise you'll likely get build errors when running `gulp`.
 
 ### Configuration variables
 
@@ -9,7 +9,7 @@ The full list of configuration variables is below and their purpose.
 #### Main document
 
 ```
-DOCTYPE_VERSION: 'XHTML_TRANSITIONAL|XHTML_STRICT|HTML4|HTML5' (default: XHTML_TRANSITIONAL)
+DOCTYPE_VERSION: 'XHTML-TRANSITIONAL|XHTML-STRICT|HTML4|HTML5' (default: XHTML-TRANSITIONAL)
 Purpose: Output a common doctype used in email templates
 ```
 
@@ -95,7 +95,7 @@ Example: http://media.centralnottingham.ac.uk/favicon.ico
 
 ```
 ENABLE_MSO_DPI_SCALING_FIX: boolean (default: true)
-Purpose: Boolean to include MSO DPI fix directly
+Purpose: Boolean to include MSO DPI fix
 ```
 
 ```
@@ -166,6 +166,11 @@ Purpose: Boolean to include a specific webkit query that will be used on any Web
 ```
 
 ```
+ENABLE_GECKO_MEDIA_QUERY: boolean (default: false)
+Purpose: Boolean to include a specific media query that targets Gecko based clients
+```
+
+```
 ENABLE_MAX_DEVICE_WIDTH_MEDIA_QUERY: boolean (default: true)
 Purpose: Boolean to include a media query that is triggered on TABLE_CONTAINER_WIDTH
 ```
@@ -201,9 +206,14 @@ Purpose: Boolean to include a <span> following the <body> tag for the preheader
 
 ```
 PREHEADER_TEXT: string
-Purpose: Variable to control the preheader value
+Purpose: Ability to provide a small sentence that will be the first text email clients will use in message/notification previews
 Example: Example Preheader text
 ```
+
+```
+BODY_BG_COLOUR: string
+Purpose: Ability to set a specific hexidecimal colour for the background of the email
+Example: #ffffff
 
 ```
 TABLE_WRAPPER_CSS_ID: string
@@ -247,12 +257,12 @@ Example: center
 
 ```
 ENABLE_GMAIL_ANDROID_FIX: boolean (default: true)
-Purpose: Boolean to include a spacer image the same size as TABLE_CONTAINER_WIDTH to prevent Gmail force scaling the email
+Purpose: Boolean to include a spacer image the same size as TABLE_CONTAINER_WIDTH to prevent Gmail force scaling a wider email
 ```
 
 ```
 ENABLE_GMAIL_IOS_FONT_FIX: boolean (default: true)
-Purpose: Boolean to include special div block to prevent Gmail iOS app auto scaling fonts
+Purpose: Boolean to include special <div> to prevent Gmail iOS app auto scaling fonts on wider emails
 ```
 
 
