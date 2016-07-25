@@ -8,7 +8,7 @@
 */
 
 table#/* @echo TABLE_CONTAINER_CSS_ID */ {
-	width: /* @echo TABLE_CONTAINER_WIDTH */px
+	width: /* @echo TABLE_CONTAINER_WIDTH */px;
 }
 
 li { 
@@ -29,7 +29,7 @@ span.MsoHyperlinkFollowed {
 /* @if ENABLE_MSO_FALLBACK_FONT='true' */
 body, h1, h2, h3, h4, h5, h6, 
 p, a, table, td, span, strong { 
-	font-family:/* @echo MSO_DEFAULT_FALLBACK_FONT_STACK */ !important;
+	font-family: /* @echo MSO_DEFAULT_FALLBACK_FONT_STACK */ !important;
 }
 
 /* @endif */
