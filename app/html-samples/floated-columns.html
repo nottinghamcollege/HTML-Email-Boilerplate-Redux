@@ -1,0 +1,33 @@
+<!--
+	floated-columns.html
+	Purpose: Create a more flexible table layout that's not constrained by <td>
+
+	Rationale:
+	Some clients don't support being able to make table cells block elements with display: block;
+	hence an alternative approach should be taken to create a column layout for mobile optimisation
+	Using floated tables with the align method allows you to do this and is more flexible.
+
+	Because Outlook lacks a sane box model, the "ghost column" method is applied
+	to actually make Outlook render the code as two table cells.
+-->
+
+<table id="floated-columns-example">
+	<tr>
+		<td>
+			<!-- Column 1 -->
+			<table align="left">
+				<tr>
+					<td>Column #1 Content</td>
+				</tr>
+			</table>
+			<!-- We "ghost" a column for Outlook here -->
+			<!--[if mso]></td><td><![endif]-->
+			<!-- Column 2 -->
+			<table align="left">
+				<tr>
+					<td>Column #2 Content</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>

@@ -1,0 +1,18 @@
+<!--
+	anchors.html
+	Purpose: The foundation of any call to action (CTA) in an email template
+
+	Rationale:
+	Anchors are one of the main layout elements that work consistently, however you should inline styling where possible
+	Always add _target="blank" to make sure links never open within the email client and in the browser
+-->
+
+<!-- Plain link -->
+<a href="<!-- @echo HTML_SAMPLE_HREF -->" class="plain-link" target="_blank">
+	Central College Nottingham
+</a>
+
+<!-- Hyperlinked image -->
+<a href="<!-- @echo HTML_SAMPLE_HREF -->" target="_blank">
+	<img src="<!-- @echo HTML_SAMPLE_IMG_SRC -->" alt="<!-- @echo HTML_SAMPLE_ALT_TEXT -->" border="0" width="289" height="81" class="block-image" />
+</a>
