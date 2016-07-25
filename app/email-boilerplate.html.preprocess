@@ -39,6 +39,7 @@
 			<link rel="icon" type="image/x-icon" href="<!-- @echo FAVICON_URL -->" />
 			<!-- @endif -->
 			<link rel="stylesheet" href="../../tmp/css/inline-rules.css.min" />
+			<link rel="stylesheet" href="../../tmp/css/html-samples.css.min" />
 			<!-- @if ENABLE_MSO_DPI_SCALING_FIX='true' -->
 			<!--[if gte mso 9]>
 				<xml>
@@ -97,6 +98,27 @@
 									</tr>
 								</table>
 								<!-- @endif -->
+
+								<!-- @if ENABLE_HTML_SAMPLE_ANCHORS='true' -->
+								<!-- @include ../tmp/html-samples/anchors.html -->
+								<!-- @endif -->
+
+								<!-- @if ENABLE_HTML_SAMPLE_IMAGES='true' -->
+								<!-- @include ../tmp/html-samples/images.html -->
+								<!-- @endif -->
+
+								<!-- @if ENABLE_HTML_SAMPLE_FAUX_LISTS='true' -->
+								<!-- @include ../tmp/html-samples/faux-lists.html -->
+								<!-- @endif -->
+
+								<!-- @if ENABLE_HTML_SAMPLE_FLOATED_COLUMNS='true' -->
+								<!-- @include ../tmp/html-samples/floated-columns.html -->
+								<!-- @endif -->
+								
+								<!-- @if ENABLE_HTML_SAMPLE_ALIGN_BLOCK_ELEMENT='true' -->
+								<!-- @include ../tmp/html-samples/align-block-element.html -->
+								<!-- @endif -->
+
 								<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
 								<!--[if (gte mso 9)|(IE)]>
 					                    </td>
