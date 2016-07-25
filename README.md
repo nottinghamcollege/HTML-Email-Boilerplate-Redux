@@ -26,7 +26,7 @@ As well as fixing other email client quirks that have been discovered.
 
 This project now uses `npm` and `gulp` based packages to produce a customised and production ready version of the email boilerplate. Originally the project began as static HTML files, however overtime this become a problem where dynamic elements were needed. e.g. toggling code blocks on/off, variable values etc.
 
-1. Install `npm` https://nodejs.org/en/ (Make sure its in your $PATH)
+1. Install `npm` https://nodejs.org/en/ (Make sure its in your `$PATH`)
 2. Install gulp globally with `npm install --global gulp-cli`
 3. Clone the git source of this project and run `npm i` to install the required depedencies
 4. `cp .env.example` `->` `.env`. There are a range of booleans, numeric and string values to tweak to your needs
