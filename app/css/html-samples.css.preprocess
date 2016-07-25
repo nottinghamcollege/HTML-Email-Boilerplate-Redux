@@ -1,0 +1,28 @@
+/*
+	html-samples.css.preprocess
+	Purpose: CSS rules for HTML samples
+
+	Description:
+	id and classes used in HTML samples to be inlined during boilerplate creation
+*/
+
+a.plain-link {
+	color: /* @echo DEFAULT_ANCHOR_COLOUR */;
+	text-decoration: underline;
+	text-align: left;
+}
+
+a img.block-image {
+	border: none;
+}
+
+img.block-image {
+	display: block;
+}
+
+img.block-image.alt {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size:20px;
+	line-height: 23px;
+	color: #000000;
+}
