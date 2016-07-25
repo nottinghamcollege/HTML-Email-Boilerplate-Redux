@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     inlineCss = require('gulp-inline-css'),
     preprocess = require('gulp-preprocess'),
     rename = require('gulp-rename'),
+    strip = require('gulp-strip-comments');
 
 // Load in environment variables from .env
 dotenv.load();
@@ -13,14 +14,17 @@ dotenv.load();
 // We only want to target this file for HTML processing, the guidelines version is static and legacy
 email_boilerplate_file = 'app/email-boilerplate.html.preprocess';
 
-// Clean out anything that might already be in dist/tmp
+// Clean out the build directories
 gulp.task('clean', function () {
     return del(
         [
-            'tmp/css/*', 
-            'dist/boilerplate/*'
+            'tmp/css/**', 
+            'tmp/html-samples/**',
+            'dist/boilerplate/**'
         ]
-    );
+    ).then(paths => {
+        console.log('Cleaning directories :\n', paths.join('\n'));
+    });
 });
 
 // Pre-process CSS files with .env values
@@ -49,21 +53,33 @@ gulp.task('minify-css', ['preprocess-css'], function() {
             compatibility: '*,' + 
             '-properties.colors,' +
             '-properties.zeroUnits'
-            },
-            // Log oringal size and minified size in gulp output
-            function(details) {
-                console.log(details.name + ': ' + details.stats.originalSize);
-                console.log(details.name + '.min' + ': ' + details.stats.minifiedSize);
-            }
-        )
+        },
+        // Log oringal size and minified size in gulp output
+        function(details) {
+            console.log(details.name + ': ' + details.stats.originalSize);
+            console.log(details.name + '.min' + ': ' + details.stats.minifiedSize);
+        })
     )
     .pipe(rename({extname: ".css.min"}))
     .pipe(gulp.dest('./tmp/css/'));
     return stream;
 });
 
+// Build all HTML samples and strip comments to be included in boilerplate
+gulp.task('build-html-samples', function() {
+    gulp.src('./app/html-samples/*.html')
+    .pipe(preprocess())
+    .pipe(strip(
+        {
+            safe: true,
+            trim: true
+        }
+    ))
+    .pipe(gulp.dest('./tmp/html-samples/'));
+});
+
 // Build email boilerplate HTML and put everything together!
-gulp.task('preprocess-html', ['minify-css'], function() {
+gulp.task('preprocess-boilerplate', ['minify-css'], function() {
     var stream = gulp.src(email_boilerplate_file)
     .pipe(preprocess({extension: 'html'}))
     .pipe(rename('email-boilerplate.html'))
@@ -71,8 +87,8 @@ gulp.task('preprocess-html', ['minify-css'], function() {
     return stream;
 });
 
-// Inline CSS to main layout elements after HTML document is generated
-gulp.task('inline-css', ['preprocess-html'], function () {
+// Inline CSS to main layout elements after boilerplate is generated and update it
+gulp.task('inline-css', ['preprocess-boilerplate'], function () {
     var stream = gulp.src('./dist/boilerplate/email-boilerplate.html')
     .pipe(inlineCss({
         applyTableAttributes: true,
@@ -92,8 +108,9 @@ gulp.task('default',
     [ 
         'clean', 
         'preprocess-css', 
-        'minify-css', 
-        'preprocess-html', 
+        'minify-css',
+        'build-html-samples',
+        'preprocess-boilerplate', 
         'inline-css' 
     ]
 );
