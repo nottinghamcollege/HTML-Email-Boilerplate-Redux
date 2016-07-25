@@ -32,7 +32,7 @@ gulp.task('preprocess-css', function() {
     var stream = gulp.src('./app/css/*.preprocess')
     .pipe(preprocess({ extension: 'css' }))
     // drop .preprocess extension
-    .pipe(rename({ extname: "" }))
+    .pipe(rename({ extname: '' }))
     .pipe(gulp.dest('./tmp/css/'))
     return stream;
 });
@@ -60,7 +60,7 @@ gulp.task('minify-css', ['preprocess-css'], function() {
             console.log(details.name + '.min' + ': ' + details.stats.minifiedSize);
         })
     )
-    .pipe(rename({extname: ".css.min"}))
+    .pipe(rename({extname: '.css.min'}))
     .pipe(gulp.dest('./tmp/css/'));
     return stream;
 });
