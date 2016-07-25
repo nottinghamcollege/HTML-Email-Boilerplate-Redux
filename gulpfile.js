@@ -30,9 +30,9 @@ gulp.task('clean', function () {
 // Pre-process CSS files with .env values
 gulp.task('preprocess-css', function() {
     var stream = gulp.src('./app/css/*.preprocess')
-    .pipe(preprocess({extension: 'css'}))
+    .pipe(preprocess({ extension: 'css' }))
     // drop .preprocess extension
-    .pipe(rename({extname: ""}))
+    .pipe(rename({ extname: "" }))
     .pipe(gulp.dest('./tmp/css/'))
     return stream;
 });
@@ -81,7 +81,7 @@ gulp.task('build-html-samples', function() {
 // Build email boilerplate HTML and put everything together!
 gulp.task('preprocess-boilerplate', ['minify-css'], function() {
     var stream = gulp.src(email_boilerplate_file)
-    .pipe(preprocess({extension: 'html'}))
+    .pipe(preprocess({ extension: 'html' }))
     .pipe(rename('email-boilerplate.html'))
     .pipe(gulp.dest('./dist/boilerplate/'))
     return stream;
@@ -90,15 +90,17 @@ gulp.task('preprocess-boilerplate', ['minify-css'], function() {
 // Inline CSS to main layout elements after boilerplate is generated and update it
 gulp.task('inline-css', ['preprocess-boilerplate'], function () {
     var stream = gulp.src('./dist/boilerplate/email-boilerplate.html')
-    .pipe(inlineCss({
-        applyTableAttributes: true,
-        applyStyleTags: false,
-        applyLinkTags: true,
-        applyWidthAttributes: true,
-        removeStyleTags: false,
-        removeLinkTags: true,
-        xmlMode: true // Be defensive
-    }))
+    .pipe(inlineCss(
+        {
+            applyTableAttributes: true,
+            applyStyleTags: false,
+            applyLinkTags: true,
+            applyWidthAttributes: true,
+            removeStyleTags: false,
+            removeLinkTags: true,
+            xmlMode: true // Be defensive
+        }
+    ))
     .pipe(gulp.dest('./dist/boilerplate/'));
     return stream;
 });
