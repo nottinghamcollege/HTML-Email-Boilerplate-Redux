@@ -101,24 +101,24 @@
 
 								<!-- @if ENABLE_HTML_SAMPLE_ANCHORS='true' -->
 								<!-- @include ../tmp/html-samples/anchors.html -->
-								<!-- @endif -->
 
+								<!-- @endif -->
 								<!-- @if ENABLE_HTML_SAMPLE_IMAGES='true' -->
 								<!-- @include ../tmp/html-samples/images.html -->
-								<!-- @endif -->
 
+								<!-- @endif -->
 								<!-- @if ENABLE_HTML_SAMPLE_FAUX_LISTS='true' -->
 								<!-- @include ../tmp/html-samples/faux-lists.html -->
-								<!-- @endif -->
 
+								<!-- @endif -->
 								<!-- @if ENABLE_HTML_SAMPLE_FLOATED_COLUMNS='true' -->
 								<!-- @include ../tmp/html-samples/floated-columns.html -->
+
 								<!-- @endif -->
-								
 								<!-- @if ENABLE_HTML_SAMPLE_ALIGN_BLOCK_ELEMENT='true' -->
 								<!-- @include ../tmp/html-samples/align-block-element.html -->
-								<!-- @endif -->
 
+								<!-- @endif -->
 								<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
 								<!--[if (gte mso 9)|(IE)]>
 										</td>
