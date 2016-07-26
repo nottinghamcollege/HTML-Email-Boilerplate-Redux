@@ -10,6 +10,6 @@
 */
 
 div[style*="margin: 16px 0"] { 
-	margin: 0 !important; 
+	margin: 0 auto !important; 
 	font-size: 100% !important; 
 }
