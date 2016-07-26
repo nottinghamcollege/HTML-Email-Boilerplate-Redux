@@ -54,13 +54,13 @@ gulp.task('minify-css', ['preprocess-css'], function() {
             '-properties.colors,' +
             '-properties.zeroUnits'
         },
-        // Log oringal size and minified size in gulp output
+        // Log original size and minified size in gulp output
         function(details) {
             console.log(details.name + ': ' + details.stats.originalSize);
             console.log(details.name + '.min' + ': ' + details.stats.minifiedSize);
         })
     )
-    .pipe(rename({extname: '.css.min'}))
+    .pipe(rename({ extname: '.css.min' }))
     .pipe(gulp.dest('./tmp/css/'));
     return stream;
 });
