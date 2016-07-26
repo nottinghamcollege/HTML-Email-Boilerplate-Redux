@@ -65,9 +65,9 @@
 				<!-- @include ../tmp/css/media-queries.css.min -->
 
 				<!-- @if ENABLE_ANDROID_4_4_CENTRE_FIX='true' -->
-				div[style*="margin: 16px 0"] { margin:0 !important; font-size:100% !important; }
-
+				<!-- @include ../tmp/css/android-4-4-margin-fix.css.min -->
 				<!-- @endif -->
+
 			</style>
 
 		</head>
