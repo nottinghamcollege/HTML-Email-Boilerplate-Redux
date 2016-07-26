@@ -87,6 +87,15 @@ gulp.task('preprocess-boilerplate', ['minify-css'], function() {
 
 // Inline CSS to main layout elements after boilerplate is generated and update it
 gulp.task('inline-css', ['preprocess-boilerplate'], function () {
+    
+    // We need to check if DOCTYPE_VERSION is using an XHTML value
+    var currentSetDoctype = process.env.DOCTYPE_VERSION;
+    if (/XHTML/i.test(currentSetDoctype)) {
+        xmlMode = true;
+    } else {
+        xmlMode = false;
+    }
+
     var stream = gulp.src('./dist/boilerplate/email-boilerplate.html')
     .pipe(inlineCSS(
         {
@@ -96,8 +105,7 @@ gulp.task('inline-css', ['preprocess-boilerplate'], function () {
             applyWidthAttributes: true,
             removeStyleTags: false,
             removeLinkTags: true,
-            // Be defensive
-            xmlMode: true
+            xmlMode: xmlMode
         }
     ))
     .pipe(gulp.dest('./dist/boilerplate/'));
