@@ -43,10 +43,10 @@
 			<!-- @if ENABLE_MSO_DPI_SCALING_FIX='true' -->
 			<!--[if gte mso 9]>
 				<xml>
-				  <o:OfficeDocumentSettings>
-				    <o:AllowPNG/>
-				    <o:PixelsPerInch>96</o:PixelsPerInch>
-				 </o:OfficeDocumentSettings>
+					<o:OfficeDocumentSettings>
+						<o:AllowPNG/>
+						<o:PixelsPerInch>96</o:PixelsPerInch>
+					</o:OfficeDocumentSettings>
 				</xml>
 			<![endif]-->
 			<!-- @endif -->
