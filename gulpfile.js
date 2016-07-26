@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     del = require('del')
     dotenv = require('dotenv'),
-    inlineCss = require('gulp-inline-css'),
+    inlineCSS = require('gulp-inline-css'),
     preprocess = require('gulp-preprocess'),
     rename = require('gulp-rename'),
     strip = require('gulp-strip-comments');
@@ -90,7 +90,7 @@ gulp.task('preprocess-boilerplate', ['minify-css'], function() {
 // Inline CSS to main layout elements after boilerplate is generated and update it
 gulp.task('inline-css', ['preprocess-boilerplate'], function () {
     var stream = gulp.src('./dist/boilerplate/email-boilerplate.html')
-    .pipe(inlineCss(
+    .pipe(inlineCSS(
         {
             applyTableAttributes: true,
             applyStyleTags: false,
@@ -98,7 +98,8 @@ gulp.task('inline-css', ['preprocess-boilerplate'], function () {
             applyWidthAttributes: true,
             removeStyleTags: false,
             removeLinkTags: true,
-            xmlMode: true // Be defensive
+            // Be defensive
+            xmlMode: true
         }
     ))
     .pipe(gulp.dest('./dist/boilerplate/'));
