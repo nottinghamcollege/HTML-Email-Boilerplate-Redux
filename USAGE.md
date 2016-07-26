@@ -116,6 +116,12 @@ Purpose: Boolean to include MSO DPI fix
 ```
 
 ```
+ENABLE_MSO_CONDITIONAL_STYLING (default: true)
+Type: boolean
+Purpose: Boolean to include specific MSO CSS reset rules
+```
+
+```
 ENABLE_MSO_FALLBACK_FONT (default: true)
 Type: boolean
 Purpose: Boolean to include a specific CSS block that targets main layout elements
