@@ -20,7 +20,7 @@
 			<!-- @endif -->
 			<!-- @if ENABLE_XUA_COMPATIBLE_META_TAG='true' -->	
 			<!--[if !mso]><!-->
-			<meta http-equiv="X-UA-Compatible" content="<!-- @echo XAU_COMPATIBLE_VALUE -->" />
+			<meta http-equiv="X-UA-Compatible" content="<!-- @echo XUA_COMPATIBLE_VALUE -->" />
 			<!--<![endif]-->
 			<!-- @endif -->
 			<!-- @if ENABLE_VIEWPORT_META_TAG='true' -->
