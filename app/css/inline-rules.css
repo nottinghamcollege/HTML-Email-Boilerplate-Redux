@@ -23,7 +23,7 @@ table#/* @echo TABLE_WRAPPER_CSS_ID */ {
 
 table#/* @echo TABLE_CONTAINER_CSS_ID */ {
 	/* @if TABLE_CONTAINER_FIXED_WIDTH='true' */
-	width: 600; /* This is to workaround a bug inline-css*/
+	width: 600; /* This is to workaround a bug inline-css */
 	/* @endif */
 	/* @if TABLE_CONTAINER_FIXED_WIDTH='false' */
 	max-width: 600px;
@@ -37,7 +37,7 @@ table#gmailapp-android-fix {
 
 table#gmailapp-android-fix td {
 	line-height: 1px; 
-	height: 1px;
+	height: 1; /* This is to workaround a bug inline-css */
 	min-width: /* @echo TABLE_CONTAINER_WIDTH */px;
 }
 
