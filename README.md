@@ -29,13 +29,13 @@ This project now uses `npm` and `gulp` based packages to produce a customised an
 1. Install `npm` https://nodejs.org/en/ (Make sure its in your `$PATH`)
 2. Install gulp globally with `npm install --global gulp-cli`
 3. Clone the git source of this project and run `npm i` to install the required depedencies
-4. `cp .env.example` `->` `.env`. There are a range of booleans, numeric and string values to tweak to your needs
+4. `cp .env.example -> .env`. There are a range of booleans, numeric and string values to tweak to your needs
 5. Run `gulp` to build the email boilerplate
 6. The "compiled" email boilerplate will be written to `dist/boilerplate/email-boilerplate.html`
 
 A `tmp` directory will be created when running `gulp` these are just helper files needed during the build, they can be ignored.
 
-Note: Don't place any files within the `tmp` or `dist` directory, it is cleaned each time `gulp` is run.
+Note: Don't place any files within the `tmp` or `dist` directory, they are cleaned each time `gulp` is run.
 
 ## Project branches
 
@@ -54,7 +54,7 @@ This is the stable version of the boilerplate which should be used in email camp
 
 ### Guidelines
 
-Two versions of the email boilerplate exist, one version is static full of HTML/CSS comments that details every aspect of the code, the other is a preprocess version which has all of the HTML/CSS comments removed, but contains variables and conditional logic ready to be built with `gulp`. The syntax of this doucment without building via `gulp` is not valid HTML. Therefore do not use it without building with the install instructions.
+Two versions of the email boilerplate exist, one version is static full of HTML/CSS comments that details every aspect of the code, the other is a preprocess version which has all of the HTML/CSS comments removed, but contains variables and conditional logic ready to be built with `gulp`. The syntax of this document without building via `gulp` is not valid HTML. Therefore do not use it without building with the install instructions.
 
 In order to maintain accessibility of the project, the guidelines version is provided outside of any `npm` control allowing you to view the full email boilerplate and documentation without having to install anything if you do not wish to use `npm`.
 
