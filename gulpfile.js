@@ -29,10 +29,8 @@ gulp.task('clean', function () {
 
 // Pre-process CSS files with .env values
 gulp.task('preprocess-css', function() {
-    var stream = gulp.src('./app/css/*.preprocess')
+    var stream = gulp.src('./app/css/*.css')
     .pipe(preprocess({ extension: 'css' }))
-    // drop .preprocess extension
-    .pipe(rename({ extname: '' }))
     .pipe(gulp.dest('./tmp/css/'))
     return stream;
 });
