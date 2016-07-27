@@ -1,13 +1,13 @@
-<!-- @if DOCTYPE_VERSION='XHTML-TRANSITIONAL' -->
+<!-- @if DOCTYPE_VERSION='xhtml-transitional' -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- @endif -->
-<!-- @if DOCTYPE_VERSION='XHTML-STRICT' -->
+<!-- @if DOCTYPE_VERSION='xhtml-strict' -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!-- @endif -->
-<!-- @if DOCTYPE_VERSION='HTML4' -->
+<!-- @if DOCTYPE_VERSION='html4' -->
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!-- @endif -->
-<!-- @if DOCTYPE_VERSION='HTML5' -->
+<!-- @if DOCTYPE_VERSION='html5' -->
 <!DOCTYPE html>
 <!-- @endif -->
 	<html lang="<!-- @echo LANGUAGE_CODE -->" <!-- @if ENABLE_VML_NAMESPACES='true' --> xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" <!-- @endif -->>

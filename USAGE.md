@@ -9,9 +9,9 @@ The full list of configuration variables is below and their purpose.
 #### Main document
 
 ```
-DOCTYPE_VERSION (default: XHTML-TRANSITIONAL)
+DOCTYPE_VERSION (default: xhtml-transitional)
 Type: string
-Possible values: XHTML-TRANSITIONAL, XHTML-STRICT, HTML4, HTML5
+Possible values: xhtml-transitional, xhtml-strict, html4, html5
 Purpose: Output a common doctype used in email templates
 ```
 
