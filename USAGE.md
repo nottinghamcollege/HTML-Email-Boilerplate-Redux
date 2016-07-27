@@ -1,4 +1,4 @@
-## Usage
+# Usage
 
 The default configuration of the email boilerplate should provide a common basis for most email campaigns, however if you want to customise any of the configuration you need to modify the config variables within a file called `.boilerplate.custom`. 
 
