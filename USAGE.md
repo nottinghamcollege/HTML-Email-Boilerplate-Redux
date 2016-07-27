@@ -79,7 +79,7 @@ Purpose: Boolean to include a XUA-Compatible meta tag for IE clients
 ```
 
 ```
-XAU_COMPATIBLE_VALUE
+XUA_COMPATIBLE_VALUE
 Type: string
 Purpose: Set a document mode for Internet Explore clients to always use
 Example: IE=edge
