@@ -40,7 +40,7 @@ body {
 }
 /* @endif */
 /* @if ENABLE_AOL_WEBMAIL_CSS_CLASS='true' */
-.aolReplacedBody {  
+.aolReplacedBody .foo {  
 
 }
 
