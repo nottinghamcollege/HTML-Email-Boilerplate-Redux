@@ -2,14 +2,24 @@
 var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     del = require('del')
-    dotenv = require('dotenv'),
     inlineCSS = require('gulp-inline-css'),
     preprocess = require('gulp-preprocess'),
     rename = require('gulp-rename'),
     strip = require('gulp-strip-comments');
 
-// Load in environment variables from .env
-dotenv.load();
+// Load in environment variables from .boilerplate.defaults first and then .boilerplate.custom if it exists
+var boilerplateConfig = require('dotenv-extended').load(
+    {
+        encoding: 'utf8',
+        silent: true,
+        path: '.boilerplate.custom',
+        defaults: '.boilerplate.defaults',
+        errorOnMissing: false,
+        errorOnExtra: false,
+        assignToProcessEnv: true,
+        overrideProcessEnv: true
+    }
+);
 
 // We only want to target this file for HTML processing, the guidelines version is static and legacy
 email_boilerplate_file = 'app/email-boilerplate.html.preprocess';

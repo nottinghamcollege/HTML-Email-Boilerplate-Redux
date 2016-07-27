@@ -1,10 +1,10 @@
 //
 // Email boilerplate configutation variables
-// See USAGE.md for an a more detailed overview of each variable
+// See USAGE.md for a more detailed overview of each variable
 //
 
 // DOCTYPE AND HEAD
-DOCTYPE_VERSION="XHTML-TRANSITIONAL"
+DOCTYPE_VERSION="xhtml-transitional"
 LANGUAGE_CODE="en"
 ENABLE_VML_NAMESPACES=true
 CHARSET="utf-8"
@@ -60,7 +60,7 @@ CONTAINER_TABLE_BG_COLOR="#dedede"
 TABLE_CONTAINER_FIXED_WIDTH=true
 TABLE_CONTAINER_WIDTH=600
 TABLE_CONTAINER_ALIGN="center"
-ENABLE_GMAIL_ANDROID_FIX=true
+ENABLE_GMAIL_ANDROID_RESIZE_FIX=true
 ENABLE_GMAIL_IOS_FONT_FIX=true
 
 // HTML SAMPLES

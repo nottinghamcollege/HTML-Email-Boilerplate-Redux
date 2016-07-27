@@ -1,6 +1,10 @@
 ## Usage
 
-The default configuration of the email boilerplate should provide a common basis for most email campaigns, however if you want to customise the email boilerplate you need to modify the configuration variables within `.env`. This file is ignored by Git so you don't need to worry about any of your changes being overwritten on any updates to the source. Ensure you keep watching `.env.example` if new configuration variables are added or modified, otherwise you'll likely get build errors when running `gulp`.
+The default configuration of the email boilerplate should provide a common basis for most email campaigns, however if you want to customise any of the configuration you need to modify the config variables within a file called `.boilerplate.custom`. 
+
+There is a default configuration file called `.boilerplate.defaults`, this is always loaded first to make sure all configuration variables are loaded with a default value to prevent any build errors e.g. if a new variable is added and your `.boilerplate.custom` file doesn't have it.
+
+Your `.boilerplate.custom` file is ignored by Git so you don't need to worry about any of your changes being overwritten on any updates to the source. Ensure you keep an eye on any changes made to this documentation for new configuration variables/modified behaviour. Tweak the `.boilerplate.custom` file to your needs and build the email boilerplate with `gulp` with your customisations.
 
 ### Configuration variables
 
