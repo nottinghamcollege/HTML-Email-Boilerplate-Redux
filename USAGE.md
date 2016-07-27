@@ -308,7 +308,7 @@ Example: center
 ```
 
 ```
-ENABLE_GMAIL_ANDROID_FIX (default: true)
+ENABLE_GMAIL_ANDROID_RESIZE_FIX (default: true)
 Type: boolean
 Purpose: Boolean to include a spacer image the same size as TABLE_CONTAINER_WIDTH to prevent Gmail force scaling a wider email
 ```
