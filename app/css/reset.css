@@ -29,7 +29,16 @@ body {
 	height: 100% !important; 
 	margin: 0 auto !important; 
 	padding: 0 !important; 
+	/* @if ENABLE_GENERAL_SIBLING_SELECTOR_BUG_FIX='true' */
+	-webkit-animation: bugfix infinite 1s;
+	/* @endif */
 }
+/* @if ENABLE_GENERAL_SIBLING_SELECTOR_BUG_FIX='true' */
+@-webkit-keyframes bugfix { 
+	from { padding: 0; } 
+	to { padding: 0; } 
+}
+/* @endif */
 /* @if ENABLE_AOL_WEBMAIL_CSS_CLASS='true' */
 .aolReplacedBody {  
 

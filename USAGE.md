@@ -141,6 +141,12 @@ Example: Helvetica, Arial, sans-serif
 #### CSS Reset/head rules
 
 ```
+ENABLE_GENERAL_SIBLING_SELECTOR_BUG_FIX (default: false)
+Type: boolean
+Purpose: Fix CSS sibling selector support in certain Android/iOS clients
+```
+
+```
 ENABLE_AOL_WEBMAIL_CSS_CLASS (default: false)
 Type: boolean
 Purpose: Boolean to include a specific CSS class that will be rendered by AOL Webmail clients
