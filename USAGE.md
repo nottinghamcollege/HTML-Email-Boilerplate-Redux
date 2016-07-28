@@ -329,10 +329,24 @@ Purpose: Set the width of the container table
 ```
 
 ```
+TABLE_WRAPPER_CELL_ALIGN
+Type: string
+Purpose: Set the align method of wrapper table cell
+Example: center
+```
+
+```
 TABLE_CONTAINER_ALIGN
 Type: string
 Purpose: Set the align method of container table
 Example: center
+```
+
+```
+TABLE_CONTAINER_CELL_ALIGN
+Type: string
+Purpose: Set the align method of container table cell
+Example: left
 ```
 
 ```
