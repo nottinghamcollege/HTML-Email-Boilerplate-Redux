@@ -1,7 +1,7 @@
 // Dependencies that makes this all work! Yay packages!
 var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
-    del = require('del')
+    del = require('del'),
     inlineCSS = require('gulp-inline-css'),
     preprocess = require('gulp-preprocess'),
     rename = require('gulp-rename'),
@@ -37,7 +37,7 @@ gulp.task('clean', function () {
     });
 });
 
-// Pre-process CSS files with .env values
+// Pre-process CSS files with config values
 gulp.task('preprocess-css', function() {
     var stream = gulp.src('./app/css/*.css')
     .pipe(preprocess())
