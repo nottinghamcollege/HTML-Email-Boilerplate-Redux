@@ -6,11 +6,11 @@ There is a default configuration file called `.boilerplate.defaults`, this is al
 
 Your `.boilerplate.custom` file is ignored by Git so you don't need to worry about any of your changes being overwritten on any updates to the source. Ensure you keep an eye on any changes made to this documentation for new configuration variables/modified behaviour. Tweak the `.boilerplate.custom` file to your needs and build the email boilerplate with `gulp` with your customisations.
 
-### Configuration variables
+## Configuration variables
 
 The full list of configuration variables is below and their purpose.
 
-#### Main document
+### Main document
 
 ```
 DOCTYPE_VERSION (default: xhtml-transitional)
@@ -111,7 +111,7 @@ Purpose: Full URL path to ico file
 Example: http://media.centralnottingham.ac.uk/favicon.ico
 ```
 
-#### MSO (Microsoft Office) code
+### MSO (Microsoft Office) code
 
 ```
 ENABLE_MSO_DPI_SCALING_FIX (default: true)
@@ -138,18 +138,12 @@ Purpose: Ability to set a web safe font stack Windows based Outlook clients will
 Example: Helvetica, Arial, sans-serif
 ```
 
-#### CSS Reset/head rules
+#### CSS Reset `<head>`
 
 ```
 ENABLE_GENERAL_SIBLING_SELECTOR_BUG_FIX (default: false)
 Type: boolean
 Purpose: Fix CSS sibling selector support in certain Android/iOS clients
-```
-
-```
-ENABLE_AOL_WEBMAIL_CSS_CLASS (default: false)
-Type: boolean
-Purpose: Boolean to include a specific CSS class that will be rendered by AOL Webmail clients
 ```
 
 ```
@@ -184,7 +178,13 @@ Type: boolean
 Purpose: Boolean to include CSS rules that target automatically converted links in Yahoo! (shortcuts)
 ```
 
-#### CSS3 Media Queries
+#### CSS3 `@media` queries
+
+```
+ENABLE_WINDOWS_PHONE_VIEWPORT_FIX (default: false)
+Type: boolean
+Purpose: Boolean to include a specific at-rule to adjust the viewport on Windows Phone devices
+```
 
 ```
 ENABLE_MEDIA_SCREEN_QUERY (default: true)
@@ -240,7 +240,25 @@ Type: boolean
 Purpose: Boolean to include a media query that targets devices with a pixel density slighty higher than normal
 ```
 
-#### Other CSS
+### Other CSS
+
+```
+ENABLE_AOL_WEBMAIL_CSS_CLASS (default: false)
+Type: boolean
+Purpose: Boolean to include a specific CSS class that will be rendered by AOL Webmail clients
+```
+
+```
+ENABLE_OFFICE_365_CSS_SELECTOR (default: false)
+Type: boolean
+Purpose: Boolean to include a specific CSS selector that will target Office 365
+```
+
+```
+ENABLE_GMAIL_HIDE_DOWNLOAD_ICON_HACK (default: true)
+Type: boolean
+Purpose: Boolean to include a specific CSS selector that will remove the download icon on Gmail
+```
 
 ```
 ENABLE_ANDROID_4_4_CENTRE_FIX (default: true)
@@ -248,7 +266,7 @@ Type: boolean
 Purpose: Boolean to include an attribute selector that normalises the margin on Android 4.4
 ```
 
-#### Main `<body>`
+### Main `<body>`
 
 ```
 ENABLE_PREHEADER (default: true)
@@ -361,7 +379,7 @@ Type: boolean
 Purpose: Boolean to include a list layout using tables example for email uage
 ```
 
-#### Misc
+### Misc
 
 ```
 PLACEHOLDER_IMG_URL

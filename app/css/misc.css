@@ -1,0 +1,43 @@
+/*
+	misc.css
+	Purpose: Additional reset or specific selector hacks that can target specific email clients
+	Description:
+
+	The main reset CSS file generally targets a wider set of clients, the CSS rules in this file
+	generally are more specific to certain clients and hence are split from the main reset file.
+*/
+
+/* @if ENABLE_AOL_WEBMAIL_CSS_CLASS='true' */
+.aolReplacedBody .foo {  
+/*!
+	Specific CSS class to target AOL Webmail
+*/
+}
+/* @endif */
+
+/* @if ENABLE_OFFICE_365_CSS_SELECTOR='true' */
+* [office365] .foo { 
+/*!
+	Specific CSS selector to target Office 365
+*/
+}
+/* @endif */
+
+/* @if ENABLE_GMAIL_HIDE_DOWNLOAD_ICON_HACK='true' */
+* img[tabindex="0"] + div { 
+	display: none !important; 
+}
+/* @endif */
+
+/* @if ENABLE_ANDROID_4_4_CENTRE_FIX='true' */
+div[style*="margin: 16px 0"] { 
+	margin: 0 auto !important; 
+	font-size: 100% !important; 
+}
+/* @endif */
+
+/* @if ENABLE_GMAIL_ANDROID_RESIZE_FIX='true' */
+table#gmailapp-android-fix {
+	display: none;
+}
+/* @endif */

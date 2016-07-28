@@ -60,13 +60,11 @@
 			<!-- @endif -->
 
 			<style type="text/css">
-				<!-- @include ../tmp/css/reset.css.min -->
+				<!-- @include ../tmp/css/main-reset.css.min -->
 
 				<!-- @include ../tmp/css/media-queries.css.min -->
 
-				<!-- @if ENABLE_ANDROID_4_4_CENTRE_FIX='true' -->
-				<!-- @include ../tmp/css/android-4-4-margin-fix.css.min -->
-				<!-- @endif -->
+				<!-- @include ../tmp/css/misc.css.min -->
 
 			</style>
 
