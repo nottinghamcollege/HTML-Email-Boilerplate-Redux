@@ -16,10 +16,6 @@
 	-ms-text-size-adjust: none; 
 }
 
-* img[tabindex="0"] + div { 
-	display: none !important; 
-}
-
 #outlook a { 
 	padding: 0; 
 }
@@ -29,14 +25,19 @@ body {
 	height: 100% !important; 
 	margin: 0 auto !important; 
 	padding: 0 !important; 
+	/* @if ENABLE_GENERAL_SIBLING_SELECTOR_BUG_FIX='true' */
+	-webkit-animation: bugfix infinite 1s;
+	/* @endif */
 }
-/* @if ENABLE_AOL_WEBMAIL_CSS_CLASS='true' */
-.aolReplacedBody {  
-
+/* @if ENABLE_GENERAL_SIBLING_SELECTOR_BUG_FIX='true' */
+@-webkit-keyframes bugfix { 
+	from { padding: 0; } 
+	to { padding: 0; } 
 }
-
 /* @endif */
-.ReadMsgBody, .ExternalClass { 
+
+.ReadMsgBody, 
+.ExternalClass { 
 	width: 100%; 
 }
 
@@ -103,13 +104,21 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 	color: blue !important; 
 }
 
-h1 a:active, h2 a:active, h3 a:active, h4 a:active, 
-h5 a:active, h6 a:active { 
+h1 a:active, 
+h2 a:active, 
+h3 a:active, 
+h4 a:active, 
+h5 a:active, 
+h6 a:active { 
 	color: red !important; 
 }
 
-h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, 
-h5 a:visited, h6 a:visited { 
+h1 a:visited, 
+h2 a:visited, 
+h3 a:visited, 
+h4 a:visited, 
+h5 a:visited, 
+h6 a:visited { 
 	color: purple !important; 
 }
 

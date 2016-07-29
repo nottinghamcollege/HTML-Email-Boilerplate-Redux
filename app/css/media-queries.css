@@ -7,6 +7,12 @@
 	NOTE: This file requires processing via gulp to build the desired conditional/variable values
 */
 
+/* @if ENABLE_WINDOWS_PHONE_VIEWPORT_FIX='true' */
+@-ms-viewport {
+	width: device-width;
+}
+
+/* @endif */
 /* @if ENABLE_MEDIA_SCREEN_QUERY='true' */
 @media screen {
 /*! 

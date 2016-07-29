@@ -1,16 +1,16 @@
-<!-- @if DOCTYPE_VERSION='XHTML-TRANSITIONAL' -->
+<!-- @if DOCTYPE_VERSION='xhtml-transitional' -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- @endif -->
-<!-- @if DOCTYPE_VERSION='XHTML-STRICT' -->
+<!-- @if DOCTYPE_VERSION='xhtml-strict' -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!-- @endif -->
-<!-- @if DOCTYPE_VERSION='HTML4' -->
+<!-- @if DOCTYPE_VERSION='html4' -->
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!-- @endif -->
-<!-- @if DOCTYPE_VERSION='HTML5' -->
+<!-- @if DOCTYPE_VERSION='html5' -->
 <!DOCTYPE html>
 <!-- @endif -->
-	<html lang="en" <!-- @if ENABLE_VML_NAMESPACES='true' --> xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" <!-- @endif -->>
+	<html lang="<!-- @echo LANGUAGE_CODE -->" <!-- @if ENABLE_VML_NAMESPACES='true' --> xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" <!-- @endif -->>
 		<head>
 			<!-- @if DOCTYPE_VERSION!='HTML5' -->
 			<meta http-equiv="Content-Type" content="text/html; charset=<!-- @echo CHARSET -->" />
@@ -60,13 +60,11 @@
 			<!-- @endif -->
 
 			<style type="text/css">
-				<!-- @include ../tmp/css/reset.css.min -->
+				<!-- @include ../tmp/css/main-reset.css.min -->
 
 				<!-- @include ../tmp/css/media-queries.css.min -->
 
-				<!-- @if ENABLE_ANDROID_4_4_CENTRE_FIX='true' -->
-				<!-- @include ../tmp/css/android-4-4-margin-fix.css.min -->
-				<!-- @endif -->
+				<!-- @include ../tmp/css/misc.css.min -->
 
 			</style>
 
@@ -78,18 +76,18 @@
 		<!-- @endif -->
 		<table id="<!-- @echo TABLE_WRAPPER_CSS_ID -->">
 			<tr>
-				<td id="<!-- @echo TABLE_WRAPPER_CELL_CSS_ID -->" align="center" valign="top">
+				<td id="<!-- @echo TABLE_WRAPPER_CELL_CSS_ID -->" align="<!-- @echo TABLE_WRAPPER_CELL_ALIGN -->" valign="top" bgcolor="<!-- @echo BODY_BG_COLOUR -->">
 					<table id="<!-- @echo TABLE_CONTAINER_CSS_ID -->">
 						<tr>
-							<td id="<!-- @echo TABLE_CONTAINER_CELL_CSS_ID -->" align="left" valign="top">
+							<td id="<!-- @echo TABLE_CONTAINER_CELL_CSS_ID -->" align="<!-- @echo TABLE_CONTAINER_CELL_ALIGN -->" valign="top" bgcolor="<!-- @echo TABLE_CONTAINER_CELL_BG_COLOR -->">
 								<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
 								<!--[if (gte mso 9)|(IE)]>
-					            <table id="mso-ie-wrapper" style="width: <!-- @echo TABLE_CONTAINER_WIDTH -->px;" width="<!-- @echo TABLE_CONTAINER_WIDTH -->" border="0" cellpadding="0" cellspacing="0">
-					                <tr>
-					                    <td id="mso-ie-cell" align="left" valign="top">
-					            <![endif]-->
-					            <!-- @endif -->
-								<!-- @if ENABLE_GMAIL_ANDROID_FIX='true' -->
+								<table id="mso-ie-wrapper" style="width: <!-- @echo TABLE_CONTAINER_WIDTH -->px;" width="<!-- @echo TABLE_CONTAINER_WIDTH -->" border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td id="mso-ie-cell" align="left" valign="top">
+								<![endif]-->
+								<!-- @endif -->
+								<!-- @if ENABLE_GMAIL_ANDROID_RESIZE_FIX='true' -->
 								<table id="gmailapp-android-fix">
 									<tr>
 										<td align="left" valign="top" height="1">
@@ -101,31 +99,31 @@
 
 								<!-- @if ENABLE_HTML_SAMPLE_ANCHORS='true' -->
 								<!-- @include ../tmp/html-samples/anchors.html -->
-								<!-- @endif -->
 
+								<!-- @endif -->
 								<!-- @if ENABLE_HTML_SAMPLE_IMAGES='true' -->
 								<!-- @include ../tmp/html-samples/images.html -->
-								<!-- @endif -->
 
+								<!-- @endif -->
 								<!-- @if ENABLE_HTML_SAMPLE_FAUX_LISTS='true' -->
 								<!-- @include ../tmp/html-samples/faux-lists.html -->
-								<!-- @endif -->
 
+								<!-- @endif -->
 								<!-- @if ENABLE_HTML_SAMPLE_FLOATED_COLUMNS='true' -->
 								<!-- @include ../tmp/html-samples/floated-columns.html -->
+
 								<!-- @endif -->
-								
 								<!-- @if ENABLE_HTML_SAMPLE_ALIGN_BLOCK_ELEMENT='true' -->
 								<!-- @include ../tmp/html-samples/align-block-element.html -->
-								<!-- @endif -->
 
+								<!-- @endif -->
 								<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
 								<!--[if (gte mso 9)|(IE)]>
-					                    </td>
-					                </tr>
-					            </table>
-					            <![endif]-->
-					            <!-- @endif -->
+										</td>
+									</tr>
+								</table>
+								<![endif]-->
+								<!-- @endif -->
 							</td>
 						</tr>
 					</table>

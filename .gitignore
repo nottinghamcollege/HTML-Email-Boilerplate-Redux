@@ -1,6 +1,6 @@
-dist
-node_modules
-.npm
+/dist/
+/node_modules/
+/.npm/
 npm-debug.log
-.env
-tmp
+.boilerplate.custom
+/tmp/

@@ -1,17 +1,21 @@
-## Usage
+# Usage
 
-The default configuration of the email boilerplate should provide a common basis for most email campaigns, however if you want to customise the email boilerplate you need to modify the configuration variables within `.env`. This file is ignored by Git so you don't need to worry about any of your changes being overwritten on any updates to the source. Ensure you keep watching `.env.example` if new configuration variables are added or modified, otherwise you'll likely get build errors when running `gulp`.
+The default configuration of the email boilerplate should provide a common basis for most email campaigns, however if you want to customise any of the configuration you need to modify the config variables within a file called `.boilerplate.custom`. 
 
-### Configuration variables
+There is a default configuration file called `.boilerplate.defaults`, this is always loaded first to make sure all configuration variables are loaded with a default value to prevent any build errors e.g. if a new variable is added and your `.boilerplate.custom` file doesn't have it.
+
+Your `.boilerplate.custom` file is ignored by Git so you don't need to worry about any of your changes being overwritten on any updates to the source. Ensure you keep an eye on any changes made to this documentation for new configuration variables/modified behaviour. Tweak the `.boilerplate.custom` file to your needs and build the email boilerplate with `gulp` with your customisations.
+
+## Configuration variables
 
 The full list of configuration variables is below and their purpose.
 
-#### Main document
+### Main document
 
 ```
-DOCTYPE_VERSION (default: XHTML-TRANSITIONAL)
+DOCTYPE_VERSION (default: xhtml-transitional)
 Type: string
-Possible values: XHTML-TRANSITIONAL, XHTML-STRICT, HTML4, HTML5
+Possible values: xhtml-transitional, xhtml-strict, html4, html5
 Purpose: Output a common doctype used in email templates
 ```
 
@@ -75,7 +79,7 @@ Purpose: Boolean to include a XUA-Compatible meta tag for IE clients
 ```
 
 ```
-XAU_COMPATIBLE_VALUE
+XUA_COMPATIBLE_VALUE
 Type: string
 Purpose: Set a document mode for Internet Explore clients to always use
 Example: IE=edge
@@ -107,7 +111,7 @@ Purpose: Full URL path to ico file
 Example: http://media.centralnottingham.ac.uk/favicon.ico
 ```
 
-#### MSO (Microsoft Office) code
+### MSO (Microsoft Office) code
 
 ```
 ENABLE_MSO_DPI_SCALING_FIX (default: true)
@@ -134,12 +138,12 @@ Purpose: Ability to set a web safe font stack Windows based Outlook clients will
 Example: Helvetica, Arial, sans-serif
 ```
 
-#### CSS Reset/head rules
+#### CSS Reset `<head>`
 
 ```
-ENABLE_AOL_WEBMAIL_CSS_CLASS (default: false)
+ENABLE_GENERAL_SIBLING_SELECTOR_BUG_FIX (default: false)
 Type: boolean
-Purpose: Boolean to include a specific CSS class that will be rendered by AOL Webmail clients
+Purpose: Fix CSS sibling selector support in certain Android/iOS clients
 ```
 
 ```
@@ -174,7 +178,13 @@ Type: boolean
 Purpose: Boolean to include CSS rules that target automatically converted links in Yahoo! (shortcuts)
 ```
 
-#### CSS3 Media Queries
+#### CSS3 `@media` queries
+
+```
+ENABLE_WINDOWS_PHONE_VIEWPORT_FIX (default: false)
+Type: boolean
+Purpose: Boolean to include a specific at-rule to adjust the viewport on Windows Phone devices
+```
 
 ```
 ENABLE_MEDIA_SCREEN_QUERY (default: true)
@@ -230,7 +240,25 @@ Type: boolean
 Purpose: Boolean to include a media query that targets devices with a pixel density slighty higher than normal
 ```
 
-#### Other CSS
+### Other CSS
+
+```
+ENABLE_AOL_WEBMAIL_CSS_CLASS (default: false)
+Type: boolean
+Purpose: Boolean to include a specific CSS class that will be rendered by AOL Webmail clients
+```
+
+```
+ENABLE_OFFICE_365_CSS_SELECTOR (default: false)
+Type: boolean
+Purpose: Boolean to include a specific CSS selector that will target Office 365
+```
+
+```
+ENABLE_GMAIL_HIDE_DOWNLOAD_ICON_HACK (default: true)
+Type: boolean
+Purpose: Boolean to include a specific CSS selector that will remove the download icon on Gmail
+```
 
 ```
 ENABLE_ANDROID_4_4_CENTRE_FIX (default: true)
@@ -238,7 +266,7 @@ Type: boolean
 Purpose: Boolean to include an attribute selector that normalises the margin on Android 4.4
 ```
 
-#### Main `<body>`
+### Main `<body>`
 
 ```
 ENABLE_PREHEADER (default: true)
@@ -289,6 +317,13 @@ Example: container-cell
 ```
 
 ```
+TABLE_CONTAINER_CELL_BG_COLOR
+Type: string
+Purpose Set a background colour for the container table cell
+Example: #ffffff
+```
+
+```
 TABLE_CONTAINER_FIXED_WIDTH (default: true)
 Type: boolean
 Purpose: Boolean to define if the email width should be fixed or not
@@ -301,6 +336,13 @@ Purpose: Set the width of the container table
 ```
 
 ```
+TABLE_WRAPPER_CELL_ALIGN
+Type: string
+Purpose: Set the align method of wrapper table cell
+Example: center
+```
+
+```
 TABLE_CONTAINER_ALIGN
 Type: string
 Purpose: Set the align method of container table
@@ -308,7 +350,14 @@ Example: center
 ```
 
 ```
-ENABLE_GMAIL_ANDROID_FIX (default: true)
+TABLE_CONTAINER_CELL_ALIGN
+Type: string
+Purpose: Set the align method of container table cell
+Example: left
+```
+
+```
+ENABLE_GMAIL_ANDROID_RESIZE_FIX (default: true)
 Type: boolean
 Purpose: Boolean to include a spacer image the same size as TABLE_CONTAINER_WIDTH to prevent Gmail force scaling a wider email
 ```
@@ -351,7 +400,7 @@ Type: boolean
 Purpose: Boolean to include a list layout using tables example for email uage
 ```
 
-#### Misc
+### Misc
 
 ```
 PLACEHOLDER_IMG_URL

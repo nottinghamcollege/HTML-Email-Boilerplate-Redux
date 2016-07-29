@@ -11,7 +11,7 @@ We refer to our email boilerplate as a redux of the [original HTML Email Boilerp
 
 As well as creating a solid foundation for any email campaign, our boilerplate also focuses on the following areas:
 
-* Modular and customisation of an email boilerplate that suits your needs with configuration options
+* Modular and customisable email boilerplate that suits your needs with configuration options
 * Forcing the document mode for Internet Explorer based clients
 * CSS3 support in the native mail client on Windows Phone 8 and above (POP3/IMAP)
 * Scaling images correctly in Outlook 2010 and 2013 when using DPI scaling factors greater than 96 DPI (100%)
@@ -29,7 +29,7 @@ This project now uses `npm` and `gulp` based packages to produce a customised an
 1. Install `npm` https://nodejs.org/en/ (Make sure its in your `$PATH`)
 2. Install gulp globally with `npm install --global gulp-cli`
 3. Clone the git source of this project and run `npm i` to install the required depedencies
-4. `cp .env.example -> .env`. There are a range of booleans, numeric and string values to tweak to your needs
+4. Copy `.boilerplate.defaults -> .boilerplate.custom`. There are a range of booleans, numeric and string values to tweak to your requirements
 5. Run `gulp` to build the email boilerplate
 6. The "compiled" email boilerplate will be written to `dist/boilerplate/email-boilerplate.html`
 
