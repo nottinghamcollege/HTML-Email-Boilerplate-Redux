@@ -317,6 +317,13 @@ Example: container-cell
 ```
 
 ```
+TABLE_CONTAINER_CELL_BG_COLOR
+Type: string
+Purpose Set a background colour for the container table cell
+Example: #ffffff
+```
+
+```
 TABLE_CONTAINER_FIXED_WIDTH (default: true)
 Type: boolean
 Purpose: Boolean to define if the email width should be fixed or not
