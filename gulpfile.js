@@ -122,6 +122,17 @@ gulp.task('inline-css', ['preprocess-boilerplate'], function () {
     return stream;
 });
 
+// Check if older .env file is present and log to console
+gulp.task('old-env-check', ['inline-css'], function() {
+    var fs = require('fs');
+    fs.stat('.env', function(err, stat) {
+        if(err == null) {
+            console.log('Note: .env is deprecated, please rename your custom settings file to .boilerplate.custom');
+        }
+    });
+});
+
+
 // The order is important! The CSS pre-process stuff must happen first otherwise minify will break everything!
 gulp.task('default', 
     [ 
@@ -130,6 +141,7 @@ gulp.task('default',
         'minify-css',
         'build-html-samples',
         'preprocess-boilerplate', 
-        'inline-css' 
+        'inline-css',
+        'old-env-check'
     ]
 );
