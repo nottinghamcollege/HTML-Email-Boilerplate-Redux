@@ -26,7 +26,8 @@ table#/* @echo TABLE_CONTAINER_CSS_ID */ {
 	width: 600; /* This is to workaround a bug inline-css */
 	/* @endif */
 	/* @if TABLE_CONTAINER_FIXED_WIDTH='false' */
-	max-width: 600px;
+	width: 100%;
+	max-width: /* @echo TABLE_CONTAINER_WIDTH */px;
 	/* @endif */
 }
 
