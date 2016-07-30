@@ -178,6 +178,27 @@ Type: boolean
 Purpose: Boolean to include CSS rules that target automatically converted links in Yahoo! (shortcuts)
 ```
 
+```
+CUSTOM_APPLE_LINKS_COLOUR1
+Type: string
+Purpose: Ability to create an additional .appleLinksCustom1 class with a custom colour
+Example: #666666
+```
+
+```
+CUSTOM_APPLE_LINKS_COLOUR2
+Type: string
+Purpose: Ability to create an additional .appleLinksCustom2 class with a custom colour
+Example: #999999
+```
+
+```
+CUSTOM_APPLE_LINKS_COLOUR3
+Type: string
+Purpose: Ability to create an additional .appleLinksCustom3 class with a custom colour
+Example: #222222
+```
+
 #### CSS3 `@media` queries
 
 ```

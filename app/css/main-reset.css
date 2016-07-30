@@ -161,6 +161,27 @@ span.yshortcuts:focus {
 	text-decoration: none !important; 
 }
 
+/* @if CUSTOM_APPLE_LINKS_COLOUR1!='' */
+.appleLinksCustom1 {
+	color: /* @echo CUSTOM_APPLE_LINKS_COLOUR1 */;
+	text-decoration: none !important;
+}
+/* @endif */
+
+/* @if CUSTOM_APPLE_LINKS_COLOUR2!='' */
+.appleLinksCustom2 {
+	color: /* @echo CUSTOM_APPLE_LINKS_COLOUR2 */;
+	text-decoration: none !important;
+}
+/* @endif */
+
+/* @if CUSTOM_APPLE_LINKS_COLOUR3!='' */
+.appleLinksCustom3 {
+	color: /* @echo CUSTOM_APPLE_LINKS_COLOUR3 */;
+	text-decoration: none !important;
+}
+/* @endif */
+
 a[x-apple-data-detectors] { 
 	color: inherit !important; 
 	text-decoration: none !important; 
