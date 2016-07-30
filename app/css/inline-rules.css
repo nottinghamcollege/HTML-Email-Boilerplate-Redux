@@ -21,14 +21,26 @@ table#/* @echo TABLE_WRAPPER_CSS_ID */ {
 	width: 100%;
 }
 
+table#/* @echo TABLE_WRAPPER_CSS_ID */ td#/* @echo TABLE_WRAPPER_CELL_CSS_ID */ {
+	vertical-align: top;
+	text-align: /* @echo TABLE_WRAPPER_CELL_ALIGN */;
+	background-color: /* @echo BODY_BG_COLOUR */;
+}
+
 table#/* @echo TABLE_CONTAINER_CSS_ID */ {
 	/* @if TABLE_CONTAINER_FIXED_WIDTH='true' */
-	width: /* @echo TABLE_CONTAINER_WIDTH */; /* no px value to workaround a bug inline-css */
+	width: /* @echo TABLE_CONTAINER_WIDTH */; /* no px to workaround a bug in inline-css*/
 	/* @endif */
 	/* @if TABLE_CONTAINER_FIXED_WIDTH='false' */
 	width: 100%;
 	max-width: /* @echo TABLE_CONTAINER_WIDTH */px;
 	/* @endif */
+}
+
+table#/* @echo TABLE_CONTAINER_CSS_ID */ td#/* @echo TABLE_CONTAINER_CELL_CSS_ID */ {  
+	vertical-align: top;
+	text-align: /* @echo TABLE_CONTAINER_CELL_ALIGN */;
+	background-color: /* @echo TABLE_CONTAINER_CELL_BG_COLOR */;
 }
 
 table#gmailapp-android-fix {
@@ -38,7 +50,7 @@ table#gmailapp-android-fix {
 
 table#gmailapp-android-fix td {
 	line-height: 1px; 
-	height: 1; /* no px value to workaround a bug inline-css */
+	height: 1; /* no px to workaround a bug in inline-css*/
 	min-width: /* @echo TABLE_CONTAINER_WIDTH */px;
 }
 

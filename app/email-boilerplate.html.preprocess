@@ -38,7 +38,7 @@
 			<!-- @if ENABLE_FAVICON='true' -->
 			<link rel="icon" type="image/x-icon" href="<!-- @echo FAVICON_URL -->" />
 			<!-- @endif -->
-			<link rel="stylesheet" href="../../tmp/css/inline-rules.css.min" />
+			<link rel="stylesheet" href="../../tmp/css/inline-rules.css" />
 			<link rel="stylesheet" href="../../tmp/css/html-samples.css.min" />
 			<!-- @if ENABLE_MSO_DPI_SCALING_FIX='true' -->
 			<!--[if gte mso 9]>
@@ -76,10 +76,10 @@
 		<!-- @endif -->
 		<table id="<!-- @echo TABLE_WRAPPER_CSS_ID -->">
 			<tr>
-				<td id="<!-- @echo TABLE_WRAPPER_CELL_CSS_ID -->" align="<!-- @echo TABLE_WRAPPER_CELL_ALIGN -->" valign="top" bgcolor="<!-- @echo BODY_BG_COLOUR -->">
+				<td id="<!-- @echo TABLE_WRAPPER_CELL_CSS_ID -->">
 					<table id="<!-- @echo TABLE_CONTAINER_CSS_ID -->">
 						<tr>
-							<td id="<!-- @echo TABLE_CONTAINER_CELL_CSS_ID -->" align="<!-- @echo TABLE_CONTAINER_CELL_ALIGN -->" valign="top" bgcolor="<!-- @echo TABLE_CONTAINER_CELL_BG_COLOR -->">
+							<td id="<!-- @echo TABLE_CONTAINER_CELL_CSS_ID -->">
 								<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
 								<!--[if (gte mso 9)|(IE)]>
 								<table id="mso-ie-wrapper" style="width: <!-- @echo TABLE_CONTAINER_WIDTH -->px;" width="<!-- @echo TABLE_CONTAINER_WIDTH -->" border="0" cellpadding="0" cellspacing="0">
