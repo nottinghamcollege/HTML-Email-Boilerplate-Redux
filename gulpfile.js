@@ -96,7 +96,7 @@ gulp.task('preprocess-boilerplate', ['minify-css'], function() {
 });
 
 // Inline CSS to main layout elements after boilerplate is generated and update it
-gulp.task('inline-css', ['preprocess-boilerplate'], function () {
+gulp.task('inline-css', ['preprocess-boilerplate'], function() {
     
     // We need to check if DOCTYPE_VERSION is using an XHTML value
     var currentSetDoctype = process.env.DOCTYPE_VERSION;
@@ -122,16 +122,79 @@ gulp.task('inline-css', ['preprocess-boilerplate'], function () {
     return stream;
 });
 
-// Check if older .env file is present and log to console
-gulp.task('old-env-check', ['inline-css'], function() {
+// Detect certain configurations and warn when they are less optimal
+gulp.task('check-config', ['inline-css'], function() {
+
+    var isMsoNamespacesEnabled = process.env.ENABLE_VML_NAMESPACES;
+    var isXuaCompatMetaTagEnabled = process.env.ENABLE_XUA_COMPATIBLE_META_TAG;
+    var xuaCompatValue = process.env.XAU_COMPATIBLE_VALUE;
+    var isViewportMetaTagEnabled = process.env.ENABLE_VIEWPORT_META_TAG;
+    var viewportValue = process.env.VIEWPORT_META_VALUE;
+    var isFormatDetectionEnabled = process.env.ENABLE_FORMAT_DETECTION_META_TAG;
+    var formatDetectionValue = process.env.FORMAT_DETECTION_META_VALUE;
+    var isMsoDpiScalingFixEnabled = process.env.ENABLE_MSO_DPI_SCALING_FIX;
+    var isGeckoMediaQueryEnabled = process.env.ENABLE_GECKO_MEDIA_QUERY;
+    var isIEMediaQueryEnabled = process.env.ENABLE_IE_10_11_MEDIA_QUERY;
+    var isGmailAndroidFixEnabled = process.env.ENABLE_GMAIL_ANDROID_RESIZE_FIX;
+    var isGmailiOSFontFixEnabled = process.env.ENABLE_GMAIL_IOS_FONT_FIX;
+    var isTableContainerFixedWidth = process.env.TABLE_CONTAINER_FIXED_WIDTH;
+
+    // Small function to re-use for warnings, because lazy
+    function configWarn(configMessage) {
+        var label = 'CONFIGURATION:'
+        console.warn(label, configMessage)
+    }
+
+    // While they act as booleans, they aren't actually REAL booleans (quacks like a duck etc..)
+    if((isMsoNamespacesEnabled === 'false') && (isMsoDpiScalingFixEnabled === 'true')) {
+        configWarn('ENABLE_VML_NAMESPACES should be set to true when ENABLE_MSO_DPI_SCALING_FIX is set to true');
+    }
+
+    if(isXuaCompatMetaTagEnabled === 'false') {
+        configWarn('You should strongly consider setting ENABLE_XUA_COMPATIBLE_META_TAG to true for better Windows Phone/IE compatibility');
+    }
+
+    if((isXuaCompatMetaTagEnabled === 'true') && (!/edge/i.test(xuaCompatValue))) {
+        configWarn('Using any other value than IE=edge for XAU_COMPATIBLE_VALUE is not recommended');
+    }
+
+    if(isViewportMetaTagEnabled === 'false') {
+        configWarn('You should strongly consider setting ENABLE_VIEWPORT_META_TAG to true for correct scaling on mobile devices');
+    }
+
+    if((isViewportMetaTagEnabled === 'true') && (/user-scalable=no/i.test(viewportValue))) {
+        configWarn('You should not disable pinch zooming/resizing gestures, it is bad UX');
+    }
+
+    if((isFormatDetectionEnabled === 'true') && (/no/i.test(formatDetectionValue))) {
+        configWarn('Disabling auto formatting data also disables any user interaction events i.e. tap to call');
+    }
+
+    if(isGeckoMediaQueryEnabled === 'true') {
+        configWarn('The Gecko/Mozilla media query is often mangled in Yahoo! Mail and can cause unexpected CSS issues');
+    }
+
+    if(isIEMediaQueryEnabled === 'true') {
+        configWarn('The IE 10/11 media query will also return true on IEMobile (Windows Phone 8.0/8.1)');
+    }
+
+    if((isGmailAndroidFixEnabled === 'true') && (isTableContainerFixedWidth === 'false')) {
+        configWarn('You should set ENABLE_GMAIL_ANDROID_RESIZE_FIX to false when not using a fixed width container table');
+    }
+
+    if((isGmailiOSFontFixEnabled === 'true') && (isTableContainerFixedWidth === 'false')) {
+        configWarn('You should set ENABLE_GMAIL_IOS_FONT_FIX to false when not using a fixed width container table');
+    }
+
+    // Check for older .env file
     var fs = require('fs');
     fs.stat('.env', function(err, stat) {
         if(err == null) {
-            console.log('Note: .env is deprecated, please rename your custom settings file to .boilerplate.custom');
+            configWarn('.env is deprecated, please rename your custom settings file to .boilerplate.custom');
         }
     });
-});
 
+});
 
 // The order is important! The CSS pre-process stuff must happen first otherwise minify will break everything!
 gulp.task('default', 
@@ -142,6 +205,6 @@ gulp.task('default',
         'build-html-samples',
         'preprocess-boilerplate', 
         'inline-css',
-        'old-env-check'
+        'check-config'
     ]
 );
