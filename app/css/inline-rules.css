@@ -52,6 +52,8 @@ table#gmailapp-android-fix td {
 	line-height: 1px; 
 	height: 1; /* no px to workaround a bug in inline-css*/
 	min-width: /* @echo TABLE_CONTAINER_WIDTH */px;
+	vertical-align: top;
+	text-align: left;
 }
 
 table#gmailapp-android-fix img {

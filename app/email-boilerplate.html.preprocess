@@ -90,7 +90,7 @@
 								<!-- @if ENABLE_GMAIL_ANDROID_RESIZE_FIX='true' -->
 								<table id="gmailapp-android-fix">
 									<tr>
-										<td align="left" valign="top" height="1">
+										<td>
 											<img src="<!-- @echo PLACEHOLDER_IMG_URL -->/<!-- @echo TABLE_CONTAINER_WIDTH -->x1.gif" alt="" width="<!-- @echo TABLE_CONTAINER_WIDTH -->" height="1" />
 										</td>
 									</tr>
