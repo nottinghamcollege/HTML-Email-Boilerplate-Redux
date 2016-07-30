@@ -12,10 +12,10 @@
 <!-- @endif -->
 	<html lang="<!-- @echo LANGUAGE_CODE -->" <!-- @if ENABLE_VML_NAMESPACES='true' --> xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" <!-- @endif -->>
 		<head>
-			<!-- @if DOCTYPE_VERSION!='HTML5' -->
+			<!-- @if DOCTYPE_VERSION!='html5' -->
 			<meta http-equiv="Content-Type" content="text/html; charset=<!-- @echo CHARSET -->" />
 			<!-- @endif -->
-			<!-- @if DOCTYPE_VERSION='HTML5' -->
+			<!-- @if DOCTYPE_VERSION='html5' -->
 			<meta charset="<!-- @echo CHARSET -->" />
 			<!-- @endif -->
 			<!-- @if ENABLE_XUA_COMPATIBLE_META_TAG='true' -->	
