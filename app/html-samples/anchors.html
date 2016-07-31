@@ -7,6 +7,24 @@
 	Always add _target="blank" to make sure links never open within the email client and in the browser
 -->
 
+<style type="text/css">	
+
+	a.plain-link {
+		color: <!-- @echo DEFAULT_ANCHOR_COLOUR -->;
+		text-decoration: underline;
+		text-align: left;
+	}
+
+	a img.block-image {
+		border: none;
+	}
+
+	img.block-image {
+		display: block;
+	}
+	
+</style>
+
 <!-- Plain link -->
 <a href="<!-- @echo HTML_SAMPLE_HREF -->" class="plain-link" target="_blank">
 	Central College Nottingham

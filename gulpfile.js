@@ -21,6 +21,14 @@ var boilerplateConfig = require('dotenv-extended').load(
     }
 );
 
+// We need to check if DOCTYPE_VERSION is using an XHTML value for inline-css purposes later
+var currentSetDoctype = process.env.DOCTYPE_VERSION;
+if (/XHTML/i.test(currentSetDoctype)) {
+    xmlMode = true;
+} else {
+    xmlMode = false;
+}
+
 // Clean out the build directories
 gulp.task('clean', function () {
     return del(
@@ -70,10 +78,18 @@ gulp.task('minify-css', ['preprocess-css'], function() {
     return stream;
 });
 
-// Build all HTML samples and strip comments to be included in boilerplate
+// Build all HTML samples, inline CSS and strip comments to be included in boilerplate
 gulp.task('build-html-samples', function() {
     gulp.src('./app/html-samples/*.html')
     .pipe(preprocess())
+    .pipe(inlineCSS(
+        {
+            applyStyleTags: true,
+            removeStyleTags: true,
+            removeHtmlSelectors: true,
+            xmlMode: xmlMode
+        }
+    ))
     .pipe(strip(
         {
             safe: true,
@@ -96,22 +112,22 @@ gulp.task('preprocess-boilerplate', ['minify-css'], function() {
 
 // Inline CSS to main layout elements after boilerplate is generated and update it
 gulp.task('inline-css', ['preprocess-boilerplate'], function() {
-    
-    // We need to check if DOCTYPE_VERSION is using an XHTML value
-    var currentSetDoctype = process.env.DOCTYPE_VERSION;
-    if (/XHTML/i.test(currentSetDoctype)) {
-        xmlMode = true;
-    } else {
-        xmlMode = false;
-    }
 
     var stream = gulp.src('./dist/boilerplate/email-boilerplate.html')
     .pipe(inlineCSS(
         {
+            /* 
+             * Currently there is a bug with inline-css when having both
+             * applyTableAttributes and applyWidthAttributes set to true
+             * More info: https://github.com/jonkemp/inline-css/issues/46
+             * A hack is to not define px values on width properties
+             * that target any table related element.
+             * 
+            */
             applyTableAttributes: true,
+            applyWidthAttributes: true,
             applyStyleTags: false,
             applyLinkTags: true,
-            applyWidthAttributes: true,
             removeStyleTags: false,
             removeLinkTags: true,
             xmlMode: xmlMode

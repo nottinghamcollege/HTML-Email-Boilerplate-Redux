@@ -39,7 +39,6 @@
 			<link rel="icon" type="image/x-icon" href="<!-- @echo FAVICON_URL -->" />
 			<!-- @endif -->
 			<link rel="stylesheet" href="../../tmp/css/inline-rules.css" />
-			<link rel="stylesheet" href="../../tmp/css/html-samples.css.min" />
 			<!-- @if ENABLE_MSO_DPI_SCALING_FIX='true' -->
 			<!--[if gte mso 9]>
 				<xml>
