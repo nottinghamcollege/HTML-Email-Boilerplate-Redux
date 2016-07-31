@@ -21,9 +21,6 @@ var boilerplateConfig = require('dotenv-extended').load(
     }
 );
 
-// We only want to target this file for HTML processing, the guidelines version is static and legacy
-email_boilerplate_file = 'app/email-boilerplate.html.preprocess';
-
 // Clean out the build directories
 gulp.task('clean', function () {
     return del(
@@ -88,6 +85,8 @@ gulp.task('build-html-samples', function() {
 
 // Build email boilerplate HTML and put everything together!
 gulp.task('preprocess-boilerplate', ['minify-css'], function() {
+    // We only want to target this file for HTML processing, the guidelines version is static and legacy
+    var email_boilerplate_file = 'app/email-boilerplate.html.preprocess';
     var stream = gulp.src(email_boilerplate_file)
     .pipe(preprocess({ extension: 'html' }))
     .pipe(rename('email-boilerplate.html'))
