@@ -87,6 +87,7 @@ gulp.task('build-html-samples', function() {
             applyStyleTags: true,
             removeStyleTags: true,
             removeHtmlSelectors: true,
+            applyTableAttributes: true,
             xmlMode: xmlMode
         }
     ))
