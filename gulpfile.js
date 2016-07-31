@@ -104,8 +104,7 @@ gulp.task('build-html-samples', function() {
 // Build email boilerplate HTML and put everything together!
 gulp.task('preprocess-boilerplate', ['minify-css'], function() {
     // We only want to target this file for HTML processing, the guidelines version is static and legacy
-    var email_boilerplate_file = 'app/email-boilerplate.html.preprocess';
-    var stream = gulp.src(email_boilerplate_file)
+    var stream = gulp.src('app/email-boilerplate.html.preprocess')
     .pipe(preprocess({ extension: 'html' }))
     .pipe(rename('email-boilerplate.html'))
     .pipe(gulp.dest('./dist/boilerplate/'))
