@@ -93,6 +93,7 @@ gulp.task('build-html-samples', function() {
     ))
     .pipe(strip(
         {
+            ignore: /<!--\[if(?!\s*(?:\[[^\]]+]|<!|>))(?:(?!-->).)*-->/g,
             safe: true,
             trim: true
         }
