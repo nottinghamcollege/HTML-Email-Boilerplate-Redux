@@ -149,6 +149,7 @@ gulp.task('check-config', ['inline-css'], function() {
     var isFormatDetectionEnabled = process.env.ENABLE_FORMAT_DETECTION_META_TAG;
     var formatDetectionValue = process.env.FORMAT_DETECTION_META_VALUE;
     var isMsoDpiScalingFixEnabled = process.env.ENABLE_MSO_DPI_SCALING_FIX;
+    var isWebkitMediaQueryEnabled = process.env.ENABLE_WEBKIT_DETECTION_QUERY;
     var isGeckoMediaQueryEnabled = process.env.ENABLE_GECKO_MEDIA_QUERY;
     var isIEMediaQueryEnabled = process.env.ENABLE_IE_10_11_MEDIA_QUERY;
     var isGmailAndroidFixEnabled = process.env.ENABLE_GMAIL_ANDROID_RESIZE_FIX;
@@ -184,6 +185,10 @@ gulp.task('check-config', ['inline-css'], function() {
 
     if((isFormatDetectionEnabled === 'true') && (/no/i.test(formatDetectionValue))) {
         configWarn('Disabling auto formatting data also disables any user interaction events i.e. tap to call');
+    }
+
+    if(isWebkitMediaQueryEnabled === 'true') {
+        configWarn('The Webkit vendor prefixes return true on some non-webkit clients, do not rely on it for accurate detection');
     }
 
     if(isGeckoMediaQueryEnabled === 'true') {
