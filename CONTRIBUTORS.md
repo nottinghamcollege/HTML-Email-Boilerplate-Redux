@@ -11,6 +11,7 @@ This serves as an official list of all organisations or indiviuals that have hel
 
 * GC-Max
 * cresencio (Gave me the idea for adding gulp processing)
+* Josh Buchea - https://github.com/joshbuchea/HEAD
 
 ### Credited Organisations:
 
