@@ -78,6 +78,7 @@ HTML_SAMPLE_IMG_SRC="http://media.centralnottingham.ac.uk/Email-Boilerplate/cent
 HTML_SAMPLE_IMG_SRC_2X="http://media.centralnottingham.ac.uk/Email-Boilerplate/central-college-logo-578x162.jpg"
 HTML_SAMPLE_ALT_TEXT="Central College Nottingham"
 ENABLE_HTML_SAMPLE_ANCHORS=false
+ENABLE_HTML_SAMPLE_CTA_BUTTONS=false
 ENABLE_HTML_SAMPLE_IMAGES=false
 ENABLE_HTML_SAMPLE_FLOATED_COLUMNS=false
 ENABLE_HTML_SAMPLE_ALIGN_BLOCK_ELEMENT=false

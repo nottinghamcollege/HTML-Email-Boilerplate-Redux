@@ -398,6 +398,12 @@ Purpose: Boolean to include an anchor HTML example for email usage
 ```
 
 ```
+ENABLE_HTML_SAMPLE_CTA_BUTTONS (default: false)
+Type: Boolean
+Purpose: Boolean to include a sample of CTA buttons for email usage
+```
+
+```
 ENABLE_HTML_SAMPLE_IMAGES (default: false)
 Type: boolean
 Purpose: Boolean to include an image HTML example for email usage
