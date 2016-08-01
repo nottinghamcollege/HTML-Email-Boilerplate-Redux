@@ -7,9 +7,11 @@
 	NOTE: This file requires processing via gulp to build the minified version
 */
 
+/* @if TABLE_CONTAINER_FIXED_WIDTH='true' */
 table#/* @echo TABLE_CONTAINER_CSS_ID */ {
 	width: /* @echo TABLE_CONTAINER_WIDTH */px;
 }
+/* @endif */
 
 li { 
 	text-indent: -1em; 
@@ -31,5 +33,4 @@ body, h1, h2, h3, h4, h5, h6,
 p, a, table, td, span, strong { 
 	font-family: /* @echo MSO_DEFAULT_FALLBACK_FONT_STACK */ !important;
 }
-
 /* @endif */
