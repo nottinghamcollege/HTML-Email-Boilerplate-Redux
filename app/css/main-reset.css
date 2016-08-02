@@ -29,6 +29,7 @@ body {
 	-webkit-animation: bugfix infinite 1s;
 	/* @endif */
 }
+
 /* @if ENABLE_GENERAL_SIBLING_SELECTOR_BUG_FIX='true' */
 @-webkit-keyframes bugfix { 
 	from { padding: 0; } 
@@ -77,8 +78,8 @@ a:hover {
 	color: /* @echo DEFAULT_ANCHOR_VISITED_COLOUR */; 
 	text-decoration: underline; 
 }
-
 /* @endif */
+
 a img { 
 	border: none; 
 }
@@ -121,8 +122,8 @@ h5 a:visited,
 h6 a:visited { 
 	color: purple !important; 
 }
-
 /* @endif */
+
 table { 
 	border-collapse: collapse; 
 	mso-table-lspace: 0pt; 
@@ -148,7 +149,6 @@ span.yshortcuts:focus {
 	background-color: transparent; 
 	border: none; 
 }
-
 /* @endif */
 
 .appleLinksWhite a { 
