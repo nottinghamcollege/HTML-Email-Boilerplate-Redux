@@ -35,9 +35,3 @@ div[style*="margin: 16px 0"] {
 	font-size: 100% !important; 
 }
 /* @endif */
-
-/* @if ENABLE_GMAIL_ANDROID_RESIZE_FIX='true' */
-table#gmailapp-android-fix {
-	display: none;
-}
-/* @endif */

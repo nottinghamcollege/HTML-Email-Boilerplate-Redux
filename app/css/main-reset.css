@@ -58,6 +58,12 @@ body {
 	line-height: 100% !important; 
 }
 
+/* @if ENABLE_GMAIL_ANDROID_RESIZE_FIX='true' */
+table#gmailapp-android-fix {
+	display: none;
+}
+/* @endif */
+
 a, a:link { 
 	color: /* @echo DEFAULT_ANCHOR_COLOUR */; 
 	text-decoration: underline; 
