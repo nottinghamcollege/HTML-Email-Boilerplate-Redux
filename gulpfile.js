@@ -143,7 +143,7 @@ gulp.task('check-config', ['inline-css'], function() {
 
     var isMsoNamespacesEnabled = process.env.ENABLE_VML_NAMESPACES;
     var isXuaCompatMetaTagEnabled = process.env.ENABLE_XUA_COMPATIBLE_META_TAG;
-    var xuaCompatValue = process.env.XAU_COMPATIBLE_VALUE;
+    var xuaCompatValue = process.env.XUA_COMPATIBLE_VALUE;
     var isViewportMetaTagEnabled = process.env.ENABLE_VIEWPORT_META_TAG;
     var viewportValue = process.env.VIEWPORT_META_VALUE;
     var isFormatDetectionEnabled = process.env.ENABLE_FORMAT_DETECTION_META_TAG;
