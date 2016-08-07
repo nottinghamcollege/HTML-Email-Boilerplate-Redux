@@ -85,6 +85,7 @@
 									<tr>
 										<td id="mso-ie-cell" align="left" valign="top">
 								<![endif]-->
+
 								<!-- @endif -->
 								<!-- @if ENABLE_GMAIL_ANDROID_RESIZE_FIX='true' -->
 								<table id="gmailapp-android-fix">
@@ -95,7 +96,6 @@
 									</tr>
 								</table>
 								<!-- @endif -->
-
 								<!-- @if ENABLE_HTML_SAMPLE_ANCHORS='true' -->
 								<!-- @include ../tmp/html-samples/anchors.html -->
 
