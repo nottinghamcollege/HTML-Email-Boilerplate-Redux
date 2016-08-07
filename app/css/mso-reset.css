@@ -7,12 +7,6 @@
 	NOTE: This file requires processing via gulp to build the minified version
 */
 
-/* @if TABLE_CONTAINER_FIXED_WIDTH='true' */
-table#/* @echo TABLE_CONTAINER_CSS_ID */ {
-	width: /* @echo TABLE_CONTAINER_WIDTH */px;
-}
-/* @endif */
-
 li { 
 	text-indent: -1em; 
 }

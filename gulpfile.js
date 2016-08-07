@@ -117,14 +117,6 @@ gulp.task('inline-css', ['preprocess-boilerplate'], function() {
     var stream = gulp.src('./dist/boilerplate/email-boilerplate.html')
     .pipe(inlineCSS(
         {
-            /* 
-             * Currently there is a bug with inline-css when having both
-             * applyTableAttributes and applyWidthAttributes set to true
-             * More info: https://github.com/jonkemp/inline-css/issues/46
-             * A hack is to not define px values on width properties
-             * that target any table related element.
-             * 
-            */
             applyTableAttributes: true,
             applyWidthAttributes: true,
             applyStyleTags: false,
