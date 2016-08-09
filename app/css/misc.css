@@ -23,7 +23,7 @@
 }
 /* @endif */
 
-/* @if ENABLE_GMAIL_HIDE_DOWNLOAD_ICON_HACK='true' */
+/* @if ENABLE_GMAIL_HIDE_DOWNLOAD_ICON='true' */
 * img[tabindex="0"] + div { 
 	display: none !important; 
 }

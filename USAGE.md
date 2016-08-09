@@ -361,7 +361,7 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Boolean to include a specific CSS selector that will target Office 365</td>
 	</tr>
 	<tr>
-		<td>ENABLE_GMAIL_HIDE_DOWNLOAD_ICON_HACK</td>
+		<td>ENABLE_GMAIL_HIDE_DOWNLOAD_ICON</td>
 		<td>boolean</td>
 		<td>
 			true (default)<br />
