@@ -6,6 +6,11 @@
 	Various CSS id/class rules that will be inlined during gulp processing
 */
 
+body {
+	padding: 0;
+	min-width: 100%;
+}
+
 span#preheader { 
 	display: none !important; 
 	color: /* @echo BODY_BG_COLOUR */; 
