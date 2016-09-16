@@ -119,6 +119,14 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Provide a value for the meta robots tags</td>
 	</tr>
 	<tr>
+		<td>ENABLE_APPLE_MESSAGE_FORMATTING_META_TAG</td>
+		<td>boolean</td>
+		<td>true <br />
+			false (default)
+		</td>
+		<td>Boolean to include a specific meta tag that will cause iOS/Apple Mail to not auto reformat email messages</td>
+	</tr>
+	<tr>
 		<td>ENABLE_FAVICON</td>
 		<td>boolean</td>
 		<td>

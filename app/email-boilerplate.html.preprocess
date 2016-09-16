@@ -32,6 +32,9 @@
 			<!-- @if ENABLE_ROBOTS_META_TAG='true' -->
 			<meta name="robots" content="<!-- @echo ROBOTS_META_VALUE -->" />
 			<!-- @endif -->
+			<!-- @if ENABLE_APPLE_MESSAGE_FORMATTING_META_TAG='true' -->
+			<meta name="x-apple-disable-message-reformatting" />
+			<!-- @endif -->
 
 			<title><!-- @echo DOCUMENT_TITLE --></title>
             
