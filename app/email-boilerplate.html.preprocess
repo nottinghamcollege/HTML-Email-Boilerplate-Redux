@@ -61,6 +61,16 @@
 			<![endif]-->
 			<!-- @endif -->
 
+			<!-- @if ENABLE_VML_CSS_OBJECTS_STYLING='true' -->
+			<!--[if gte mso 9]>
+				<style style="text/css">
+					v\:* { behavior: url(#default#VML); display: inline-block }
+					o\:* { behavior: url(#default#VML); display: inline-block } 
+					w\:* { behavior: url(#default#VML); display: inline-block }
+				</style>
+ 			<![endif]-->
+			<!-- @endif -->
+
 			<style type="text/css">
 				<!-- @include ../tmp/css/main-reset.css.min -->
 

@@ -165,6 +165,15 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Boolean to include specific MSO CSS reset rules</td>
 	</tr>
 	<tr>
+		<td>ENABLE_VML_CSS_OBJECTS_STYLING</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include specific CSS rules for VML objects when using specific techniques</td>
+	</tr>
+	<tr>
 		<td>ENABLE_MSO_FALLBACK_FONT</td>
 		<td>boolean</td>
 		<td>
