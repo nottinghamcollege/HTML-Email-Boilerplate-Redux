@@ -6,7 +6,7 @@
 	Various CSS id/class rules that will be inlined during gulp processing
 */
 
-body {
+body#main-body {
 	padding: 0;
 	min-width: 100%;
 }

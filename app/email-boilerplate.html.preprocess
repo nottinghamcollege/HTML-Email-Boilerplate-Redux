@@ -82,7 +82,7 @@
 
 		</head>
 
-	<body bgcolor="<!-- @echo BODY_BG_COLOUR -->">
+	<body id="main-body" bgcolor="<!-- @echo BODY_BG_COLOUR -->">
 		<!-- @if ENABLE_PREHEADER='true' -->
 		<span id="preheader"><!-- @echo PREHEADER_TEXT --></span>
 		<!-- @endif -->
