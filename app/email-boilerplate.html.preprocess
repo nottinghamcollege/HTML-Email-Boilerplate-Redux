@@ -84,7 +84,7 @@
 
 	<body id="main-body" bgcolor="<!-- @echo BODY_BG_COLOUR -->">
 		<!-- @if ENABLE_PREHEADER='true' -->
-		<span id="preheader"><!-- @echo PREHEADER_TEXT --></span>
+		<div id="preheader"><!-- @echo PREHEADER_TEXT --></div>
 		<!-- @endif -->
 		<table id="<!-- @echo TABLE_WRAPPER_CSS_ID -->">
 			<tr>

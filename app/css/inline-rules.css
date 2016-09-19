@@ -9,12 +9,13 @@
 body#main-body {
 	padding: 0;
 	min-width: 100%;
+	background-color: /* @echo BODY_BG_COLOUR */;
 }
 
-span#preheader { 
+div#preheader { 
 	display: none !important; 
 	color: /* @echo BODY_BG_COLOUR */; 
-	font-size: 1px; 
+	font-size: 0px; 
 	line-height: 0; 
 	overflow: hidden; 
 	mso-hide: all;
