@@ -8,7 +8,6 @@
 
 body#main-body {
 	padding: 0;
-	min-width: 100%;
 	background-color: /* @echo BODY_BG_COLOUR */;
 }
 
