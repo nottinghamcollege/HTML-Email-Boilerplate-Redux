@@ -355,6 +355,15 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Boolean to include a media query that targets devices with a pixel density slighty higher than normal</td>
 	</tr>
 	<tr>
+		<td>ENABLE_IOS10_MEDIA_QUERY</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a media query that targets iOS 10 devices</td>
+	</tr>
+	<tr>
 		<td colspan="4" align="center">
 			<strong>Misc/Other CSS</strong>
 		</td>
