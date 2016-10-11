@@ -199,6 +199,10 @@ gulp.task('check-config', ['inline-css'], function() {
         configWarn('You should set ENABLE_GMAIL_IOS_FONT_FIX to false when not using a fixed width container table');
     }
 
+    if((isGmailiOSFontFixEnabled === 'true') || (isGmailAndroidFixEnabled === 'true')) {
+        configWarn('Gmail app font/image spacer hacks for iOS and Android should be deprecated due to CSS3 support, see USAGE.md for more info');
+    }
+
     // Check for older .env file
     var fs = require('fs');
     fs.stat('.env', function(err, stat) {

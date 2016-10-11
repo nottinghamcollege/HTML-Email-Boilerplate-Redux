@@ -479,7 +479,7 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Set the align method of container table</td>
 	</tr>
 	<tr>
-		<td>ENABLE_GMAIL_ANDROID_RESIZE_FIX</td>
+		<td>ENABLE_GMAIL_ANDROID_RESIZE_FIX (Deprecated)</td>
 		<td>boolean</td>
 		<td>
 			true (default)<br />
@@ -488,7 +488,7 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Boolean to include a spacer image the same size as TABLE_CONTAINER_WIDTH to prevent Gmail force scaling a wider email</td>
 	</tr>
 	<tr>
-		<td>ENABLE_GMAIL_IOS_FONT_FIX</td>
+		<td>ENABLE_GMAIL_IOS_FONT_FIX (Deprecated)</td>
 		<td>boolean</td>
 		<td>
 			true (default)<br />
