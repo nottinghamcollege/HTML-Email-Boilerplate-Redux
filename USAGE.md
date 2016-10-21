@@ -491,8 +491,8 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>ENABLE_GMAIL_ANDROID_RESIZE_FIX (Deprecated)</td>
 		<td>boolean</td>
 		<td>
-			true (default)<br />
-			false
+			true<br />
+			false (default)
 		</td>
 		<td>Boolean to include a spacer image the same size as TABLE_CONTAINER_WIDTH to prevent Gmail force scaling a wider email</td>
 	</tr>
@@ -500,8 +500,8 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>ENABLE_GMAIL_IOS_FONT_FIX (Deprecated)</td>
 		<td>boolean</td>
 		<td>
-			true (default)<br />
-			false
+			true<br />
+			false (default)
 		</td>
 		<td>Boolean to include special divider block to prevent Gmail iOS app auto scaling fonts on wider emails</td>
 	</tr>
