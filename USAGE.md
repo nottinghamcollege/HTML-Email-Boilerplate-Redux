@@ -124,7 +124,7 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>true <br />
 			false (default)
 		</td>
-		<td>Boolean to include a specific meta tag that will prevent iOS/Apple Mail to not auto reformat email messages (iOS 10)</td>
+		<td>Boolean to include a specific meta tag that will prevent iOS/Apple Mail from auto formatting email messages (iOS 10)</td>
 	</tr>
 	<tr>
 		<td>ENABLE_FAVICON</td>
