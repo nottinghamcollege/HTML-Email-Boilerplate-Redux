@@ -209,6 +209,14 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Ability to set a global general anchor colour</td>
 	</tr>
 	<tr>
+		<td>ENABLE_OUTLOOK_MAIL_ANCHOR_STYLING</td>
+		<td>boolean</td>
+		<td>true<br />
+			false (default)
+		</td>
+		<td>Ability to override the default anchor styling in Outlook Mail (Windows 10)</td>
+	</tr>
+	<tr>
 		<td>DEFAULT_ANCHOR_VISITED_COLOUR</td>
 		<td>string</td>
 		<td>#ff0000</td>

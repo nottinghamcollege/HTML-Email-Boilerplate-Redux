@@ -69,6 +69,14 @@ a, a:link {
 	text-decoration: underline; 
 }
 
+/* @if ENABLE_OUTLOOK_MAIL_ANCHOR_STYLING='true' */
+span.MsoHyperlink {
+	mso-style-priority:100 !important;
+	color: /* @echo DEFAULT_ANCHOR_COLOUR */ !important;
+	text-decoration:none !important;
+}
+/* @endif */
+
 /* @if ENABLE_VISITED_ANCHOR_CSS='true' */
 a:visited { 
 	color: /* @echo DEFAULT_ANCHOR_VISITED_COLOUR */; 
