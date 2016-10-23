@@ -83,6 +83,9 @@
 		</head>
 
 	<body id="main-body" bgcolor="<!-- @echo BODY_BG_COLOUR -->">
+	<!-- @if ENABLE_DOTMAILER_EASY_EDITOR_TEMPLATE='true' -->
+	<!-- Easy Editor -->
+	<!-- @endif -->
 		<!-- @if ENABLE_PREHEADER='true' -->
 		<div id="preheader"><!-- @echo PREHEADER_TEXT --></div>
 		<!-- @endif -->

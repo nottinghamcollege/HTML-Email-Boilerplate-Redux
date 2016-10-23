@@ -418,6 +418,15 @@ The full list of configuration variables that can be used with the email boilerp
 		</td>
 	</tr>
 	<tr>
+		<td>ENABLE_DOTMAILER_EASY_EDITOR_TEMPLATE</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a specific HTML comment that is parsed by the dotmailer Easy Editor templating system</td>
+	</tr>
+	<tr>
 		<td>ENABLE_PREHEADER</td>
 		<td>boolean</td>
 		<td>
