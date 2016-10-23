@@ -478,6 +478,15 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Set a background colour for the container table cell</td>
 	</tr>
 	<tr>
+		<td>ENABLE_TABLE_CONTAINER</td>
+		<td>boolean</td>
+		<td>
+			true (default)<br />
+			false
+		</td>
+		<td>Boolean to control if a container table is created following the wrapper table</td>
+	</tr>
+	<tr>
 		<td>TABLE_CONTAINER_FIXED_WIDTH</td>
 		<td>boolean</td>
 		<td>
@@ -490,7 +499,7 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>TABLE_CONTAINER_WIDTH</td>
 		<td>integer</td>
 		<td>600</td>
-		<td>Set the width of the container table in pixels</td>
+		<td>Set the width of the container table in pixels (px)</td>
 	</tr>
 	<tr>
 		<td>TABLE_WRAPPER_CELL_ALIGN</td>

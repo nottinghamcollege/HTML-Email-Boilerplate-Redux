@@ -92,17 +92,17 @@
 		<table id="<!-- @echo TABLE_WRAPPER_CSS_ID -->">
 			<tr>
 				<td id="<!-- @echo TABLE_WRAPPER_CELL_CSS_ID -->">
+				<!-- @if ENABLE_TABLE_CONTAINER='true' -->
+					<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
+					<!--[if (gte mso 9)|(IE)]>
+					<table style="width: <!-- @echo TABLE_CONTAINER_WIDTH -->px;" border="0" cellpadding="0" cellspacing="0" width="<!-- @echo TABLE_CONTAINER_WIDTH -->">
+						<tr>
+							<td align="left" valign="top">
+					<![endif]-->
+					<!-- @endif -->
 					<table id="<!-- @echo TABLE_CONTAINER_CSS_ID -->">
 						<tr>
 							<td id="<!-- @echo TABLE_CONTAINER_CELL_CSS_ID -->">
-								<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
-								<!--[if (gte mso 9)|(IE)]>
-								<table id="mso-ie-wrapper" style="width: <!-- @echo TABLE_CONTAINER_WIDTH -->px;" width="<!-- @echo TABLE_CONTAINER_WIDTH -->" border="0" cellpadding="0" cellspacing="0">
-									<tr>
-										<td id="mso-ie-cell" align="left" valign="top">
-								<![endif]-->
-
-								<!-- @endif -->
 								<!-- @if ENABLE_GMAIL_ANDROID_RESIZE_FIX='true' -->
 								<table id="gmailapp-android-fix">
 									<tr>
@@ -112,43 +112,44 @@
 									</tr>
 								</table>
 								<!-- @endif -->
-								<!-- @if ENABLE_HTML_SAMPLE_ANCHORS='true' -->
-								<!-- @include ../tmp/html-samples/anchors.html -->
-
-								<!-- @endif -->
-								<!-- @if ENABLE_HTML_SAMPLE_CTA_BUTTONS='true' -->
-								<!-- @include ../tmp/html-samples/cta-buttons.html -->
-
-								<!-- @endif -->
-								<!-- @if ENABLE_HTML_SAMPLE_IMAGES='true' -->
-								<!-- @include ../tmp/html-samples/images.html -->
-
-								<!-- @endif -->
-								<!-- @if ENABLE_HTML_SAMPLE_FAUX_LISTS='true' -->
-								<!-- @include ../tmp/html-samples/faux-lists.html -->
-
-								<!-- @endif -->
-								<!-- @if ENABLE_HTML_SAMPLE_FLOATED_COLUMNS='true' -->
-								<!-- @include ../tmp/html-samples/floated-columns.html -->
-
-								<!-- @endif -->
-								<!-- @if ENABLE_HTML_SAMPLE_ALIGN_BLOCK_ELEMENT='true' -->
-								<!-- @include ../tmp/html-samples/align-block-element.html -->
-
-								<!-- @endif -->
-								<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
-								<!--[if (gte mso 9)|(IE)]>
-										</td>
-									</tr>
-								</table>
-								<![endif]-->
-								<!-- @endif -->
 							</td>
 						</tr>
 					</table>
+					<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
+					<!--[if (gte mso 9)|(IE)]>
+							</td>
+						</tr>
+					</table>
+					<![endif]-->
+					<!-- @endif -->
+				<!-- @endif -->
 				</td>
 			</tr>
 		</table>
+		<!-- @if ENABLE_HTML_SAMPLE_ANCHORS='true' -->
+		<!-- @include ../tmp/html-samples/anchors.html -->
+
+		<!-- @endif -->
+		<!-- @if ENABLE_HTML_SAMPLE_CTA_BUTTONS='true' -->
+		<!-- @include ../tmp/html-samples/cta-buttons.html -->
+
+		<!-- @endif -->
+		<!-- @if ENABLE_HTML_SAMPLE_IMAGES='true' -->
+		<!-- @include ../tmp/html-samples/images.html -->
+
+		<!-- @endif -->
+		<!-- @if ENABLE_HTML_SAMPLE_FAUX_LISTS='true' -->
+		<!-- @include ../tmp/html-samples/faux-lists.html -->
+
+		<!-- @endif -->
+		<!-- @if ENABLE_HTML_SAMPLE_FLOATED_COLUMNS='true' -->
+		<!-- @include ../tmp/html-samples/floated-columns.html -->
+
+		<!-- @endif -->
+		<!-- @if ENABLE_HTML_SAMPLE_ALIGN_BLOCK_ELEMENT='true' -->
+		<!-- @include ../tmp/html-samples/align-block-element.html -->
+
+		<!-- @endif -->
 		<!-- @if ENABLE_GMAIL_IOS_FONT_FIX='true' -->
 		<div id="gmailapp-ios-font-fix">
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
