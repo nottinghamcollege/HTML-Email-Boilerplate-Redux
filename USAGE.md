@@ -424,7 +424,7 @@ The full list of configuration variables that can be used with the email boilerp
 			true (default)<br />
 			false
 		</td>
-		<td>Boolean to include a span following the <body> tag for the preheader</td>
+		<td>Boolean to include a &lt;div&gt; following the &lt;body&gt; tag for the preheader</td>
 	</tr>
 	<tr>
 		<td>PREHEADER_TEXT</td>
