@@ -615,4 +615,13 @@ The email boilerplate also contains samples of common elements/techniques used i
 		</td>
 		<td>Boolean to include a list layout using tables example for email uage</td>
 	</tr>
+	<tr>
+		<td>ENABLE_HTML_SAMPLE_HORIZONTAL_SPACER</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a spacer example using a table cell with line-height and height</td>
+	</tr>
 </table>

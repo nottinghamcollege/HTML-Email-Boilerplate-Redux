@@ -141,6 +141,10 @@
 		<!-- @include ../tmp/html-samples/align-block-element.html -->
 
 		<!-- @endif -->
+		<!-- @if ENABLE_HTML_SAMPLE_HORIZONTAL_SPACER='true' -->
+		<!-- @include ../tmp/html-samples/horizontal-spacer.html -->
+
+		<!-- @endif -->
 		<!-- @if ENABLE_GMAIL_IOS_FONT_FIX='true' -->
 		<div id="gmailapp-ios-font-fix">
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
