@@ -70,7 +70,7 @@ a, a:link {
 }
 
 /* @if ENABLE_OUTLOOK_MAIL_ANCHOR_STYLING='true' */
-span.MsoHyperlink {
+span.MsoHyperlink, span.MsoHyperlinkFollowed {
 	mso-style-priority:100 !important;
 	color: /* @echo DEFAULT_ANCHOR_COLOUR */ !important;
 	text-decoration:none !important;

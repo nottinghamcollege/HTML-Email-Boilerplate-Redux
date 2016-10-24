@@ -11,12 +11,6 @@ li {
 	text-indent: -1em; 
 }
 
-span.MsoHyperlink,
-span.MsoHyperlinkFollowed { 
-	mso-style-priority: 99; 
-	color: inherit; 
-}
-
 /* @if ENABLE_MSO_FALLBACK_FONT='true' */
 body, h1, h2, h3, h4, h5, h6, 
 p, a, table, td, span, strong { 
