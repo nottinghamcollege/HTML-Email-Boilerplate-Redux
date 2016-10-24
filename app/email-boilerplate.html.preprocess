@@ -82,7 +82,7 @@
 
 		</head>
 
-	<body id="main-body" bgcolor="<!-- @echo BODY_BG_COLOUR -->">
+	<body id="main-body" class="<!-- @echo BODY_CSS_CLASS -->" bgcolor="<!-- @echo BODY_BG_COLOUR -->">
 	<!-- @if ENABLE_DOTMAILER_EASY_EDITOR_TEMPLATE='true' -->
 	<!-- Easy Editor -->
 	<!-- @endif -->

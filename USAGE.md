@@ -418,6 +418,12 @@ The full list of configuration variables that can be used with the email boilerp
 		</td>
 	</tr>
 	<tr>
+		<td>BODY_CSS_CLASS</td>
+		<td>string</td>
+		<td>body</td>
+		<td>Set a specific class on the &lt;body&gt; tag for advanced CSS targetting techniques</td>
+	</tr>
+	<tr>
 		<td>ENABLE_DOTMAILER_EASY_EDITOR_TEMPLATE</td>
 		<td>boolean</td>
 		<td>
