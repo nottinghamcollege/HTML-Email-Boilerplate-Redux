@@ -87,7 +87,9 @@
 	<!-- Easy Editor -->
 	<!-- @endif -->
 		<!-- @if ENABLE_PREHEADER='true' -->
-		<div id="preheader"><!-- @echo PREHEADER_TEXT --></div>
+		<div id="preheader">
+			<!-- @echo PREHEADER_TEXT -->
+		</div>
 		<!-- @endif -->
 		<table id="<!-- @echo TABLE_WRAPPER_CSS_ID -->">
 			<tr>
