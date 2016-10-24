@@ -17,3 +17,9 @@ p, a, table, td, span, strong {
 	font-family: /* @echo MSO_DEFAULT_FALLBACK_FONT_STACK */ !important;
 }
 /* @endif */
+
+/* @if ENABLE_VML_CSS_OBJECTS_STYLING='true' */
+v\:* { behavior: url(#default#VML); display: inline-block }
+o\:* { behavior: url(#default#VML); display: inline-block } 
+w\:* { behavior: url(#default#VML); display: inline-block }
+/* @endif */
