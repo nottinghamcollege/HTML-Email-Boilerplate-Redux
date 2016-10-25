@@ -70,7 +70,6 @@ table#gmailapp-android-fix img {
 }
 
 div#gmailapp-ios-font-fix {
-	display: none; 
 	white-space: nowrap; 
 	font: 15px courier; 
 	line-height: 0; 

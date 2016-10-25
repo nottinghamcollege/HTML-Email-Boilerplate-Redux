@@ -66,6 +66,13 @@ table#gmailapp-android-fix {
 }
 /* @endif */
 
+/* @if ENABLE_GMAIL_IOS_FONT_FIX='true' */
+div#gmailapp-ios-font-fix {
+	display: none;
+	display: none !important;
+}
+/* @endif */
+
 a, a:link { 
 	color: /* @echo DEFAULT_ANCHOR_COLOUR */; 
 	text-decoration: underline; 
