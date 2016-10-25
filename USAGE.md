@@ -10,7 +10,7 @@ Your `.boilerplate.custom` file is ignored by Git so you don't need to worry abo
 
 The full list of configuration variables that can be used with the email boilerplate can be found in the table below.
 
-<table width="100%">
+<table width="100%" style="font-size:14px;">
 	<tr>
 		<th>Option</th>
 		<th>Type</th>
@@ -554,7 +554,7 @@ The full list of configuration variables that can be used with the email boilerp
 
 The email boilerplate also contains samples of common elements/techniques used in email campaigns. By default all of these examples are not included in the boilerplate, but they are intended to be used for gudiance and learning by generating live code examples of areas mentioned in the guidelines version of the boilerplate.
 
-<table width="100%">
+<table width="100%" style="font-size:14px;">
 	<tr>
 		<th>Option</th>
 		<th>Type</th>
