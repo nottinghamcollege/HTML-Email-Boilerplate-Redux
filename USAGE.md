@@ -203,6 +203,15 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Fix CSS sibling selector support in certain Android/iOS clients</td>
 	</tr>
 	<tr>
+		<td>ENABLE_OUTLOOK_WEBMAIL_RESET_CSS (Deprecated)</td>
+		<td>boolean</td>
+		<td>
+			true (default)<br />
+			false
+		</td>
+		<td>Boolean to include specific CSS to reset line-height and email body container width in Outlook.com webmail</td>
+	</tr>
+	<tr>
 		<td>DEFAULT_ANCHOR_COLOUR</td>
 		<td>string</td>
 		<td>#e6057f</td>

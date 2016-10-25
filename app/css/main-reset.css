@@ -37,6 +37,7 @@ body {
 }
 /* @endif */
 
+/* @if ENABLE_OUTLOOK_WEBMAIL_RESET_CSS='true' */
 .ReadMsgBody, 
 .ExternalClass { 
 	width: 100%; 
@@ -50,6 +51,7 @@ body {
 .ExternalClass div { 
 	line-height: 100%; 
 }
+/* @endif */
 
 #/* @echo TABLE_WRAPPER_CSS_ID */ { 
 	margin: 0; 
