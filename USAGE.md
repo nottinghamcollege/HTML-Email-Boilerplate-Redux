@@ -250,13 +250,13 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Boolean to include CSS rules that targets h1 - h6 tags</td>
 	</tr>
 	<tr>
-		<td>ENABLE_YAHOO_SHORTCUTS_CSS_CLASSES</td>
+		<td>ENABLE_YAHOO_SHORTCUTS_CSS (deprecated)</td>
 		<td>boolean</td>
 		<td>
 			true<br />
 			false (default)
 		</td>
-		<td>Boolean to include CSS rules that target automatically converted links in Yahoo! (shortcuts)</td>
+		<td>Boolean to include CSS rules that target automatically converted links in Yahoo! Mail (shortcuts)</td>
 	</tr>
 	<tr>
 		<td>CUSTOM_APPLE_LINKS_COLOUR1</td>
@@ -569,6 +569,16 @@ Several configuration options may be marked as (deprecated), this is often due t
 		<th>Deprecation note</th>
 	</tr>
 	<tr>
+		<td>ENABLE_OUTLOOK_WEBMAIL_RESET_CSS</td>
+		<td>
+			<a href="https://www.emailonacid.com/blog/article/industry-news/outlook.com-accounts-begin-migration-to-office-365-interface" target="_blank">Outlook.com is being migrated over to the Office 365 platform</a>, the majority of Microsoft Accounts i.e. @live, @msn @hotmail, @outlook etc. should have already been migrated over, but there may still be a portion of the userbase still present on the older Outlook.com platform. The purpose of this configuration variable was to reset the containing &lt;div&gt; width and to reset a crazy default line-height value via two CSS classes .ExternalClass and .ReadMsgBody. However, this reset will no longer be required once the older Outlook.com platform is retired completely. For now, the reset code remains enabled by default, but will likely be removed in the near future.
+		</td>
+	</tr>
+	<tr>
+		<td>ENABLE_YAHOO_SHORTCUTS_CSS</td>
+		<td>Yahoo! Mail no longer highlights certain keywords in email campaigns, therefore there is no requirement to reset any .yshortcuts classes as they are no longer used.</td>
+	</tr>
+	<tr>
 		<td>ENABLE_GMAIL_ANDROID_RESIZE_FIX</td>
 		<td rowspan="2">
 			Gmail is now <a href="https://gsuite-developers.googleblog.com/2016/09/your-emails-optimized-for-every-screen-with-responsive-design.html" target="_blank">starting to support CSS3</a>, in addition the force scaling and font resizing quirks that these configuration options override on the Android and iOS Gmail apps <a href="https://www.emailonacid.com/blog/article/industry-news/gmail-update-embedded-styles-and-media-queries" target="_blank">are being removed from the client itself</a>, so these options should be considered legacy. Currently not all Gmail clients are rendering with CSS3 support due to a phased rollout.
@@ -576,12 +586,6 @@ Several configuration options may be marked as (deprecated), this is often due t
 	</tr>
 	<tr>
 		<td>ENABLE_GMAIL_IOS_FONT_FIX</td>
-	</tr>
-	<tr>
-		<td>ENABLE_OUTLOOK_WEBMAIL_RESET_CSS</td>
-		<td>
-			<a href="https://www.emailonacid.com/blog/article/industry-news/outlook.com-accounts-begin-migration-to-office-365-interface" target="_blank">Outlook.com is being migrated over to the Office 365 platform</a>, the majority of Microsoft Accounts i.e. @live, @msn @hotmail, @outlook etc. should have already been migrated over, but there may still be a portion of the userbase still present on the older Outlook.com platform. The purpose of this configuration variable was to reset the containing &lt;div&gt; width and to reset a crazy default line-height value via two CSS classes .ExternalClass and .ReadMsgBody. However, this reset will no longer be required once the older Outlook.com platform is retired completely. For now, the reset code remains enabled by default, but will likely be removed in the near future.
-		</td>
 	</tr>
 </table>
 

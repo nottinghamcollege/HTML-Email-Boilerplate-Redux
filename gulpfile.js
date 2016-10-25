@@ -140,6 +140,7 @@ gulp.task('check-config', ['inline-css'], function() {
     var viewportValue = process.env.VIEWPORT_META_VALUE;
     var isFormatDetectionEnabled = process.env.ENABLE_FORMAT_DETECTION_META_TAG;
     var formatDetectionValue = process.env.FORMAT_DETECTION_META_VALUE;
+    var isYahooShortcutsCSSEnabled = process.env.ENABLE_YAHOO_SHORTCUTS_CSS;
     var isMsoDpiScalingFixEnabled = process.env.ENABLE_MSO_DPI_SCALING_FIX;
     var isWebkitMediaQueryEnabled = process.env.ENABLE_WEBKIT_DETECTION_QUERY;
     var isGeckoMediaQueryEnabled = process.env.ENABLE_GECKO_MEDIA_QUERY;
@@ -177,6 +178,10 @@ gulp.task('check-config', ['inline-css'], function() {
 
     if((isFormatDetectionEnabled === 'true') && (/no/i.test(formatDetectionValue))) {
         configWarn('Disabling auto formatting data also disables any user interaction events i.e. tap to call');
+    }
+
+    if(isYahooShortcutsCSSEnabled === 'true') {
+        configWarn('Yahoo Shortcuts is no longer a feature of the Yahoo! Mail webmail client and does not need additional CSS to override');
     }
 
     if(isWebkitMediaQueryEnabled === 'true') {
