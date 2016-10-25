@@ -559,6 +559,32 @@ The full list of configuration variables that can be used with the email boilerp
 	</tr>
 </table>
 
+### Deprecation Notes
+
+Several configuration options may be marked as (deprecated), this is often due to email client specific changes that affect how the configuration option works since it was originally developed.
+
+<table width="100%" style="font-size:14px;">
+	<tr>
+		<th>Option</th>
+		<th>Deprecation note</th>
+	</tr>
+	<tr>
+		<td>ENABLE_GMAIL_ANDROID_RESIZE_FIX</td>
+		<td rowspan="2">
+			Gmail is now <a href="https://gsuite-developers.googleblog.com/2016/09/your-emails-optimized-for-every-screen-with-responsive-design.html" target="_blank">starting to support CSS3</a>, in addition the force scaling and font resizing quirks that these configuration options override on the Android and iOS Gmail apps <a href="https://www.emailonacid.com/blog/article/industry-news/gmail-update-embedded-styles-and-media-queries" target="_blank">are being removed from the client itself</a>, so these options should be considered legacy. Currently not all Gmail clients are rendering with CSS3 support due to a phased rollout.
+		</td>
+	</tr>
+	<tr>
+		<td>ENABLE_GMAIL_IOS_FONT_FIX</td>
+	</tr>
+	<tr>
+		<td>ENABLE_OUTLOOK_WEBMAIL_RESET_CSS</td>
+		<td>
+			<a href="https://www.emailonacid.com/blog/article/industry-news/outlook.com-accounts-begin-migration-to-office-365-interface" target="_blank">Outlook.com is being migrated over to the Office 365 platform</a>, the majority of Microsoft Accounts i.e. @live, @msn @hotmail, @outlook etc. should have already been migrated over, but there may still be a portion of the userbase still present on the older Outlook.com platform. The purpose of this configuration variable was to reset the containing &lt;div&gt; width and to reset a crazy default line-height value via two CSS classes .ExternalClass and .ReadMsgBody. However, this reset will no longer be required once the older Outlook.com platform is retired completely. For now, the reset code remains enabled by default, but will likely be removed in the near future.
+		</td>
+	</tr>
+</table>
+
 ### HTML Samples
 
 The email boilerplate also contains samples of common elements/techniques used in email campaigns. By default all of these examples are not included in the boilerplate, but they are intended to be used for gudiance and learning by generating live code examples of areas mentioned in the guidelines version of the boilerplate.
