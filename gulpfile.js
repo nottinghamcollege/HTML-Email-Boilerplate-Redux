@@ -151,7 +151,7 @@ gulp.task('check-config', ['inline-css'], function() {
 
     // Small function to re-use for warnings, because lazy
     function configWarn(configMessage) {
-        var label = 'CONFIGURATION:'
+        var label = 'CONFIG WARNING:'
         console.warn(label, configMessage)
     }
 
