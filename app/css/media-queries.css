@@ -1,8 +1,8 @@
 /*
 	media-queries.css
 	Purpose: Defines all media queries to be included in the email boilerplate
+	
 	Description:
-
 	For email clients that support CSS3, media queries can be used to enhance the user experience
 	NOTE: This file requires processing via gulp to build the desired conditional/variable values
 */

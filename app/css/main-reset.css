@@ -1,8 +1,8 @@
 /*
 	reset.css
 	Purpose: Defines all styling to be included in the <head>
+	
 	Description:
-
 	For email clients that support CSS in the <head>, resets can be used to fix various quirks.
 	NOTE: This file requires processing via gulp to build the desired conditional/variable values
 */

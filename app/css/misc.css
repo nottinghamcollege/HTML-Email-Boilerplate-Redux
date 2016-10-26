@@ -1,8 +1,8 @@
 /*
 	misc.css
 	Purpose: Additional reset or specific selector hacks that can target specific email clients
+	
 	Description:
-
 	The main reset CSS file generally targets a wider set of clients, the CSS rules in this file
 	generally are more specific to certain clients and hence are split from the main reset file.
 */
