@@ -241,6 +241,15 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Boolean to include CSS to target visited links (not all clients support this styling)</td>
 	</tr>
 	<tr>
+		<td>ENABLE_PARAGRAPH_CSS</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include CSS to reset the paragraph selector</td>
+	</tr>
+	<tr>
 		<td>ENABLE_HEADER_SELECTORS_CSS</td>
 		<td>boolean</td>
 		<td>

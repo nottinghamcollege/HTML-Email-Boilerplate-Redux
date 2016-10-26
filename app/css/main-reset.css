@@ -115,9 +115,11 @@ img {
 	-ms-interpolation-mode: bicubic; 
 }
 
+/* @if ENABLE_PARAGRAPH_CSS='true' */
 p { 
 	margin: 1em 0; 
 }
+/* @endif */
 
 /* @if ENABLE_HEADER_SELECTORS_CSS='true' */
 h1, h2, h3, h4, h5, h6 { 
