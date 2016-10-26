@@ -164,7 +164,7 @@ gulp.task('check-config', ['inline-css'], function() {
         configWarn('You should strongly consider setting ENABLE_XUA_COMPATIBLE_META_TAG to true for better Windows Phone/IE compatibility');
     }
 
-    if((isXuaCompatMetaTagEnabled === 'true') && (!/edge/i.test(xuaCompatValue))) {
+    if((isXuaCompatMetaTagEnabled === 'true') && (!/IE=edge/i.test(xuaCompatValue))) {
         configWarn('Using any other value than IE=edge for XAU_COMPATIBLE_VALUE is not recommended');
     }
 
