@@ -180,6 +180,10 @@ gulp.task('check-config', ['inline-css'], function() {
         configWarn('Disabling auto formatting data also disables any user interaction events i.e. tap to call');
     }
 
+    if(isMsoDpiScalingFixEnabled === 'false') {
+        configWarn('You should strongly consider setting ENABLE_MSO_DPI_SCALING_FIX to true for fixing image scaling with DPI values higher than 96');
+    }
+
     if(isYahooShortcutsCSSEnabled === 'true') {
         configWarn('Yahoo Shortcuts is no longer a feature of the Yahoo! Mail webmail client and does not need additional CSS to override');
     }
