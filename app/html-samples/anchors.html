@@ -4,15 +4,38 @@
 
 	Rationale:
 	Anchors are one of the main layout elements that work consistently, however you should inline styling where possible
-	Always add _target="blank" to make sure links never open within the email client and in the browser
+	Always add _target="blank" to make sure links never open within the email client itself.
 -->
 
+<style type="text/css">	
+
+	a {
+		color: <!-- @echo DEFAULT_ANCHOR_COLOUR -->;
+		text-decoration: underline;
+		text-align: left;
+	}
+
+	a img {
+		border: none;
+	}
+
+	img {
+		display: block;
+	}
+	
+</style>
+
 <!-- Plain link -->
-<a href="<!-- @echo HTML_SAMPLE_HREF -->" class="plain-link" target="_blank">
-	Central College Nottingham
+<a href="<!-- @echo HTML_SAMPLE_HREF -->" target="_blank">
+	<!-- @echo DOCUMENT_TITLE -->
+</a>
+
+<!-- Plain link with title -->
+<a href="<!-- @echo HTML_SAMPLE_HREF -->" target="_blank" title="Tooltip shown in some email clients">
+	<!-- @echo DOCUMENT_TITLE -->
 </a>
 
 <!-- Hyperlinked image -->
 <a href="<!-- @echo HTML_SAMPLE_HREF -->" target="_blank">
-	<img src="<!-- @echo HTML_SAMPLE_IMG_SRC -->" alt="<!-- @echo HTML_SAMPLE_ALT_TEXT -->" border="0" width="289" height="81" class="block-image" />
+	<img src="<!-- @echo HTML_SAMPLE_IMG_SRC -->" alt="<!-- @echo HTML_SAMPLE_ALT_TEXT -->" border="0" width="289" height="81" />
 </a>

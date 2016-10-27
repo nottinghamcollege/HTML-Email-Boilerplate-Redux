@@ -26,7 +26,7 @@ As well as fixing other email client quirks that have been discovered.
 
 This project now uses `npm` and `gulp` based packages to produce a customised and production ready version of the email boilerplate. Originally the project began as static HTML files, however overtime this become a problem where dynamic elements were needed. e.g. toggling code blocks on/off, variable values etc.
 
-1. Install `npm` https://nodejs.org/en/ (Make sure its in your `$PATH`)
+1. Install `npm` <a href="https://nodejs.org/en/" target="_blank">https://nodejs.org/en/</a> (Make sure its in your `$PATH`)
 2. Install gulp globally with `npm install --global gulp-cli`
 3. Clone the git source of this project and run `npm i` to install the required depedencies
 4. Copy `.boilerplate.defaults -> .boilerplate.custom`. There are a range of booleans, numeric and string values to tweak to your requirements
@@ -37,18 +37,20 @@ A `tmp` directory will be created when running `gulp` these are just helper file
 
 Note: Don't place any files within the `tmp` or `dist` directory, they are cleaned each time `gulp` is run.
 
+For further information on the configuration variables available see USAGE.md.
+
 ## Project branches
 
 The email boilerplate itself is split into two versions, experimental and stable. Previously this was managed by creating seperate HTML documents, however since [
 1bc2b35](https://github.com/centralcollegenottingham/HTML-Email-Boilerplate-Redux/commit/1bc2b35d4e4730eb4aea203f2d8fded1a93ec0d9) this is now done via branches in the Git repo.
 
-### Develop (Experimental)
+### Develop (Experimental) [![CircleCI](https://circleci.com/gh/centralcollegenottingham/HTML-Email-Boilerplate-Redux/tree/develop.svg?style=svg)](https://circleci.com/gh/centralcollegenottingham/HTML-Email-Boilerplate-Redux/tree/develop)
 
 This is the latest/bleeding edge version of the email boilerplate, experimental code that needs testing will appear here first, it provides a branch for testers/curious users to check out the very latest developments of the email boilerplate, but be warned, email client compatibility is not guaranteed on develop because its more of a pre-release branch.
 
 **It is strongly recommended that you NEVER use the develop version of the email boilerplate in a live email campaign. The develop version may not have been tested thoroughly and hence its cross email client compatibility is not guaranteed. Always use the master branch!**
 
-### Master (Stable)
+### Master (Stable) [![CircleCI](https://circleci.com/gh/centralcollegenottingham/HTML-Email-Boilerplate-Redux/tree/master.svg?style=svg)](https://circleci.com/gh/centralcollegenottingham/HTML-Email-Boilerplate-Redux/tree/master)
 
 This is the stable version of the boilerplate which should be used in email campaigns. It is also the default branch. 
 
@@ -92,3 +94,5 @@ This boilerplate is originally based on two very popular boilerplates by:
 * Email on Acid - http://www.emailonacid.com/blog/details/C13/html_boilerplate
 
 Further additions and adaptations have been made Central College Nottingham either from our own research or cited from sources. Where sources have been cited in the guidelines version of the stable boilerplate, credit is given to the original author of the referenced information.
+
+A full list of credited individuals/organisations can be found in the CONTRIBUTORS.md

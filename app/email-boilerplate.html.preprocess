@@ -12,10 +12,10 @@
 <!-- @endif -->
 	<html lang="<!-- @echo LANGUAGE_CODE -->" <!-- @if ENABLE_VML_NAMESPACES='true' --> xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" <!-- @endif -->>
 		<head>
-			<!-- @if DOCTYPE_VERSION!='HTML5' -->
+			<!-- @if DOCTYPE_VERSION!='html5' -->
 			<meta http-equiv="Content-Type" content="text/html; charset=<!-- @echo CHARSET -->" />
 			<!-- @endif -->
-			<!-- @if DOCTYPE_VERSION='HTML5' -->
+			<!-- @if DOCTYPE_VERSION='html5' -->
 			<meta charset="<!-- @echo CHARSET -->" />
 			<!-- @endif -->
 			<!-- @if ENABLE_XUA_COMPATIBLE_META_TAG='true' -->	
@@ -32,14 +32,16 @@
 			<!-- @if ENABLE_ROBOTS_META_TAG='true' -->
 			<meta name="robots" content="<!-- @echo ROBOTS_META_VALUE -->" />
 			<!-- @endif -->
+			<!-- @if ENABLE_APPLE_DISABLE_MESSAGE_FORMATTING_META_TAG='true' -->
+			<meta name="x-apple-disable-message-reformatting" />
+			<!-- @endif -->
 
 			<title><!-- @echo DOCUMENT_TITLE --></title>
             
 			<!-- @if ENABLE_FAVICON='true' -->
 			<link rel="icon" type="image/x-icon" href="<!-- @echo FAVICON_URL -->" />
 			<!-- @endif -->
-			<link rel="stylesheet" href="../../tmp/css/inline-rules.css.min" />
-			<link rel="stylesheet" href="../../tmp/css/html-samples.css.min" />
+			<link rel="stylesheet" href="../../tmp/css/inline-rules.css" />
 			<!-- @if ENABLE_MSO_DPI_SCALING_FIX='true' -->
 			<!--[if gte mso 9]>
 				<xml>
@@ -63,73 +65,86 @@
 				<!-- @include ../tmp/css/main-reset.css.min -->
 
 				<!-- @include ../tmp/css/media-queries.css.min -->
-
+				
 				<!-- @include ../tmp/css/misc.css.min -->
-
 			</style>
 
 		</head>
 
-	<body bgcolor="<!-- @echo BODY_BG_COLOUR -->">
+	<body id="main-body" class="<!-- @echo BODY_CSS_CLASS -->" bgcolor="<!-- @echo BODY_BG_COLOUR -->">
+	<!-- @if ENABLE_DOTMAILER_EASY_EDITOR_TEMPLATE='true' -->
+	<!-- Easy Editor -->
+	<!-- @endif -->
 		<!-- @if ENABLE_PREHEADER='true' -->
-		<span id="preheader"><!-- @echo PREHEADER_TEXT --></span>
+		<div id="preheader">
+			<!-- @echo PREHEADER_TEXT -->
+		</div>
 		<!-- @endif -->
 		<table id="<!-- @echo TABLE_WRAPPER_CSS_ID -->">
 			<tr>
-				<td id="<!-- @echo TABLE_WRAPPER_CELL_CSS_ID -->" align="<!-- @echo TABLE_WRAPPER_CELL_ALIGN -->" valign="top" bgcolor="<!-- @echo BODY_BG_COLOUR -->">
+				<td id="<!-- @echo TABLE_WRAPPER_CELL_CSS_ID -->">
+				<!-- @if ENABLE_TABLE_CONTAINER='true' -->
+					<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
+					<!--[if (gte mso 9)|(IE)]>
+					<table style="width: <!-- @echo TABLE_CONTAINER_WIDTH -->px;" border="0" cellpadding="0" cellspacing="0" width="<!-- @echo TABLE_CONTAINER_WIDTH -->">
+						<tr>
+							<td align="left" valign="top">
+					<![endif]-->
+					<!-- @endif -->
 					<table id="<!-- @echo TABLE_CONTAINER_CSS_ID -->">
 						<tr>
-							<td id="<!-- @echo TABLE_CONTAINER_CELL_CSS_ID -->" align="<!-- @echo TABLE_CONTAINER_CELL_ALIGN -->" valign="top" bgcolor="<!-- @echo TABLE_CONTAINER_CELL_BG_COLOR -->">
-								<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
-								<!--[if (gte mso 9)|(IE)]>
-								<table id="mso-ie-wrapper" style="width: <!-- @echo TABLE_CONTAINER_WIDTH -->px;" width="<!-- @echo TABLE_CONTAINER_WIDTH -->" border="0" cellpadding="0" cellspacing="0">
-									<tr>
-										<td id="mso-ie-cell" align="left" valign="top">
-								<![endif]-->
-								<!-- @endif -->
+							<td id="<!-- @echo TABLE_CONTAINER_CELL_CSS_ID -->">
 								<!-- @if ENABLE_GMAIL_ANDROID_RESIZE_FIX='true' -->
 								<table id="gmailapp-android-fix">
 									<tr>
-										<td align="left" valign="top" height="1">
+										<td>
 											<img src="<!-- @echo PLACEHOLDER_IMG_URL -->/<!-- @echo TABLE_CONTAINER_WIDTH -->x1.gif" alt="" width="<!-- @echo TABLE_CONTAINER_WIDTH -->" height="1" />
 										</td>
 									</tr>
 								</table>
 								<!-- @endif -->
-
-								<!-- @if ENABLE_HTML_SAMPLE_ANCHORS='true' -->
-								<!-- @include ../tmp/html-samples/anchors.html -->
-
-								<!-- @endif -->
-								<!-- @if ENABLE_HTML_SAMPLE_IMAGES='true' -->
-								<!-- @include ../tmp/html-samples/images.html -->
-
-								<!-- @endif -->
-								<!-- @if ENABLE_HTML_SAMPLE_FAUX_LISTS='true' -->
-								<!-- @include ../tmp/html-samples/faux-lists.html -->
-
-								<!-- @endif -->
-								<!-- @if ENABLE_HTML_SAMPLE_FLOATED_COLUMNS='true' -->
-								<!-- @include ../tmp/html-samples/floated-columns.html -->
-
-								<!-- @endif -->
-								<!-- @if ENABLE_HTML_SAMPLE_ALIGN_BLOCK_ELEMENT='true' -->
-								<!-- @include ../tmp/html-samples/align-block-element.html -->
-
-								<!-- @endif -->
-								<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
-								<!--[if (gte mso 9)|(IE)]>
-										</td>
-									</tr>
-								</table>
-								<![endif]-->
-								<!-- @endif -->
 							</td>
 						</tr>
 					</table>
+					<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
+					<!--[if (gte mso 9)|(IE)]>
+							</td>
+						</tr>
+					</table>
+					<![endif]-->
+					<!-- @endif -->
+				<!-- @endif -->
 				</td>
 			</tr>
 		</table>
+		<!-- @if ENABLE_HTML_SAMPLE_ANCHORS='true' -->
+		<!-- @include ../tmp/html-samples/anchors.html -->
+
+		<!-- @endif -->
+		<!-- @if ENABLE_HTML_SAMPLE_CTA_BUTTONS='true' -->
+		<!-- @include ../tmp/html-samples/cta-buttons.html -->
+
+		<!-- @endif -->
+		<!-- @if ENABLE_HTML_SAMPLE_IMAGES='true' -->
+		<!-- @include ../tmp/html-samples/images.html -->
+
+		<!-- @endif -->
+		<!-- @if ENABLE_HTML_SAMPLE_FAUX_LISTS='true' -->
+		<!-- @include ../tmp/html-samples/faux-lists.html -->
+
+		<!-- @endif -->
+		<!-- @if ENABLE_HTML_SAMPLE_FLOATED_COLUMNS='true' -->
+		<!-- @include ../tmp/html-samples/floated-columns.html -->
+
+		<!-- @endif -->
+		<!-- @if ENABLE_HTML_SAMPLE_ALIGN_BLOCK_ELEMENT='true' -->
+		<!-- @include ../tmp/html-samples/align-block-element.html -->
+
+		<!-- @endif -->
+		<!-- @if ENABLE_HTML_SAMPLE_HORIZONTAL_SPACER='true' -->
+		<!-- @include ../tmp/html-samples/horizontal-spacer.html -->
+
+		<!-- @endif -->
 		<!-- @if ENABLE_GMAIL_IOS_FONT_FIX='true' -->
 		<div id="gmailapp-ios-font-fix">
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 

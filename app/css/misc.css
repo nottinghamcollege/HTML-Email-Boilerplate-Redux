@@ -1,8 +1,8 @@
 /*
 	misc.css
 	Purpose: Additional reset or specific selector hacks that can target specific email clients
+	
 	Description:
-
 	The main reset CSS file generally targets a wider set of clients, the CSS rules in this file
 	generally are more specific to certain clients and hence are split from the main reset file.
 */
@@ -23,7 +23,7 @@
 }
 /* @endif */
 
-/* @if ENABLE_GMAIL_HIDE_DOWNLOAD_ICON_HACK='true' */
+/* @if ENABLE_GMAIL_HIDE_DOWNLOAD_ICON='true' */
 * img[tabindex="0"] + div { 
 	display: none !important; 
 }
@@ -33,11 +33,5 @@
 div[style*="margin: 16px 0"] { 
 	margin: 0 auto !important; 
 	font-size: 100% !important; 
-}
-/* @endif */
-
-/* @if ENABLE_GMAIL_ANDROID_RESIZE_FIX='true' */
-table#gmailapp-android-fix {
-	display: none;
 }
 /* @endif */

@@ -11,11 +11,24 @@
 	to actually make Outlook render the code as two table cells.
 -->
 
+<style type="text/css">
+	
+	table#floated-columns-example td#float-columns-example-cell {
+		vertical-align: top;
+	}
+
+	table#column-1,
+	table#column-2 {
+		float: left;
+	}
+
+</style>
+
 <table id="floated-columns-example">
 	<tr>
-		<td>
+		<td id="float-columns-example-cell">
 			<!-- Column 1 -->
-			<table align="left">
+			<table id="column-1">
 				<tr>
 					<td>Column #1 Content</td>
 				</tr>
@@ -23,7 +36,7 @@
 			<!-- We "ghost" a column for Outlook here -->
 			<!--[if mso]></td><td><![endif]-->
 			<!-- Column 2 -->
-			<table align="left">
+			<table id="column-2">
 				<tr>
 					<td>Column #2 Content</td>
 				</tr>

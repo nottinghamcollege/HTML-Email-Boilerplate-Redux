@@ -1,0 +1,30 @@
+<!--
+	horizontal-spacer.html
+	Purpose: Create spacers that don't require images and will render consistently across clients
+
+	Rationale:
+	Sometimes you might want to create spacer tables/cells between layout elements
+	Using a combination of line-height and height this can be achieved without images
+-->
+
+<style type="text/css">
+
+	table.horizontal-spacer {
+		width: 100%;
+	}
+
+	table.horizontal-spacer td {
+		text-align: left;
+		vertical-align: top;
+		height: 30px;
+		line-height: 30px;
+		mso-line-height-rule: exactly;
+	}
+	
+</style>
+
+<table class="horizontal-spacer">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+</table>

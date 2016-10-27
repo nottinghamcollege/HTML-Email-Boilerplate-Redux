@@ -6,12 +6,20 @@
 	Various CSS id/class rules that will be inlined during gulp processing
 */
 
-span#preheader { 
+body#main-body {
+	padding: 0;
+	background-color: /* @echo BODY_BG_COLOUR */;
+}
+
+div#preheader { 
 	display: none !important; 
 	color: /* @echo BODY_BG_COLOUR */; 
-	font-size: 1px; 
+	font-size: 0px; 
 	line-height: 0; 
-	overflow: hidden; 
+	overflow: hidden;
+	max-width: 0;
+	max-height: 0;
+	opacity: 0;
 	mso-hide: all;
 }
 
@@ -21,14 +29,26 @@ table#/* @echo TABLE_WRAPPER_CSS_ID */ {
 	width: 100%;
 }
 
+table#/* @echo TABLE_WRAPPER_CSS_ID */ td#/* @echo TABLE_WRAPPER_CELL_CSS_ID */ {
+	vertical-align: top;
+	text-align: /* @echo TABLE_WRAPPER_CELL_ALIGN */;
+	background-color: /* @echo BODY_BG_COLOUR */;
+}
+
 table#/* @echo TABLE_CONTAINER_CSS_ID */ {
 	/* @if TABLE_CONTAINER_FIXED_WIDTH='true' */
-	width: 600; /* This is to workaround a bug inline-css */
+	width: /* @echo TABLE_CONTAINER_WIDTH */px;
 	/* @endif */
 	/* @if TABLE_CONTAINER_FIXED_WIDTH='false' */
 	width: 100%;
 	max-width: /* @echo TABLE_CONTAINER_WIDTH */px;
 	/* @endif */
+}
+
+table#/* @echo TABLE_CONTAINER_CSS_ID */ td#/* @echo TABLE_CONTAINER_CELL_CSS_ID */ {  
+	vertical-align: top;
+	text-align: /* @echo TABLE_CONTAINER_CELL_ALIGN */;
+	background-color: /* @echo TABLE_CONTAINER_CELL_BG_COLOR */;
 }
 
 table#gmailapp-android-fix {
@@ -38,8 +58,10 @@ table#gmailapp-android-fix {
 
 table#gmailapp-android-fix td {
 	line-height: 1px; 
-	height: 1; /* This is to workaround a bug inline-css */
+	height: 1px;
 	min-width: /* @echo TABLE_CONTAINER_WIDTH */px;
+	vertical-align: top;
+	text-align: left;
 }
 
 table#gmailapp-android-fix img {
@@ -48,7 +70,6 @@ table#gmailapp-android-fix img {
 }
 
 div#gmailapp-ios-font-fix {
-	display: none; 
 	white-space: nowrap; 
 	font: 15px courier; 
 	line-height: 0; 

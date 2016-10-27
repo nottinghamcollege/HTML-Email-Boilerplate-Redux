@@ -1,0 +1,6 @@
+dependencies:
+  override:
+    - npm install
+test:
+  override:
+    - ./node_modules/.bin/gulp

@@ -1,6 +1,6 @@
 # Usage
 
-The default configuration of the email boilerplate should provide a common basis for most email campaigns, however if you want to customise any of the configuration you need to modify the config variables within a file called `.boilerplate.custom`. 
+The default configuration of the email boilerplate should provide a common basis for most email campaigns, however if you want to customise any of the configuration you need to modify the configuration variables within a file called `.boilerplate.custom`. 
 
 There is a default configuration file called `.boilerplate.defaults`, this is always loaded first to make sure all configuration variables are loaded with a default value to prevent any build errors e.g. if a new variable is added and your `.boilerplate.custom` file doesn't have it.
 
@@ -8,403 +8,668 @@ Your `.boilerplate.custom` file is ignored by Git so you don't need to worry abo
 
 ## Configuration variables
 
-The full list of configuration variables is below and their purpose.
-
-### Main document
-
-```
-DOCTYPE_VERSION (default: xhtml-transitional)
-Type: string
-Possible values: xhtml-transitional, xhtml-strict, html4, html5
-Purpose: Output a common doctype used in email templates
-```
-
-```
-LANGUAGE_CODE
-Type: string
-Purpose: Sets lang attribute value on root <html> tag
-Example: en
-```
-
-```
-ENABLE_VML_NAMESPACES (default: true)
-Type: boolean
-Purpose: Boolean to include VML namespaces on root <html> (needed for MSO specific code like VML)
-```
-
-```
-CHARSET
-Type: string
-Purpose: Sets desired character set for the document
-Example: utf-8
-```
-
-```
-DOCUMENT_TITLE
-Type: string
-Purpose: Ability to set a specific <title> for the HTML document
-Example: Central College Nottingham
-```
-
-```
-ENABLE_FORMAT_DETECTION_META_TAG (default: false)
-Type: boolean
-Purpose: Boolean to stop devices automatically converting data like phone numbers and addresses into ineteractive links
-```
-
-```
-FORMAT_DETECTION_META_VALUE
-Type: string
-Purpose: Provide data types to be ignored
-Example: telephone=no
-```
-
-```
-ENABLE_VIEWPORT_META_TAG (default: true)
-Type: boolean
-Purpose: Boolean to include the viewport meta tag
-```
-
-```
-VIEWPORT_META_VALUE
-Type: string
-Purpose: Ability to set a specific viewport value
-Example: width=device-width, initial-scale=1
-```
-
-```
-ENABLE_XUA_COMPATIBLE_META_TAG (default: true)
-Type: boolean
-Purpose: Boolean to include a XUA-Compatible meta tag for IE clients
-```
-
-```
-XUA_COMPATIBLE_VALUE
-Type: string
-Purpose: Set a document mode for Internet Explore clients to always use
-Example: IE=edge
-```
-
-```
-ENABLE_ROBOTS_META_TAG (default: false)
-Type: boolean
-Purpose: Boolean to include a meta robots tag
-```                    
-
-```
-ROBOTS_META_VALUE
-Type: string
-Purpose: Provide a value for the meta robots tags
-Example: noindex, nofollow
-```
-
-```
-ENABLE_FAVICON (default: true)
-Type: boolean
-Purpose: Define a favicon reference which is used by some email clients/web version
-```
-
-```
-FAVICON_URL
-Type: string
-Purpose: Full URL path to ico file
-Example: http://media.centralnottingham.ac.uk/favicon.ico
-```
-
-### MSO (Microsoft Office) code
-
-```
-ENABLE_MSO_DPI_SCALING_FIX (default: true)
-Type: boolean
-Purpose: Boolean to include MSO DPI fix
-```
-
-```
-ENABLE_MSO_CONDITIONAL_STYLING (default: true)
-Type: boolean
-Purpose: Boolean to include specific MSO CSS reset rules
-```
-
-```
-ENABLE_MSO_FALLBACK_FONT (default: true)
-Type: boolean
-Purpose: Boolean to include a specific CSS block that targets main layout elements
-```
-
-```
-MSO_DEFAULT_FALLBACK_FONT_STACK
-Type: string
-Purpose: Ability to set a web safe font stack Windows based Outlook clients will use when using web fonts
-Example: Helvetica, Arial, sans-serif
-```
-
-#### CSS Reset `<head>`
-
-```
-ENABLE_GENERAL_SIBLING_SELECTOR_BUG_FIX (default: false)
-Type: boolean
-Purpose: Fix CSS sibling selector support in certain Android/iOS clients
-```
-
-```
-DEFAULT_ANCHOR_COLOUR
-Type: string
-Purpose: Ability to set a global <a> colour in the <head>.
-Example: #e6057f
-```
-
-```
-DEFAULT_ANCHOR_VISITED_COLOUR
-Type: string
-Purpose: Ability to set a global visited <a> colour in the <head>
-Example: #ff0000
-```
-
-```
-ENABLE_VISITED_ANCHOR_CSS (default: false)
-Type: boolean
-Purpose: Boolean to include CSS to target visited links (no all clients support this styling)
-```
-
-```
-ENABLE_HEADER_SELECTORS_CSS (default: false)
-Type: boolean
-Purpose: Boolean to include CSS rules that target <h1> - <h6> tags
-```
-
-```
-ENABLE_YAHOO_SHORTCUTS_CSS_CLASSES (default: false)
-Type: boolean
-Purpose: Boolean to include CSS rules that target automatically converted links in Yahoo! (shortcuts)
-```
-
-#### CSS3 `@media` queries
-
-```
-ENABLE_WINDOWS_PHONE_VIEWPORT_FIX (default: false)
-Type: boolean
-Purpose: Boolean to include a specific at-rule to adjust the viewport on Windows Phone devices
-```
-
-```
-ENABLE_MEDIA_SCREEN_QUERY (default: true)
-Type: boolean
-Purpose: Boolean to include a media screen query, useful for include webfonts with @font-face or import
-```
-
-```
-ENABLE_YAHOO_MEDIA_QUERY (default: false)
-Type: boolean
-Purpose: Boolean to include a specific yahoo media query that will be rendered in Yahoo! webmail
-```
-
-```
-ENABLE_IE_10_11_MEDIA_QUERY (default: false)
-Type: boolean
-Purpose: Boolean to include a specific IE 10/11 media query that targets both desktop and mobile
-```
-
-```
-ENABLE_WEBKIT_DETECTION_QUERY (default: false)
-Type: boolean
-Purpose: Boolean to include a specific webkit query that will be used on any Webkit client
-```
-
-```
-ENABLE_GECKO_MEDIA_QUERY (default: false)
-Type: boolean
-Purpose: Boolean to include a specific media query that targets Gecko based clients
-```
-
-```
-ENABLE_MAX_DEVICE_WIDTH_MEDIA_QUERY (default: true)
-Type: boolean
-Purpose: Boolean to include a media query that is triggered on TABLE_CONTAINER_WIDTH
-```
-
-```
-ENABLE_RETINA_3X_MEDIA_QUERY (default: false)
-Type: boolean
-Purpose: Boolean to include a media query that targets devices with a pixel density of 3x the standard
-```
-
-```
-ENABLE_RETINA_2X_MEDIA_QUERY (default: false)
-Type: boolean
-Purpose: Boolean to include a media query that targets devices with a pixel density of 2x the standard
-```
-
-```
-ENABLE_RETINA_1X_MEDIA_QUERY (default: false)
-Type: boolean
-Purpose: Boolean to include a media query that targets devices with a pixel density slighty higher than normal
-```
-
-### Other CSS
-
-```
-ENABLE_AOL_WEBMAIL_CSS_CLASS (default: false)
-Type: boolean
-Purpose: Boolean to include a specific CSS class that will be rendered by AOL Webmail clients
-```
-
-```
-ENABLE_OFFICE_365_CSS_SELECTOR (default: false)
-Type: boolean
-Purpose: Boolean to include a specific CSS selector that will target Office 365
-```
-
-```
-ENABLE_GMAIL_HIDE_DOWNLOAD_ICON_HACK (default: true)
-Type: boolean
-Purpose: Boolean to include a specific CSS selector that will remove the download icon on Gmail
-```
-
-```
-ENABLE_ANDROID_4_4_CENTRE_FIX (default: true)
-Type: boolean
-Purpose: Boolean to include an attribute selector that normalises the margin on Android 4.4
-```
-
-### Main `<body>`
-
-```
-ENABLE_PREHEADER (default: true)
-Type: boolean
-Purpose: Boolean to include a <span> following the <body> tag for the preheader
-```
-
-```
-PREHEADER_TEXT
-Type: string
-Purpose: Ability to provide a small sentence that will be the first text email clients will use in message/notification previews
-Example: Example Preheader text
-```
-
-```
-BODY_BG_COLOUR
-Type: string
-Purpose: Ability to set a specific hexidecimal colour for the background of the email
-Example: #ffffff
-```
-
-```
-TABLE_WRAPPER_CSS_ID
-Type: string
-Purpose: Ability to set a specific CSS ID for the first wrapping table
-Example: main-wrapper
-```
-
-```
-TABLE_CONTAINER_CSS_ID
-Type: string
-Purpose: Ability to set a specific CSS ID for the first wrapping cell
-Example: container-wrapper
-```
-
-```
-TABLE_WRAPPER_CELL_CSS_ID
-Type: string
-Purpose: Ability to set a specific CSS ID for the container table
-Example: main-cell
-```
-
-```
-TABLE_CONTAINER_CELL_CSS_ID
-Type: string
-Purpose: Ability to set a specific CSS ID for the container cell
-Example: container-cell
-```
-
-```
-TABLE_CONTAINER_CELL_BG_COLOR
-Type: string
-Purpose Set a background colour for the container table cell
-Example: #ffffff
-```
-
-```
-TABLE_CONTAINER_FIXED_WIDTH (default: true)
-Type: boolean
-Purpose: Boolean to define if the email width should be fixed or not
-```
-
-```
-TABLE_CONTAINER_WIDTH (default: 600)
-Type: integer
-Purpose: Set the width of the container table
-```
-
-```
-TABLE_WRAPPER_CELL_ALIGN
-Type: string
-Purpose: Set the align method of wrapper table cell
-Example: center
-```
-
-```
-TABLE_CONTAINER_ALIGN
-Type: string
-Purpose: Set the align method of container table
-Example: center
-```
-
-```
-TABLE_CONTAINER_CELL_ALIGN
-Type: string
-Purpose: Set the align method of container table cell
-Example: left
-```
-
-```
-ENABLE_GMAIL_ANDROID_RESIZE_FIX (default: true)
-Type: boolean
-Purpose: Boolean to include a spacer image the same size as TABLE_CONTAINER_WIDTH to prevent Gmail force scaling a wider email
-```
-
-```
-ENABLE_GMAIL_IOS_FONT_FIX (default: true)
-Type: boolean
-Purpose: Boolean to include special <div> to prevent Gmail iOS app auto scaling fonts on wider emails
-```
-
-#### HTML Samples
-
-```
-ENABLE_HTML_SAMPLE_ANCHORS (default: false)
-Type: boolean
-Purpose: Boolean to include an anchor HTML example for email usage
-```
-
-```
-ENABLE_HTML_SAMPLE_IMAGES (default: false)
-Type: boolean
-Purpose: Boolean to include an image HTML example for email usage
-```
-
-```
-ENABLE_HTML_SAMPLE_FLOATED_COLUMNS (default: false)
-Type: boolean
-Purpose: Boolean to include a column layout for email usage
-```
-
-```
-ENABLE_HTML_SAMPLE_ALIGN_BLOCK_ELEMENT (default: false)
-Type: boolean
-Purpose: Boolean to include an block element align example for email usage
-```
-
-```
-ENABLE_HTML_SAMPLE_FAUX_LISTS (default: false)
-Type: boolean
-Purpose: Boolean to include a list layout using tables example for email uage
-```
-
-### Misc
-
-```
-PLACEHOLDER_IMG_URL
-Type: string
-Purpose: Variable to store URL path to placeholder images
-Example: http://placehold.it
-```
+The full list of configuration variables that can be used with the email boilerplate can be found in the table below.
+
+<table width="100%" style="font-size:14px;">
+	<tr>
+		<th>Option</th>
+		<th>Type</th>
+		<th width="15%">Value</th>
+		<th>Purpose</th>
+	</tr>
+	<tr>
+		<td colspan="4" align="center">
+			<strong>Main Document</strong>
+		</td>
+	</tr>
+	<tr>
+		<td>DOCTYPE_VERSION</td>
+		<td>string</td>
+		<td>
+			xhtml-transitional (default)<br />
+			xhtml-strict<br /> 
+			html4<br />
+			html5</td>
+		<td>Build email boilerplate with a specific doctype</td>
+	</tr>
+	<tr>
+		<td>LANGUAGE_CODE</td>
+		<td>string</td>
+		<td>en</td>
+		<td>Sets lang attribute value on root HTML tag</td>
+	</tr>
+	<tr>
+		<td>ENABLE_VML_NAMESPACES </td>
+		<td>boolean</td>
+		<td>
+			true (default)<br />
+			false
+		</td>
+		<td>Boolean to include VML namespaces on root HTML tag (needed for MSO specific code like VML)</td>
+	</tr>
+	<tr>
+		<td>CHARSET</td>
+		<td>string</td>
+		<td>utf-8</td>
+		<td>Sets desired character set for the document</td>
+	</tr>
+	<tr>
+		<td>DOCUMENT_TITLE</td>
+		<td>string</td>
+		<td>Central College Nottingham</td>
+		<td>Ability to set a specific title value for the HTML document</td>
+	</tr>
+	<tr>
+		<td>ENABLE_FORMAT_DETECTION_META_TAG</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to stop devices automatically converting data like phone numbers and addresses into ineteractive links</td>
+	</tr>
+	<tr>
+		<td>FORMAT_DETECTION_META_VALUE</td>
+		<td>string</td>
+		<td>telephone=no</td>
+		<td>Provide data types to be ignored</td>
+	</tr>
+	<tr>
+		<td>ENABLE_VIEWPORT_META_TAG</td>
+		<td>boolean</td>
+		<td>
+			true (default)<br />
+			false
+		</td>
+		<td>Boolean to include the viewport meta tag</td>
+	</tr>
+	<tr>
+		<td>VIEWPORT_META_VALUE</td>
+		<td>string</td>
+		<td>width=device-width</td>
+		<td>Ability to set a specific viewport value</td>
+	</tr>
+	<tr>
+		<td>ENABLE_XUA_COMPATIBLE_META_TAG</td>
+		<td>boolean</td>
+		<td>
+			true (default)<br />
+			false
+		</td>
+		<td>Boolean to include a XUA-Compatible meta tag for Internet Explorer based clients</td>
+	</tr>
+	<tr>
+		<td>XUA_COMPATIBLE_VALUE</td>
+		<td>string</td>
+		<td>IE=edge</td>
+		<td>Force a document mode for Internet Explorer based clients to use</td>
+	</tr>
+	<tr>
+		<td>ENABLE_ROBOTS_META_TAG</td>
+		<td>boolean</td>
+		<td>true <br />
+			false (default)
+		</td>
+		<td>Boolean to include a meta robots tag</td>
+	</tr>
+	<tr>
+		<td>ROBOTS_META_VALUE</td>
+		<td>string</td>
+		<td>noindex, nofollow</td>
+		<td>Provide a value for the meta robots tags</td>
+	</tr>
+	<tr>
+		<td>ENABLE_APPLE_DISABLE_MESSAGE_FORMATTING_META_TAG</td>
+		<td>boolean</td>
+		<td>true <br />
+			false (default)
+		</td>
+		<td>Boolean to include a specific meta tag that will prevent iOS/Apple Mail from auto formatting email messages (iOS 10)</td>
+	</tr>
+	<tr>
+		<td>ENABLE_FAVICON</td>
+		<td>boolean</td>
+		<td>
+			true (default)<br />
+			false
+		</td>
+		<td>Define a favicon reference which is used by some email clients/web version</td>
+	</tr>
+	<tr>
+		<td>FAVICON_URL</td>
+		<td>string</td>
+		<td>Absolute URL</td>
+		<td>Full http(s):// URL path to ico file</td>
+	</tr>
+	<tr>
+		<td colspan="4" align="center">
+			<strong>Microsoft Office (MSO) code</strong>
+		</td>
+	</tr>
+	<tr>
+		<td>ENABLE_MSO_DPI_SCALING_FIX</td>
+		<td>boolean</td>
+		<td>
+			true (default)<br />
+			false
+		</td>
+		<td>Boolean to include MSO specific code that normalises PPI (DPI) on images</td>
+	</tr>
+	<tr>
+		<td>ENABLE_MSO_CONDITIONAL_STYLING</td>
+		<td>boolean</td>
+		<td>
+			true (default)<br />
+			false
+		</td>
+		<td>Boolean to include specific MSO CSS reset rules</td>
+	</tr>
+	<tr>
+		<td>ENABLE_VML_CSS_OBJECTS_STYLING</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include specific CSS rules for VML objects when using specific techniques</td>
+	</tr>
+	<tr>
+		<td>ENABLE_MSO_FALLBACK_FONT</td>
+		<td>boolean</td>
+		<td>
+			true (default)<br />
+			false
+		</td>
+		<td>Boolean to include a specific CSS block that targets main layout elements</td>
+	</tr>
+	<tr>
+		<td>MSO_DEFAULT_FALLBACK_FONT_STACK</td>
+		<td>string</td>
+		<td>Helvetica, Arial, sans-serif</td>
+		<td>Ability to set a web safe font stack Windows based Outlook clients will use when using web fonts</td>
+	</tr>
+	<tr>
+		<td colspan="4" align="center">
+			<strong>Main CSS Reset</strong>
+		</td>
+	</tr>
+	<tr>
+		<td>ENABLE_GENERAL_SIBLING_SELECTOR_BUG_FIX</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Fix CSS sibling selector support in certain Android/iOS clients</td>
+	</tr>
+	<tr>
+		<td>ENABLE_OUTLOOK_WEBMAIL_RESET_CSS (Deprecated)</td>
+		<td>boolean</td>
+		<td>
+			true (default)<br />
+			false
+		</td>
+		<td>Boolean to include specific CSS to reset line-height and email body container width in Outlook.com webmail</td>
+	</tr>
+	<tr>
+		<td>DEFAULT_ANCHOR_COLOUR</td>
+		<td>string</td>
+		<td>#e6057f</td>
+		<td>Ability to set a global general anchor colour</td>
+	</tr>
+	<tr>
+		<td>ENABLE_OUTLOOK_MAIL_ANCHOR_STYLING</td>
+		<td>boolean</td>
+		<td>true<br />
+			false (default)
+		</td>
+		<td>Ability to override the default anchor styling in Outlook Mail (Windows 10)</td>
+	</tr>
+	<tr>
+		<td>DEFAULT_ANCHOR_VISITED_COLOUR</td>
+		<td>string</td>
+		<td>#ff0000</td>
+		<td>Ability to set a global visited anchor colour</td>
+	</tr>
+	<tr>
+		<td>ENABLE_VISITED_ANCHOR_CSS</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include CSS to target visited links (not all clients support this styling)</td>
+	</tr>
+	<tr>
+		<td>ENABLE_PARAGRAPH_CSS</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include CSS to reset the paragraph selector</td>
+	</tr>
+	<tr>
+		<td>ENABLE_HEADER_SELECTORS_CSS</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include CSS rules that targets h1 - h6 tags</td>
+	</tr>
+	<tr>
+		<td>ENABLE_YAHOO_SHORTCUTS_CSS (deprecated)</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include CSS rules that target automatically converted links in Yahoo! Mail (shortcuts)</td>
+	</tr>
+	<tr>
+		<td>CUSTOM_APPLE_LINKS_COLOUR1</td>
+		<td>string</td>
+		<td>#666666</td>
+		<td>Ability to create an additional .appleLinksCustom1 class with a custom colour</td>
+	</tr>
+	<tr>
+		<td>CUSTOM_APPLE_LINKS_COLOUR2</td>
+		<td>string</td>
+		<td>#999999</td>
+		<td>Ability to create an additional .appleLinksCustom2 class with a custom colour</td>
+	</tr>
+	<tr>
+		<td>CUSTOM_APPLE_LINKS_COLOUR3</td>
+		<td>string</td>
+		<td>#222222</td>
+		<td>Ability to create an additional .appleLinksCustom3 class with a custom colour</td>
+	</tr>
+	<tr>
+		<td colspan="4" align="center">
+			<strong>CSS3 media queries</strong>
+		</td>
+	</tr>
+	<tr>
+		<td>ENABLE_WINDOWS_PHONE_VIEWPORT_FIX</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a specific at-rule to adjust the viewport on Windows Phone devices</td>
+	</tr>
+	<tr>
+		<td>ENABLE_MEDIA_SCREEN_QUERY</td>
+		<td>boolean</td>
+		<td>
+			true (default)<br />
+			false
+		</td>
+		<td>Boolean to include a media screen query, useful for include webfonts with @font-face or import</td>
+	</tr>
+	<tr>
+		<td>ENABLE_YAHOO_MEDIA_QUERY</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a specific yahoo media query that will be rendered in Yahoo! webmail</td>
+	</tr>
+	<tr>
+		<td>ENABLE_IE_10_11_MEDIA_QUERY</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a specific IE 10/11 media query that targets both desktop and mobile</td>
+	</tr>
+	<tr>
+		<td>ENABLE_WEBKIT_DETECTION_QUERY</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a specific webkit query that will be used on any Webkit client</td>
+	</tr>
+	<tr>
+		<td>ENABLE_GECKO_MEDIA_QUERY</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a specific media query that targets Gecko based clients</td>
+	</tr>
+	<tr>
+		<td>ENABLE_MAX_DEVICE_WIDTH_MEDIA_QUERY</td>
+		<td>boolean</td>
+		<td>
+			true (default)<br />
+			false
+		</td>
+		<td>Boolean to include a media query that is triggered on TABLE_CONTAINER_WIDTH</td>
+	</tr>
+	<tr>
+		<td>ENABLE_RETINA_3X_MEDIA_QUERY</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a media query that targets devices with a pixel density of 3x the standard</td>
+	</tr>
+	<tr>
+		<td>ENABLE_RETINA_2X_MEDIA_QUERY</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a media query that targets devices with a pixel density of 2x the standard</td>
+	</tr>
+	<tr>
+		<td>ENABLE_RETINA_1X_MEDIA_QUERY</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a media query that targets devices with a pixel density slighty higher than normal</td>
+	</tr>
+	<tr>
+		<td>ENABLE_IOS10_MEDIA_QUERY</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a media query that targets iOS 10 devices</td>
+	</tr>
+	<tr>
+		<td colspan="4" align="center">
+			<strong>Misc/Other CSS</strong>
+		</td>
+	</tr>
+	<tr>
+		<td>ENABLE_AOL_WEBMAIL_CSS_CLASS</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a specific CSS class that will be rendered by AOL Webmail clients</td>
+	</tr>
+	<tr>
+		<td>ENABLE_OFFICE_365_CSS_SELECTOR</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a specific CSS selector that will target Office 365</td>
+	</tr>
+	<tr>
+		<td>ENABLE_GMAIL_HIDE_DOWNLOAD_ICON</td>
+		<td>boolean</td>
+		<td>
+			true (default)<br />
+			false
+		</td>
+		<td>Boolean to include a specific CSS selector that will remove the download icon on Gmail</td>
+	</tr>
+	<tr>
+		<td>ENABLE_ANDROID_4_4_CENTRE_FIX</td>
+		<td>boolean</td>
+		<td>
+			true (default)<br />
+			false
+		</td>
+		<td>Boolean to include an attribute selector that normalises the margin on Android 4.4</td>
+	</tr>
+	<tr>
+		<td colspan="4" align="center">
+			<strong>Main body</strong>
+		</td>
+	</tr>
+	<tr>
+		<td>BODY_CSS_CLASS</td>
+		<td>string</td>
+		<td>body</td>
+		<td>Set a specific class on the &lt;body&gt; tag for advanced CSS targetting techniques</td>
+	</tr>
+	<tr>
+		<td>ENABLE_DOTMAILER_EASY_EDITOR_TEMPLATE</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a specific HTML comment that is parsed by the dotmailer Easy Editor templating system</td>
+	</tr>
+	<tr>
+		<td>ENABLE_PREHEADER</td>
+		<td>boolean</td>
+		<td>
+			true (default)<br />
+			false
+		</td>
+		<td>Boolean to include a &lt;div&gt; following the &lt;body&gt; tag for the preheader</td>
+	</tr>
+	<tr>
+		<td>PREHEADER_TEXT</td>
+		<td>string</td>
+		<td>Example Preheader text</td>
+		<td>Ability to provide a small sentence that will be the first text email clients will use in message/notification previews</td>
+	</tr>
+	<tr>
+		<td>BODY_BG_COLOUR</td>
+		<td>string</td>
+		<td>#ffffff</td>
+		<td>Ability to set a specific hexidecimal colour for the background of the email</td>
+	</tr>
+	<tr>
+		<td>TABLE_WRAPPER_CSS_ID</td>
+		<td>string</td>
+		<td>main-wrapper</td>
+		<td>Ability to set a specific CSS ID for the first wrapping table</td>
+	</tr>
+	<tr>
+		<td>TABLE_CONTAINER_CSS_ID</td>
+		<td>string</td>
+		<td>container-wrapper</td>
+		<td>Ability to set a specific CSS ID for the first wrapping cell</td>
+	</tr>
+	<tr>
+		<td>TABLE_WRAPPER_CELL_CSS_ID</td>
+		<td>string</td>
+		<td>main-cell</td>
+		<td>Ability to set a specific CSS ID for the container table</td>
+	</tr>
+	<tr>
+		<td>TABLE_CONTAINER_CELL_CSS_ID</td>
+		<td>string</td>
+		<td>container-cell</td>
+		<td>Ability to set a specific CSS ID for the container cell</td>
+	</tr>
+	<tr>
+		<td>TABLE_CONTAINER_CELL_BG_COLOR</td>
+		<td>string</td>
+		<td>#ffffff</td>
+		<td>Set a background colour for the container table cell</td>
+	</tr>
+	<tr>
+		<td>ENABLE_TABLE_CONTAINER</td>
+		<td>boolean</td>
+		<td>
+			true (default)<br />
+			false
+		</td>
+		<td>Boolean to control if a container table is created following the wrapper table</td>
+	</tr>
+	<tr>
+		<td>TABLE_CONTAINER_FIXED_WIDTH</td>
+		<td>boolean</td>
+		<td>
+			true (default)<br />
+			false
+		</td>
+		<td>Boolean to define if the email width should be fixed or not</td>
+	</tr>
+	<tr>
+		<td>TABLE_CONTAINER_WIDTH</td>
+		<td>integer</td>
+		<td>600</td>
+		<td>Set the width of the container table in pixels (px)</td>
+	</tr>
+	<tr>
+		<td>TABLE_WRAPPER_CELL_ALIGN</td>
+		<td>string</td>
+		<td>center</td>
+		<td>Set the align method of wrapper table cell</td>
+	</tr>
+	<tr>
+		<td>TABLE_CONTAINER_ALIGN</td>
+		<td>string</td>
+		<td>center</td>
+		<td>Set the align method of container table</td>
+	</tr>
+	<tr>
+		<td>ENABLE_GMAIL_ANDROID_RESIZE_FIX (Deprecated)</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a spacer image the same size as TABLE_CONTAINER_WIDTH to prevent Gmail force scaling a wider email</td>
+	</tr>
+	<tr>
+		<td>ENABLE_GMAIL_IOS_FONT_FIX (Deprecated)</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include special divider block to prevent Gmail iOS app auto scaling fonts on wider emails</td>
+	</tr>
+	<tr>
+		<td colspan="4" align="center">
+			<strong>Other/Misc</strong>
+		</td>
+	</tr>
+	<tr>
+		<td>PLACEHOLDER_IMG_URL</td>
+		<td>string</td>
+		<td>Absolute URL</td>
+		<td>Base URL path of where placeholder images are stored</td>
+	</tr>
+</table>
+
+### Deprecation Notes
+
+Several configuration options may be marked as (deprecated), this is often due to email client specific changes that affect how the configuration option works since it was originally developed.
+
+<table width="100%" style="font-size:14px;">
+	<tr>
+		<th>Option</th>
+		<th>Deprecation note</th>
+	</tr>
+	<tr>
+		<td>ENABLE_OUTLOOK_WEBMAIL_RESET_CSS</td>
+		<td>
+			<a href="https://www.emailonacid.com/blog/article/industry-news/outlook.com-accounts-begin-migration-to-office-365-interface" target="_blank">Outlook.com is being migrated over to the Office 365 platform</a>, the majority of Microsoft Accounts i.e. @live, @msn @hotmail, @outlook etc. should have already been migrated over, but there may still be a portion of the userbase still present on the older Outlook.com platform. The purpose of this configuration variable was to reset the containing &lt;div&gt; width and to reset a crazy default line-height value via two CSS classes .ExternalClass and .ReadMsgBody. However, this reset will no longer be required once the older Outlook.com platform is retired completely. For now, the reset code remains enabled by default, but will likely be removed in the near future.
+		</td>
+	</tr>
+	<tr>
+		<td>ENABLE_YAHOO_SHORTCUTS_CSS</td>
+		<td>Yahoo! Mail no longer highlights certain keywords in email campaigns, therefore there is no requirement to reset any .yshortcuts classes as they are no longer used.</td>
+	</tr>
+	<tr>
+		<td>ENABLE_GMAIL_ANDROID_RESIZE_FIX</td>
+		<td rowspan="2">
+			Gmail is now <a href="https://gsuite-developers.googleblog.com/2016/09/your-emails-optimized-for-every-screen-with-responsive-design.html" target="_blank">starting to support CSS3</a>, in addition the force scaling and font resizing quirks that these configuration options override on the Android and iOS Gmail apps <a href="https://www.emailonacid.com/blog/article/industry-news/gmail-update-embedded-styles-and-media-queries" target="_blank">are being removed from the client itself</a>, so these options should be considered legacy. Currently not all Gmail clients are rendering with CSS3 support due to a phased rollout.
+		</td>
+	</tr>
+	<tr>
+		<td>ENABLE_GMAIL_IOS_FONT_FIX</td>
+	</tr>
+</table>
+
+### HTML Samples
+
+The email boilerplate also contains samples of common elements/techniques used in email campaigns. By default all of these examples are not included in the boilerplate, but they are intended to be used for gudiance and learning by generating live code examples of areas mentioned in the guidelines version of the boilerplate.
+
+<table width="100%" style="font-size:14px;">
+	<tr>
+		<th>Option</th>
+		<th>Type</th>
+		<th width="15%">Value</th>
+		<th>Purpose</th>
+	</tr>
+	<tr>
+		<td>ENABLE_HTML_SAMPLE_ANCHORS</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include an anchor HTML example for email usage</td>
+	</tr>
+	<tr>
+		<td>ENABLE_HTML_SAMPLE_CTA_BUTTONS</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a sample of CTA buttons for email usage</td>
+	</tr>
+	<tr>
+		<td>ENABLE_HTML_SAMPLE_IMAGES</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include an image HTML example for email usage</td>
+	</tr>
+	<tr>
+		<td>ENABLE_HTML_SAMPLE_FLOATED_COLUMNS</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a column layout for email usage</td>
+	</tr>
+	<tr>
+		<td>ENABLE_HTML_SAMPLE_ALIGN_BLOCK_ELEMENT</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include an block element align example for email usage</td>
+	</tr>
+	<tr>
+		<td>ENABLE_HTML_SAMPLE_FAUX_LISTS</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a list layout using tables example for email uage</td>
+	</tr>
+	<tr>
+		<td>ENABLE_HTML_SAMPLE_HORIZONTAL_SPACER</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a spacer example using a table cell with line-height and height</td>
+	</tr>
+</table>
