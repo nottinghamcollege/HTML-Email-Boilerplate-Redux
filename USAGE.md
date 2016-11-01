@@ -273,6 +273,30 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Boolean to include CSS rules that targets h1 - h6 tags</td>
 	</tr>
 	<tr>
+		<td>HEADER_SELECTORS_CSS_COLOUR</td>
+		<td>string</td>
+		<td>#000000</td>
+		<td>Ability to set the default colour of header tags (&lt;h1&gt; - &lt;h6&gt;)</td>
+	</tr>
+	<tr>
+		<td>HEADER_SELECTORS_ANCHOR_CSS_COLOUR</td>
+		<td>string</td>
+		<td>#0000FF</td>
+		<td>Ability to set the default colour of &lt;a&gt; tags within headers tags (&lt;h1&gt; - &lt;h6&gt;)</td>
+	</tr>
+	<tr>
+		<td>HEADER_SELECTORS_ANCHOR_ACTIVE_CSS_COLOUR</td>
+		<td>string</td>
+		<td>#FF0000</td>
+		<td>Ability to set the default colour of active &lt;a&gt; within headers tags (&lt;h1&gt; - &lt;h6&gt;)</td>
+	</tr>
+	<tr>
+		<td>HEADER_SELECTORS_ANCHOR_VISITED_CSS_COLOUR</td>
+		<td>string</td>
+		<td>#800080</td>
+		<td>Ability to set the default colour of visited &lt;a&gt; within header tags (&lt;h1&gt; - &lt;h6&gt;)</td>
+	</tr>
+	<tr>
 		<td>ENABLE_YAHOO_SHORTCUTS_CSS (deprecated)</td>
 		<td>boolean</td>
 		<td>
