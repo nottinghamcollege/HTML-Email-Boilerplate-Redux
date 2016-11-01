@@ -36,7 +36,7 @@
 			<meta name="x-apple-disable-message-reformatting" />
 			<!-- @endif -->
 			<!-- @if ENABLE_GENERATOR_META_TAG='true' -->
-			<meta name="generator" content="HTML Email Boilerplate Redux" />
+			<meta name="generator" content="HTML Email Boilerplate Redux (<!-- @echo GIT_BRANCH -->/<!-- @echo GIT_REVISION_SHORT -->)" />
 			<!-- @endif -->
 
 			<title><!-- @echo DOCUMENT_TITLE --></title>

@@ -8,8 +8,8 @@
 	#                                                                               #
 	# Originally based on the HTML Email Boilerplates:                              #
 	#                                                                               #
-	# https://github.com/seanpowell/Email-Boilerplate                               #
-	# http://www.emailology.org                                                     #
+	# * https://github.com/seanpowell/Email-Boilerplate                             #
+	# * http://www.emailology.org                                                   #
 	#                                                                               #
 	# This boilerplate has been formulated from various sources.                    #
 	# Including: Campaign Monitor, MailChimp, Litmus, Email on Acid and more.       #
@@ -24,6 +24,12 @@
 	# THIS VERSION IS FOR GUIDANCE, EXPLAINATION, OUTLOOK BASHING AND NOTES!        #
 	#                                                                               #
 	#################################################################################
+
+	GIT VERSION INFORMATION:
+
+	* Revision: <!-- @echo GIT_REVISION_LONG -->
+	* Branch: <!-- @echo GIT_BRANCH -->
+	<!-- @echo GITHUB_REPO_URL -->/commit/<!-- @echo GIT_REVISION_LONG -->
 
 	BOILERPLATE CONTENTS:
 
