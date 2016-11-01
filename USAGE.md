@@ -19,6 +19,20 @@ The full list of configuration variables that can be used with the email boilerp
 	</tr>
 	<tr>
 		<td colspan="4" align="center">
+			<strong>General boilerplate settings</strong>
+		</td>
+	</tr>
+	<tr>
+		<td>ENABLE_GUIDELINES_VERSION_HEADER</td>
+		<td>boolean</td>
+		<td>
+			true (default)<br />
+			false
+		</td>
+		<td>Build email boilerplate guidelines version with the "pretty" document header</td>
+	</tr>
+	<tr>
+		<td colspan="4" align="center">
 			<strong>Main Document</strong>
 		</td>
 	</tr>
