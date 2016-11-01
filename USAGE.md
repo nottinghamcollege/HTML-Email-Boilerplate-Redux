@@ -141,6 +141,15 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Boolean to include a specific meta tag that will prevent iOS/Apple Mail from auto formatting email messages (iOS 10)</td>
 	</tr>
 	<tr>
+		<td>ENABLE_GENERATOR_META_TAG</td>
+		<td>boolean</td>
+		<td>
+			true <br />
+			false
+		</td>
+		<td>Boolean to include a generator meta tag with the project name</td>
+	</tr>
+	<tr>
 		<td>ENABLE_FAVICON</td>
 		<td>boolean</td>
 		<td>

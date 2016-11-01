@@ -35,12 +35,16 @@
 			<!-- @if ENABLE_APPLE_DISABLE_MESSAGE_FORMATTING_META_TAG='true' -->
 			<meta name="x-apple-disable-message-reformatting" />
 			<!-- @endif -->
+			<!-- @if ENABLE_GENERATOR_META_TAG='true' -->
+			<meta name="generator" content="HTML Email Boilerplate Redux" />
+			<!-- @endif -->
 
 			<title><!-- @echo DOCUMENT_TITLE --></title>
             
 			<!-- @if ENABLE_FAVICON='true' -->
 			<link rel="icon" type="image/x-icon" href="<!-- @echo FAVICON_URL -->" />
 			<!-- @endif -->
+
 			<!-- @if ENABLE_MSO_DPI_SCALING_FIX='true' -->
 			<!--[if gte mso 9]>
 				<xml>
