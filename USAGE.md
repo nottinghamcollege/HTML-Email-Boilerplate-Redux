@@ -10,7 +10,7 @@ Your `.boilerplate.custom` file is ignored by Git so you don't need to worry abo
 
 The full list of configuration variables that can be used with the email boilerplate can be found in the table below.
 
-<table width="100%" style="font-size:14px;">
+<table width="100%">
 	<tr>
 		<th>Option</th>
 		<th>Type</th>
@@ -309,7 +309,7 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Ability to set the default colour of visited &lt;a&gt; within header tags (&lt;h1&gt; - &lt;h6&gt;)</td>
 	</tr>
 	<tr>
-		<td>ENABLE_YAHOO_SHORTCUTS_CSS (deprecated)</td>
+		<td>ENABLE_YAHOO_SHORTCUTS_CSS (Deprecated)</td>
 		<td>boolean</td>
 		<td>
 			true<br />
@@ -634,7 +634,7 @@ The full list of configuration variables that can be used with the email boilerp
 
 Several configuration options may be marked as (deprecated), this is often due to email client specific changes that affect how the configuration option works since it was originally developed.
 
-<table width="100%" style="font-size:14px;">
+<table width="100%">
 	<tr>
 		<th>Option</th>
 		<th>Deprecation note</th>
@@ -664,7 +664,7 @@ Several configuration options may be marked as (deprecated), this is often due t
 
 The email boilerplate also contains samples of common elements/techniques used in email campaigns. By default all of these examples are not included in the boilerplate, but they are intended to be used for gudiance and learning by generating live code examples of areas mentioned in the guidelines version of the boilerplate.
 
-<table width="100%" style="font-size:14px;">
+<table width="100%">
 	<tr>
 		<th>Option</th>
 		<th>Type</th>
