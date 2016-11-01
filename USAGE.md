@@ -121,7 +121,8 @@ The full list of configuration variables that can be used with the email boilerp
 	<tr>
 		<td>ENABLE_ROBOTS_META_TAG</td>
 		<td>boolean</td>
-		<td>true <br />
+		<td>
+			true <br />
 			false (default)
 		</td>
 		<td>Boolean to include a meta robots tag</td>
@@ -135,7 +136,8 @@ The full list of configuration variables that can be used with the email boilerp
 	<tr>
 		<td>ENABLE_APPLE_DISABLE_MESSAGE_FORMATTING_META_TAG</td>
 		<td>boolean</td>
-		<td>true <br />
+		<td>
+			true <br />
 			false (default)
 		</td>
 		<td>Boolean to include a specific meta tag that will prevent iOS/Apple Mail from auto formatting email messages (iOS 10)</td>
@@ -243,7 +245,8 @@ The full list of configuration variables that can be used with the email boilerp
 	<tr>
 		<td>ENABLE_OUTLOOK_MAIL_ANCHOR_STYLING</td>
 		<td>boolean</td>
-		<td>true<br />
+		<td>
+			true<br />
 			false (default)
 		</td>
 		<td>Ability to override the default anchor styling in Outlook Mail (Windows 10)</td>
