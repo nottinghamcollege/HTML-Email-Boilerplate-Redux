@@ -306,6 +306,12 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Boolean to include CSS rules that target automatically converted links in Yahoo! Mail (shortcuts)</td>
 	</tr>
 	<tr>
+		<td>YAHOO_SHORTCUTS_CSS_COLOUR</td>
+		<td>string</td>
+		<td>#000000</td>
+		<td>Ability to set the colour of Yahoo shortcuts</td>
+	</tr>
+	<tr>
 		<td>CUSTOM_APPLE_LINKS_COLOUR1</td>
 		<td>string</td>
 		<td>#666666</td>
