@@ -434,7 +434,7 @@
 			2. Nest a container table within or multiple tables to define the layout
 			3. When using a pixel width value, a matching CSS width property should be applied for better HiDPI support in Outlook 2007 - 2016
 		-->
-		<!-- WRAPPER TABLE -->
+		<!-- BEGIN WRAPPER TABLE -->
 		<table id="<!-- @echo TABLE_WRAPPER_CSS_ID -->">
 			<tr>
 				<!--
@@ -470,7 +470,7 @@
 							<td align="left" valign="top">
 					<![endif]-->
 					<!-- @endif -->
-					<!-- CONTAINER TABLE -->
+					<!-- BEGIN CONTAINER TABLE -->
 					<table id="<!-- @echo TABLE_CONTAINER_CSS_ID -->">
 						<tr>
 							<td id="<!-- @echo TABLE_CONTAINER_CELL_CSS_ID -->">
