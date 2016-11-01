@@ -2,7 +2,7 @@
 var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     del = require('del'),
-    dotEnvExtended = require('dotenv-extended'),
+    dotenv_extended = require('dotenv-extended'),
     fs = require('fs'),
     inlineCSS = require('gulp-inline-css'),
     preprocess = require('gulp-preprocess'),
@@ -10,7 +10,7 @@ var gulp = require('gulp'),
     strip = require('gulp-strip-comments');
 
 // Load in environment variables from .boilerplate.defaults first and then .boilerplate.custom if it exists
-var boilerplateConfig = dotEnvExtended.load(
+var boilerplateConfig = dotenv_extended.load(
     {
         encoding: 'utf8',
         silent: true,
