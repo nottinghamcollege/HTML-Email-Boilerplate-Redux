@@ -41,7 +41,6 @@
 			<!-- @if ENABLE_FAVICON='true' -->
 			<link rel="icon" type="image/x-icon" href="<!-- @echo FAVICON_URL -->" />
 			<!-- @endif -->
-			<link rel="stylesheet" href="../../tmp/css/inline-rules.css" />
 			<!-- @if ENABLE_MSO_DPI_SCALING_FIX='true' -->
 			<!--[if gte mso 9]>
 				<xml>
@@ -56,19 +55,19 @@
 			<!-- @if ENABLE_MSO_CONDITIONAL_STYLING='true' -->
 			<!--[if gte mso 9]>
 				<style style="text/css">
-					<!-- @include ../tmp/css/mso-reset.css.min -->
+					<!-- @include ../tmp/css/mso-reset-nocomments.css.min -->
 				</style>
 			<![endif]-->
 			<!-- @endif -->
 
 			<style type="text/css">
-				<!-- @include ../tmp/css/main-reset.css.min -->
+				<!-- @include ../tmp/css/main-reset-nocomments.css.min -->
 
-				<!-- @include ../tmp/css/media-queries.css.min -->
+				<!-- @include ../tmp/css/media-queries-nocomments.css.min -->
 				
-				<!-- @include ../tmp/css/misc.css.min -->
+				<!-- @include ../tmp/css/misc-nocomments.css.min -->
 			</style>
-
+			<link rel="stylesheet" href="../../tmp/css/inline-rules.css" />
 		</head>
 
 	<body id="main-body" class="<!-- @echo BODY_CSS_CLASS -->" bgcolor="<!-- @echo BODY_BG_COLOUR -->">
@@ -118,31 +117,31 @@
 			</tr>
 		</table>
 		<!-- @if ENABLE_HTML_SAMPLE_ANCHORS='true' -->
-		<!-- @include ../tmp/html-samples/anchors.html -->
+		<!-- @include ../tmp/html-samples/anchors-nocomments.html -->
 
 		<!-- @endif -->
 		<!-- @if ENABLE_HTML_SAMPLE_CTA_BUTTONS='true' -->
-		<!-- @include ../tmp/html-samples/cta-buttons.html -->
+		<!-- @include ../tmp/html-samples/cta-buttons-nocomments.html -->
 
 		<!-- @endif -->
 		<!-- @if ENABLE_HTML_SAMPLE_IMAGES='true' -->
-		<!-- @include ../tmp/html-samples/images.html -->
+		<!-- @include ../tmp/html-samples/images-nocomments.html -->
 
 		<!-- @endif -->
 		<!-- @if ENABLE_HTML_SAMPLE_FAUX_LISTS='true' -->
-		<!-- @include ../tmp/html-samples/faux-lists.html -->
+		<!-- @include ../tmp/html-samples/faux-lists-nocomments.html -->
 
 		<!-- @endif -->
 		<!-- @if ENABLE_HTML_SAMPLE_FLOATED_COLUMNS='true' -->
-		<!-- @include ../tmp/html-samples/floated-columns.html -->
+		<!-- @include ../tmp/html-samples/floated-columns-nocomments.html -->
 
 		<!-- @endif -->
 		<!-- @if ENABLE_HTML_SAMPLE_ALIGN_BLOCK_ELEMENT='true' -->
-		<!-- @include ../tmp/html-samples/align-block-element.html -->
+		<!-- @include ../tmp/html-samples/align-block-element-nocomments.html -->
 
 		<!-- @endif -->
 		<!-- @if ENABLE_HTML_SAMPLE_HORIZONTAL_SPACER='true' -->
-		<!-- @include ../tmp/html-samples/horizontal-spacer.html -->
+		<!-- @include ../tmp/html-samples/horizontal-spacer-nocomments.html -->
 
 		<!-- @endif -->
 		<!-- @if ENABLE_GMAIL_IOS_FONT_FIX='true' -->
