@@ -23,6 +23,12 @@ The full list of configuration variables that can be used with the email boilerp
 		</td>
 	</tr>
 	<tr>
+		<td>GITHUB_REPO_URL</td>
+		<td>string</td>
+		<td>URL</td>
+		<td>Full URL of the project hosted on GitHub, used for generating latest git commit URL</td>
+	</tr>
+	<tr>
 		<td>ENABLE_GUIDELINES_VERSION_HEADER</td>
 		<td>boolean</td>
 		<td>

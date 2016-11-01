@@ -4,6 +4,7 @@
 //
 
 // GENERAL BOILERPLATE SETTINGS
+GITHUB_REPO_URL="https://github.com/centralcollegenottingham/HTML-Email-Boilerplate-Redux"
 ENABLE_GUIDELINES_VERSION_HEADER=true
 ENABLE_GENERATOR_META_TAG=true
 
