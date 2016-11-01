@@ -111,15 +111,16 @@
 <!-- @endif -->
 <!-- 
 	CHOOSING THE DOCTYPE:
-	XHTML Strict or Transitional are common choices. 
-	HTML5 can also be used when using specific HTML5 features like video. However supported email clients will render HTML5 under a XHTML doctype
-	Note: Some email clients force their own doctype regardless of what's set and some will even remove it entirely.
-
 	http://www.campaignmonitor.com/blog/post/3317/correct-doctype-to-use-in-html-email
 	http://www.emailonacid.com/blog/details/C13/doctype_-_the_black_sheep_of_html_email_design
 	https://www.campaignmonitor.com/blog/post/4278/HTML5-vs-XHTML1-the-right-doctype-to-use-in-html-email
 
-	Switch the Doctype as required if you wish, this template uses XHTML 1.0 Transitional as the default
+	Setting a doctype is important due to the differences in rendering with certain elements.
+	An increasing number of email clients are using the HTML5 doctype (often webmail based).
+
+	Note: Some email clients force their own doctype regardless of what's set, some will even remove it entirely.
+
+	Switch the doctype as required, this template uses XHTML 1.0 Transitional as the default
 -->
 <!-- @if DOCTYPE_VERSION='xhtml-transitional' -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
