@@ -32,6 +32,15 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Build email boilerplate guidelines version with the "pretty" document header</td>
 	</tr>
 	<tr>
+		<td>ENABLE_GENERATOR_META_TAG</td>
+		<td>boolean</td>
+		<td>
+			true <br />
+			false
+		</td>
+		<td>Boolean to include a generator meta tag with the project name</td>
+	</tr>
+	<tr>
 		<td colspan="4" align="center">
 			<strong>Main Document</strong>
 		</td>
@@ -141,15 +150,6 @@ The full list of configuration variables that can be used with the email boilerp
 			false (default)
 		</td>
 		<td>Boolean to include a specific meta tag that will prevent iOS/Apple Mail from auto formatting email messages (iOS 10)</td>
-	</tr>
-	<tr>
-		<td>ENABLE_GENERATOR_META_TAG</td>
-		<td>boolean</td>
-		<td>
-			true <br />
-			false
-		</td>
-		<td>Boolean to include a generator meta tag with the project name</td>
 	</tr>
 	<tr>
 		<td>ENABLE_FAVICON</td>
