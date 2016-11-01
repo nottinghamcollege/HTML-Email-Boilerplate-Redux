@@ -9,7 +9,7 @@
 
 /* @if ENABLE_WINDOWS_PHONE_VIEWPORT_FIX='true' */
 @-ms-viewport {
-	width: device-width;
+	width: /* @echo WINDOWS_PHONE_VIEWPORT_WIDTH */;
 }
 /* @endif */
 

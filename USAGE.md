@@ -338,6 +338,12 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Boolean to include a specific at-rule to adjust the viewport on Windows Phone devices</td>
 	</tr>
 	<tr>
+		<td>WINDOWS_PHONE_VIEWPORT_WIDTH</td>
+		<td>string</td>
+		<td>device-width</td>
+		<td>Ability to define a specific viewport value for Windows Phone devices</td>
+	</tr>
+	<tr>
 		<td>ENABLE_MEDIA_SCREEN_QUERY</td>
 		<td>boolean</td>
 		<td>
