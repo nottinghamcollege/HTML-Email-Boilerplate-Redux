@@ -2,13 +2,15 @@
 var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     del = require('del'),
+    dotEnvExtended = require('dotenv-extended'),
+    fs = require('fs'),
     inlineCSS = require('gulp-inline-css'),
     preprocess = require('gulp-preprocess'),
     rename = require('gulp-rename'),
     strip = require('gulp-strip-comments');
 
 // Load in environment variables from .boilerplate.defaults first and then .boilerplate.custom if it exists
-var boilerplateConfig = require('dotenv-extended').load(
+var boilerplateConfig = dotEnvExtended.load(
     {
         encoding: 'utf8',
         silent: true,
@@ -25,11 +27,12 @@ var boilerplateConfig = require('dotenv-extended').load(
 var currentSetDoctype = process.env.DOCTYPE_VERSION;
 if (/XHTML/i.test(currentSetDoctype)) {
     xmlMode = true;
-} else {
+} 
+else {
     xmlMode = false;
 }
 
-// Clean out the build directories
+// Clean out /tmp and /dist directories each time gulp is run
 gulp.task('clean', function () {
     return del(
         [
@@ -42,7 +45,7 @@ gulp.task('clean', function () {
     });
 });
 
-// Pre-process CSS files with config values
+// Preprocess CSS files with config values
 gulp.task('preprocess-css', function() {
     var stream = gulp.src('./app/css/*.css')
     .pipe(preprocess())
@@ -55,14 +58,12 @@ gulp.task('minify-css', ['preprocess-css'], function() {
     var stream = gulp.src('./tmp/css/*.css')
     .pipe(cleanCSS(
         {
-            // We don't want to go too crazy when minifying, this is email after all!
             advanced: false,
+            keepSpecialComments: '*',
             aggressiveMerging: false,
             debug: true, // Needed for the size output on before and after min files
             keepBreaks: true,
-            keepSpecialComments: 0,
             shorthandCompacting: false,
-            // Defensive for less friendly email clients
             compatibility: '*,' + 
             '-properties.colors,' +
             '-properties.zeroUnits'
@@ -78,9 +79,35 @@ gulp.task('minify-css', ['preprocess-css'], function() {
     return stream;
 });
 
+// Remove CSS comments from minified files for production version of the boilerplate
+gulp.task('remove-css-comments', ['minify-css'], function() {
+    var stream = gulp.src('./tmp/css/*.css.min')
+    .pipe(cleanCSS(
+        { 
+            advanced: false,
+            aggressiveMerging: false,
+            keepBreaks: true,
+            keepSpecialComments: 0,
+            shorthandCompacting: false,
+            compatibility: '*,' + 
+            '-properties.colors,' +
+            '-properties.zeroUnits'
+        }
+    ))
+    .pipe(rename(
+        function(path) { 
+            path.extname = "" // Drop extension to avoid double css naming
+        }
+    ))
+    // Specific versions with no CSS comments for the production version
+    .pipe(rename({ extname: '-nocomments.css.min'}))
+    .pipe(gulp.dest('./tmp/css/'));
+    return stream;
+});
+
 // Build all HTML samples, inline CSS and strip comments to be included in boilerplate
 gulp.task('build-html-samples', function() {
-    gulp.src('./app/html-samples/*.html')
+    var stream = gulp.src('./app/html-samples/*.html')
     .pipe(preprocess())
     .pipe(inlineCSS(
         {
@@ -91,30 +118,41 @@ gulp.task('build-html-samples', function() {
             xmlMode: xmlMode
         }
     ))
+    .pipe(gulp.dest('./tmp/html-samples/'));
+    return stream;
+});
+
+// Strip HTML comments from HTML samples for to be included in boilerplate
+gulp.task('remove-html-comments', ['build-html-samples'], function() {
+    var stream = gulp.src('./tmp/html-samples/*.html')
     .pipe(strip(
         {
-            ignore: /<!--\[if(?!\s*(?:\[[^\]]+]|<!|>))(?:(?!-->).)*-->/g,
+            ignore: /<!--\[if(?!\s*(?:\[[^\]]+]|<!|>))(?:(?!-->).)*-->/g, // Mantain MSO conditional comments
             safe: true,
             trim: true
         }
     ))
+    .pipe(rename({ extname: '-nocomments.html'}))
     .pipe(gulp.dest('./tmp/html-samples/'));
+    return stream;
 });
 
-// Build email boilerplate HTML and put everything together!
-gulp.task('preprocess-boilerplate', ['minify-css'], function() {
-    // We only want to target this file for HTML processing, the guidelines version is static and legacy
-    var stream = gulp.src('app/email-boilerplate.html.preprocess')
+// Build boilerplate and output the HTML versions
+gulp.task('preprocess-boilerplate', ['remove-css-comments'], function() {
+    var stream = gulp.src('app/email-boilerplate*')
     .pipe(preprocess({ extension: 'html' }))
-    .pipe(rename('email-boilerplate.html'))
+    .pipe(rename(
+        function(path) { 
+            path.extname = "" // Drop preprocess ext and change to .html
+        }
+    ))
     .pipe(gulp.dest('./dist/boilerplate/'))
     return stream;
 });
 
-// Inline CSS to main layout elements after boilerplate is generated and update it
+// Inline CSS to main layout elements after boilerplate is generated and update documents
 gulp.task('inline-css', ['preprocess-boilerplate'], function() {
-
-    var stream = gulp.src('./dist/boilerplate/email-boilerplate.html')
+    var stream = gulp.src('./dist/boilerplate/*.html')
     .pipe(inlineCSS(
         {
             applyTableAttributes: true,
@@ -130,7 +168,7 @@ gulp.task('inline-css', ['preprocess-boilerplate'], function() {
     return stream;
 });
 
-// Detect certain configurations and warn when they are less optimal
+// Detect certain configurations and warn in console when they are not optimal from recommended guidelines
 gulp.task('check-config', ['inline-css'], function() {
 
     var isMsoNamespacesEnabled = process.env.ENABLE_VML_NAMESPACES;
@@ -156,6 +194,7 @@ gulp.task('check-config', ['inline-css'], function() {
     }
 
     // While they act as booleans, they aren't actually REAL booleans (quacks like a duck etc..)
+
     if((isMsoNamespacesEnabled === 'false') && (isMsoDpiScalingFixEnabled === 'true')) {
         configWarn('ENABLE_VML_NAMESPACES should be set to true when ENABLE_MSO_DPI_SCALING_FIX is set to true');
     }
@@ -165,7 +204,7 @@ gulp.task('check-config', ['inline-css'], function() {
     }
 
     if((isXuaCompatMetaTagEnabled === 'true') && (!/IE=edge/i.test(xuaCompatValue))) {
-        configWarn('Using any other value than IE=edge for XAU_COMPATIBLE_VALUE is not recommended');
+        configWarn('Using any other value than IE=edge for XUA_COMPATIBLE_VALUE is not recommended');
     }
 
     if(isViewportMetaTagEnabled === 'false') {
@@ -189,7 +228,7 @@ gulp.task('check-config', ['inline-css'], function() {
     }
 
     if(isWebkitMediaQueryEnabled === 'true') {
-        configWarn('The Webkit vendor prefixes return true on some non-webkit clients, do not rely on it for accurate detection');
+        configWarn('The Webkit vendor prefixes return true on some non-webkit clients, do not rely on it for absolute accuracy');
     }
 
     if(isGeckoMediaQueryEnabled === 'true') {
@@ -213,7 +252,6 @@ gulp.task('check-config', ['inline-css'], function() {
     }
 
     // Check for older .env file
-    var fs = require('fs');
     fs.stat('.env', function(err, stat) {
         if(err == null) {
             configWarn('.env is deprecated, please rename your custom settings file to .boilerplate.custom');
@@ -222,13 +260,15 @@ gulp.task('check-config', ['inline-css'], function() {
 
 });
 
-// The order is important! The CSS pre-process stuff must happen first otherwise minify will break everything!
+// The order is important! The CSS preprocess stuff must happen first otherwise minify will break everything!
 gulp.task('default', 
     [ 
         'clean', 
         'preprocess-css', 
         'minify-css',
+        'remove-css-comments',
         'build-html-samples',
+        'remove-html-comments',
         'preprocess-boilerplate', 
         'inline-css',
         'check-config'
