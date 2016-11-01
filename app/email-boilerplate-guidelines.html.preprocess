@@ -423,7 +423,7 @@
 			Note: Setting a very small font size can trigger some spam filters.
 		-->
 		<div id="preheader">
-			Preheader text here
+			<!-- @echo PREHEADER_TEXT -->
 		</div>
 		<!-- @endif -->
 		<!--
