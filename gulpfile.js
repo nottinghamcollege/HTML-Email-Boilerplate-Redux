@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     del = require('del'),
     dotenv_extended = require('dotenv-extended'),
     fs = require('fs'),
+    git_rev = require('git-rev'),
     inlineCSS = require('gulp-inline-css'),
     preprocess = require('gulp-preprocess'),
     rename = require('gulp-rename'),
@@ -43,6 +44,28 @@ gulp.task('clean', function () {
     ).then(paths => {
         console.log('Cleaning directories :\n', paths.join('\n'));
     });
+});
+
+// Get Git revision details for use in boilerplate templates
+gulp.task('git-rev-info', function() {
+    // Get latest commit (short)
+    git_rev.short(
+        function(rev) {
+            return process.env.GIT_REVISION_SHORT = rev;
+        }
+    )
+    // Get latest commit (long)
+    git_rev.long(
+        function(rev) {
+            return process.env.GIT_REVISION_LONG = rev;
+        }
+    )
+    // Get branch name boilerplate is being generated from
+    git_rev.branch(
+        function(branch) {
+            return process.env.GIT_BRANCH = branch;      
+        }
+    )
 });
 
 // Preprocess CSS files with config values
@@ -263,7 +286,8 @@ gulp.task('check-config', ['inline-css'], function() {
 // The order is important! The CSS preprocess stuff must happen first otherwise minify will break everything!
 gulp.task('default', 
     [ 
-        'clean', 
+        'clean',
+        'git-rev-info',
         'preprocess-css', 
         'minify-css',
         'remove-css-comments',
