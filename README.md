@@ -14,7 +14,7 @@ There are various email boilerplate templates around, however [Central College N
 
 We refer to our email boilerplate as a redux of the [original HTML Email Boilerplate](https://github.com/seanpowell/Email-Boilerplate).
 
-## Main Features:
+## Main Features
 
 As well as creating a solid foundation for any email campaign, our boilerplate also focuses on the following areas:
 
@@ -31,7 +31,7 @@ As well as creating a solid foundation for any email campaign, our boilerplate a
 
 As well as fixing other email client quirks that have been discovered.
 
-## Install:
+## Installation instructions
 
 This project now uses `npm` and `gulp` based packages to produce a customised and production ready version of the email boilerplate. Originally the project began as static HTML files, however overtime this become a problem where dynamic elements were needed. e.g. toggling code blocks on/off, variable values etc.
 
@@ -72,7 +72,7 @@ Two versions of the email boilerplate exist, one version is heavily documented w
 
 **Never use the "guidelines" version in a live email campaign, as HTML/CSS comments play havoc with spam filters and even cause emails to appear blank in a few clients! You will also be adding unnecessary bloat to your HTML as well!**
 
-## License:
+## License
 
 The MIT License (MIT)
 
@@ -96,7 +96,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-## Credits:
+## Credits
 
 This boilerplate is originally based on two very popular boilerplates by:
 
