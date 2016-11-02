@@ -442,9 +442,9 @@
 			MAIN TABLE LAYOUT:
 			Basic table layout to adapt for your campaign with some general guidance.
 
-			1. Start with a 100% width table to ensure the entire HTML document is covered
-			2. Nest a container table within or multiple tables to define the layout
-			3. When using a pixel width value, a matching CSS width property should be applied for better HiDPI support in Outlook 2007 - 2016
+			1. Start with a 100% width table to ensure the entire HTML document is full width
+			2. Nest a single container table with a width/max-width within or multiple tables to create the layout
+			3. When using a fixed width value on a table, a matching CSS width property should be applied for better HiDPI support in Outlook 2007 - 2016
 		-->
 		<!-- BEGIN WRAPPER TABLE -->
 		<table id="<!-- @echo TABLE_WRAPPER_CSS_ID -->">
