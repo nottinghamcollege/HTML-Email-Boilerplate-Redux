@@ -1,6 +1,8 @@
 HTML Email Boilerplate Redux
 ==============================================
 
+[![CircleCI Shield](https://circleci.com/gh/centralcollegenottingham/HTML-Email-Boilerplate-Redux.svg?style=shield&circle-token=4c887bae1ee5e6a4601c55abeb5b8fc230a524a7)](https://circleci.com/gh/centralcollegenottingham/HTML-Email-Boilerplate-Redux)
+
 A HTML Email Boilerplate is designed to create a solid foundation for any email campaign by fixing various email client quirks from the beginning (saving headaches later!), as well as providing a good starting point for building your own email campaigns/templates.
 
 There are various email boilerplate templates around, however [Central College Nottingham](https://www.centralnottingham.ac.uk) has adapted its own email boilerplate template based on a variety of sources as well our own additions based on our own research and development. We regularly review changes in email client behaviour and aim to keep our boilerplate constantly up to date with the latest developments and changes in the email world.
