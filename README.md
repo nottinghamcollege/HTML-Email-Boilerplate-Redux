@@ -37,7 +37,7 @@ This project now uses `npm` and `gulp` based packages to produce a customised an
 
 1. Install `npm` <a href="https://nodejs.org/en/" target="_blank">https://nodejs.org/en/</a> (Make sure its in your `$PATH`)
 2. Install gulp globally with `npm install --global gulp-cli`
-3. Clone the git source of this project and run `npm i` to install the required depedencies
+3. Clone the git source of this project and run `npm i` to install the required dependencies
 4. Copy `.boilerplate.defaults -> .boilerplate.custom`. There are a range of booleans, integer and string values to tweak to your requirements
 5. Run `gulp` to build the email boilerplate
 6. The "compiled" email boilerplate versions will be written to:
@@ -47,7 +47,7 @@ This project now uses `npm` and `gulp` based packages to produce a customised an
 
 A `tmp` directory will be created when running `gulp` these are just helper files needed during the build, they can be ignored.
 
-Note: Don't place any files within the `tmp` or `dist` directory, they are cleaned each time `gulp` is run.
+**Note:** Don't place any files within the `tmp` or `dist` directory, they are cleaned each time `gulp` is run.
 
 For further information on the available configuration options available, see USAGE.md.
 
