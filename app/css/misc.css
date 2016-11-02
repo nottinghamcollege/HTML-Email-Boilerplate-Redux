@@ -26,6 +26,12 @@
 }
 /* @endif */
 
+/* @if ENABLE_GMAIL_WEBMAIL_TARGETING_SELECTOR='true' */
+/*! Target Gmail by using a CSS class on the body and specific class to wrap Gmail content with
+u + ./* @echo BODY_CSS_CLASS */ .gmail {
+}
+/* @endif */
+
 /* @if ENABLE_ANDROID_4_4_CENTRE_FIX='true' */
 /*! Android 4.4 margin fix */
 div[style*="margin: 16px 0"] { 

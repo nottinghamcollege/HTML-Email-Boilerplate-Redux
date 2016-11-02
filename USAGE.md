@@ -490,6 +490,15 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Boolean to include a specific CSS selector that will remove the download icon on Gmail</td>
 	</tr>
 	<tr>
+		<td>ENABLE_GMAIL_WEBMAIL_TARGETING_SELECTOR</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a specific CSS selector that will target Gmail webmail clients</td>
+	</tr>
+	<tr>
 		<td>ENABLE_ANDROID_4_4_CENTRE_FIX</td>
 		<td>boolean</td>
 		<td>
