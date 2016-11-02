@@ -41,7 +41,7 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>ENABLE_GENERATOR_META_TAG</td>
 		<td>boolean</td>
 		<td>
-			true <br />
+			true (default)<br />
 			false
 		</td>
 		<td>Boolean to include a generator meta tag with the project name</td>
