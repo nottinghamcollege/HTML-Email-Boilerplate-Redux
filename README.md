@@ -66,7 +66,7 @@ This is the latest/bleeding edge version of the email boilerplate, experimental 
 
 This is the stable version of the boilerplate which should be used in email campaigns. It is also the default branch. 
 
-### Boilerplate versions
+## Boilerplate versions
 
 Two versions of the email boilerplate exist, one version is heavily documented with HTML/CSS comments that details every aspect of the code, the other is a clean version which has all of the HTML/CSS comments removed.
 
