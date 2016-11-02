@@ -638,7 +638,7 @@ The full list of configuration variables that can be used with the email boilerp
 
 ### Deprecation Notes
 
-Several configuration options may be marked as (deprecated), this is often due to email client specific changes that affect how the configuration option works since it was originally developed.
+Several configuration options may be marked as "(Deprecated)", this is often due to email client specific changes that affect how the configuration option works since it was originally developed.
 
 <table width="100%">
 	<tr>
@@ -648,7 +648,7 @@ Several configuration options may be marked as (deprecated), this is often due t
 	<tr>
 		<td>ENABLE_OUTLOOK_WEBMAIL_RESET_CSS</td>
 		<td>
-			<a href="https://www.emailonacid.com/blog/article/industry-news/outlook.com-accounts-begin-migration-to-office-365-interface" target="_blank">Outlook.com is being migrated over to the Office 365 platform</a>, the majority of Microsoft Accounts i.e. @live, @msn @hotmail, @outlook etc. should have already been migrated over, but there may still be a portion of the userbase still present on the older Outlook.com platform. The purpose of this configuration variable was to reset the containing &lt;div&gt; width and to reset a crazy default line-height value via two CSS classes .ExternalClass and .ReadMsgBody. However, this reset will no longer be required once the older Outlook.com platform is retired completely. For now, the reset code remains enabled by default, but will likely be removed in the near future.
+			<a href="https://www.emailonacid.com/blog/article/industry-news/outlook.com-accounts-begin-migration-to-office-365-interface" target="_blank">Outlook.com is being migrated over to the Office 365 platform</a>, the majority of Microsoft Accounts i.e. @live, @msn @hotmail, @outlook etc. should have already been migrated over, but there may still be a portion of the user base still present on the older Outlook.com platform. The purpose of this configuration variable was to reset the wrapping &lt;div&gt; element of the email body and normalise a crazy default line-height value via two CSS classes .ExternalClass and .ReadMsgBody. However, this reset will no longer be required once the older Outlook.com platform is retired completely. For now, the reset code remains enabled by default, but will likely be removed in the near future.
 		</td>
 	</tr>
 	<tr>
