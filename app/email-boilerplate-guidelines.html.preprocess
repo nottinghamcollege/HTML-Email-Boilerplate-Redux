@@ -31,7 +31,7 @@
 	* Revision: <!-- @echo GIT_REVISION_LONG -->
 	* Branch: <!-- @echo GIT_BRANCH -->
 	<!-- @echo GITHUB_REPO_URL -->/commit/<!-- @echo GIT_REVISION_LONG -->
-	
+
 	<!-- @endif -->
 	BOILERPLATE CONTENTS:
 
@@ -197,7 +197,7 @@
 				CAVEATS:
 
 				The inclusion of this meta tag has been known to mess with Outlook 2003 and breaking printing functionality.
-				Windows Live Mail  also has issues with images when the edge document mode value is used
+				Windows Live Mail also has issues with images when the document mode of edge is used
 				In order to prevent this, a special MSO conditional is used to hide the code from these clients.
 			-->
 			<!--[if !mso]><!-->
@@ -283,6 +283,8 @@
 				Using conditional comments you can target specific versions of Outlook via CSS.
 				Be aware that since Outlook 2016, any conditional comment targeting mso engine 16 and above 
 				will also be parsed on Outlook Mail (Windows 10) including mobile devices.
+
+				In addition any generic MSO conditional comment will also be parsed on Windows 10 devices including mobile
 			-->
 			<!--[if gte mso 9]>
 				<style style="text/css">
@@ -299,7 +301,7 @@
 				Email clients and CSS support vary massively.
 				Most CSS should be inline due to limitations with CSS in the <head> in some clients.
 				The exception to this is reset styles or fixes that target a specific client that do render CSS in the <head>.
-				Forget calling external style sheets, most email clients won't parse them due to security restrictions.
+				External style sheets should not ever be used as most email clients won't parse them due to security restrictions.
 			-->
 			<style type="text/css">
 
@@ -334,7 +336,7 @@
 					CSS3 MEDIA QUERIES:
 					https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries
 
-					For clients that support CSS3, various queries can be used to target different devices.
+					For clients that support CSS3, various media queries can be used to target different screen sizes/devices.
 				*/
 
 				<!-- @include ../tmp/css/media-queries.css.min -->
@@ -458,8 +460,11 @@
 					It does mean however you'll need to use the align attribute on all table cells within to avoid content being centred.
 				-->
 				<td id="<!-- @echo TABLE_WRAPPER_CELL_CSS_ID -->">
+				<!-- @if ENABLE_TABLE_CONTAINER='false' -->
+				<!-- YOUR LAYOUT HERE -->
+				<!-- @endif -->
  				<!-- @if ENABLE_TABLE_CONTAINER='true' -->
-                <!--
+ 				<!--
 					DEFINE YOUR LAYOUT APPROACH:
 					https://litmus.com/community/learning/22-mobile-email-defining-approaches
 					http://labs.actionrocket.co/the-hybrid-coding-approach
@@ -472,7 +477,7 @@
 
 					Fixed width layouts are common, but require media query support to optimise for mobile devices and not all email clients support CSS3.
 					The scalable/fluid approach removes the direct requirement for media query support but can force certain layout requirements.
-                -->
+				-->
 					<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
 					<!--
 						BEGIN OUTLOOK/IE FIXED WIDTH WRAPPER
@@ -555,6 +560,14 @@
 		<!-- @endif -->
 		<!-- @if ENABLE_HTML_SAMPLE_HORIZONTAL_SPACER='true' -->
 		<!-- @include ../tmp/html-samples/horizontal-spacer.html -->
+
+		<!-- @endif -->
+		<!-- @if ENABLE_HTML_SAMPLE_OUTLOOK_PAGE_BREAKS='true' -->
+		<!-- @include ../tmp/html-samples/prevent-outlook-page-breaks.html -->
+
+		<!-- @endif -->
+		<!-- @if ENABLE_HTML_SAMPLE_OUTLOOK_TABLE_CSS_INHERITANCE='true' -->
+		<!-- @include ../tmp/html-samples/prevent-outlook-table-css-inheritance.html -->
 
 		<!-- @endif -->
 		<!-- @if ENABLE_GMAIL_IOS_FONT_FIX='true' -->
