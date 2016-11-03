@@ -484,8 +484,8 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>ENABLE_GMAIL_HIDE_DOWNLOAD_ICON</td>
 		<td>boolean</td>
 		<td>
-			true (default)<br />
-			false
+			true<br />
+			false (default)
 		</td>
 		<td>Boolean to include a specific CSS selector that will remove the download icon on Gmail</td>
 	</tr>
@@ -506,6 +506,15 @@ The full list of configuration variables that can be used with the email boilerp
 			false
 		</td>
 		<td>Boolean to include an attribute selector that normalises the margin on Android 4.4</td>
+	</tr>
+	<tr>
+		<td>ENABLE_CSS_DEBUG_MODE</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a special set of CSS rules that will highlight elements allowing further analysis of layout elements</td>
 	</tr>
 	<tr>
 		<td colspan="4" align="center">
@@ -747,6 +756,24 @@ The email boilerplate also contains samples of common elements/techniques used i
 			true<br />
 			false (default)
 		</td>
-		<td>Boolean to include a spacer example using a table cell with line-height and height</td>
+		<td>Boolean to include a horizontal spacer example using a table cell with line-height and height</td>
+	</tr>
+	<tr>
+		<td>ENABLE_HTML_SAMPLE_OUTLOOK_PAGE_BREAKS</td>
+		<td>boolean</td>
+		<td>
+			true <br />
+			false (default)
+		</td>
+		<td>Boolean to include a table example that shows how to avoid automatic page breaks in Outlook 2007+</td>
+	</tr>
+	<tr>
+		<td>ENABLE_HTML_SAMPLE_OUTLOOK_TABLE_CSS_INHERITANCE</td>
+		<td>boolean</td>
+		<td>
+			true <br />
+			false (default)
+		</td>
+		<td>Boolean to include a table example that shows how to avoid CSS inheritance issues with table cells in Outlook 2007+</td>
 	</tr>
 </table>
