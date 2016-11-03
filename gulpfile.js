@@ -161,7 +161,7 @@ gulp.task('remove-html-comments', ['build-html-samples'], function() {
 });
 
 // Build boilerplate and output the HTML versions
-gulp.task('preprocess-boilerplate', ['remove-css-comments'], function() {
+gulp.task('preprocess-boilerplate', ['remove-html-comments'], function() {
     var stream = gulp.src('app/email-boilerplate*')
     .pipe(preprocess({ extension: 'html' }))
     .pipe(rename(
