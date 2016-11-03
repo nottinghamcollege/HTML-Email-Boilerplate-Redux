@@ -1,5 +1,5 @@
 <a href="https://www.centralnottingham.ac.uk" target="_blank" title="Visit the Central College Nottingham website">
-	<img src="http://i.emlfiles1.com/cmpimg/5/8/9/2/2/1/files/437952_centrallogopink690x210.jpg" 
+	<img src="https://i.emlfiles.com/cmpimg/5/8/9/2/2/1/files/794509_centrallogopink690x210.png" 
 	alt="Central College Nottingham" style="display:block;" width="260" />
 </a>
 
