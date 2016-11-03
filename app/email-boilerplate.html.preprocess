@@ -148,6 +148,14 @@
 		<!-- @include ../tmp/html-samples/horizontal-spacer-nocomments.html -->
 
 		<!-- @endif -->
+		<!-- @if ENABLE_HTML_SAMPLE_OUTLOOK_PAGE_BREAKS='true' -->
+		<!-- @include ../tmp/html-samples/prevent-outlook-page-breaks-nocomments.html -->
+
+		<!-- @endif -->
+		<!-- @if ENABLE_HTML_SAMPLE_OUTLOOK_TABLE_CSS_INHERITANCE='true' -->
+		<!-- @include ../tmp/html-samples/prevent-outlook-table-css-inheritance-nocomments.html -->
+
+		<!-- @endif -->
 		<!-- @if ENABLE_GMAIL_IOS_FONT_FIX='true' -->
 		<div id="gmailapp-ios-font-fix">
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
