@@ -1,0 +1,51 @@
+<!--
+	PREVENT OUTLOOK INSERTING PAGE BREAKS ON LONG VERTICAL EMAILS HTML SAMPLE:
+	http://www.emailonacid.com/blog/details/C13/horizontal_spacing_issues_in_outlook_2007_and_2010
+
+	Purpose: Demonstrate how Outlook treats email templates as Word documents and will page break emails that exceed a certain height
+
+	Rationale:
+	If a single table element exceeds 23.7 inches (Approx 2275 pixels) in height, a page break will be added which can cause gaps.
+	The easiest solution is to break up major sections of an email template by starting new table elements to avoid this issue.
+-->
+<style type="text/css">
+	
+	table td {
+		text-align: left;
+		vertical-align: top;
+		background-color: #ff0000;
+	}
+
+	table td table td {
+		height:766px;
+		color: #ffffff;
+	}
+
+</style>
+
+<table class="prevent-outlook-page-breaks">
+	<tr>
+		<td>
+			<!-- 
+				Split content into new tables, to avoid the approx 2275 pixel threshold
+				Three tables height combined (766 x 3) is over the threshold but avoids any issues due to being indiviual tables
+			-->
+			<table>
+				<tr>
+					<td>Example table content section</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>Example table content section</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>Example table content section</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
