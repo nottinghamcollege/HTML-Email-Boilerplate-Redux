@@ -377,6 +377,15 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Boolean to include a media screen query, useful for include webfonts with @font-face or import</td>
 	</tr>
 	<tr>
+		<td>ENABLE_MEDIA_PRINT_QUERY</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a media print query, useful for optimising an email template for printing</td>
+	</tr>
+	<tr>
 		<td>ENABLE_YAHOO_MEDIA_QUERY</td>
 		<td>boolean</td>
 		<td>

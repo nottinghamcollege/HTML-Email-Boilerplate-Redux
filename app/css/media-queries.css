@@ -21,6 +21,14 @@
 }
 /* @endif */
 
+/* @if ENABLE_MEDIA_PRINT_QUERY='true' */
+@media print {
+/*!
+	Specific media query that can be used to optimise an email when printed	
+*/
+}
+/* @endif */
+
 /* @if ENABLE_YAHOO_MEDIA_QUERY='true' */
 @media yahoo {
 /*!
