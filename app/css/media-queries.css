@@ -61,6 +61,22 @@
 }
 /* @endif */
 
+/* @if ENABLE_IPAD_3_4_MEDIA_QUERY='true' */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+/*! 
+	Specific media query that matches the dimensions and pixel ratio of the iPad 3/4
+*/
+}
+/* @endif */
+
+/* @if ENABLE_IPAD_1_2_MEDIA_QUERY='true' */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+/*!
+	Specific media query that matches the dimensions and pixel ratio of the iPad 1/2
+*/
+}
+/* @endif */
+
 /* @if ENABLE_MAX_DEVICE_WIDTH_MEDIA_QUERY='true' */
 @media screen and (max-device-width: /* @echo TABLE_CONTAINER_WIDTH */px), screen and (max-width: /* @echo TABLE_CONTAINER_WIDTH */px) {
 /*!

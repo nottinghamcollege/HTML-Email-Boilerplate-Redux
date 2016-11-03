@@ -422,6 +422,24 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Boolean to include a specific media query that targets Gecko based clients</td>
 	</tr>
 	<tr>
+		<td>ENABLE_IPAD_3_4_MEDIA_QUERY</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a media query that matches the iPad 3/4</td>
+	</tr>
+	<tr>
+		<td>ENABLE_IPAD_1_2_MEDIA_QUERY</td>
+		<td>boolean</td>
+		<td>
+			true<br />
+			false (default)
+		</td>
+		<td>Boolean to include a media query that matches the iPad 1/2</td>
+	</tr>
+	<tr>
 		<td>ENABLE_MAX_DEVICE_WIDTH_MEDIA_QUERY</td>
 		<td>boolean</td>
 		<td>
