@@ -4,6 +4,7 @@
 
 	Description:
 	Various CSS id/class rules that will be inlined during gulp processing
+	NOTE: This file requires processing via gulp to build the desired conditional/variable values
 */
 
 body#main-body {
