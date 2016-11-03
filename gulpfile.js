@@ -206,6 +206,8 @@ gulp.task('check-config', ['inline-css'], function() {
     var isWebkitMediaQueryEnabled = process.env.ENABLE_WEBKIT_DETECTION_QUERY;
     var isGeckoMediaQueryEnabled = process.env.ENABLE_GECKO_MEDIA_QUERY;
     var isIEMediaQueryEnabled = process.env.ENABLE_IE_10_11_MEDIA_QUERY;
+    var isPreheaderEnabled = process.env.ENABLE_PREHEADER;
+    var preheaderText = process.env.PREHEADER_TEXT;
     var isGmailAndroidFixEnabled = process.env.ENABLE_GMAIL_ANDROID_RESIZE_FIX;
     var isGmailiOSFontFixEnabled = process.env.ENABLE_GMAIL_IOS_FONT_FIX;
     var isTableContainerFixedWidth = process.env.TABLE_CONTAINER_FIXED_WIDTH;
@@ -260,6 +262,22 @@ gulp.task('check-config', ['inline-css'], function() {
 
     if(isIEMediaQueryEnabled === 'true') {
         configWarn('The IE 10/11 media query will also return true on IEMobile (Windows Phone 8.0/8.1)');
+    }
+
+    if(isPreheaderEnabled === 'true') {
+        switch(true) {
+            case (preheaderText.length < 35):
+                configWarn('PREHEADER_TEXT is less than 35 characters, consider increasing the amount of characters to avoid unwanted HTML text being shown in previews');
+                break;
+
+            case (preheaderText.length >= 35 && preheaderText.length <= 85):
+                configWarn('PREHEADER_TEXT is less than 85 characters, increase the amount of characters for a more effective preheader');
+                break;
+
+            case (preheaderText.length > 100):
+                configWarn('PREHEADER_TEXT is greater than 100 characters, consider decreasing the amount of characters to avoid truncation in previews');
+                break;
+        }
     }
 
     if((isGmailAndroidFixEnabled === 'true') && (isTableContainerFixedWidth === 'false')) {
