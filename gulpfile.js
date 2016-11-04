@@ -26,11 +26,11 @@ var boilerplateConfig = dotenv_extended.load(
 
 // We need to check if DOCTYPE_VERSION is using an XHTML value for inline-css purposes later
 var currentSetDoctype = process.env.DOCTYPE_VERSION;
-if (/XHTML/i.test(currentSetDoctype)) {
-    xmlMode = true;
+if (/xhtml/i.test(currentSetDoctype)) {
+    isXHTMLDoctype = true;
 } 
 else {
-    xmlMode = false;
+    isXHTMLDoctype = false;
 }
 
 // Clean out /tmp and /dist directories each time gulp is run
@@ -138,7 +138,7 @@ gulp.task('build-html-samples', function() {
             removeStyleTags: true,
             removeHtmlSelectors: true,
             applyTableAttributes: true,
-            xmlMode: xmlMode
+            xmlMode: isXHTMLDoctype
         }
     ))
     .pipe(gulp.dest('./tmp/html-samples/'));
@@ -184,7 +184,7 @@ gulp.task('inline-css', ['preprocess-boilerplate'], function() {
             applyLinkTags: true,
             removeStyleTags: false,
             removeLinkTags: true,
-            xmlMode: xmlMode
+            xmlMode: isXHTMLDoctype
         }
     ))
     .pipe(gulp.dest('./dist/boilerplate/'));
