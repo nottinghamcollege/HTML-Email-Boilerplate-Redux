@@ -37,7 +37,9 @@
 
 	<!DOCTYPE html>
 		<html>
+			<!-- @if ENABLE_VML_NAMESPACES='true' -->
 			- XML Namespaces
+			<!-- @endif -->
 			<head>
 				<meta>
 					- Character Encoding
@@ -82,8 +84,15 @@
 							- Aligning layouts
 							<!-- @if ENABLE_TABLE_CONTAINER='true' -->
 							- Define your layout approach
+							<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
+							- Outlook/IE fixed width wrapper
+							- Fluid width container table
+							<!-- @endif -->
+							<!-- @if TABLE_CONTAINER_FIXED_WIDTH='true' -->
+							- Fixed width container table
 							<!-- @if ENABLE_GMAIL_ANDROID_RESIZE_FIX='true' -->
-							- Prevent Gmail App Auto-fit/zooming
+								- Prevent Gmail App Auto-fit/zooming
+							<!-- @endif -->
 							<!-- @endif -->
 							<!-- @endif -->
 						</td>
@@ -110,7 +119,9 @@
 				<!-- @if ENABLE_HTML_SAMPLE_IMAGES='true' -->
 				- Images HTML sample
 				<!-- @endif -->
+				<!-- @if ENABLE_GMAIL_IOS_FONT_FIX='true' -->
 				- Gmail iOS app font sizing fix
+				<!-- @endif -->
 			</body>
 		- Filesize of your email template
 		</html>
@@ -481,7 +492,7 @@
 				-->
 					<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
 					<!--
-						BEGIN OUTLOOK/IE FIXED WIDTH WRAPPER
+						OUTLOOK/IE FIXED WIDTH WRAPPER:
 						Due to Outlook clients and older versions of Interner Explorer (8 and below) having zero/limited max-width support, a conditional fixed width table is created that matches the max-width value on the container table which then wraps around it, this stops designs going super wide and constrains the layout accordingly.
 					-->
 					<!--[if (gte mso 9)|(lte ie 8)]>
@@ -489,6 +500,23 @@
 						<tr>
 							<td align="left" valign="top">
 					<![endif]-->
+					<!-- @endif -->
+					<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
+					<!--
+						FLUID WIDTH CONTAINER TABLE:
+						For clients that support max-width, the container table is set to a maximum width of <!-- @echo TABLE_CONTAINER_WIDTH -->px.
+						When the container table is rendered on a device smaller than this, the table automatically resizes without any media query requirements.
+						In conjunction with hybrid coding techniques, the main layout can essentially scale without any media query support.
+						Progressive enhancement with media queries can then be used to optimise layout areas for devices/email clients that support CSS3.
+					-->
+					<!-- @endif -->
+					<!-- @if TABLE_CONTAINER_FIXED_WIDTH='true' -->
+					<!--
+						FIXED WIDTH CONTAINER TABLE:
+						A less mobile first approach is to have a fixed width container table and then use media queries to override the fixed witdh for mobile devices.
+						This method is reliant on CSS3 and media query support which isn't applicable to all email clients, this means some mobile users will get a
+						desktop like layout which would be harder to engage with given its not optimised for the viewport in question.
+					-->
 					<!-- @endif -->
 					<!-- BEGIN CONTAINER TABLE -->
 					<table id="<!-- @echo TABLE_CONTAINER_CSS_ID -->">
@@ -520,7 +548,7 @@
 					<!-- END CONTAINER TABLE -->
 					<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
 					<!-- 
-						END OUTLOOK/IE FIXED WIDTH WRAPPER
+						END OUTLOOK/IE FIXED WIDTH WRAPPER:
 						The conditional fixed width wrapper created is now closed by this conditional closing tag block
 					-->
 					<!--[if (gte mso 9)|(lte ie 8)]>
