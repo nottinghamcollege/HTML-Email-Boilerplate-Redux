@@ -270,12 +270,16 @@ gulp.task('check-config', ['inline-css'], function() {
                 configWarn('PREHEADER_TEXT is less than 35 characters, consider increasing the amount of characters to avoid unwanted HTML text being shown in previews');
                 break;
 
-            case (preheaderText.length >= 35 && preheaderText.length <= 85):
-                configWarn('PREHEADER_TEXT is less than 85 characters, increase the amount of characters for a more effective preheader');
+            case (preheaderText.length >= 35 && preheaderText.length <= 75):
+                configWarn('PREHEADER_TEXT is less than 75 characters, increase the amount of characters for a more effective preheader');
                 break;
 
             case (preheaderText.length > 100):
-                configWarn('PREHEADER_TEXT is greater than 100 characters, consider decreasing the amount of characters to avoid truncation in previews');
+                configWarn('PREHEADER_TEXT is greater than 100 characters, consider decreasing the amount of characters to avoid truncation in most email clients');
+                break;
+
+            case (preheaderText.length > 140):
+                configWarn('PREHEADER_TEXT is greater than 140 characters, most email clients will not show all of your preheader');
                 break;
         }
     }
