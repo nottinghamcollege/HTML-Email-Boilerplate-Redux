@@ -88,7 +88,7 @@
 				<td id="<!-- @echo TABLE_WRAPPER_CELL_CSS_ID -->">
 				<!-- @if ENABLE_TABLE_CONTAINER='true' -->
 					<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
-					<!--[if (gte mso 9)|(IE)]>
+					<!--[if (gte mso 9)|(lte ie 8)]>
 					<table style="width: <!-- @echo TABLE_CONTAINER_WIDTH -->px;" border="0" cellpadding="0" cellspacing="0" width="<!-- @echo TABLE_CONTAINER_WIDTH -->">
 						<tr>
 							<td align="left" valign="top">
@@ -110,7 +110,7 @@
 						</tr>
 					</table>
 					<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
-					<!--[if (gte mso 9)|(IE)]>
+					<!--[if (gte mso 9)|(lte ie 8)]>
 							</td>
 						</tr>
 					</table>

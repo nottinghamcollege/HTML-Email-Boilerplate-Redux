@@ -482,9 +482,9 @@
 					<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
 					<!--
 						BEGIN OUTLOOK/IE FIXED WIDTH WRAPPER
-						Due to Outlook clients and older version of IE having no max-width CSS support, a conditional fixed width table is created that matches the max-width value on the container table which then wraps around it, this stops designs going super wide and constrains the layout accordingly.
+						Due to Outlook clients and older versions of Interner Explorer (8 and below) having zero/limited max-width support, a conditional fixed width table is created that matches the max-width value on the container table which then wraps around it, this stops designs going super wide and constrains the layout accordingly.
 					-->
-					<!--[if (gte mso 9)|(IE)]>
+					<!--[if (gte mso 9)|(lte ie 8)]>
 					<table style="width: <!-- @echo TABLE_CONTAINER_WIDTH -->px;" border="0" cellpadding="0" cellspacing="0" width="<!-- @echo TABLE_CONTAINER_WIDTH -->">
 						<tr>
 							<td align="left" valign="top">
@@ -523,7 +523,7 @@
 						END OUTLOOK/IE FIXED WIDTH WRAPPER
 						The conditional fixed width wrapper created is now closed by this conditional closing tag block
 					-->
-					<!--[if (gte mso 9)|(IE)]>
+					<!--[if (gte mso 9)|(lte ie 8)]>
 							</td>
 						</tr>
 					</table>
