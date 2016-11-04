@@ -110,7 +110,7 @@
 /* @endif */
 
 /* @if ENABLE_IOS10_MEDIA_QUERY='true' */
-@supports (-webkit-overflow-scrolling:touch) and (color:#ffffffff) {
+@supports (-webkit-overflow-scrolling:touch) and (color:#ffff) {
 /*!
 	Specific media query that targets iOS 10 devices
 */
