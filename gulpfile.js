@@ -33,6 +33,20 @@ else {
     isXHTMLDoctype = false;
 }
 
+// Check if preheader needs to be padded with &nbsp;
+var preheaderPaddingInt = process.env.PREHEADER_CHARACTER_PADDING;
+var nbsp = ''; // global so for loop output can be assigned to env var
+if (preheaderPaddingInt > 0) {
+    for (i = 0; i < preheaderPaddingInt; i++) { 
+        nbsp += '&nbsp;';
+    }
+    process.env.PREHEADER_CHARACTER_PADDING_NBSP = nbsp;
+}
+else {
+    // Avoid undefined value and initalise as blank
+    process.env.PREHEADER_CHARACTER_PADDING_NBSP = ''
+}
+
 // Clean out /tmp and /dist directories each time gulp is run
 gulp.task('clean', function () {
     return del(

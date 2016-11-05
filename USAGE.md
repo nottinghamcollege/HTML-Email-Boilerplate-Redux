@@ -579,6 +579,12 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Ability to provide a small sentence that will be the first text email clients will use in message/notification previews</td>
 	</tr>
 	<tr>
+		<td>PREHEADER_CHARACTER_PADDING</td>
+		<td>integer</td>
+		<td>10</td>
+		<td>A numeric value to control how many &amp;nbsp; entities are included after the preheader content in PREHEADER_TEXT to acts as character padding</td>
+	</tr>
+	<tr>
 		<td>BODY_BG_COLOUR</td>
 		<td>string</td>
 		<td>#ffffff</td>

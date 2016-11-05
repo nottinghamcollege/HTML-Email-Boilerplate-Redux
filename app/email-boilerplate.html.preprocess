@@ -80,7 +80,7 @@
 	<!-- @endif -->
 		<!-- @if ENABLE_PREHEADER='true' -->
 		<div id="preheader">
-			<!-- @echo PREHEADER_TEXT -->
+			<!-- @echo PREHEADER_TEXT --><!-- @echo PREHEADER_CHARACTER_PADDING_NBSP -->
 		</div>
 		<!-- @endif -->
 		<table id="<!-- @echo TABLE_WRAPPER_CSS_ID -->">
