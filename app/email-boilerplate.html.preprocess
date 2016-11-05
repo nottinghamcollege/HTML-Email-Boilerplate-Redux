@@ -74,7 +74,7 @@
 			<link rel="stylesheet" href="../../tmp/css/inline-rules.css" />
 		</head>
 
-	<body id="main-body" class="<!-- @echo BODY_CSS_CLASS -->" bgcolor="<!-- @echo BODY_BG_COLOUR -->">
+	<body bgcolor="<!-- @echo BODY_BG_COLOUR -->" id="main-body" class="<!-- @echo BODY_CSS_CLASS -->">
 	<!-- @if ENABLE_DOTMAILER_EASY_EDITOR_TEMPLATE='true' -->
 	<!-- Easy Editor -->
 	<!-- @endif -->
