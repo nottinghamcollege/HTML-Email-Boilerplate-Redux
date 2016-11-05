@@ -103,6 +103,6 @@ This boilerplate is originally based on two very popular boilerplates by:
 * Sean Powell - https://github.com/seanpowell/Email-Boilerplate
 * Email on Acid - http://www.emailonacid.com/blog/details/C13/html_boilerplate
 
-Further additions and adaptations have been made Central College Nottingham either from our own research or cited from sources. Where sources have been cited in the guidelines version of the stable boilerplate, credit is given to the original author of the referenced information.
+Further additions and adaptations have been made Central College Nottingham either from our own research or cited from sources. Where sources have been cited in the guidelines version of the boilerplate, credit is given to the original author of the referenced information.
 
 A full list of credited individuals/organisations can be found in the CONTRIBUTORS.md

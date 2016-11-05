@@ -126,11 +126,13 @@ a img {
 
 /*! Make all images block elements and allow smoother image resizing with attributes for IE */
 img { 
+	/* @if ENABLE_IMG_FIX='true' */
 	display: block; 
+	/* @endif */
 	border: none; 
 	outline: none; 
 	text-decoration: none; 
-	-ms-interpolation-mode: bicubic; 
+	-ms-interpolation-mode: bicubic;
 }
 
 /* @if ENABLE_PARAGRAPH_CSS='true' */

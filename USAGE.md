@@ -273,6 +273,15 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>Boolean to include CSS to target visited links (not all clients support this styling)</td>
 	</tr>
 	<tr>
+		<td>ENABLE_IMG_FIX</td>
+		<td>boolean</td>
+		<td>
+			true (default) <br />
+			false
+		</td>
+		<td>Boolean to include the display property on the img selector CSS rule to make all images block elements</td>
+	</tr>
+	<tr>
 		<td>ENABLE_PARAGRAPH_CSS</td>
 		<td>boolean</td>
 		<td>
