@@ -9,32 +9,42 @@
 */
 
 /* @if ENABLE_AOL_WEBMAIL_CSS_CLASS='true' */
+
 /*! Specific CSS class to target AOL Webmail */
+
 .aolReplacedBody .foo {  
 }
 /* @endif */
 
 /* @if ENABLE_OFFICE_365_CSS_SELECTOR='true' */
+
 /*! Specific CSS selector to target Office 365 */
+
 * [office365] .foo { 
 }
 /* @endif */
 
 /* @if ENABLE_GMAIL_HIDE_DOWNLOAD_ICON='true' */
+
 /*! Hide download icon on images in Gmail */
+
 * img[tabindex="0"] + div { 
 	display: none !important; 
 }
 /* @endif */
 
 /* @if ENABLE_GMAIL_WEBMAIL_TARGETING_SELECTOR='true' */
+
 /*! Target Gmail by using a CSS class on the body and specific class to wrap Gmail content with
+
 u + ./* @echo BODY_CSS_CLASS */ .gmail {
 }
 /* @endif */
 
 /* @if ENABLE_ANDROID_4_4_CENTRE_FIX='true' */
+
 /*! Android 4.4 margin fix */
+
 div[style*="margin: 16px 0"] { 
 	margin: 0 auto !important; 
 	font-size: 100% !important; 
@@ -42,7 +52,9 @@ div[style*="margin: 16px 0"] {
 /* @endif */
 
 /* @if ENABLE_CSS_DEBUG_MODE='true' */
+
 /*! Allows you to visually see areas like margin, padding widths etc at multi depth level to debug layout issues */
+
 * { background-color: rgba(255,0,0,.2); }
 * * { background-color: rgba(0,255,0,.2); }
 * * * { background-color: rgba(0,0,255,.2); }
