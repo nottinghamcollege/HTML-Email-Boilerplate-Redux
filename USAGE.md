@@ -161,8 +161,8 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>ENABLE_FAVICON</td>
 		<td>boolean</td>
 		<td>
-			true (default)<br />
-			false
+			true<br />
+			false (default)
 		</td>
 		<td>Define a favicon reference which is used by some email clients/web version</td>
 	</tr>
@@ -591,7 +591,7 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>PREHEADER_CHARACTER_PADDING</td>
 		<td>integer</td>
 		<td>10</td>
-		<td>A numeric value to control how many &amp;nbsp; entities are included after the preheader content in PREHEADER_TEXT to acts as character padding</td>
+		<td>A numeric value to control how many &amp;nbsp; entities are included after the preheader content in PREHEADER_TEXT to act as character padding</td>
 	</tr>
 	<tr>
 		<td>BODY_BG_COLOUR</td>
