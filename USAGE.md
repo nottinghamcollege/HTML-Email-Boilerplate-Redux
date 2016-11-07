@@ -55,11 +55,13 @@ The full list of configuration variables that can be used with the email boilerp
 		<td>DOCTYPE_VERSION</td>
 		<td>string</td>
 		<td>
-			xhtml-transitional (default)<br />
-			xhtml-strict<br /> 
-			html4<br />
+			xhtml1_1 <br />
+			xhtml1_0-transitional (default)<br />
+			xhtml1_0-strict<br /> 
+			html4-transitional<br />
+			html4-strict<br />
 			html5</td>
-		<td>Build email boilerplate with a specific doctype</td>
+		<td>Build email boilerplate with a specific doctype. If this configuration option is blank or uses a non-existent value, no doctype will be used</td>
 	</tr>
 	<tr>
 		<td>LANGUAGE_CODE</td>

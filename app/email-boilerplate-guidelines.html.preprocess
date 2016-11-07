@@ -141,14 +141,20 @@
 
 	Switch the doctype as required, this template uses XHTML 1.0 Transitional as the default
 -->
-<!-- @if DOCTYPE_VERSION='xhtml-transitional' -->
+<!-- @if DOCTYPE_VERSION='xhtml1_1' -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!-- @endif -->
+<!-- @if DOCTYPE_VERSION='xhtml1_0-transitional' -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- @endif -->
-<!-- @if DOCTYPE_VERSION='xhtml-strict' -->
+<!-- @if DOCTYPE_VERSION='xhtml1_0-strict' -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!-- @endif -->
-<!-- @if DOCTYPE_VERSION='html4' -->
+<!-- @if DOCTYPE_VERSION='html4-transitional' -->
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- @endif -->
+<!-- @if DOCTYPE_VERSION='html4-strict' -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <!-- @endif -->
 <!-- @if DOCTYPE_VERSION='html5' -->
 <!DOCTYPE html>
