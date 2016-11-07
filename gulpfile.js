@@ -208,6 +208,8 @@ gulp.task('inline-css', ['preprocess-boilerplate'], function() {
 // Detect certain configurations and warn in console when they are not optimal from recommended guidelines
 gulp.task('check-config', ['inline-css'], function() {
 
+    var doctypeValue = process.env.DOCTYPE_VERSION;
+    var doctypeValidOptions = ['xhtml1_1', 'xhtml1_0-transitional', 'xhtml1_0-strict', 'html4-transitional', 'html4-strict', 'html5'];
     var isMsoNamespacesEnabled = process.env.ENABLE_VML_NAMESPACES;
     var isXuaCompatMetaTagEnabled = process.env.ENABLE_XUA_COMPATIBLE_META_TAG;
     var xuaCompatValue = process.env.XUA_COMPATIBLE_VALUE;
@@ -233,6 +235,10 @@ gulp.task('check-config', ['inline-css'], function() {
     }
 
     // While they act as booleans, they aren't actually REAL booleans (quacks like a duck etc..)
+
+    if(doctypeValidOptions.indexOf(doctypeValue) < 0) {
+        configWarn('No doctype has been set or the current DOCTYPE_VERSION value set isn\'t a valid option');
+    }
 
     if((isMsoNamespacesEnabled === 'false') && (isMsoDpiScalingFixEnabled === 'true')) {
         configWarn('ENABLE_VML_NAMESPACES should be set to true when ENABLE_MSO_DPI_SCALING_FIX is set to true');
