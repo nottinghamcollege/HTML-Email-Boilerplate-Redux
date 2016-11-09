@@ -36,10 +36,10 @@
 	BOILERPLATE CONTENTS:
 
 	<!DOCTYPE html>
+		<!-- @if ENABLE_VML_NAMESPACES='true' -->
+		- XML Namespaces
+		<!-- @endif -->
 		<html>
-			<!-- @if ENABLE_VML_NAMESPACES='true' -->
-			- XML Namespaces
-			<!-- @endif -->
 			<head>
 				<meta>
 					- Character Encoding
