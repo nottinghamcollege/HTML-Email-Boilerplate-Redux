@@ -12,689 +12,1937 @@ The full list of configuration variables that can be used with the email boilerp
 
 <table width="100%">
 	<tr>
-		<th>Option</th>
-		<th>Type</th>
-		<th width="15%">Value</th>
-		<th>Purpose</th>
+		<th valign="middle">
+			<sub>
+				Option
+			</sub>
+		</th>
+		<th valign="middle">
+			<sub>
+				Type
+			</sub>
+		</th>
+		<th valign="middle" width="20%">
+			<sub>
+				Value
+			</sub>
+		</th>
+		<th valign="middle">
+			<sub>
+				Purpose
+			</sub>
+		</th>
 	</tr>
 	<tr>
 		<td colspan="4" align="center">
-			<strong>General boilerplate settings</strong>
+			<sub>
+				<strong>General boilerplate settings</strong>
+			</sub>
 		</td>
 	</tr>
 	<tr>
-		<td>GITHUB_REPO_URL</td>
-		<td>string</td>
-		<td>URL</td>
-		<td>Full URL of the project hosted on GitHub, used for generating latest git commit URL</td>
+		<td align="left" valign="middle">
+			<sub>
+				GITHUB_REPO_URL
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string</sub>
+			</td>
+		<td align="left" valign="middle">
+			<sub>
+				URL
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Full URL of the project hosted on GitHub, used for generating latest git commit URL
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_GUIDELINES_VERSION_HEADER</td>
-		<td>boolean</td>
-		<td>
-			true (default)<br />
-			false
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_GUIDELINES_VERSION_HEADER
+			</sub>
 		</td>
-		<td>Build email boilerplate guidelines version with the "pretty" document header</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true (default)<br />
+				false
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Build email boilerplate guidelines version with the "pretty" document header
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_GENERATOR_META_TAG</td>
-		<td>boolean</td>
-		<td>
-			true (default)<br />
-			false
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_GENERATOR_META_TAG
+			</sub>
 		</td>
-		<td>Boolean to include a generator meta tag with the project name</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true (default)<br />
+				false
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a generator meta tag with the project name
+			</sub>
+		</td>
 	</tr>
 	<tr>
 		<td colspan="4" align="center">
-			<strong>Main Document</strong>
+			<sub>
+				<strong>Main Document</strong>
+			</sub>
 		</td>
 	</tr>
 	<tr>
-		<td>DOCTYPE_VERSION</td>
-		<td>string</td>
-		<td>
-			xhtml1_1 <br />
-			xhtml1_0-transitional (default)<br />
-			xhtml1_0-strict<br /> 
-			html4-transitional<br />
-			html4-strict<br />
-			html5</td>
-		<td>Build email boilerplate with a specific doctype. If this configuration option is blank or uses a non-existent value, no doctype will be used</td>
-	</tr>
-	<tr>
-		<td>LANGUAGE_CODE</td>
-		<td>string</td>
-		<td>en</td>
-		<td>Sets lang attribute value on root HTML tag</td>
-	</tr>
-	<tr>
-		<td>ENABLE_VML_NAMESPACES </td>
-		<td>boolean</td>
-		<td>
-			true (default)<br />
-			false
+		<td align="left" valign="middle">
+			<sub>
+				DOCTYPE_VERSION
+			</sub>
 		</td>
-		<td>Boolean to include VML namespaces on root HTML tag (needed for MSO specific code like VML)</td>
-	</tr>
-	<tr>
-		<td>CHARSET</td>
-		<td>string</td>
-		<td>utf-8</td>
-		<td>Sets desired character set for the document</td>
-	</tr>
-	<tr>
-		<td>DOCUMENT_TITLE</td>
-		<td>string</td>
-		<td>Central College Nottingham</td>
-		<td>Ability to set a specific title value for the HTML document</td>
-	</tr>
-	<tr>
-		<td>ENABLE_FORMAT_DETECTION_META_TAG</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
 		</td>
-		<td>Boolean to stop devices automatically converting data like phone numbers and addresses into ineteractive links</td>
-	</tr>
-	<tr>
-		<td>FORMAT_DETECTION_META_VALUE</td>
-		<td>string</td>
-		<td>telephone=no</td>
-		<td>Provide data types to be ignored</td>
-	</tr>
-	<tr>
-		<td>ENABLE_VIEWPORT_META_TAG</td>
-		<td>boolean</td>
-		<td>
-			true (default)<br />
-			false
+		<td align="left" valign="middle">
+			<sub>
+				xhtml1_1 <br />
+				xhtml1_0-transitional (default)<br />
+				xhtml1_0-strict<br /> 
+				html4-transitional<br />
+				html4-strict<br />
+				html5
+			</sub>
 		</td>
-		<td>Boolean to include the viewport meta tag</td>
-	</tr>
-	<tr>
-		<td>VIEWPORT_META_VALUE</td>
-		<td>string</td>
-		<td>width=device-width</td>
-		<td>Ability to set a specific viewport value</td>
-	</tr>
-	<tr>
-		<td>ENABLE_XUA_COMPATIBLE_META_TAG</td>
-		<td>boolean</td>
-		<td>
-			true (default)<br />
-			false
+		<td align="left" valign="middle">
+			<sub>
+				Build email boilerplate with a specific doctype. If this configuration option is blank or uses a non-existent value, no doctype will be used
+			</sub>
 		</td>
-		<td>Boolean to include a XUA-Compatible meta tag for Internet Explorer based clients</td>
 	</tr>
 	<tr>
-		<td>XUA_COMPATIBLE_VALUE</td>
-		<td>string</td>
-		<td>IE=edge</td>
-		<td>Force a document mode for Internet Explorer based clients to use</td>
-	</tr>
-	<tr>
-		<td>ENABLE_ROBOTS_META_TAG</td>
-		<td>boolean</td>
-		<td>
-			true <br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				LANGUAGE_CODE
+			</sub>
 		</td>
-		<td>Boolean to include a meta robots tag</td>
-	</tr>
-	<tr>
-		<td>ROBOTS_META_VALUE</td>
-		<td>string</td>
-		<td>noindex, nofollow</td>
-		<td>Provide a value for the meta robots tags</td>
-	</tr>
-	<tr>
-		<td>ENABLE_APPLE_DISABLE_MESSAGE_FORMATTING_META_TAG</td>
-		<td>boolean</td>
-		<td>
-			true <br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
 		</td>
-		<td>Boolean to include a specific meta tag that will prevent iOS/Apple Mail from auto formatting email messages (iOS 10)</td>
-	</tr>
-	<tr>
-		<td>ENABLE_FAVICON</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				en
+			</sub>
 		</td>
-		<td>Define a favicon reference which is used by some email clients/web version</td>
+		<td align="left" valign="middle">
+			<sub>
+				Sets lang attribute value on root HTML tag
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>FAVICON_URL</td>
-		<td>string</td>
-		<td>Absolute URL</td>
-		<td>Full http(s):// URL path to ico file</td>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_VML_NAMESPACES
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true (default)<br />
+				false
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include VML namespaces on root HTML tag (needed for MSO specific code like VML)
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				CHARSET
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				utf-8
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Sets desired character set for the document
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				DOCUMENT_TITLE
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Central College Nottingham
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to set a specific title value for the HTML document
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_FORMAT_DETECTION_META_TAG
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to stop devices automatically converting data like phone numbers and addresses into ineteractive links
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				FORMAT_DETECTION_META_VALUE
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				telephone=no
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Provide data types to be ignored
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_VIEWPORT_META_TAG
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true (default)<br />
+				false
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include the viewport meta tag
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				VIEWPORT_META_VALUE
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				width=device-width
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to set a specific viewport value
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_XUA_COMPATIBLE_META_TAG
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true (default)<br />
+				false
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a XUA-Compatible meta tag for Internet Explorer based clients
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				XUA_COMPATIBLE_VALUE
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				IE=edge
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Force a document mode for Internet Explorer based clients to use
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_ROBOTS_META_TAG
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true <br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a meta robots tag
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				ROBOTS_META_VALUE
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				noindex, nofollow
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Provide a value for the meta robots tags
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_APPLE_DISABLE_MESSAGE_FORMATTING_META_TAG
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true <br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a specific meta tag that will prevent iOS/Apple Mail from auto formatting email messages (iOS 10)
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_FAVICON
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Define a favicon reference which is used by some email clients/web version
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				FAVICON_URL
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Absolute URL
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Full http(s):// URL path to ico file
+			</sub>
+		</td>
 	</tr>
 	<tr>
 		<td colspan="4" align="center">
-			<strong>Microsoft Office (MSO) code</strong>
+			<sub>
+				<strong>Microsoft Office (MSO) code</strong>
+			</sub>
 		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_MSO_DPI_SCALING_FIX</td>
-		<td>boolean</td>
-		<td>
-			true (default)<br />
-			false
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_MSO_DPI_SCALING_FIX
+			</sub>
 		</td>
-		<td>Boolean to include MSO specific code that normalises PPI (DPI) on images</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true (default)<br />
+				false
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include MSO specific code that normalises PPI (DPI) on images
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_MSO_CONDITIONAL_STYLING</td>
-		<td>boolean</td>
-		<td>
-			true (default)<br />
-			false
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_MSO_CONDITIONAL_STYLING
+			</sub>
 		</td>
-		<td>Boolean to include specific MSO CSS reset rules</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true (default)<br />
+				false
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include specific MSO CSS reset rules
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_VML_CSS_OBJECTS_STYLING</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_VML_CSS_OBJECTS_STYLING
+			</sub>
 		</td>
-		<td>Boolean to include specific CSS rules for VML objects when using specific techniques</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include specific CSS rules for VML objects when using specific techniques
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_MSO_FALLBACK_FONT</td>
-		<td>boolean</td>
-		<td>
-			true (default)<br />
-			false
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_MSO_FALLBACK_FONT
+			</sub>
 		</td>
-		<td>Boolean to include a specific CSS block that targets main layout elements</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true (default)<br />
+				false
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a specific CSS block that targets main layout elements
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>MSO_DEFAULT_FALLBACK_FONT_STACK</td>
-		<td>string</td>
-		<td>Helvetica, Arial, sans-serif</td>
-		<td>Ability to set a web safe font stack Windows based Outlook clients will use when using web fonts</td>
+		<td align="left" valign="middle">
+			<sub>
+				MSO_DEFAULT_FALLBACK_FONT_STACK
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Helvetica, Arial, sans-serif
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to set a web safe font stack Windows based Outlook clients will use when using web fonts
+			</sub>
+		</td>
 	</tr>
 	<tr>
 		<td colspan="4" align="center">
-			<strong>Main CSS Reset</strong>
+			<sub>
+				<strong>Main CSS Reset</strong>
+			</sub>
 		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_GENERAL_SIBLING_SELECTOR_BUG_FIX</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_GENERAL_SIBLING_SELECTOR_BUG_FIX
+			</sub>
 		</td>
-		<td>Fix CSS sibling selector support in certain Android/iOS clients</td>
-	</tr>
-	<tr>
-		<td>ENABLE_OUTLOOK_WEBMAIL_RESET_CSS (Deprecated)</td>
-		<td>boolean</td>
-		<td>
-			true (default)<br />
-			false
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
 		</td>
-		<td>Boolean to include specific CSS to reset line-height and email body container width in Outlook.com webmail</td>
-	</tr>
-	<tr>
-		<td>DEFAULT_ANCHOR_COLOUR</td>
-		<td>string</td>
-		<td>#e6057f</td>
-		<td>Ability to set a global general anchor colour</td>
-	</tr>
-	<tr>
-		<td>ENABLE_OUTLOOK_MAIL_ANCHOR_STYLING</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
 		</td>
-		<td>Ability to override the default anchor styling in Outlook Mail (Windows 10)</td>
-	</tr>
-	<tr>
-		<td>DEFAULT_ANCHOR_VISITED_COLOUR</td>
-		<td>string</td>
-		<td>#ff0000</td>
-		<td>Ability to set a global visited anchor colour</td>
-	</tr>
-	<tr>
-		<td>ENABLE_VISITED_ANCHOR_CSS</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				Fix CSS sibling selector support in certain Android/iOS clients
+			</sub>
 		</td>
-		<td>Boolean to include CSS to target visited links (not all clients support this styling)</td>
 	</tr>
 	<tr>
-		<td>ENABLE_IMG_FIX</td>
-		<td>boolean</td>
-		<td>
-			true (default) <br />
-			false
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_OUTLOOK_WEBMAIL_RESET_CSS (Deprecated)
+			</sub>
 		</td>
-		<td>Boolean to include the display property on the img selector CSS rule to make all images block elements</td>
-	</tr>
-	<tr>
-		<td>ENABLE_PARAGRAPH_CSS</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
 		</td>
-		<td>Boolean to include CSS to reset the paragraph selector</td>
-	</tr>
-	<tr>
-		<td>ENABLE_HEADER_SELECTORS_CSS</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				true (default)<br />
+				false
+			</sub>
 		</td>
-		<td>Boolean to include CSS rules that targets h1 - h6 tags</td>
-	</tr>
-	<tr>
-		<td>HEADER_SELECTORS_CSS_COLOUR</td>
-		<td>string</td>
-		<td>#000000</td>
-		<td>Ability to set the default colour of header tags (&lt;h1&gt; - &lt;h6&gt;)</td>
-	</tr>
-	<tr>
-		<td>HEADER_SELECTORS_ANCHOR_CSS_COLOUR</td>
-		<td>string</td>
-		<td>#0000FF</td>
-		<td>Ability to set the default colour of &lt;a&gt; tags within headers tags (&lt;h1&gt; - &lt;h6&gt;)</td>
-	</tr>
-	<tr>
-		<td>HEADER_SELECTORS_ANCHOR_ACTIVE_CSS_COLOUR</td>
-		<td>string</td>
-		<td>#FF0000</td>
-		<td>Ability to set the default colour of active &lt;a&gt; within headers tags (&lt;h1&gt; - &lt;h6&gt;)</td>
-	</tr>
-	<tr>
-		<td>HEADER_SELECTORS_ANCHOR_VISITED_CSS_COLOUR</td>
-		<td>string</td>
-		<td>#800080</td>
-		<td>Ability to set the default colour of visited &lt;a&gt; within header tags (&lt;h1&gt; - &lt;h6&gt;)</td>
-	</tr>
-	<tr>
-		<td>ENABLE_YAHOO_SHORTCUTS_CSS (Deprecated)</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include specific CSS to reset line-height and email body container width in Outlook.com webmail
+			</sub>
 		</td>
-		<td>Boolean to include CSS rules that target automatically converted links in Yahoo! Mail (shortcuts)</td>
 	</tr>
 	<tr>
-		<td>YAHOO_SHORTCUTS_CSS_COLOUR</td>
-		<td>string</td>
-		<td>#000000</td>
-		<td>Ability to set the colour of Yahoo shortcuts</td>
+		<td align="left" valign="middle">
+			<sub>
+				DEFAULT_ANCHOR_COLOUR
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				#e6057f
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to set a global general anchor colour
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>CUSTOM_APPLE_LINKS_COLOUR1</td>
-		<td>string</td>
-		<td>#666666</td>
-		<td>Ability to create an additional .appleLinksCustom1 class with a custom colour</td>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_OUTLOOK_MAIL_ANCHOR_STYLING
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to override the default anchor styling in Outlook Mail (Windows 10)
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>CUSTOM_APPLE_LINKS_COLOUR2</td>
-		<td>string</td>
-		<td>#999999</td>
-		<td>Ability to create an additional .appleLinksCustom2 class with a custom colour</td>
+		<td align="left" valign="middle">
+			<sub>
+				DEFAULT_ANCHOR_VISITED_COLOUR
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				#ff0000
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to set a global visited anchor colour
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>CUSTOM_APPLE_LINKS_COLOUR3</td>
-		<td>string</td>
-		<td>#222222</td>
-		<td>Ability to create an additional .appleLinksCustom3 class with a custom colour</td>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_VISITED_ANCHOR_CSS
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include CSS to target visited links (not all clients support this styling)
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_IMG_FIX
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true (default) <br />
+				false
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include the display property on the img selector CSS rule to make all images block elements
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_PARAGRAPH_CSS
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include CSS to reset the paragraph selector
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_HEADER_SELECTORS_CSS
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include CSS rules that targets h1 - h6 tags
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				HEADER_SELECTORS_CSS_COLOUR
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				#000000
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to set the default colour of header tags (&lt;h1&gt; - &lt;h6&gt;)
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				HEADER_SELECTORS_ANCHOR_CSS_COLOUR
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				#0000FF
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to set the default colour of &lt;a&gt; tags within headers tags (&lt;h1&gt; - &lt;h6&gt;)
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				HEADER_SELECTORS_ANCHOR_ACTIVE_CSS_COLOUR
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				#FF0000
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to set the default colour of active &lt;a&gt; within headers tags (&lt;h1&gt; - &lt;h6&gt;)
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				HEADER_SELECTORS_ANCHOR_VISITED_CSS_COLOUR
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				#800080
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to set the default colour of visited &lt;a&gt; within header tags (&lt;h1&gt; - &lt;h6&gt;)
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_YAHOO_SHORTCUTS_CSS (Deprecated)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include CSS rules that target automatically converted links in Yahoo! Mail (shortcuts)
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				YAHOO_SHORTCUTS_CSS_COLOUR
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				#000000
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to set the colour of Yahoo shortcuts
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				CUSTOM_APPLE_LINKS_COLOUR1
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				#666666
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to create an additional .appleLinksCustom1 class with a custom colour
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				CUSTOM_APPLE_LINKS_COLOUR2
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				#999999
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to create an additional .appleLinksCustom2 class with a custom colour
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				CUSTOM_APPLE_LINKS_COLOUR3
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				#222222
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to create an additional .appleLinksCustom3 class with a custom colour
+			</sub>
+		</td>
 	</tr>
 	<tr>
 		<td colspan="4" align="center">
-			<strong>CSS3 media queries</strong>
+			<sub>
+				<strong>CSS3 media queries</strong>
+			</sub>
 		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_WINDOWS_PHONE_VIEWPORT_FIX</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_WINDOWS_PHONE_VIEWPORT_FIX
+			</sub>
 		</td>
-		<td>Boolean to include a specific at-rule to adjust the viewport on Windows Phone devices</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a specific at-rule to adjust the viewport on Windows Phone devices
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>WINDOWS_PHONE_VIEWPORT_WIDTH</td>
-		<td>string</td>
-		<td>device-width</td>
-		<td>Ability to define a specific viewport value for Windows Phone devices</td>
+		<td align="left" valign="middle">
+			<sub>
+				WINDOWS_PHONE_VIEWPORT_WIDTH
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				device-width
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to define a specific viewport value for Windows Phone devices
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_MEDIA_SCREEN_QUERY</td>
-		<td>boolean</td>
-		<td>
-			true (default)<br />
-			false
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_MEDIA_SCREEN_QUERY
+			</sub>
 		</td>
-		<td>Boolean to include a media screen query, useful for include webfonts with @font-face or import</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true (default)<br />
+				false
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a media screen query, useful for include webfonts with @font-face or import
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_MEDIA_PRINT_QUERY</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_MEDIA_PRINT_QUERY
+			</sub>
 		</td>
-		<td>Boolean to include a media print query, useful for optimising an email template for printing</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a media print query, useful for optimising an email template for printing
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_YAHOO_MEDIA_QUERY</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_YAHOO_MEDIA_QUERY
+			</sub>
 		</td>
-		<td>Boolean to include a specific yahoo media query that will be rendered in Yahoo! webmail</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a specific yahoo media query that will be rendered in Yahoo! webmail
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_IE_10_11_MEDIA_QUERY</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_IE_10_11_MEDIA_QUERY
+			</sub>
 		</td>
-		<td>Boolean to include a specific IE 10/11 media query that targets both desktop and mobile</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a specific IE 10/11 media query that targets both desktop and mobile
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_WEBKIT_DETECTION_QUERY</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_WEBKIT_DETECTION_QUERY
+			</sub>
 		</td>
-		<td>Boolean to include a specific webkit query that will be used on any Webkit client</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a specific webkit query that will be used on any Webkit client
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_GECKO_MEDIA_QUERY</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_GECKO_MEDIA_QUERY
+			</sub>
 		</td>
-		<td>Boolean to include a specific media query that targets Gecko based clients</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a specific media query that targets Gecko based clients
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_IPAD_3_4_MEDIA_QUERY</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_IPAD_3_4_MEDIA_QUERY
+			</sub>
 		</td>
-		<td>Boolean to include a media query that matches the iPad 3/4</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a media query that matches the iPad 3/4
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_IPAD_1_2_MEDIA_QUERY</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_IPAD_1_2_MEDIA_QUERY
+			</sub>
 		</td>
-		<td>Boolean to include a media query that matches the iPad 1/2</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a media query that matches the iPad 1/2
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_MAX_DEVICE_WIDTH_MEDIA_QUERY</td>
-		<td>boolean</td>
-		<td>
-			true (default)<br />
-			false
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_MAX_DEVICE_WIDTH_MEDIA_QUERY
+			</sub>
 		</td>
-		<td>Boolean to include a media query that is triggered on TABLE_CONTAINER_WIDTH</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true (default)<br />
+				false
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a media query that is triggered on TABLE_CONTAINER_WIDTH
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_RETINA_3X_MEDIA_QUERY</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_RETINA_3X_MEDIA_QUERY
+			</sub>
 		</td>
-		<td>Boolean to include a media query that targets devices with a pixel density of 3x the standard</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a media query that targets devices with a pixel density of 3x the standard
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_RETINA_2X_MEDIA_QUERY</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_RETINA_2X_MEDIA_QUERY
+			</sub>
 		</td>
-		<td>Boolean to include a media query that targets devices with a pixel density of 2x the standard</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a media query that targets devices with a pixel density of 2x the standard
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_RETINA_1X_MEDIA_QUERY</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_RETINA_1X_MEDIA_QUERY
+			</sub>
 		</td>
-		<td>Boolean to include a media query that targets devices with a pixel density slighty higher than normal</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a media query that targets devices with a pixel density slighty higher than normal
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_IOS10_MEDIA_QUERY</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_IOS10_MEDIA_QUERY
+			</sub>
 		</td>
-		<td>Boolean to include a media query that targets iOS 10 devices</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a media query that targets iOS 10 devices
+			</sub>
+		</td>
 	</tr>
 	<tr>
 		<td colspan="4" align="center">
-			<strong>Misc/Other CSS</strong>
+			<sub>
+				<strong>Misc/Other CSS</strong>
+			</sub>
 		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_AOL_WEBMAIL_CSS_CLASS</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_AOL_WEBMAIL_CSS_CLASS
+			</sub>
 		</td>
-		<td>Boolean to include a specific CSS class that will be rendered by AOL Webmail clients</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a specific CSS class that will be rendered by AOL Webmail clients
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_OFFICE_365_CSS_SELECTOR</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_OFFICE_365_CSS_SELECTOR
+			</sub>
 		</td>
-		<td>Boolean to include a specific CSS selector that will target Office 365</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a specific CSS selector that will target Office 365
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_GMAIL_HIDE_DOWNLOAD_ICON</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_GMAIL_HIDE_DOWNLOAD_ICON
+			</sub>
 		</td>
-		<td>Boolean to include a specific CSS selector that will remove the download icon on Gmail</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a specific CSS selector that will remove the download icon on Gmail
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_GMAIL_WEBMAIL_TARGETING_SELECTOR</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_GMAIL_WEBMAIL_TARGETING_SELECTOR
+			</sub>
 		</td>
-		<td>Boolean to include a specific CSS selector that will target Gmail webmail clients</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a specific CSS selector that will target Gmail webmail clients
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_ANDROID_4_4_CENTRE_FIX</td>
-		<td>boolean</td>
-		<td>
-			true (default)<br />
-			false
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_ANDROID_4_4_CENTRE_FIX
+			</sub>
 		</td>
-		<td>Boolean to include an attribute selector that normalises the margin on Android 4.4</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true (default)<br />
+				false
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include an attribute selector that normalises the margin on Android 4.4
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_CSS_DEBUG_MODE</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_CSS_DEBUG_MODE
+			</sub>
 		</td>
-		<td>Boolean to include a special set of CSS rules that will highlight elements allowing further analysis of layout elements</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a special set of CSS rules that will highlight elements allowing further analysis of layout elements
+			</sub>
+		</td>
 	</tr>
 	<tr>
 		<td colspan="4" align="center">
-			<strong>Main body</strong>
+			<sub>
+				<strong>Main body</strong>
+			</sub>
 		</td>
 	</tr>
 	<tr>
-		<td>BODY_CSS_CLASS</td>
-		<td>string</td>
-		<td>body</td>
-		<td>Set a specific class on the &lt;body&gt; tag for advanced CSS targetting techniques</td>
-	</tr>
-	<tr>
-		<td>ENABLE_DOTMAILER_EASY_EDITOR_TEMPLATE</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				BODY_CSS_CLASS
+			</sub>
 		</td>
-		<td>Boolean to include a specific HTML comment that is parsed by the dotmailer Easy Editor templating system</td>
-	</tr>
-	<tr>
-		<td>ENABLE_PREHEADER</td>
-		<td>boolean</td>
-		<td>
-			true (default)<br />
-			false
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
 		</td>
-		<td>Boolean to include a &lt;div&gt; following the &lt;body&gt; tag for the preheader</td>
-	</tr>
-	<tr>
-		<td>PREHEADER_TEXT</td>
-		<td>string</td>
-		<td>Example Preheader text</td>
-		<td>Ability to provide a small sentence that will be the first text email clients will use in message/notification previews</td>
-	</tr>
-	<tr>
-		<td>PREHEADER_CHARACTER_PADDING</td>
-		<td>integer</td>
-		<td>10</td>
-		<td>A numeric value to control how many &amp;nbsp; entities are included after the preheader content in PREHEADER_TEXT to act as character padding</td>
-	</tr>
-	<tr>
-		<td>BODY_BG_COLOUR</td>
-		<td>string</td>
-		<td>#ffffff</td>
-		<td>Ability to set a specific hexidecimal colour for the background of the email</td>
-	</tr>
-	<tr>
-		<td>TABLE_WRAPPER_CSS_ID</td>
-		<td>string</td>
-		<td>main-wrapper</td>
-		<td>Ability to set a specific CSS ID for the first wrapping table</td>
-	</tr>
-	<tr>
-		<td>TABLE_CONTAINER_CSS_ID</td>
-		<td>string</td>
-		<td>container-wrapper</td>
-		<td>Ability to set a specific CSS ID for the first wrapping cell</td>
-	</tr>
-	<tr>
-		<td>TABLE_WRAPPER_CELL_CSS_ID</td>
-		<td>string</td>
-		<td>main-cell</td>
-		<td>Ability to set a specific CSS ID for the container table</td>
-	</tr>
-	<tr>
-		<td>TABLE_CONTAINER_CELL_CSS_ID</td>
-		<td>string</td>
-		<td>container-cell</td>
-		<td>Ability to set a specific CSS ID for the container cell</td>
-	</tr>
-	<tr>
-		<td>TABLE_CONTAINER_CELL_BG_COLOR</td>
-		<td>string</td>
-		<td>#ffffff</td>
-		<td>Set a background colour for the container table cell</td>
-	</tr>
-	<tr>
-		<td>ENABLE_TABLE_CONTAINER</td>
-		<td>boolean</td>
-		<td>
-			true (default)<br />
-			false
+		<td align="left" valign="middle">
+			<sub>
+				body
+			</sub>
 		</td>
-		<td>Boolean to control if a container table is created following the wrapper table</td>
-	</tr>
-	<tr>
-		<td>TABLE_CONTAINER_FIXED_WIDTH</td>
-		<td>boolean</td>
-		<td>
-			true (default)<br />
-			false
+		<td align="left" valign="middle">
+			<sub>
+				Set a specific class on the &lt;body&gt; tag for advanced CSS targeting techniques
+			</sub>
 		</td>
-		<td>Boolean to define if the email width should be fixed or not</td>
 	</tr>
 	<tr>
-		<td>TABLE_CONTAINER_WIDTH</td>
-		<td>integer</td>
-		<td>600</td>
-		<td>Set the width of the container table in pixels (px)</td>
-	</tr>
-	<tr>
-		<td>TABLE_WRAPPER_CELL_ALIGN</td>
-		<td>string</td>
-		<td>center</td>
-		<td>Set the align method of wrapper table cell</td>
-	</tr>
-	<tr>
-		<td>TABLE_CONTAINER_ALIGN</td>
-		<td>string</td>
-		<td>center</td>
-		<td>Set the align method of container table</td>
-	</tr>
-	<tr>
-		<td>ENABLE_GMAIL_ANDROID_RESIZE_FIX (Deprecated)</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_DOTMAILER_EASY_EDITOR_TEMPLATE
+			</sub>
 		</td>
-		<td>Boolean to include a spacer image the same size as TABLE_CONTAINER_WIDTH to prevent Gmail force scaling a wider email</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a specific HTML comment that is parsed by the dotmailer Easy Editor templating system
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_GMAIL_IOS_FONT_FIX (Deprecated)</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_PREHEADER
+			</sub>
 		</td>
-		<td>Boolean to include special divider block to prevent Gmail iOS app auto scaling fonts on wider emails</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true (default)<br />
+				false
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a &lt;div&gt; following the &lt;body&gt; tag for the preheader
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				PREHEADER_TEXT
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Example preheader text
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to provide a small sentence that will be the first text email clients will use in message/notification previews
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				PREHEADER_CHARACTER_PADDING
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				integer
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				10
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				A numeric value to control how many &amp;nbsp; entities are included after the preheader content in PREHEADER_TEXT to act as character padding
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				BODY_BG_COLOUR
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				#ffffff
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to set a specific hexidecimal colour for the background of the email
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				TABLE_WRAPPER_CSS_ID
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				main-wrapper
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to set a specific CSS ID for the first wrapping table
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				TABLE_CONTAINER_CSS_ID
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				container-wrapper
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to set a specific CSS ID for the first wrapping cell
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				TABLE_WRAPPER_CELL_CSS_ID
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				main-cell
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to set a specific CSS ID for the container table
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				TABLE_CONTAINER_CELL_CSS_ID
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				container-cell
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Ability to set a specific CSS ID for the container cell
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				TABLE_CONTAINER_CELL_BG_COLOR
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				#ffffff
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Set a background colour for the container table cell
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_TABLE_CONTAINER
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true (default)<br />
+				false
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to control if a container table is created following the wrapper table
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				TABLE_CONTAINER_FIXED_WIDTH
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true (default)<br />
+				false
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to define if the email width should be fixed or not
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				TABLE_CONTAINER_WIDTH
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				integer
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				600
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Set the width of the container table in pixels (px)
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				TABLE_WRAPPER_CELL_ALIGN
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				center
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Set the align method of wrapper table cell
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				TABLE_CONTAINER_ALIGN
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				center
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Set the align method of container table
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_GMAIL_ANDROID_RESIZE_FIX (Deprecated)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a spacer image the same size as TABLE_CONTAINER_WIDTH to prevent Gmail force scaling a wider email
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_GMAIL_IOS_FONT_FIX (Deprecated)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include special divider block to prevent Gmail iOS app auto scaling fonts on wider emails
+			</sub>
+		</td>
 	</tr>
 	<tr>
 		<td colspan="4" align="center">
-			<strong>Other/Misc</strong>
+			<sub>
+				<strong>Other/Misc</strong>
+			</sub>
 		</td>
 	</tr>
 	<tr>
-		<td>PLACEHOLDER_IMG_URL</td>
-		<td>string</td>
-		<td>Absolute URL</td>
-		<td>Base URL path of where placeholder images are stored</td>
+		<td align="left" valign="middle">
+			<sub>
+				PLACEHOLDER_IMG_URL
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Absolute URL
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Base URL path of where placeholder images are stored
+			</sub>
+		</td>
 	</tr>
 </table>
 
@@ -704,27 +1952,59 @@ Several configuration options may be marked as "(Deprecated)", this is often due
 
 <table width="100%">
 	<tr>
-		<th>Option</th>
-		<th>Deprecation note</th>
+		<th valign="middle">
+			<sub>
+				Option
+			</sub>
+		</th>
+		<th valign="middle">
+			<sub>
+				Deprecation note
+			</sub>
+		</th>
 	</tr>
 	<tr>
-		<td>ENABLE_OUTLOOK_WEBMAIL_RESET_CSS</td>
-		<td>
-			<a href="https://www.emailonacid.com/blog/article/industry-news/outlook.com-accounts-begin-migration-to-office-365-interface" target="_blank">Outlook.com is being migrated over to the Office 365 platform</a>, the majority of Microsoft Accounts i.e. @live, @msn @hotmail, @outlook etc. should have already been migrated over, but there may still be a portion of the user base still present on the older Outlook.com platform. The purpose of this configuration variable was to reset the wrapping &lt;div&gt; element of the email body and normalise a crazy default line-height value via two CSS classes .ExternalClass and .ReadMsgBody. However, this reset will no longer be required once the older Outlook.com platform is retired completely. For now, the reset code remains enabled by default, but will likely be removed in the near future.
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_OUTLOOK_WEBMAIL_RESET_CSS
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				<a href="https://www.emailonacid.com/blog/article/industry-news/outlook.com-accounts-begin-migration-to-office-365-interface" target="_blank">Outlook.com is being migrated over to the Office 365 platform</a>, the majority of Microsoft Accounts i.e. @live, @msn @hotmail, @outlook etc. should have already been migrated over, but there may still be a portion of the user base still present on the older Outlook.com platform. The purpose of this configuration variable was to reset the wrapping &lt;div&gt; element of the email body and normalise a crazy default line-height value via two CSS classes .ExternalClass and .ReadMsgBody. However, this reset will no longer be required once the older Outlook.com platform is retired completely. For now, the reset code remains enabled by default, but will likely be removed in the near future.
+			</sub>
 		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_YAHOO_SHORTCUTS_CSS</td>
-		<td>Yahoo! Mail no longer highlights certain keywords in email campaigns, therefore there is no requirement to reset any .yshortcuts classes as they are no longer used.</td>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_YAHOO_SHORTCUTS_CSS
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Yahoo! Mail no longer highlights certain keywords in email campaigns, therefore there is no requirement to reset any .yshortcuts classes as they are no longer used.
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_GMAIL_ANDROID_RESIZE_FIX</td>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_GMAIL_ANDROID_RESIZE_FIX
+			</sub>
+		</td>
 		<td rowspan="2">
-			Gmail is now <a href="https://gsuite-developers.googleblog.com/2016/09/your-emails-optimized-for-every-screen-with-responsive-design.html" target="_blank">starting to support CSS3</a>, in addition the force scaling and font resizing quirks that these configuration options override on the Android and iOS Gmail apps <a href="https://www.emailonacid.com/blog/article/industry-news/gmail-update-embedded-styles-and-media-queries" target="_blank">are being removed from the client itself</a>, so these options should be considered legacy. Currently not all Gmail clients are rendering with CSS3 support due to a phased rollout.
+			<sub>
+				Gmail is now <a href="https://gsuite-developers.googleblog.com/2016/09/your-emails-optimized-for-every-screen-with-responsive-design.html" target="_blank">starting to support CSS3</a>, in addition the force scaling and font resizing quirks that these configuration options override on the Android and iOS Gmail apps <a href="https://www.emailonacid.com/blog/article/industry-news/gmail-update-embedded-styles-and-media-queries" target="_blank">are being removed from the client itself</a>, so these options should be considered legacy. Currently not all Gmail clients are rendering with CSS3 support due to a phased rollout.
+			</sub>
 		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_GMAIL_IOS_FONT_FIX</td>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_GMAIL_IOS_FONT_FIX
+			</sub>
+		</td>
 	</tr>
 </table>
 
@@ -734,90 +2014,232 @@ The email boilerplate also contains samples of common elements/techniques used i
 
 <table width="100%">
 	<tr>
-		<th>Option</th>
-		<th>Type</th>
-		<th width="15%">Value</th>
-		<th>Purpose</th>
+		<th valign="middle">
+			<sub>
+				Option
+			</sub>
+		</th>
+		<th valign="middle">
+			<sub>
+				Type
+			</sub>
+		</th>
+		<th valign="middle" width="20%">
+			<sub>
+				Value
+			</sub>
+		</th>
+		<th valign="middle">
+			<sub>
+				Purpose
+			</sub>
+		</th>
 	</tr>
 	<tr>
-		<td>ENABLE_HTML_SAMPLE_ANCHORS</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_HTML_SAMPLE_ANCHORS
+			</sub>
 		</td>
-		<td>Boolean to include an anchor HTML example for email usage</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include an anchor HTML example for email usage
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_HTML_SAMPLE_CTA_BUTTONS</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_HTML_SAMPLE_CTA_BUTTONS
+			</sub>
 		</td>
-		<td>Boolean to include a sample of CTA buttons for email usage</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a sample of CTA buttons for email usage
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_HTML_SAMPLE_IMAGES</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_HTML_SAMPLE_IMAGES
+			</sub>
 		</td>
-		<td>Boolean to include an image HTML example for email usage</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include an image HTML example for email usage
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_HTML_SAMPLE_FLOATED_COLUMNS</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_HTML_SAMPLE_FLOATED_COLUMNS
+			</sub>
 		</td>
-		<td>Boolean to include a column layout for email usage</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a column layout for email usage
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_HTML_SAMPLE_ALIGN_BLOCK_ELEMENT</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_HTML_SAMPLE_ALIGN_BLOCK_ELEMENT
+			</sub>
 		</td>
-		<td>Boolean to include an block element align example for email usage</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include an block element align example for email usage
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_HTML_SAMPLE_FAUX_LISTS</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_HTML_SAMPLE_FAUX_LISTS
+			</sub>
 		</td>
-		<td>Boolean to include a list layout using tables example for email uage</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a list layout using tables for email usage
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_HTML_SAMPLE_HORIZONTAL_SPACER</td>
-		<td>boolean</td>
-		<td>
-			true<br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_HTML_SAMPLE_HORIZONTAL_SPACER
+			</sub>
 		</td>
-		<td>Boolean to include a horizontal spacer example using a table cell with line-height and height</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a horizontal spacer example using a table cell with line-height and height
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_HTML_SAMPLE_OUTLOOK_PAGE_BREAKS</td>
-		<td>boolean</td>
-		<td>
-			true <br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_HTML_SAMPLE_OUTLOOK_PAGE_BREAKS
+			</sub>
 		</td>
-		<td>Boolean to include a table example that shows how to avoid automatic page breaks in Outlook 2007+</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true <br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a table example that shows how to avoid automatic page breaks in Outlook 2007+
+			</sub>
+		</td>
 	</tr>
 	<tr>
-		<td>ENABLE_HTML_SAMPLE_OUTLOOK_TABLE_CSS_INHERITANCE</td>
-		<td>boolean</td>
-		<td>
-			true <br />
-			false (default)
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_HTML_SAMPLE_OUTLOOK_TABLE_CSS_INHERITANCE
+			</sub>
 		</td>
-		<td>Boolean to include a table example that shows how to avoid CSS inheritance issues with table cells in Outlook 2007+</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true <br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include a table example that shows how to avoid CSS inheritance issues with table cells in Outlook 2007+
+			</sub>
+		</td>
 	</tr>
 </table>
