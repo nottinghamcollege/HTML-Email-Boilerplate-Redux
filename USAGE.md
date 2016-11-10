@@ -2010,7 +2010,7 @@ Several configuration options may be marked as "(Deprecated)", this is often due
 
 ### HTML Samples
 
-The email boilerplate also contains samples of common elements/techniques used in email campaigns. By default all of these examples are not included in the boilerplate, but they are intended to be used for gudiance and learning by generating live code examples of areas mentioned in the guidelines version of the boilerplate.
+The email boilerplate also contains samples of common techniques used in email campaigns. These samples are included on the guidelines version of the boilerplate only.
 
 <table width="100%">
 	<tr>
@@ -2048,8 +2048,8 @@ The email boilerplate also contains samples of common elements/techniques used i
 		</td>
 		<td align="left" valign="middle">
 			<sub>
-				true<br />
-				false (default)
+				true (default)<br />
+				false
 			</sub>
 		</td>
 		<td align="left" valign="middle">
@@ -2071,8 +2071,8 @@ The email boilerplate also contains samples of common elements/techniques used i
 		</td>
 		<td align="left" valign="middle">
 			<sub>
-				true<br />
-				false (default)
+				true (default)<br />
+				false
 			</sub>
 		</td>
 		<td align="left" valign="middle">
@@ -2094,8 +2094,8 @@ The email boilerplate also contains samples of common elements/techniques used i
 		</td>
 		<td align="left" valign="middle">
 			<sub>
-				true<br />
-				false (default)
+				true (default)<br />
+				false
 			</sub>
 		</td>
 		<td align="left" valign="middle">
@@ -2117,8 +2117,8 @@ The email boilerplate also contains samples of common elements/techniques used i
 		</td>
 		<td align="left" valign="middle">
 			<sub>
-				true<br />
-				false (default)
+				true (default)<br />
+				false
 			</sub>
 		</td>
 		<td align="left" valign="middle">
@@ -2140,8 +2140,8 @@ The email boilerplate also contains samples of common elements/techniques used i
 		</td>
 		<td align="left" valign="middle">
 			<sub>
-				true<br />
-				false (default)
+				true (default)<br />
+				false
 			</sub>
 		</td>
 		<td align="left" valign="middle">
@@ -2163,8 +2163,8 @@ The email boilerplate also contains samples of common elements/techniques used i
 		</td>
 		<td align="left" valign="middle">
 			<sub>
-				true<br />
-				false (default)
+				true (default)<br />
+				false
 			</sub>
 		</td>
 		<td align="left" valign="middle">
@@ -2186,8 +2186,8 @@ The email boilerplate also contains samples of common elements/techniques used i
 		</td>
 		<td align="left" valign="middle">
 			<sub>
-				true<br />
-				false (default)
+				true (default)<br />
+				false
 			</sub>
 		</td>
 		<td align="left" valign="middle">
@@ -2209,8 +2209,8 @@ The email boilerplate also contains samples of common elements/techniques used i
 		</td>
 		<td align="left" valign="middle">
 			<sub>
-				true <br />
-				false (default)
+				true (default)<br />
+				false
 			</sub>
 		</td>
 		<td align="left" valign="middle">
@@ -2232,8 +2232,8 @@ The email boilerplate also contains samples of common elements/techniques used i
 		</td>
 		<td align="left" valign="middle">
 			<sub>
-				true <br />
-				false (default)
+				true (default)<br />
+				false
 			</sub>
 		</td>
 		<td align="left" valign="middle">

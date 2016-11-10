@@ -126,42 +126,6 @@
 				</td>
 			</tr>
 		</table>
-		<!-- @if ENABLE_HTML_SAMPLE_ANCHORS='true' -->
-		<!-- @include ../tmp/html-samples/anchors-nocomments.html -->
-
-		<!-- @endif -->
-		<!-- @if ENABLE_HTML_SAMPLE_CTA_BUTTONS='true' -->
-		<!-- @include ../tmp/html-samples/cta-buttons-nocomments.html -->
-
-		<!-- @endif -->
-		<!-- @if ENABLE_HTML_SAMPLE_IMAGES='true' -->
-		<!-- @include ../tmp/html-samples/images-nocomments.html -->
-
-		<!-- @endif -->
-		<!-- @if ENABLE_HTML_SAMPLE_FAUX_LISTS='true' -->
-		<!-- @include ../tmp/html-samples/faux-lists-nocomments.html -->
-
-		<!-- @endif -->
-		<!-- @if ENABLE_HTML_SAMPLE_FLOATED_COLUMNS='true' -->
-		<!-- @include ../tmp/html-samples/floated-columns-nocomments.html -->
-
-		<!-- @endif -->
-		<!-- @if ENABLE_HTML_SAMPLE_ALIGN_BLOCK_ELEMENT='true' -->
-		<!-- @include ../tmp/html-samples/align-block-element-nocomments.html -->
-
-		<!-- @endif -->
-		<!-- @if ENABLE_HTML_SAMPLE_HORIZONTAL_SPACER='true' -->
-		<!-- @include ../tmp/html-samples/horizontal-spacer-nocomments.html -->
-
-		<!-- @endif -->
-		<!-- @if ENABLE_HTML_SAMPLE_OUTLOOK_PAGE_BREAKS='true' -->
-		<!-- @include ../tmp/html-samples/prevent-outlook-page-breaks-nocomments.html -->
-
-		<!-- @endif -->
-		<!-- @if ENABLE_HTML_SAMPLE_OUTLOOK_TABLE_CSS_INHERITANCE='true' -->
-		<!-- @include ../tmp/html-samples/prevent-outlook-table-css-inheritance-nocomments.html -->
-
-		<!-- @endif -->
 		<!-- @if ENABLE_GMAIL_IOS_FONT_FIX='true' -->
 		<div id="gmailapp-ios-font-fix">
 			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 

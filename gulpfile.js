@@ -1,14 +1,13 @@
 // Dependencies that makes this all work! Yay packages!
-var gulp = require('gulp'),
-    cleanCSS = require('gulp-clean-css'),
+var cleanCSS = require('gulp-clean-css'),
     del = require('del'),
     dotenv_extended = require('dotenv-extended'),
     fs = require('fs'),
     git_rev = require('git-rev'),
+    gulp = require('gulp'),
     inlineCSS = require('gulp-inline-css'),
     preprocess = require('gulp-preprocess'),
-    rename = require('gulp-rename'),
-    strip = require('gulp-strip-comments');
+    rename = require('gulp-rename');
 
 // Load in environment variables from .boilerplate.defaults first and then .boilerplate.custom if it exists
 var boilerplateConfig = dotenv_extended.load(
@@ -159,23 +158,8 @@ gulp.task('build-html-samples', function() {
     return stream;
 });
 
-// Strip HTML comments from HTML samples for to be included in boilerplate
-gulp.task('remove-html-comments', ['build-html-samples'], function() {
-    var stream = gulp.src('./tmp/html-samples/*.html')
-    .pipe(strip(
-        {
-            ignore: /<!--\[if(?!\s*(?:\[[^\]]+]|<!|>))(?:(?!-->).)*-->/g, // Mantain MSO conditional comments
-            safe: true,
-            trim: true
-        }
-    ))
-    .pipe(rename({ extname: '-nocomments.html'}))
-    .pipe(gulp.dest('./tmp/html-samples/'));
-    return stream;
-});
-
 // Build boilerplate and output the HTML versions
-gulp.task('preprocess-boilerplate', ['remove-html-comments'], function() {
+gulp.task('preprocess-boilerplate', ['build-html-samples'], function() {
     var stream = gulp.src('app/email-boilerplate*')
     .pipe(preprocess({ extension: 'html' }))
     .pipe(rename(
@@ -334,7 +318,6 @@ gulp.task('default',
         'minify-css',
         'remove-css-comments',
         'build-html-samples',
-        'remove-html-comments',
         'preprocess-boilerplate', 
         'inline-css',
         'check-config'
