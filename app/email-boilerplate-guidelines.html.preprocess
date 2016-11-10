@@ -98,27 +98,34 @@
 						</td>
 					</tr>
 				</table>
-				<!-- @if ENABLE_HTML_SAMPLE_ANCHORS='true' -->
-				- Anchors HTML sample
-				<!-- @endif -->
-				<!-- @if ENABLE_HTML_SAMPLE_ALIGN_BLOCK_ELEMENT='true' -->
-				- Aligning block elements HTML sample
-				<!-- @endif -->
-				<!-- @if ENABLE_HTML_SAMPLE_CTA_BUTTONS='true' -->
-				- CTA Buttons HTML samples
-				<!-- @endif -->
-				<!-- @if ENABLE_HTML_SAMPLE_FAUX_LISTS='true' -->
-				- Faux lists HTML sample
-				<!-- @endif -->
-				<!-- @if ENABLE_HTML_SAMPLE_FLOATED_COLUMNS='true' -->
-				- Floated columns HTML sample
-				<!-- @endif -->
-				<!-- @if ENABLE_HTML_SAMPLE_HORIZONTAL_SPACER='true' -->
-				- Horizontal spacer HTML sample
-				<!-- @endif -->
-				<!-- @if ENABLE_HTML_SAMPLE_IMAGES='true' -->
-				- Images HTML sample
-				<!-- @endif -->
+				- HTML samples
+					<!-- @if ENABLE_HTML_SAMPLE_ANCHORS='true' -->
+					- Anchors HTML sample
+					<!-- @endif -->
+					<!-- @if ENABLE_HTML_SAMPLE_ALIGN_BLOCK_ELEMENT='true' -->
+					- Aligning block elements HTML sample
+					<!-- @endif -->
+					<!-- @if ENABLE_HTML_SAMPLE_CTA_BUTTONS='true' -->
+					- CTA Buttons HTML samples
+					<!-- @endif -->
+					<!-- @if ENABLE_HTML_SAMPLE_FAUX_LISTS='true' -->
+					- Faux lists HTML sample
+					<!-- @endif -->
+					<!-- @if ENABLE_HTML_SAMPLE_FLOATED_COLUMNS='true' -->
+					- Floated columns HTML sample
+					<!-- @endif -->
+					<!-- @if ENABLE_HTML_SAMPLE_HORIZONTAL_SPACER='true' -->
+					- Horizontal spacer HTML sample
+					<!-- @endif -->
+					<!-- @if ENABLE_HTML_SAMPLE_IMAGES='true' -->
+					- Images HTML sample
+					<!-- @endif -->
+					<!-- @if ENABLE_HTML_SAMPLE_OUTLOOK_PAGE_BREAKS='true' -->
+					- Prevent Outlook clients inserting page breaks on long vertical emails
+					<!-- @endif -->
+					<!-- @if ENABLE_HTML_SAMPLE_OUTLOOK_TABLE_CSS_INHERITANCE='true' -->
+					- Prevent table cell CSS inheritance in Outlook clients
+					<!-- @endif -->
 				<!-- @if ENABLE_GMAIL_IOS_FONT_FIX='true' -->
 				- Gmail iOS app font sizing fix
 				<!-- @endif -->
@@ -568,6 +575,12 @@
 			</tr>
 		</table>
 		<!-- END WRAPPER TABLE -->
+
+		<!--
+			HTML SAMPLES:
+
+			Various layout techniques and code examples
+		-->
 
 		<!-- @if ENABLE_HTML_SAMPLE_ANCHORS='true' -->
 		<!-- @include ../tmp/html-samples/anchors.html -->
