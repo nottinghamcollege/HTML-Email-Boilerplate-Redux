@@ -82,7 +82,7 @@ gulp.task('git-rev-info', function() {
 });
 
 // Preprocess CSS files with config values
-gulp.task('preprocess-css', function() {
+gulp.task('preprocess-css', ['clean'], function() {
     var stream = gulp.src('./app/css/*.css')
     .pipe(preprocess())
     .pipe(gulp.dest('./tmp/css/'))
@@ -159,7 +159,7 @@ gulp.task('build-html-samples', function() {
 });
 
 // Build boilerplate and output the HTML versions
-gulp.task('preprocess-boilerplate', ['build-html-samples'], function() {
+gulp.task('preprocess-boilerplate', ['remove-css-comments'], function() {
     var stream = gulp.src('app/email-boilerplate*')
     .pipe(preprocess({ extension: 'html' }))
     .pipe(rename(
