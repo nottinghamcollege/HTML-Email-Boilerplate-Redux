@@ -27,10 +27,13 @@
 
 	<!-- @if GIT_BRANCH!='' -->
 	GIT VERSION INFORMATION:
-
+	<!-- @if GIT_REVISION_LONG!='undefined' -->
 	* Revision: <!-- @echo GIT_REVISION_LONG -->
+	<!-- @endif -->
 	* Branch: <!-- @echo GIT_BRANCH -->
+	<!-- @if GIT_REVISION_LONG!='undefined' -->
 	<!-- @echo GITHUB_REPO_URL -->/commit/<!-- @echo GIT_REVISION_LONG -->
+	<!-- @endif -->
 
 	<!-- @endif -->
 	BOILERPLATE CONTENTS:
