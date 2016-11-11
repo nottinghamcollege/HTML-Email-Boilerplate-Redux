@@ -159,7 +159,7 @@ The full list of configuration variables that can be used with the email boilerp
 		</td>
 		<td align="left" valign="middle">
 			<sub>
-				Sets lang attribute value on root HTML tag
+				Sets lang attribute value on root HTML tag. If the value is blank, the lang attribute will be removed from the root &lt;html&gt; tag entirely.
 			</sub>
 		</td>
 	</tr>

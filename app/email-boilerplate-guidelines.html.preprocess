@@ -177,7 +177,7 @@
 
 		Namespaces for Vector Markup Language (VML). Enables the use of VML shapes and other Microsoft Word specific code for Outlook clients.
 	-->
-	<html lang="<!-- @echo LANGUAGE_CODE -->" <!-- @if ENABLE_VML_NAMESPACES='true' --> xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" <!-- @endif -->>
+	<html <!-- @if LANGUAGE_CODE!='' --> lang="<!-- @echo LANGUAGE_CODE -->"<!-- @endif --> <!-- @if ENABLE_VML_NAMESPACES='true' --> xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" <!-- @endif -->>
 		<head>
 			<!--
 				CHARACTER ENCODING:

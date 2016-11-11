@@ -16,7 +16,7 @@
 <!-- @if DOCTYPE_VERSION='html5' -->
 <!DOCTYPE html>
 <!-- @endif -->
-	<html lang="<!-- @echo LANGUAGE_CODE -->" <!-- @if ENABLE_VML_NAMESPACES='true' --> xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" <!-- @endif -->>
+	<html <!-- @if LANGUAGE_CODE!='' --> lang="<!-- @echo LANGUAGE_CODE -->"<!-- @endif --> <!-- @if ENABLE_VML_NAMESPACES='true' --> xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" <!-- @endif -->>
 		<head>
 			<!-- @if DOCTYPE_VERSION!='html5' -->
 			<meta http-equiv="Content-Type" content="text/html; charset=<!-- @echo CHARSET -->" />
@@ -42,7 +42,7 @@
 			<meta name="x-apple-disable-message-reformatting" />
 			<!-- @endif -->
 			<!-- @if ENABLE_GENERATOR_META_TAG='true' -->
-			<meta name="generator" content="HTML Email Boilerplate Redux<!-- @if GIT_BRANCH!='' --> (<!-- @echo GIT_BRANCH -->/<!-- @echo GIT_REVISION_SHORT -->)<!-- @endif -->" />
+			<meta name="generator" content="HTML Email Boilerplate Redux<!-- @if GIT_BRANCH!='' --> (<!-- @echo GIT_BRANCH --><!-- @if GIT_REVISION_SHORT!='undefined'-->/<!-- @echo GIT_REVISION_SHORT --><!-- @endif -->)<!-- @endif -->" />
 			<!-- @endif -->
 
 			<title><!-- @echo DOCUMENT_TITLE --></title>
