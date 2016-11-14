@@ -1,0 +1,37 @@
+<!--
+	PREVENT TABLE CELL CSS INHERITANCE IN OUTLOOK HTML SAMPLE:
+	http://blog.mailermailer.com/email-design/ultimate-field-guide-to-common-bugs-in-html-email
+
+	Purpose: Prevent CSS inheritance on table cells in Outlook 2007+
+	
+	Rationale:
+	When a table contains more than one table cell within the same table, CSS properties applied to one cell will be applied to all the cells within that table.
+	In order to prevent this, you must nest a table within the cell you want to apply CSS on and apply CSS properties to the nested table cell.
+-->
+<style type="text/css">
+
+	table td {  
+		text-align: left;
+		vertical-align: top;
+	}
+
+	table td table td {
+		text-align: left;
+		vertical-align: top;
+		padding-bottom: 5px;
+	}
+
+</style>
+
+<table class="prevent-outlook-css-inherit-example">
+	<tr>
+		<td>
+			<table>
+				<tr>
+					<td>Cell 1 with 5px padding on the bottom</td>
+				</tr>
+			</table>
+		</td>
+		<td>Cell 2 doesn't get padding!</td>
+	</tr>
+</table>
