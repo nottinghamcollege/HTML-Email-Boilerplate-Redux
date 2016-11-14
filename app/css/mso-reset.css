@@ -7,11 +7,16 @@
 	NOTE: This file requires processing via gulp to build the minified version
 */
 
+/*! Reset list item styling so items are aligned correctly */
+
 li { 
 	text-indent: -1em; 
 }
 
 /* @if ENABLE_MSO_FALLBACK_FONT='true' */
+
+/*! Globally reset any font styling on major layout elements for Outlook */
+
 body, h1, h2, h3, h4, h5, h6, 
 p, a, table, td, span, strong { 
 	font-family: /* @echo MSO_DEFAULT_FALLBACK_FONT_STACK */ !important;
@@ -19,6 +24,9 @@ p, a, table, td, span, strong {
 /* @endif */
 
 /* @if ENABLE_VML_CSS_OBJECTS_STYLING='true' */
+
+/*! When using specific VML techniques, make VML elements inline-block */
+
 v\:* { behavior: url(#default#VML); display: inline-block }
 o\:* { behavior: url(#default#VML); display: inline-block } 
 w\:* { behavior: url(#default#VML); display: inline-block }

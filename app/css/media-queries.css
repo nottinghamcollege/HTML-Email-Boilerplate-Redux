@@ -9,7 +9,7 @@
 
 /* @if ENABLE_WINDOWS_PHONE_VIEWPORT_FIX='true' */
 @-ms-viewport {
-	width: device-width;
+	width: /* @echo WINDOWS_PHONE_VIEWPORT_WIDTH */;
 }
 /* @endif */
 
@@ -17,6 +17,14 @@
 @media screen {
 /*! 
 	Captures all CSS3 based clients, useful for putting font-face/@import rules for fonts
+*/
+}
+/* @endif */
+
+/* @if ENABLE_MEDIA_PRINT_QUERY='true' */
+@media print {
+/*!
+	Specific media query that can be used to optimise an email when printed	
 */
 }
 /* @endif */
@@ -49,6 +57,22 @@
 @-moz-document url-prefix() { 
 /*!
 	Specific media query that targets Gecko based clients
+*/
+}
+/* @endif */
+
+/* @if ENABLE_IPAD_3_4_MEDIA_QUERY='true' */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+/*! 
+	Specific media query that matches the dimensions and pixel ratio of the iPad 3/4
+*/
+}
+/* @endif */
+
+/* @if ENABLE_IPAD_1_2_MEDIA_QUERY='true' */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+/*!
+	Specific media query that matches the dimensions and pixel ratio of the iPad 1/2
 */
 }
 /* @endif */
@@ -86,7 +110,7 @@
 /* @endif */
 
 /* @if ENABLE_IOS10_MEDIA_QUERY='true' */
-@supports (-webkit-overflow-scrolling:touch) and (color:#ffffffff) {
+@supports (-webkit-overflow-scrolling:touch) and (color:#ffff) {
 /*!
 	Specific media query that targets iOS 10 devices
 */
