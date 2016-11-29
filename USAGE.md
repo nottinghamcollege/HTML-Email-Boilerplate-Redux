@@ -1561,7 +1561,7 @@ The full list of configuration variables that can be used with the email boilerp
 	<tr>
 		<td align="left" valign="middle">
 			<sub>
-				ENABLE_PREHEADER
+				ENABLE_HIDDEN_PREHEADER
 			</sub>
 		</td>
 		<td align="left" valign="middle">
@@ -1584,7 +1584,7 @@ The full list of configuration variables that can be used with the email boilerp
 	<tr>
 		<td align="left" valign="middle">
 			<sub>
-				PREHEADER_TEXT
+				HIDDEN_PREHEADER_TEXT
 			</sub>
 		</td>
 		<td align="left" valign="middle">
@@ -1606,7 +1606,7 @@ The full list of configuration variables that can be used with the email boilerp
 	<tr>
 		<td align="left" valign="middle">
 			<sub>
-				PREHEADER_CHARACTER_PADDING
+				HIDDEN_PREHEADER_CHARACTER_PADDING
 			</sub>
 		</td>
 		<td align="left" valign="middle">
@@ -1621,7 +1621,7 @@ The full list of configuration variables that can be used with the email boilerp
 		</td>
 		<td align="left" valign="middle">
 			<sub>
-				A numeric value to control how many &amp;nbsp; entities are included after the preheader content in PREHEADER_TEXT to act as character padding
+				A numeric value to control how many &amp;nbsp; entities are included after the preheader content in HIDDEN_PREHEADER_TEXT to act as character padding
 			</sub>
 		</td>
 	</tr>

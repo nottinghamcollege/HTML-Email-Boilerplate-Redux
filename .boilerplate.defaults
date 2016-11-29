@@ -81,9 +81,9 @@ ENABLE_CSS_DEBUG_MODE=false
 // MAIN BODY
 BODY_CSS_CLASS="body"
 ENABLE_DOTMAILER_EASY_EDITOR_TEMPLATE=false
-ENABLE_PREHEADER=true
-PREHEADER_TEXT="This is an example preheader, treat the preheader as a secondary subject line"
-PREHEADER_CHARACTER_PADDING=0
+ENABLE_HIDDEN_PREHEADER=true
+HIDDEN_PREHEADER_TEXT="This is an example preheader, treat the preheader as a secondary subject line"
+HIDDEN_PREHEADER_CHARACTER_PADDING=0
 BODY_BG_COLOUR="#ffffff"
 TABLE_WRAPPER_CSS_ID="main-wrapper"
 TABLE_CONTAINER_CSS_ID="container-wrapper"
