@@ -467,7 +467,7 @@
 			Note: Setting a very small font-size value can trigger some spam filters.
 		-->
 		<div id="preheader">
-			<!-- @echo HIDDEN_PREHEADER_TEXT --><!-- @echo HIDDEN_PREHEADER_CHARACTER_PADDING_NBSP -->
+			<!-- @echo PREHEADER_TEXT --><!-- @echo PREHEADER_CHARACTER_PADDING_NBSP -->
 		</div>
 		<!-- @endif -->
 		<!--

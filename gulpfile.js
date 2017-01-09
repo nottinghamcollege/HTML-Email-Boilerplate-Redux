@@ -33,17 +33,17 @@ else {
 }
 
 // Check if preheader needs to be padded with &nbsp;
-var preheaderPaddingInt = process.env.HIDDEN_PREHEADER_CHARACTER_PADDING;
+var preheaderPaddingInt = process.env.PREHEADER_CHARACTER_PADDING;
 var nbsp = ''; // global so for loop output can be assigned to env var
 if (preheaderPaddingInt > 0) {
     for (i = 0; i < preheaderPaddingInt; i++) { 
         nbsp += '&nbsp;';
     }
-    process.env.HIDDEN_PREHEADER_CHARACTER_PADDING_NBSP = nbsp;
+    process.env.PREHEADER_CHARACTER_PADDING_NBSP = nbsp;
 }
 else {
     // Avoid undefined value and initalise as blank
-    process.env.HIDDEN_PREHEADER_CHARACTER_PADDING_NBSP = ''
+    process.env.PREHEADER_CHARACTER_PADDING_NBSP = ''
 }
 
 // Clean out /tmp and /dist directories each time gulp is run
@@ -207,7 +207,7 @@ gulp.task('check-config', ['inline-css'], function() {
     var isGeckoMediaQueryEnabled = process.env.ENABLE_GECKO_MEDIA_QUERY;
     var isIEMediaQueryEnabled = process.env.ENABLE_IE_10_11_MEDIA_QUERY;
     var isPreheaderEnabled = process.env.ENABLE_HIDDEN_PREHEADER;
-    var preheaderText = process.env.HIDDEN_PREHEADER_TEXT;
+    var preheaderText = process.env.PREHEADER_TEXT;
     var isGmailAndroidFixEnabled = process.env.ENABLE_GMAIL_ANDROID_RESIZE_FIX;
     var isGmailiOSFontFixEnabled = process.env.ENABLE_GMAIL_IOS_FONT_FIX;
     var isTableContainerFixedWidth = process.env.TABLE_CONTAINER_FIXED_WIDTH;
@@ -271,19 +271,19 @@ gulp.task('check-config', ['inline-css'], function() {
     if(isPreheaderEnabled === 'true') {
         switch(true) {
             case (preheaderText.length < 35):
-                configWarn('HIDDEN_PREHEADER_TEXT is less than 35 characters, consider increasing the amount of characters to avoid unwanted HTML text being shown in previews');
+                configWarn('PREHEADER_TEXT is less than 35 characters, consider increasing the amount of characters to avoid unwanted HTML text being shown in previews');
                 break;
 
             case (preheaderText.length >= 35 && preheaderText.length <= 75):
-                configWarn('HIDDEN_PREHEADER_TEXT is less than 75 characters, increase the amount of characters for a more effective preheader');
+                configWarn('PREHEADER_TEXT is less than 75 characters, increase the amount of characters for a more effective preheader');
                 break;
 
             case (preheaderText.length > 100):
-                configWarn('HIDDEN_PREHEADER_TEXT is greater than 100 characters, consider decreasing the amount of characters to avoid truncation in most email clients');
+                configWarn('PREHEADER_TEXT is greater than 100 characters, consider decreasing the amount of characters to avoid truncation in most email clients');
                 break;
 
             case (preheaderText.length > 140):
-                configWarn('HIDDEN_PREHEADER_TEXT is greater than 140 characters, most email clients will not show all of your preheader');
+                configWarn('PREHEADER_TEXT is greater than 140 characters, most email clients will not show all of your preheader');
                 break;
         }
     }

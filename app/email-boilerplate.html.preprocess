@@ -86,7 +86,7 @@
 	<!-- @endif -->
 		<!-- @if ENABLE_HIDDEN_PREHEADER='true' -->
 		<div id="preheader">
-			<!-- @echo HIDDEN_PREHEADER_TEXT --><!-- @echo HIDDEN_PREHEADER_CHARACTER_PADDING_NBSP -->
+			<!-- @echo PREHEADER_TEXT --><!-- @echo PREHEADER_CHARACTER_PADDING_NBSP -->
 		</div>
 		<!-- @endif -->
 		<table id="<!-- @echo TABLE_WRAPPER_CSS_ID -->">
