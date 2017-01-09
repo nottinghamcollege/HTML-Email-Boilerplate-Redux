@@ -12,7 +12,7 @@ body#main-body {
 	background-color: /* @echo BODY_BG_COLOUR */;
 }
 
-div#preheader { 
+div#hidden-preheader { 
 	display: none !important; 
 	color: /* @echo BODY_BG_COLOUR */; 
 	font-size: 0px; 

@@ -449,7 +449,7 @@
     <body bgcolor="<!-- @echo BODY_BG_COLOUR -->" id="main-body" class="body">
     	<!-- @if ENABLE_HIDDEN_PREHEADER='true' -->
 		<!-- 
-			PREHEADER:
+			HIDDEN PREHEADER:
 
 			https://www.campaignmonitor.com/blog/post/3628/a-practical-guide-to-email-preheaders
 			http://www.smartinsights.com/email-marketing/email-creative-and-copywriting/4-ways-use-preheader-marketing-emails
@@ -465,7 +465,7 @@
 
 			Note: Setting a very small font-size value can trigger some spam filters.
 		-->
-		<div id="preheader">
+		<div id="hidden-preheader">
 			<!-- @echo PREHEADER_TEXT --><!-- @echo PREHEADER_CHARACTER_PADDING_NBSP -->
 		</div>
 		<!-- @endif -->

@@ -89,7 +89,7 @@
 	<!-- Easy Editor -->
 	<!-- @endif -->
 		<!-- @if ENABLE_HIDDEN_PREHEADER='true' -->
-		<div id="preheader">
+		<div id="hidden-preheader">
 			<!-- @echo PREHEADER_TEXT --><!-- @echo PREHEADER_CHARACTER_PADDING_NBSP -->
 		</div>
 		<!-- @endif -->
