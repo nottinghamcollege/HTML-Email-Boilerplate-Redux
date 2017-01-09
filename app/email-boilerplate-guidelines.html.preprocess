@@ -79,28 +79,30 @@
 			</head>
 			<body>
 				<!-- @if ENABLE_HIDDEN_PREHEADER='true' -->
-				<div>Preheader</div>
+				<div>Hidden preheader</div>
 				<!-- @endif -->
-				<table>
-					<td>
+				<div>
+					<table>
 						<td>
-							- Aligning layouts
-							<!-- @if ENABLE_TABLE_CONTAINER='true' -->
-							- Define your layout approach
-							<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
-							- Outlook/IE fixed width wrapper
-							- Fluid width container table
-							<!-- @endif -->
-							<!-- @if TABLE_CONTAINER_FIXED_WIDTH='true' -->
-							- Fixed width container table
-							<!-- @if ENABLE_GMAIL_ANDROID_RESIZE_FIX='true' -->
-								- Prevent Gmail App Auto-fit/zooming
-							<!-- @endif -->
-							<!-- @endif -->
-							<!-- @endif -->
-						</td>
-					</tr>
-				</table>
+							<td>
+								- Aligning layouts
+								<!-- @if ENABLE_TABLE_CONTAINER='true' -->
+								- Define your layout approach
+								<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
+								- Outlook/IE fixed width wrapper
+								- Fluid width container table
+								<!-- @endif -->
+								<!-- @if TABLE_CONTAINER_FIXED_WIDTH='true' -->
+								- Fixed width container table
+								<!-- @if ENABLE_GMAIL_ANDROID_RESIZE_FIX='true' -->
+									- Prevent Gmail App Auto-fit/zooming
+								<!-- @endif -->
+								<!-- @endif -->
+								<!-- @endif -->
+							</td>
+						</tr>
+					</table>
+				</div>
 				- HTML samples
 					<!-- @if ENABLE_HTML_SAMPLE_ANCHORS='true' -->
 					- Anchors HTML sample
@@ -469,114 +471,118 @@
 			<!-- @echo PREHEADER_TEXT --><!-- @echo PREHEADER_CHARACTER_PADDING_NBSP -->
 		</div>
 		<!-- @endif -->
-		<!--
-			MAIN TABLE LAYOUT:
-			Basic table layout to adapt for your campaign with some general guidance.
+		<!-- BEGIN WRAPPER BODY DIV -->
+		<div id="body-wrapper">
+			<!--
+				MAIN TABLE LAYOUT:
+				Basic table layout to adapt for your campaign with some general guidance.
 
-			1. Start with a 100% width table to ensure the entire HTML document is full width
-			2. Nest a single container table with a width/max-width within or multiple tables to create the layout
-			3. When using a fixed width value on a table, a matching CSS width property should be applied for better HiDPI support in Outlook 2007 - 2016
-		-->
-		<!-- BEGIN WRAPPER TABLE -->
-		<table id="<!-- @echo TABLE_WRAPPER_CSS_ID -->">
-			<tr>
-				<!--
-					ALIGNING LAYOUTS:
-					In some cases, you may want the whole email layout to be centred (mainly for desktop clients).
-					Using the wrapping table cell approach is a clean way of doing it, removing the need for any ugly <center> or <div> tags.
-					It does mean however you'll need to use the align attribute on all table cells within to avoid content being centred.
-				-->
-				<td id="<!-- @echo TABLE_WRAPPER_CELL_CSS_ID -->">
-				<!-- @if ENABLE_TABLE_CONTAINER='false' -->
-				<!-- YOUR LAYOUT HERE -->
-				<!-- @endif -->
- 				<!-- @if ENABLE_TABLE_CONTAINER='true' -->
- 				<!--
-					DEFINE YOUR LAYOUT APPROACH:
-					https://litmus.com/community/learning/22-mobile-email-defining-approaches
-					http://labs.actionrocket.co/the-hybrid-coding-approach
-					http://labs.actionrocket.co/the-hybrid-coding-approach-2
-					https://www.campaignmonitor.com/blog/post/4240/creating-a-centred-responsive-design-without-media-queries
-					https://www.campaignmonitor.com/guides/mobile
+				1. Start with a 100% width table to ensure the entire HTML document is full width
+				2. Nest a single container table with a width/max-width within or multiple tables to create the layout
+				3. When using a fixed width value on a table, a matching CSS width property should be applied for better HiDPI support in Outlook 2007 - 2016
+			-->
+			<!-- BEGIN WRAPPER TABLE -->
+			<table id="<!-- @echo TABLE_WRAPPER_CSS_ID -->">
+				<tr>
+					<!--
+						ALIGNING LAYOUTS:
+						In some cases, you may want the whole email layout to be centred (mainly for desktop clients).
+						Using the wrapping table cell approach is a clean way of doing it, removing the need for any ugly <center> or <div> tags.
+						It does mean however you'll need to use the align attribute on all table cells within to avoid content being centred.
+					-->
+					<td id="<!-- @echo TABLE_WRAPPER_CELL_CSS_ID -->">
+					<!-- @if ENABLE_TABLE_CONTAINER='false' -->
+					<!-- YOUR LAYOUT HERE -->
+					<!-- @endif -->
+	 				<!-- @if ENABLE_TABLE_CONTAINER='true' -->
+	 				<!--
+						DEFINE YOUR LAYOUT APPROACH:
+						https://litmus.com/community/learning/22-mobile-email-defining-approaches
+						http://labs.actionrocket.co/the-hybrid-coding-approach
+						http://labs.actionrocket.co/the-hybrid-coding-approach-2
+						https://www.campaignmonitor.com/blog/post/4240/creating-a-centred-responsive-design-without-media-queries
+						https://www.campaignmonitor.com/guides/mobile
 
-					When creating an email campaign there are several approaches you can take when developing the layout.
-					The approach used is often dependent on the design of the email campaign itself.
+						When creating an email campaign there are several approaches you can take when developing the layout.
+						The approach used is often dependent on the design of the email campaign itself.
 
-					Fixed width layouts are common, but require media query support to optimise for mobile devices and not all email clients support CSS3.
-					The scalable/fluid approach removes the direct requirement for media query support but can force certain layout requirements.
-				-->
-					<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
-					<!--
-						OUTLOOK/IE FIXED WIDTH WRAPPER:
-						Due to Outlook clients and older versions of Interner Explorer (8 and below) having zero/limited max-width support, a conditional fixed width table is created that matches the max-width value on the container table which then wraps around it, this stops designs going super wide and constrains the layout accordingly.
+						Fixed width layouts are common, but require media query support to optimise for mobile devices and not all email clients support CSS3.
+						The scalable/fluid approach removes the direct requirement for media query support but can force certain layout requirements.
 					-->
-					<!--[if (gte mso 9)|(lte ie 8)]>
-					<table style="width: <!-- @echo TABLE_CONTAINER_WIDTH -->px;" border="0" cellpadding="0" cellspacing="0" width="<!-- @echo TABLE_CONTAINER_WIDTH -->">
-						<tr>
-							<td align="left" valign="top">
-					<![endif]-->
+						<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
+						<!--
+							OUTLOOK/IE FIXED WIDTH WRAPPER:
+							Due to Outlook clients and older versions of Interner Explorer (8 and below) having zero/limited max-width support, a conditional fixed width table is created that matches the max-width value on the container table which then wraps around it, this stops designs going super wide and constrains the layout accordingly.
+						-->
+						<!--[if (gte mso 9)|(lte ie 8)]>
+						<table style="width: <!-- @echo TABLE_CONTAINER_WIDTH -->px;" border="0" cellpadding="0" cellspacing="0" width="<!-- @echo TABLE_CONTAINER_WIDTH -->">
+							<tr>
+								<td align="left" valign="top">
+						<![endif]-->
+						<!-- @endif -->
+						<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
+						<!--
+							FLUID WIDTH CONTAINER TABLE:
+							For clients that support max-width, the container table is set to a maximum width of <!-- @echo TABLE_CONTAINER_WIDTH -->px.
+							When the container table is rendered on a device smaller than this, the table automatically resizes without any media query requirements.
+							In conjunction with hybrid coding techniques, the main layout can essentially scale without any media query support.
+							Progressive enhancement with media queries can then be used to optimise layout areas for devices/email clients that support CSS3.
+						-->
+						<!-- @endif -->
+						<!-- @if TABLE_CONTAINER_FIXED_WIDTH='true' -->
+						<!--
+							FIXED WIDTH CONTAINER TABLE:
+							A less mobile first approach is to have a fixed width container table and then use media queries to override the fixed witdh for mobile devices.
+							This method is reliant on CSS3 and media query support which isn't applicable to all email clients, this means some mobile users will get a
+							desktop like layout which would be harder to engage with given its not optimised for the viewport in question.
+						-->
+						<!-- @endif -->
+						<!-- BEGIN CONTAINER TABLE -->
+						<table id="<!-- @echo TABLE_CONTAINER_CSS_ID -->">
+							<tr>
+								<td id="<!-- @echo TABLE_CONTAINER_CELL_CSS_ID -->">
+									<!-- @if ENABLE_GMAIL_ANDROID_RESIZE_FIX='true' -->
+									<!--
+										PREVENT GMAIL APP AUTO-FIT/ZOOMING:
+										https://support.google.com/mail/answer/2951689
+										https://litmus.com/community/discussions/257-gmail-app-android-how-to-stop-text-from-auto-resizing
+	                                    
+										The Gmail App on Android 4.0 and above will modify an email to fit the device viewport.
+										Depending on the design, this can break various layouts and ends up being counterproductive
+										This feature can be disabled by setting min-width on an image that is equal size to the container table
+										For responsive designs the entire "gmailapp-android-fix" table can be hidden.  
+									-->
+									<table id="gmailapp-android-fix">
+										<tr>
+											<td>
+												<img src="<!-- @echo PLACEHOLDER_IMG_URL -->/<!-- @echo TABLE_CONTAINER_WIDTH -->x1.gif" alt="" width="<!-- @echo TABLE_CONTAINER_WIDTH -->" height="1" />
+											</td>
+										</tr>
+									</table>
+									<!-- @endif -->
+									<!-- YOUR LAYOUT HERE -->
+								</td>
+							</tr>
+						</table> 
+						<!-- END CONTAINER TABLE -->
+						<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
+						<!-- 
+							END OUTLOOK/IE FIXED WIDTH WRAPPER:
+							The conditional fixed width wrapper created is now closed by this conditional closing tag block
+						-->
+						<!--[if (gte mso 9)|(lte ie 8)]>
+								</td>
+							</tr>
+						</table>
+						<![endif]-->
+						<!-- @endif -->
 					<!-- @endif -->
-					<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
-					<!--
-						FLUID WIDTH CONTAINER TABLE:
-						For clients that support max-width, the container table is set to a maximum width of <!-- @echo TABLE_CONTAINER_WIDTH -->px.
-						When the container table is rendered on a device smaller than this, the table automatically resizes without any media query requirements.
-						In conjunction with hybrid coding techniques, the main layout can essentially scale without any media query support.
-						Progressive enhancement with media queries can then be used to optimise layout areas for devices/email clients that support CSS3.
-					-->
-					<!-- @endif -->
-					<!-- @if TABLE_CONTAINER_FIXED_WIDTH='true' -->
-					<!--
-						FIXED WIDTH CONTAINER TABLE:
-						A less mobile first approach is to have a fixed width container table and then use media queries to override the fixed witdh for mobile devices.
-						This method is reliant on CSS3 and media query support which isn't applicable to all email clients, this means some mobile users will get a
-						desktop like layout which would be harder to engage with given its not optimised for the viewport in question.
-					-->
-					<!-- @endif -->
-					<!-- BEGIN CONTAINER TABLE -->
-					<table id="<!-- @echo TABLE_CONTAINER_CSS_ID -->">
-						<tr>
-							<td id="<!-- @echo TABLE_CONTAINER_CELL_CSS_ID -->">
-								<!-- @if ENABLE_GMAIL_ANDROID_RESIZE_FIX='true' -->
-								<!--
-									PREVENT GMAIL APP AUTO-FIT/ZOOMING:
-									https://support.google.com/mail/answer/2951689
-									https://litmus.com/community/discussions/257-gmail-app-android-how-to-stop-text-from-auto-resizing
-                                    
-									The Gmail App on Android 4.0 and above will modify an email to fit the device viewport.
-									Depending on the design, this can break various layouts and ends up being counterproductive
-									This feature can be disabled by setting min-width on an image that is equal size to the container table
-									For responsive designs the entire "gmailapp-android-fix" table can be hidden.  
-								-->
-								<table id="gmailapp-android-fix">
-									<tr>
-										<td>
-											<img src="<!-- @echo PLACEHOLDER_IMG_URL -->/<!-- @echo TABLE_CONTAINER_WIDTH -->x1.gif" alt="" width="<!-- @echo TABLE_CONTAINER_WIDTH -->" height="1" />
-										</td>
-									</tr>
-								</table>
-								<!-- @endif -->
-								<!-- YOUR LAYOUT HERE -->
-							</td>
-						</tr>
-					</table> 
-					<!-- END CONTAINER TABLE -->
-					<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
-					<!-- 
-						END OUTLOOK/IE FIXED WIDTH WRAPPER:
-						The conditional fixed width wrapper created is now closed by this conditional closing tag block
-					-->
-					<!--[if (gte mso 9)|(lte ie 8)]>
-							</td>
-						</tr>
-					</table>
-					<![endif]-->
-					<!-- @endif -->
-				<!-- @endif -->
-				</td>
-			</tr>
-		</table>
-		<!-- END WRAPPER TABLE -->
+					</td>
+				</tr>
+			</table>
+			<!-- END WRAPPER TABLE -->
+		</div>
+		<!-- END WRAPPER BODY DIV -->
 
 		<!--
 			HTML SAMPLES:
