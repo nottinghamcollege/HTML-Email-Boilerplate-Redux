@@ -331,7 +331,6 @@
 				External style sheets should not ever be used as most email clients won't parse them due to security restrictions.
 			-->
 			<style type="text/css">
-
 				/* 
 					CSS RESET FOR FIXING VARIOUS EMAIL CLIENT QUIRKS:
 					http://www.emailonacid.com/blog/details/C13/12_things_you_must_know_when_developing_for_gmail_and_gmail_mobile_apps
@@ -353,12 +352,10 @@
 					Based on the original reset from MailChimp with newer additions for various clients.
 				*/
 
-				/* BEGIN MAIN CSS RESET */
-
 				<!-- @include ../tmp/css/main-reset.css.min -->
+			</style>
 
-				/* END MAIN CSS RESET */
-
+			<style type="text/css">
 				/*
 					CSS3 MEDIA QUERIES:
 					https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries
@@ -367,7 +364,9 @@
 				*/
 
 				<!-- @include ../tmp/css/media-queries.css.min -->
-				
+			</style>
+
+			<style type="text/css">
 				/* 
 					MISCELLANEOUS CSS HACKS/FIXES:
 

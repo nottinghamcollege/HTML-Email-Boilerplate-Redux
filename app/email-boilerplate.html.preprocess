@@ -72,9 +72,13 @@
 
 			<style type="text/css">
 				<!-- @include ../tmp/css/main-reset-nocomments.css.min -->
+			</style>
 
+			<style type="text/css">
 				<!-- @include ../tmp/css/media-queries-nocomments.css.min -->
-				
+			</style>
+
+			<style type="text/css">
 				<!-- @include ../tmp/css/misc-nocomments.css.min -->
 			</style>
 			<link rel="stylesheet" href="../../tmp/css/inline-rules.css" />
