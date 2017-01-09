@@ -84,7 +84,7 @@
 			<link rel="stylesheet" href="../../tmp/css/inline-rules.css" />
 		</head>
 
-	<body bgcolor="<!-- @echo BODY_BG_COLOUR -->" id="main-body" class="<!-- @echo BODY_CSS_CLASS -->">
+	<body <!-- @if ENABLE_BODY_IMG_BG='false' --> bgcolor="<!-- @echo BODY_BG_COLOUR -->"<!-- @endif --> id="main-body" class="<!-- @echo BODY_CSS_CLASS -->">
 	<!-- @if ENABLE_DOTMAILER_EASY_EDITOR_TEMPLATE='true' -->
 	<!-- Easy Editor -->
 	<!-- @endif -->
@@ -94,9 +94,16 @@
 		</div>
 		<!-- @endif -->
 		<div id="body-wrapper">
+			<!-- @if ENABLE_BODY_IMG_BG='true' -->
+			<!--[if gte mso 9]>
+				<v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
+					<v:fill type="tile" src="<!-- @echo BODY_BG_IMG_URL -->" color="<!-- @echo BODY_BG_FALLBACK_COLOUR -->" />
+				</v:background>
+			<![endif]-->
+			<!-- @endif -->
 			<table id="<!-- @echo TABLE_WRAPPER_CSS_ID -->">
 				<tr>
-					<td id="<!-- @echo TABLE_WRAPPER_CELL_CSS_ID -->">
+					<td id="<!-- @echo TABLE_WRAPPER_CELL_CSS_ID -->" <!-- @if ENABLE_BODY_IMG_BG='true' -->background="<!-- @echo BODY_BG_IMG_URL-->"<!-- @endif -->>
 					<!-- @if ENABLE_TABLE_CONTAINER='true' -->
 						<!-- @if TABLE_CONTAINER_FIXED_WIDTH='false' -->
 						<!--[if (gte mso 9)|(lte ie 8)]>

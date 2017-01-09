@@ -1650,6 +1650,73 @@ The full list of configuration variables that can be used with the email boilerp
 	<tr>
 		<td align="left" valign="middle">
 			<sub>
+				ENABLE_BODY_IMG_BG
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Allows for a full width body background to be applied to the wrapper table. When this setting is enabled BODY_BG_COLOUR is ignored
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				BODY_BG_IMG_URL
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				http://i.imgur.com/YJOX1PC.png
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Absolute URL to where the background image is hosted
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				BODY_BG_FALLBACK_COLOUR
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				string
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				#7bceeb
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Background colour used for the fallback, when the background image doesn't load/is not supported.
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
 				TABLE_WRAPPER_CSS_ID
 			</sub>
 		</td>
@@ -1935,7 +2002,7 @@ The full list of configuration variables that can be used with the email boilerp
 		</td>
 		<td align="left" valign="middle">
 			<sub>
-				Absolute URL
+				http://placehold.it
 			</sub>
 		</td>
 		<td align="left" valign="middle">

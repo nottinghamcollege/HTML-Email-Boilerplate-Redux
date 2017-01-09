@@ -9,7 +9,9 @@
 
 body#main-body {
 	padding: 0;
+	/* @if ENABLE_BODY_IMG_BG='false' */
 	background-color: /* @echo BODY_BG_COLOUR */;
+	/* @endif */
 }
 
 div#hidden-preheader { 
@@ -24,16 +26,27 @@ div#hidden-preheader {
 	mso-hide: all;
 }
 
+/* @if ENABLE_BODY_IMG_BG='true' */
+div#body-wrapper {
+	background-color: /* @echo BODY_BG_FALLBACK_COLOUR */;
+}
+/* @endif */
+
 table#/* @echo TABLE_WRAPPER_CSS_ID */ { 
 	table-layout: fixed; 
 	min-width: 100%;
 	width: 100%;
+	/* @if ENABLE_BODY_IMG_BG='true' */
+	height: 100%;
+	/* @endif */
 }
 
 table#/* @echo TABLE_WRAPPER_CSS_ID */ td#/* @echo TABLE_WRAPPER_CELL_CSS_ID */ {
 	vertical-align: top;
 	text-align: /* @echo TABLE_WRAPPER_CELL_ALIGN */;
+	/* @if ENABLE_BODY_IMG_BG='false' */
 	background-color: /* @echo BODY_BG_COLOUR */;
+	/* @endif */
 }
 
 table#/* @echo TABLE_CONTAINER_CSS_ID */ {

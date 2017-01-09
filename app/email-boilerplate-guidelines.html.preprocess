@@ -82,8 +82,13 @@
 				<div>Hidden preheader</div>
 				<!-- @endif -->
 				<div>
+					- Body wrapper
+					<!-- @if ENABLE_BODY_IMG_BG='true' -->
+					- Full width body background
+					<!-- @endif -->
 					<table>
-						<td>
+						- Wrapper table
+						<tr>
 							<td>
 								- Aligning layouts
 								<!-- @if ENABLE_TABLE_CONTAINER='true' -->
@@ -448,7 +453,7 @@
 			<link rel="stylesheet" href="../../tmp/css/inline-rules.css" />
 		</head>
 
-    <body bgcolor="<!-- @echo BODY_BG_COLOUR -->" id="main-body" class="body">
+    <body <!-- @if ENABLE_BODY_IMG_BG='false' --> bgcolor="<!-- @echo BODY_BG_COLOUR -->"<!-- @endif --> id="main-body" class="<!-- @echo BODY_CSS_CLASS -->">
     	<!-- @if ENABLE_HIDDEN_PREHEADER='true' -->
 		<!-- 
 			HIDDEN PREHEADER:
@@ -473,6 +478,31 @@
 		<!-- @endif -->
 		<!-- BEGIN WRAPPER BODY DIV -->
 		<div id="body-wrapper">
+			<!-- @if ENABLE_BODY_IMG_BG='true' -->
+			<!--
+				FULL WIDTH BODY BACKGROUND:
+				https://backgrounds.cm
+
+				Allows for a repeated (tiled) body background to be displayed behind your campaign layout.
+
+				This is split into several parts because not all clients support one or more of the following scenarios:
+
+				* Applying a background image to the <body>
+				* Applying a background image to a <td>
+				* Support for the background-image CSS property
+
+				How the bulletproof background technique works:
+
+				1. The wrapping body <div> provides an element to set a fallback background colour in the event of images off/no background support
+				2. Specific VML for the background to work in Outlook is used that sets these properties differently
+				3. The background itself is applied to the first wrapper table cell that is 100% width so the entire space is covered
+			-->
+			<!--[if gte mso 9]>
+				<v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
+					<v:fill type="tile" src="<!-- @echo BODY_BG_IMG_URL -->" color="<!-- @echo BODY_BG_FALLBACK_COLOUR -->" />
+				</v:background>
+			<![endif]-->
+			<!-- @endif -->
 			<!--
 				MAIN TABLE LAYOUT:
 				Basic table layout to adapt for your campaign with some general guidance.
@@ -490,7 +520,7 @@
 						Using the wrapping table cell approach is a clean way of doing it, removing the need for any ugly <center> or <div> tags.
 						It does mean however you'll need to use the align attribute on all table cells within to avoid content being centred.
 					-->
-					<td id="<!-- @echo TABLE_WRAPPER_CELL_CSS_ID -->">
+					<td id="<!-- @echo TABLE_WRAPPER_CELL_CSS_ID -->" <!-- @if ENABLE_BODY_IMG_BG='true' -->background="<!-- @echo BODY_BG_IMG_URL-->"<!-- @endif -->>
 					<!-- @if ENABLE_TABLE_CONTAINER='false' -->
 					<!-- YOUR LAYOUT HERE -->
 					<!-- @endif -->
