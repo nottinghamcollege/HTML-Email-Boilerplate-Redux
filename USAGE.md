@@ -609,6 +609,29 @@ The full list of configuration variables that can be used with the email boilerp
 	<tr>
 		<td align="left" valign="middle">
 			<sub>
+				ENABLE_RESET_CSS
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true (default)<br />
+				false
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include the CSS reset style block
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
 				ENABLE_GENERAL_SIBLING_SELECTOR_BUG_FIX
 			</sub>
 		</td>
@@ -1020,6 +1043,29 @@ The full list of configuration variables that can be used with the email boilerp
 	<tr>
 		<td align="left" valign="middle">
 			<sub>
+				ENABLE_MEDIA_QUERY_CSS
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true (default)<br />
+				false
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to enable the media query style block
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
 				ENABLE_WINDOWS_PHONE_VIEWPORT_FIX
 			</sub>
 		</td>
@@ -1365,6 +1411,29 @@ The full list of configuration variables that can be used with the email boilerp
 		<td colspan="4" align="center">
 			<sub>
 				<strong>Misc/Other CSS</strong>
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				ENABLE_MISC_CSS
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true (default)<br />
+				false
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include the misc/other CSS style block
 			</sub>
 		</td>
 	</tr>

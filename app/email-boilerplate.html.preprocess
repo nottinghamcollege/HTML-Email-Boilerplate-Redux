@@ -62,6 +62,24 @@
 			<![endif]-->
 			<!-- @endif -->
 
+			<!-- @if ENABLE_RESET_CSS='true' -->
+			<style type="text/css">
+				<!-- @include ../tmp/css/main-reset-nocomments.css.min -->
+			</style>
+			<!-- @endif -->
+
+			<!-- @if ENABLE_MEDIA_QUERY_CSS='true' -->
+			<style type="text/css">
+				<!-- @include ../tmp/css/media-queries-nocomments.css.min -->
+			</style>
+			<!-- @endif -->
+
+			<!-- @if ENABLE_MISC_CSS='true' -->
+			<style type="text/css">
+				<!-- @include ../tmp/css/misc-nocomments.css.min -->
+			</style>
+			<!-- @endif -->
+
 			<!-- @if ENABLE_MSO_CONDITIONAL_STYLING='true' -->
 			<!--[if gte mso 9]>
 				<style style="text/css">
@@ -69,18 +87,6 @@
 				</style>
 			<![endif]-->
 			<!-- @endif -->
-
-			<style type="text/css">
-				<!-- @include ../tmp/css/main-reset-nocomments.css.min -->
-			</style>
-
-			<style type="text/css">
-				<!-- @include ../tmp/css/media-queries-nocomments.css.min -->
-			</style>
-
-			<style type="text/css">
-				<!-- @include ../tmp/css/misc-nocomments.css.min -->
-			</style>
 			<link rel="stylesheet" href="../../tmp/css/inline-rules.css" />
 		</head>
 

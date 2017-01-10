@@ -66,16 +66,26 @@
 				<!-- @if ENABLE_MSO_DPI_SCALING_FIX='true' -->
 				- Fix images in Outlook when using DPI scaling on Windows
 				<!-- @endif -->
+				- Cascading Style Sheets
+				<!-- @if ENABLE_RESET_CSS='true' -->
+				<style>
+					- CSS reset for fixing various email client quirks
+				</style>
+				<!-- @endif -->
+				<!-- @if ENABLE_MEDIA_QUERY_CSS='true' -->
+				<style>
+					- CSS3 Media Queries
+				</style>
+				<!-- @endif -->
+				<!-- @if ENABLE_MISC_CSS='true' -->
+				<style>
+					- Miscellaneous CSS
+				</style>
+				<!-- @endif -->
+				- IE/MSO Conditional comments
 				<!-- @if ENABLE_MSO_CONDITIONAL_STYLING='true' -->
 				- Microsoft Office conditional CSS
 				<!-- @endif -->
-				<style>
-				- Cascading Style Sheets
-					- CSS reset for fixing various email client quirks
-					- CSS3 Media Queries
-					- Miscellaneous CSS
-				</style>
-				- IE/MSO Conditional comments
 			</head>
 			<body>
 				<!-- @if ENABLE_HIDDEN_PREHEADER='true' -->
@@ -309,23 +319,6 @@
 				</xml>
 			<![endif]-->
 			<!-- @endif -->
-			<!-- @if ENABLE_MSO_CONDITIONAL_STYLING='true' -->
-			<!--
-				MICROSOFT OFFICE CONDITIONAL CSS:
-				https://templates.mailchimp.com/development/css/outlook-conditional-css
-
-				Using conditional comments you can target specific versions of Outlook via CSS.
-				Be aware that since Outlook 2016, any conditional comment targeting mso engine 16 and above 
-				will also be parsed on Outlook Mail (Windows 10) including mobile devices.
-
-				In addition any generic MSO conditional comment will also be parsed on Windows 10 devices including mobile
-			-->
-			<!--[if gte mso 9]>
-				<style style="text/css">
-					<!-- @include ../tmp/css/mso-reset.css.min -->
-				</style>
-			<![endif]-->
-			<!-- @endif -->
 
 			<!--
 				CASCADING STYLE SHEETS:
@@ -337,6 +330,7 @@
 				The exception to this is reset styles or fixes that target a specific client that do render CSS in the <head>.
 				External style sheets should not ever be used as most email clients won't parse them due to security restrictions.
 			-->
+			<!-- @if ENABLE_RESET_CSS='true' -->
 			<style type="text/css">
 				/* 
 					CSS RESET FOR FIXING VARIOUS EMAIL CLIENT QUIRKS:
@@ -361,18 +355,28 @@
 
 				<!-- @include ../tmp/css/main-reset.css.min -->
 			</style>
+			<!-- @endif -->
 
+			<!-- @if ENABLE_MEDIA_QUERY_CSS='true' -->
 			<style type="text/css">
 				/*
 					CSS3 MEDIA QUERIES:
 					https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries
+					https://litmus.com/blog/understanding-media-queries-in-html-email
+					https://www.emailonacid.com/blog/article/email-development/media_queries_in_html_emails
+					https://www.emailonacid.com/blog/article/email-development/stop_yahoo_mail_from_rendering_your_media_queries
+					https://www.emailonacid.com/blog/details/C4/yahoo_mail_now_supports_media_queries
 
 					For clients that support CSS3, various media queries can be used to target different screen sizes/devices.
+					Up until March 2015, the recommendation was to write media query CSS rules with attribute selectors, because of a bug in the Yahoo! webmail client.
+					This however is now not required and continuing to doing so will prevent Gmail from rendering your media query CSS rules.
 				*/
 
 				<!-- @include ../tmp/css/media-queries.css.min -->
 			</style>
+			<!-- @endif -->
 
+			<!-- @if ENABLE_MISC_CSS='true' -->
 			<style type="text/css">
 				/* 
 					MISCELLANEOUS CSS HACKS/FIXES:
@@ -382,6 +386,7 @@
 
 				<!-- @include ../tmp/css/misc.css.min -->
 			</style>
+			<!-- @endif -->
 
 			<!-- 
 				CONDITIONAL COMMENTS:
@@ -450,6 +455,24 @@
 					/* Outlook specific styles here */
 				</style>
 			<![endif]-->
+
+			<!-- @if ENABLE_MSO_CONDITIONAL_STYLING='true' -->
+			<!--
+				MICROSOFT OFFICE CONDITIONAL CSS:
+				https://templates.mailchimp.com/development/css/outlook-conditional-css
+
+				Using conditional comments you can target specific versions of Outlook via CSS.
+				Be aware that since Outlook 2016, any conditional comment targeting mso engine 16 and above 
+				will also be parsed on Outlook Mail (Windows 10) including mobile devices.
+
+				In addition any generic MSO conditional comment will also be parsed on Windows 10 devices including mobile
+			-->
+			<!--[if gte mso 9]>
+				<style style="text/css">
+					<!-- @include ../tmp/css/mso-reset.css.min -->
+				</style>
+			<![endif]-->
+			<!-- @endif -->
 			<link rel="stylesheet" href="../../tmp/css/inline-rules.css" />
 		</head>
 
