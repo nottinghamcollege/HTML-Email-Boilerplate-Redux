@@ -15,14 +15,9 @@ body#main-body {
 }
 
 div#hidden-preheader { 
-	display: none !important; 
-	color: /* @echo BODY_BG_COLOUR */; 
-	font-size: 0px; 
-	line-height: 0; 
+	display: none; 
 	overflow: hidden;
-	max-width: 0;
 	max-height: 0;
-	opacity: 0;
 	mso-hide: all;
 }
 
