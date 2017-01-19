@@ -535,7 +535,7 @@
 				3. When using a fixed width value on a table, a matching CSS width property should be applied for better HiDPI support in Outlook 2007 - 2016
 			-->
 			<!-- BEGIN WRAPPER TABLE -->
-			<table id="<!-- @echo TABLE_WRAPPER_CSS_ID -->">
+			<table role="presentation" id="<!-- @echo TABLE_WRAPPER_CSS_ID -->">
 				<tr>
 					<!--
 						ALIGNING LAYOUTS:
@@ -568,7 +568,7 @@
 							Due to Outlook clients and older versions of Interner Explorer (8 and below) having zero/limited max-width support, a conditional fixed width table is created that matches the max-width value on the container table which then wraps around it, this stops designs going super wide and constrains the layout accordingly.
 						-->
 						<!--[if (gte mso 9)|(lte ie 8)]>
-						<table style="width: <!-- @echo TABLE_CONTAINER_WIDTH -->px;" border="0" cellpadding="0" cellspacing="0" width="<!-- @echo TABLE_CONTAINER_WIDTH -->">
+						<table role="presentation" style="width: <!-- @echo TABLE_CONTAINER_WIDTH -->px;" border="0" cellpadding="0" cellspacing="0" width="<!-- @echo TABLE_CONTAINER_WIDTH -->">
 							<tr>
 								<td align="left" valign="top">
 						<![endif]-->
@@ -591,7 +591,7 @@
 						-->
 						<!-- @endif -->
 						<!-- BEGIN CONTAINER TABLE -->
-						<table id="<!-- @echo TABLE_CONTAINER_CSS_ID -->">
+						<table role="presentation" id="<!-- @echo TABLE_CONTAINER_CSS_ID -->">
 							<tr>
 								<td id="<!-- @echo TABLE_CONTAINER_CELL_CSS_ID -->">
 									<!-- @if ENABLE_GMAIL_ANDROID_RESIZE_FIX='true' -->
@@ -605,7 +605,7 @@
 										This feature can be disabled by setting min-width on an image that is equal size to the container table
 										For responsive designs the entire "gmailapp-android-fix" table can be hidden.  
 									-->
-									<table id="gmailapp-android-fix">
+									<table role="presentation" id="gmailapp-android-fix">
 										<tr>
 											<td>
 												<img src="<!-- @echo PLACEHOLDER_IMG_URL -->/<!-- @echo TABLE_CONTAINER_WIDTH -->x1.gif" alt="" width="<!-- @echo TABLE_CONTAINER_WIDTH -->" height="1" />
