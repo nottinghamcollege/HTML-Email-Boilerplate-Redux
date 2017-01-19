@@ -534,6 +534,29 @@ The full list of configuration variables that can be used with the email boilerp
 	<tr>
 		<td align="left" valign="middle">
 			<sub>
+				ENABLE_MSO_LIST_CSS_RESET
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true<br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Boolean to include specific MSO CSS rule to fix the alignment of &lt;li&gt; items
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
 				ENABLE_VML_CSS_OBJECTS_STYLING
 			</sub>
 		</td>

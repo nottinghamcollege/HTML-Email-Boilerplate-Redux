@@ -7,11 +7,14 @@
 	NOTE: This file requires processing via gulp to build the minified version
 */
 
+/* @if ENABLE_MSO_LIST_CSS_RESET='true' */
+
 /*! Reset list item styling so items are aligned correctly */
 
 li { 
 	text-indent: -1em; 
 }
+/* @endif */
 
 /* @if ENABLE_MSO_FALLBACK_FONT='true' */
 
@@ -27,7 +30,7 @@ p, a, table, td, span, strong {
 
 /*! When using specific VML techniques, make VML elements inline-block */
 
-v\:* { behavior: url(#default#VML); display: inline-block }
-o\:* { behavior: url(#default#VML); display: inline-block } 
-w\:* { behavior: url(#default#VML); display: inline-block }
+v\:* { behavior: url(#default#VML); display: inline-block; }
+o\:* { behavior: url(#default#VML); display: inline-block; } 
+w\:* { behavior: url(#default#VML); display: inline-block; }
 /* @endif */
