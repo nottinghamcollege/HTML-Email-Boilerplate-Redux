@@ -12,6 +12,9 @@ body#main-body {
 	/* @if ENABLE_BODY_IMG_BG='false' */
 	background-color: /* @echo BODY_BG_COLOUR */;
 	/* @endif */
+	/* @if BODY_MSO_LINE_HEIGHT_FIX='true' */
+	mso-line-height-rule: exactly;
+	/* @endif */
 }
 
 div#hidden-preheader { 

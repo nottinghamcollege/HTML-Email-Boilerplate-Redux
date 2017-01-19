@@ -1607,6 +1607,29 @@ The full list of configuration variables that can be used with the email boilerp
 	<tr>
 		<td align="left" valign="middle">
 			<sub>
+				BODY_MSO_LINE_HEIGHT_FIX
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true <br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Adds a specific MSO CSS property to the &lt;body&rt; tag to normalise line-height values
+			</sub>
+		</td>
+	</tr>
+	<tr>
+		<td align="left" valign="middle">
+			<sub>
 				ENABLE_DOTMAILER_EASY_EDITOR_TEMPLATE
 			</sub>
 		</td>

@@ -83,6 +83,7 @@ ENABLE_CSS_DEBUG_MODE=false
 
 // MAIN BODY
 BODY_CSS_CLASS="body"
+BODY_MSO_LINE_HEIGHT_FIX=false
 ENABLE_DOTMAILER_EASY_EDITOR_TEMPLATE=false
 ENABLE_HIDDEN_PREHEADER=true
 PREHEADER_TEXT="This is an example preheader, treat the preheader as a secondary subject line"
