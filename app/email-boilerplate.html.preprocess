@@ -94,12 +94,12 @@
 	<!-- @if ENABLE_DOTMAILER_EASY_EDITOR_TEMPLATE='true' -->
 	<!-- Easy Editor -->
 	<!-- @endif -->
-		<!-- @if ENABLE_HIDDEN_PREHEADER='true' -->
-		<div id="hidden-preheader">
-			<!-- @echo PREHEADER_TEXT --><!-- @echo PREHEADER_CHARACTER_PADDING_NBSP -->
-		</div>
-		<!-- @endif -->
 		<div id="body-wrapper">
+			<!-- @if ENABLE_HIDDEN_PREHEADER='true' -->
+			<div id="hidden-preheader">
+				<!-- @echo PREHEADER_TEXT --><!-- @echo PREHEADER_CHARACTER_PADDING_NBSP -->
+			</div>
+			<!-- @endif -->
 			<!-- @if ENABLE_BODY_IMG_BG='true' -->
 			<!--[if gte mso 9]>
 				<v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">

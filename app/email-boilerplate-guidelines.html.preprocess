@@ -88,11 +88,11 @@
 				<!-- @endif -->
 			</head>
 			<body>
-				<!-- @if ENABLE_HIDDEN_PREHEADER='true' -->
-				<div>Hidden preheader</div>
-				<!-- @endif -->
+				- Body wrapper
 				<div>
-					- Body wrapper
+					<!-- @if ENABLE_HIDDEN_PREHEADER='true' -->
+					<div>Hidden preheader</div>
+					<!-- @endif -->
 					<!-- @if ENABLE_BODY_IMG_BG='true' -->
 					- Full width body background
 					<!-- @endif -->
@@ -477,30 +477,30 @@
 		</head>
 
     <body <!-- @if ENABLE_BODY_IMG_BG='false' --> bgcolor="<!-- @echo BODY_BG_COLOUR -->"<!-- @endif --> id="main-body" class="<!-- @echo BODY_CSS_CLASS -->">
-    	<!-- @if ENABLE_HIDDEN_PREHEADER='true' -->
-		<!-- 
-			HIDDEN PREHEADER:
-
-			https://www.campaignmonitor.com/blog/post/3628/a-practical-guide-to-email-preheaders
-			http://www.smartinsights.com/email-marketing/email-creative-and-copywriting/4-ways-use-preheader-marketing-emails
-			https://litmus.com/blog/the-ultimate-guide-to-preview-text-support
-
-			Also known as the second subject line, the preheader is text that appears after the subject line in a preview/notification in the inbox.
-			Not creating a preheader means the first HTML text content following the <body> is used
-			This is not ideal when areas like the web version link appear first.
-
-			The preheader can be visible in the email itself but if a template design doesn't allow for it, the hidden <div> technique can be used.
-
-			A <div> is used because it is a block element and its safer to collapse spacing compared to inline elements like <span>
-
-			Note: Setting a very small font-size value can trigger some spam filters.
-		-->
-		<div id="hidden-preheader">
-			<!-- @echo PREHEADER_TEXT --><!-- @echo PREHEADER_CHARACTER_PADDING_NBSP -->
-		</div>
-		<!-- @endif -->
 		<!-- BEGIN WRAPPER BODY DIV -->
 		<div id="body-wrapper">
+			<!-- @if ENABLE_HIDDEN_PREHEADER='true' -->
+			<!-- 
+				HIDDEN PREHEADER:
+
+				https://www.campaignmonitor.com/blog/post/3628/a-practical-guide-to-email-preheaders
+				http://www.smartinsights.com/email-marketing/email-creative-and-copywriting/4-ways-use-preheader-marketing-emails
+				https://litmus.com/blog/the-ultimate-guide-to-preview-text-support
+
+				Also known as the second subject line, the preheader is text that appears after the subject line in a preview/notification in the inbox.
+				Not creating a preheader means the first HTML text content following the <body> is used
+				This is not ideal when areas like the web version link appear first.
+
+				The preheader can be visible in the email itself but if a template design doesn't allow for it, the hidden <div> technique can be used.
+
+				A <div> is used because it is a block element and its safer to collapse spacing compared to inline elements like <span>
+
+				Note: Setting a very small font-size value can trigger some spam filters.
+			-->
+			<div id="hidden-preheader">
+				<!-- @echo PREHEADER_TEXT --><!-- @echo PREHEADER_CHARACTER_PADDING_NBSP -->
+			</div>
+			<!-- @endif -->
 			<!-- @if ENABLE_BODY_IMG_BG='true' -->
 			<!--
 				FULL WIDTH BODY BACKGROUND:
