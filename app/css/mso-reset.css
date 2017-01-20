@@ -20,8 +20,7 @@ li {
 
 /*! Globally reset any font styling on major layout elements for Outlook */
 
-body, h1, h2, h3, h4, h5, h6, 
-p, a, table, td, span, strong { 
+* { 
 	font-family: /* @echo MSO_DEFAULT_FALLBACK_FONT_STACK */ !important;
 }
 /* @endif */
