@@ -10,7 +10,7 @@
 /*! Adjust font rendering on supported devices */
 
 * { 
-	webkit-font-smoothing: antialiased; 
+	-webkit-font-smoothing: antialiased; 
 	-moz-osx-font-smoothing: grayscale; 
 	text-size-adjust: none; 
 	-webkit-text-size-adjust: none; 
