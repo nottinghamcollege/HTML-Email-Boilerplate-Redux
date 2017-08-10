@@ -42,35 +42,27 @@ if (preheaderPaddingInt > 0) {
     process.env.PREHEADER_CHARACTER_PADDING_NBSP = nbsp;
 }
 else {
-    // Avoid undefined value and initalise as blank
+    // Avoid undefined value or invalid value and initalise as blank
     process.env.PREHEADER_CHARACTER_PADDING_NBSP = ''
 }
 
 // Clean out /tmp and /dist directories each time gulp is run
 gulp.task('clean', function () {
-    return del(
-        [
-            'tmp/css/**', 
-            'tmp/html-samples/**',
-            'dist/boilerplate/**'
-        ]
-    ).then(paths => {
-        console.log('Cleaning directories :\n', paths.join('\n'));
-    });
+    return del(['tmp/*', 'dist/*']);
 });
 
 // Get Git revision details for use in boilerplate templates
-gulp.task('git-rev-info', function() {
+gulp.task('git-rev-info', ['clean'], function() {
     // Get latest commit (short)
     git_rev.short(
-        function(rev) {
-            return process.env.GIT_REVISION_SHORT = rev;
+        function(rev_short) {
+            return process.env.GIT_REVISION_SHORT = rev_short;
         }
     )
     // Get latest commit (long)
     git_rev.long(
-        function(rev) {
-            return process.env.GIT_REVISION_LONG = rev;
+        function(rev_long) {
+            return process.env.GIT_REVISION_LONG = rev_long;
         }
     )
     // Get branch name boilerplate is being generated from
@@ -89,25 +81,39 @@ gulp.task('preprocess-css', ['clean'], function() {
     return stream;
 });
 
+var cleanCSSFormat = 'keep-breaks';
+
 // Minify processed CSS for inclusion in the email boilerplate
 gulp.task('minify-css', ['preprocess-css'], function() {
     var stream = gulp.src('./tmp/css/*.css')
     .pipe(cleanCSS(
         {
-            advanced: false,
-            keepSpecialComments: '*',
-            aggressiveMerging: false,
-            debug: true, // Needed for the size output on before and after min files
-            keepBreaks: true,
-            shorthandCompacting: false,
-            compatibility: '*,' + 
-            '-properties.colors,' +
-            '-properties.zeroUnits'
+            compatibility: {
+                properties: {
+                    colors: false,
+                    zeroUnits: false
+                }
+            },
+
+            format: cleanCSSFormat,
+
+            level: {
+                1: {
+                    all: false,
+                    specialComments: 'all'
+                },
+                2: {
+                    all: false,
+                    mergeIntoShorthands: false
+                } 
+            }
         },
-        // Log original size and minified size in gulp output
+        // Show minify results
         function(details) {
-            console.log(details.name + ': ' + details.stats.originalSize);
-            console.log(details.name + '.min' + ': ' + details.stats.minifiedSize);
+            var originalCSSSize = details.stats.originalSize;
+            var minifiedCSSSize = details.stats.minifiedSize;
+            var cssFileDiff = originalCSSSize - minifiedCSSSize;
+            console.log('Minified ' + details.name + ' saved ' + cssFileDiff + ' bytes');
         })
     )
     .pipe(rename({ extname: '.css.min' }))
@@ -120,14 +126,25 @@ gulp.task('remove-css-comments', ['minify-css'], function() {
     var stream = gulp.src('./tmp/css/*.css.min')
     .pipe(cleanCSS(
         { 
-            advanced: false,
-            aggressiveMerging: false,
-            keepBreaks: true,
-            keepSpecialComments: 0,
-            shorthandCompacting: false,
-            compatibility: '*,' + 
-            '-properties.colors,' +
-            '-properties.zeroUnits'
+            compatibility: {
+                properties: {
+                    colors: false,
+                    zeroUnits: false
+                }
+            },
+
+            format: cleanCSSFormat,
+
+            level: {
+                1: {
+                    all: false,
+                    specialComments: 0
+                },
+                2: {
+                    all: false,
+                    mergeIntoShorthands: false
+                } 
+            }
         }
     ))
     .pipe(rename(
@@ -142,7 +159,7 @@ gulp.task('remove-css-comments', ['minify-css'], function() {
 });
 
 // Build all HTML samples, inline CSS and strip comments to be included in boilerplate
-gulp.task('build-html-samples', function() {
+gulp.task('build-html-samples', ['clean'], function() {
     var stream = gulp.src('./app/html-samples/*.html')
     .pipe(preprocess())
     .pipe(inlineCSS(
@@ -192,8 +209,17 @@ gulp.task('inline-css', ['preprocess-boilerplate'], function() {
 // Detect certain configurations and warn in console when they are not optimal from recommended guidelines
 gulp.task('check-config', ['inline-css'], function() {
 
+    // Valid options for DOCTYPE_VERSION to check for
+    var doctypeValidOptions = [
+        'xhtml1_1', 
+        'xhtml1_0-transitional', 
+        'xhtml1_0-strict', 
+        'html4-transitional', 
+        'html4-strict', 
+        'html5'
+    ];
+
     var doctypeValue = process.env.DOCTYPE_VERSION;
-    var doctypeValidOptions = ['xhtml1_1', 'xhtml1_0-transitional', 'xhtml1_0-strict', 'html4-transitional', 'html4-strict', 'html5'];
     var isMsoNamespacesEnabled = process.env.ENABLE_VML_NAMESPACES;
     var isXuaCompatMetaTagEnabled = process.env.ENABLE_XUA_COMPATIBLE_META_TAG;
     var xuaCompatValue = process.env.XUA_COMPATIBLE_VALUE;
@@ -211,11 +237,11 @@ gulp.task('check-config', ['inline-css'], function() {
     var isGmailAndroidFixEnabled = process.env.ENABLE_GMAIL_ANDROID_RESIZE_FIX;
     var isGmailiOSFontFixEnabled = process.env.ENABLE_GMAIL_IOS_FONT_FIX;
     var isTableContainerFixedWidth = process.env.TABLE_CONTAINER_FIXED_WIDTH;
+    var isPreheaderCharacterPaddingValid = process.env.PREHEADER_CHARACTER_PADDING;
 
     // Small function to re-use for warnings, because lazy
     function configWarn(configMessage) {
-        var label = 'CONFIG WARNING:'
-        console.warn(label, configMessage)
+        console.warn('CONFIG WARNING:', configMessage)
     }
 
     // While they act as booleans, they aren't actually REAL booleans (quacks like a duck etc..)
@@ -298,6 +324,10 @@ gulp.task('check-config', ['inline-css'], function() {
 
     if((isGmailiOSFontFixEnabled === 'true') || (isGmailAndroidFixEnabled === 'true')) {
         configWarn('Gmail app font/image spacer hacks for iOS and Android should be deprecated due to CSS3 support, see USAGE.md for more info');
+    }
+
+    if(isNaN(isPreheaderCharacterPaddingValid)) {
+        configWarn('PREHEADER_CHARACTER_PADDING is not a valid integer value');
     }
 
     // Check for older .env file

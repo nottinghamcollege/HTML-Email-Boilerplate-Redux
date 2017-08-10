@@ -1,6 +1,6 @@
 {
   "name": "html-email-boilerplate-redux",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "HTML Email Boilerplate for email developers",
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "dotenv-extended": "^1.0.1",
     "git-rev": "^0.2.1",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "2.2.2",
+    "gulp-clean-css": "^3.7.0",
     "gulp-inline-css": "git+https://git@github.com/centralcollegenottingham/gulp-inline-css.git",
     "gulp-preprocess": "^2.0.0",
     "gulp-rename": "^1.2.2"
