@@ -1057,6 +1057,29 @@ The full list of configuration variables that can be used with the email boilerp
 		</td>
 	</tr>
 	<tr>
+		<td align="left" valign="middle">
+			<sub>
+				ZIMBA_WEBMAIL_LINKS_RESET
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				boolean
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				true <br />
+				false (default)
+			</sub>
+		</td>
+		<td align="left" valign="middle">
+			<sub>
+				Reset link styling colour in Zimba webmail client (laposte.net)
+			</sub>
+		</td>
+	</tr>
+	<tr>
 		<td colspan="4" align="center">
 			<sub>
 				<strong>CSS3 media queries</strong>

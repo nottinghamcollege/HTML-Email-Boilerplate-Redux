@@ -279,3 +279,16 @@ a[x-apple-data-detectors] {
 	font-weight: inherit !important; 
 	line-height: inherit !important; 
 }
+
+/* @if ZIMBA_WEBMAIL_LINKS_RESET */
+
+/*! Reset link colour on Zimba webmail (laposte.net)*/
+span.Object {
+	color: inherit !important;
+}
+
+span.Object-hover {
+	color: inherit !important;
+	text-decoration:none !important;
+}
+/* @endif */
