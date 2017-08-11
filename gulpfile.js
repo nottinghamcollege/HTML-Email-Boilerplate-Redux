@@ -255,7 +255,7 @@ gulp.task('check-config', ['inline-css'], function() {
     // While they act as booleans, they aren't actually REAL booleans (quacks like a duck etc..)
 
     if(doctypeValidOptions.indexOf(doctypeValue) < 0) {
-        configWarn('No doctype has been set or the current DOCTYPE_VERSION value set isn\'t a valid option');
+        configWarn('No doctype has been set or the current DOCTYPE_VERSION value set isn\'t a valid option. Valid options are: ' + doctypeValidOptions.join(", "));
     }
 
     if((isMsoNamespacesEnabled === 'false') && (isMsoDpiScalingFixEnabled === 'true')) {
