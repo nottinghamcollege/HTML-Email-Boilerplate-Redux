@@ -73,8 +73,25 @@ gulp.task('git-rev-info', ['clean'], function() {
     )
 });
 
+// Build all HTML samples, inline CSS and strip comments to be included in boilerplate
+gulp.task('build-html-samples', ['clean'], function() {
+    var stream = gulp.src('./app/html-samples/*.html')
+    .pipe(preprocess())
+    .pipe(inlineCSS(
+        {
+            applyStyleTags: true,
+            removeStyleTags: true,
+            removeHtmlSelectors: true,
+            applyTableAttributes: true,
+            xmlMode: isXHTMLDoctype
+        }
+    ))
+    .pipe(gulp.dest('./tmp/html-samples/'));
+    return stream;
+});
+
 // Preprocess CSS files with config values
-gulp.task('preprocess-css', ['clean'], function() {
+gulp.task('preprocess-css', ['build-html-samples'], function() {
     var stream = gulp.src('./app/css/*.css')
     .pipe(preprocess())
     .pipe(gulp.dest('./tmp/css/'))
@@ -149,29 +166,12 @@ gulp.task('remove-css-comments', ['minify-css'], function() {
     ))
     .pipe(rename(
         function(path) { 
-            path.extname = "" // Drop extension to avoid double css naming
+            path.extname = "" // Drop extension to avoid double .css naming
         }
     ))
     // Specific versions with no CSS comments for the production version
     .pipe(rename({ extname: '-nocomments.css.min'}))
     .pipe(gulp.dest('./tmp/css/'));
-    return stream;
-});
-
-// Build all HTML samples, inline CSS and strip comments to be included in boilerplate
-gulp.task('build-html-samples', ['clean'], function() {
-    var stream = gulp.src('./app/html-samples/*.html')
-    .pipe(preprocess())
-    .pipe(inlineCSS(
-        {
-            applyStyleTags: true,
-            removeStyleTags: true,
-            removeHtmlSelectors: true,
-            applyTableAttributes: true,
-            xmlMode: isXHTMLDoctype
-        }
-    ))
-    .pipe(gulp.dest('./tmp/html-samples/'));
     return stream;
 });
 
@@ -344,10 +344,10 @@ gulp.task('default',
     [ 
         'clean',
         'git-rev-info',
+        'build-html-samples',
         'preprocess-css', 
         'minify-css',
         'remove-css-comments',
-        'build-html-samples',
         'preprocess-boilerplate', 
         'inline-css',
         'check-config'
