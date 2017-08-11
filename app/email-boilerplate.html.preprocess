@@ -22,7 +22,7 @@
 			<meta http-equiv="Content-Type" content="text/html; charset=<!-- @echo CHARSET -->" />
 			<!-- @endif -->
 			<!-- @if DOCTYPE_VERSION='html5' -->
-			<meta charset="<!-- @echo CHARSET -->" />
+			<meta charset="<!-- @echo CHARSET -->">
 			<!-- @endif -->
 			<!-- @if ENABLE_XUA_COMPATIBLE_META_TAG='true' -->	
 			<!--[if !mso]><!-->
