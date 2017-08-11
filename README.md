@@ -19,10 +19,10 @@ We refer to our email boilerplate as a redux of the [original HTML Email Boilerp
 As well as creating a solid foundation for any email campaign, our boilerplate also focuses on the following areas:
 
 * Modular and customisable email boilerplate that suits your needs with configuration options
-* Full documented with a guidelines version that explains every aspect of each line of code
+* Fully documented with a guidelines version that explains every aspect of each line of code and its purpose
 * Forcing the document mode for Internet Explorer based clients
 * Improved Windows Phone 7/8/8.1 compatibility
-* CSS3 support in the Outlook Mobile client on Windows Phone 8+ and above (POP3/IMAP)
+* CSS3 support in the Outlook Mobile client on Windows Phone 8/8.1 (POP3/IMAP)
 * Scaling images correctly in Outlook 2010 and 2013 when using DPI scaling factors greater than 96 DPI (100%)
 * Improved Office 365 (OWA) compatibility (Microsoft have since improved the rendering standards of OWA [in the October 2014 update](http://blogs.office.com/2014/10/14/improving-outlook-web-app-options-settings-2/))
 * Android 4.4 centring fix
@@ -33,12 +33,12 @@ As well as fixing other email client quirks that have been discovered.
 
 ## Installation instructions
 
-This project now uses `npm` and `gulp` based packages to produce a customised and production ready version of the email boilerplate. Originally the project began as static HTML files, however overtime this become a problem where dynamic elements were needed. e.g. toggling code blocks on/off, variable values etc.
+This project now uses `npm` and `gulp` based packages to produce a customised and production ready version of the email boilerplate. Originally the project began as static HTML files, however overtime this had limitations where dynamic elements were needed. e.g. toggling code blocks on/off, variable values etc.
 
 1. Install `npm` <a href="https://nodejs.org/en/" target="_blank">https://nodejs.org/en/</a> (Make sure its in your `$PATH`)
 2. Install gulp globally with `npm install --global gulp-cli`
 3. Clone the git source of this project and run `npm i` to install the required dependencies
-4. Copy `.boilerplate.defaults -> .boilerplate.custom`. There are a range of booleans, integer and string values to tweak to your requirements
+4. Copy `.boilerplate.defaults -> .boilerplate.custom`. There are a range of configuration options available to customise
 5. Run `gulp` to build the email boilerplate
 6. The "compiled" email boilerplate versions will be written to:
 
@@ -47,7 +47,7 @@ This project now uses `npm` and `gulp` based packages to produce a customised an
 
 A `tmp` directory will be created when running `gulp` these are just helper files needed during the build, they can be ignored.
 
-**Note:** Don't place any files within the `tmp` or `dist` directory, they are cleaned each time `gulp` is run.
+**Note:** Don't place any files within either the `tmp` or `dist` directory, they are cleaned each time `gulp` is run.
 
 For further information on the available configuration options available, see USAGE.md.
 
@@ -72,33 +72,9 @@ Two versions of the email boilerplate exist, one version is heavily documented w
 
 **Never use the "guidelines" version in a live email campaign, as HTML/CSS comments play havoc with spam filters and even cause emails to appear blank in a few clients! You will also be adding unnecessary bloat to your HTML as well!**
 
-## License
-
-The MIT License (MIT)
-
-&copy; 2014 - 2017 Central College Nottingham
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-
 ## Credits
 
-This boilerplate is originally based on two very popular boilerplates by:
+This boilerplate was originally based on two very popular boilerplates by:
 
 * Sean Powell - https://github.com/seanpowell/Email-Boilerplate
 * Email on Acid - http://www.emailonacid.com/blog/details/C13/html_boilerplate
