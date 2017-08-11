@@ -24,8 +24,8 @@ var boilerplateConfig = dotenv_extended.load(
 );
 
 // We need to check if DOCTYPE_VERSION is using an XHTML value for inline-css purposes later
-var currentSetDoctype = process.env.DOCTYPE_VERSION;
-if (/xhtml/i.test(currentSetDoctype)) {
+var doctypeValue = process.env.DOCTYPE_VERSION;
+if (/xhtml/i.test(doctypeValue)) {
     isXHTMLDoctype = true;
 } 
 else {
@@ -219,7 +219,6 @@ gulp.task('check-config', ['inline-css'], function() {
         'html5'
     ];
 
-    var doctypeValue = process.env.DOCTYPE_VERSION;
     var isMsoNamespacesEnabled = process.env.ENABLE_VML_NAMESPACES;
     var isXuaCompatMetaTagEnabled = process.env.ENABLE_XUA_COMPATIBLE_META_TAG;
     var xuaCompatValue = process.env.XUA_COMPATIBLE_VALUE;
