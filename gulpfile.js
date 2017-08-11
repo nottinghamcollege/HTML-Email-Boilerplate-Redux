@@ -211,9 +211,9 @@ gulp.task('check-config', ['inline-css'], function() {
 
     // Valid options for DOCTYPE_VERSION to check for
     var doctypeValidOptions = [
-        'xhtml1_1', 
-        'xhtml1_0-transitional', 
-        'xhtml1_0-strict', 
+        'xhtml1.0-transitional', 
+        'xhtml1.0-strict', 
+        'xhtml1.1', 
         'html4-transitional', 
         'html4-strict', 
         'html5'
@@ -233,15 +233,23 @@ gulp.task('check-config', ['inline-css'], function() {
     var isGeckoMediaQueryEnabled = process.env.ENABLE_GECKO_MEDIA_QUERY;
     var isIEMediaQueryEnabled = process.env.ENABLE_IE_10_11_MEDIA_QUERY;
     var isPreheaderEnabled = process.env.ENABLE_HIDDEN_PREHEADER;
-    var preheaderText = process.env.PREHEADER_TEXT;
+    var preheaderTextValue = process.env.PREHEADER_TEXT;
     var isGmailAndroidFixEnabled = process.env.ENABLE_GMAIL_ANDROID_RESIZE_FIX;
     var isGmailiOSFontFixEnabled = process.env.ENABLE_GMAIL_IOS_FONT_FIX;
     var isTableContainerFixedWidth = process.env.TABLE_CONTAINER_FIXED_WIDTH;
-    var isPreheaderCharacterPaddingValid = process.env.PREHEADER_CHARACTER_PADDING;
+    var preheaderCharacterPaddingInt = process.env.PREHEADER_CHARACTER_PADDING;
+    var tableContainerWidthInt = process.env.TABLE_CONTAINER_WIDTH;
 
     // Small function to re-use for warnings, because lazy
     function configWarn(configMessage) {
         console.warn('CONFIG WARNING:', configMessage)
+    }
+
+    // Check for value integer value on required configuration variables
+    function isValidInteger(configName, configValue) {
+        if(isNaN(configValue)) {
+            configWarn(configName + ' is not set to a valid integer value');
+        }
     }
 
     // While they act as booleans, they aren't actually REAL booleans (quacks like a duck etc..)
@@ -296,19 +304,19 @@ gulp.task('check-config', ['inline-css'], function() {
 
     if(isPreheaderEnabled === 'true') {
         switch(true) {
-            case (preheaderText.length < 35):
+            case (preheaderTextValue.length < 35):
                 configWarn('PREHEADER_TEXT is less than 35 characters, consider increasing the amount of characters to avoid unwanted HTML text being shown in previews');
                 break;
 
-            case (preheaderText.length >= 35 && preheaderText.length <= 75):
+            case (preheaderTextValue.length >= 35 && preheaderTextValue.length <= 75):
                 configWarn('PREHEADER_TEXT is less than 75 characters, increase the amount of characters for a more effective preheader');
                 break;
 
-            case (preheaderText.length > 100):
+            case (preheaderTextValue.length > 100):
                 configWarn('PREHEADER_TEXT is greater than 100 characters, consider decreasing the amount of characters to avoid truncation in most email clients');
                 break;
 
-            case (preheaderText.length > 140):
+            case (preheaderTextValue.length > 140):
                 configWarn('PREHEADER_TEXT is greater than 140 characters, most email clients will not show all of your preheader');
                 break;
         }
@@ -326,9 +334,9 @@ gulp.task('check-config', ['inline-css'], function() {
         configWarn('Gmail app font/image spacer hacks for iOS and Android should be deprecated due to CSS3 support, see USAGE.md for more info');
     }
 
-    if(isNaN(isPreheaderCharacterPaddingValid)) {
-        configWarn('PREHEADER_CHARACTER_PADDING is not a valid integer value');
-    }
+    // Check configuration variables that should be integers
+    isValidInteger('PREHEADER_CHARACTER_PADDING', preheaderCharacterPaddingInt);
+    isValidInteger('TABLE_CONTAINER_WIDTH', tableContainerWidthInt);
 
     // Check for older .env file
     fs.stat('.env', function(err, stat) {

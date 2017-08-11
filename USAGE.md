@@ -127,9 +127,9 @@ The full list of configuration variables that can be used with the email boilerp
 		</td>
 		<td align="left" valign="middle">
 			<sub>
-				xhtml1_1 <br />
-				xhtml1_0-transitional (default)<br />
-				xhtml1_0-strict<br /> 
+				xhtml1.0-transitional (default)<br />
+				xhtml1.0-strict<br /> 
+				xhtml1.1 <br />
 				html4-transitional<br />
 				html4-strict<br />
 				html5
