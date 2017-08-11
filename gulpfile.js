@@ -10,11 +10,12 @@ var cleanCSS = require('gulp-clean-css'),
     rename = require('gulp-rename');
 
 // Load in environment variables from .boilerplate.defaults first and then .boilerplate.custom if it exists
+var boilerplateCustomFile = '.boilerplate.custom';
 var boilerplateConfig = dotenv_extended.load(
     {
         encoding: 'utf8',
         silent: true,
-        path: '.boilerplate.custom',
+        path: boilerplateCustomFile,
         defaults: '.boilerplate.defaults',
         errorOnMissing: false,
         errorOnExtra: false,
@@ -27,7 +28,7 @@ var boilerplateConfig = dotenv_extended.load(
 var doctypeValue = process.env.DOCTYPE_VERSION;
 if (/xhtml/i.test(doctypeValue)) {
     isXHTMLDoctype = true;
-} 
+}
 else {
     isXHTMLDoctype = false;
 }
@@ -36,7 +37,7 @@ else {
 var preheaderPaddingInt = process.env.PREHEADER_CHARACTER_PADDING;
 var nbsp = ''; // global so for loop output can be assigned to env var
 if (preheaderPaddingInt > 0) {
-    for (i = 0; i < preheaderPaddingInt; i++) { 
+    for (i = 0; i < preheaderPaddingInt; i++) {
         nbsp += '&nbsp;';
     }
     process.env.PREHEADER_CHARACTER_PADDING_NBSP = nbsp;
@@ -68,7 +69,7 @@ gulp.task('git-rev-info', ['clean'], function() {
     // Get branch name boilerplate is being generated from
     git_rev.branch(
         function(branch) {
-            return process.env.GIT_BRANCH = branch;      
+            return process.env.GIT_BRANCH = branch;
         }
     )
 });
@@ -122,7 +123,7 @@ gulp.task('minify-css', ['preprocess-css'], function() {
                 2: {
                     all: false,
                     mergeIntoShorthands: false
-                } 
+                }
             }
         },
         // Show minify results
@@ -142,7 +143,7 @@ gulp.task('minify-css', ['preprocess-css'], function() {
 gulp.task('remove-css-comments', ['minify-css'], function() {
     var stream = gulp.src('./tmp/css/*.css.min')
     .pipe(cleanCSS(
-        { 
+        {
             compatibility: {
                 properties: {
                     colors: false,
@@ -160,12 +161,12 @@ gulp.task('remove-css-comments', ['minify-css'], function() {
                 2: {
                     all: false,
                     mergeIntoShorthands: false
-                } 
+                }
             }
         }
     ))
     .pipe(rename(
-        function(path) { 
+        function(path) {
             path.extname = "" // Drop extension to avoid double .css naming
         }
     ))
@@ -180,7 +181,7 @@ gulp.task('preprocess-boilerplate', ['remove-css-comments'], function() {
     var stream = gulp.src('app/email-boilerplate*')
     .pipe(preprocess({ extension: 'html' }))
     .pipe(rename(
-        function(path) { 
+        function(path) {
             path.extname = "" // Drop preprocess ext and change to .html
         }
     ))
@@ -211,11 +212,11 @@ gulp.task('check-config', ['inline-css'], function() {
 
     // Valid options for DOCTYPE_VERSION to check for
     var doctypeValidOptions = [
-        'xhtml1.0-transitional', 
-        'xhtml1.0-strict', 
-        'xhtml1.1', 
-        'html4-transitional', 
-        'html4-strict', 
+        'xhtml1.0-transitional',
+        'xhtml1.0-strict',
+        'xhtml1.1',
+        'html4-transitional',
+        'html4-strict',
         'html5'
     ];
 
@@ -338,24 +339,27 @@ gulp.task('check-config', ['inline-css'], function() {
     isValidInteger('TABLE_CONTAINER_WIDTH', tableContainerWidthInt);
 
     // Check for older .env file
-    fs.stat('.env', function(err, stat) {
-        if(err == null) {
-            configWarn('.env is deprecated, please rename your custom settings file to .boilerplate.custom');
-        }
-    });
+    if (fs.existsSync('.env')) {
+        configWarn('.env is deprecated, please rename your custom settings file to ' + boilerplateCustomFile);
+    }
+
+    // Warn if .boilerplate.custom is not found
+    if (!fs.existsSync(boilerplateCustomFile)) {
+        configWarn(boilerplateCustomFile + ' could not be found. Boilerplate has been configured with default settings');
+    }
 
 });
 
 // The order is important! The CSS preprocess stuff must happen first otherwise minify will break everything!
-gulp.task('default', 
-    [ 
+gulp.task('default',
+    [
         'clean',
         'git-rev-info',
         'build-html-samples',
-        'preprocess-css', 
+        'preprocess-css',
         'minify-css',
         'remove-css-comments',
-        'preprocess-boilerplate', 
+        'preprocess-boilerplate',
         'inline-css',
         'check-config'
     ]
