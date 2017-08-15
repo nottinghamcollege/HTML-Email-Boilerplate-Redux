@@ -33,14 +33,18 @@ else {
     isXHTMLDoctype = false;
 }
 
-// Check if preheader needs to be padded with &nbsp;
+// Check if preheader needs to be padded with the interesting &nbsp;&zwnj; hack
 var preheaderPaddingInt = process.env.PREHEADER_CHARACTER_PADDING;
-var nbsp = ''; // global so for loop output can be assigned to env var
 if (preheaderPaddingInt > 0) {
+
+    var paddingChar = ''; // Initalise as blank/empty to avoid undefined
+
+    // Assign as many padding hack characters required as per PREHEADER_CHARACTER_PADDING
     for (i = 0; i < preheaderPaddingInt; i++) {
-        nbsp += '&nbsp;';
+        paddingChar += '&nbsp;&zwnj;';
     }
-    process.env.PREHEADER_CHARACTER_PADDING_NBSP = nbsp;
+
+    process.env.PREHEADER_CHARACTER_PADDING_NBSP = paddingChar;
 }
 else {
     // Avoid undefined value or invalid value and initalise as blank
