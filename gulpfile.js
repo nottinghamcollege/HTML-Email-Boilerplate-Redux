@@ -9,14 +9,17 @@ var cleanCSS = require('gulp-clean-css'),
     preprocess = require('gulp-preprocess'),
     rename = require('gulp-rename');
 
+// Default and custom boilerplate configuration files
+var boilerplateDefaultConfigFile = '.boilerplate.defaults';
+var boilerplateCustomConfigFile = '.boilerplate.custom';
+
 // Load in environment variables from .boilerplate.defaults first and then .boilerplate.custom if it exists
-var boilerplateCustomFile = '.boilerplate.custom';
 var boilerplateConfig = dotenv_extended.load(
     {
         encoding: 'utf8',
         silent: true,
-        path: boilerplateCustomFile,
-        defaults: '.boilerplate.defaults',
+        defaults: boilerplateDefaultConfigFile,
+        path: boilerplateCustomConfigFile,
         errorOnMissing: false,
         errorOnExtra: false,
         assignToProcessEnv: true,
@@ -348,8 +351,8 @@ gulp.task('check-config', ['inline-css'], function() {
     }
 
     // Warn if .boilerplate.custom is not found
-    if (!fs.existsSync(boilerplateCustomFile)) {
-        configWarn(boilerplateCustomFile + ' could not be found. Boilerplate has been configured with default settings');
+    if (!fs.existsSync(boilerplateCustomConfigFile)) {
+        configWarn(boilerplateCustomConfigFile + ' could not be found. Boilerplate has been configured with default settings from ' + boilerplateDefaultConfigFile);
     }
 
 });
